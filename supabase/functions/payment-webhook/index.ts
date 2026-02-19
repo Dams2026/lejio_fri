@@ -44,7 +44,7 @@ async function verifyStripeSignature(payload: string, signature: string, secret:
   }
 }
 
-// Parse Stripe webhook for LEJIO commission payments
+// Parse Stripe webhook for AUTOFIQ commission payments
 function parseStripeWebhook(body: unknown): WebhookEvent | null {
   const eventType = body.type;
   const session = body.data?.object;

@@ -181,7 +181,7 @@ const ReportLessorPage = () => {
 
               <div className="bg-muted/50 p-3 rounded-lg text-sm text-muted-foreground">
                 <p>
-                  Din rapport vil blive gennemgået af LEJIO's team. Vi kontakter dig via e-mail 
+                  Din rapport vil blive gennemgået af AUTOFIQ's team. Vi kontakter dig via e-mail 
                   hvis vi har brug for yderligere oplysninger.
                 </p>
               </div>

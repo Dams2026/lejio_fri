@@ -5,7 +5,7 @@ import * as path from 'path';
 // Configuration from environment
 const config = {
   server: process.env.SQL_SERVER || 'sql-vqiibdafjcmnc-dev.database.windows.net',
-  database: process.env.SQL_DATABASE || 'lejio-fri',
+  database: process.env.SQL_DATABASE || 'autofiq',
   authentication: {
     type: 'default',
     options: {

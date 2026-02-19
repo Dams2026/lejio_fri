@@ -52,13 +52,13 @@ const LessorTerms = () => {
                 <section>
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">1. Introduktion</h2>
                   <p>
-                    Velkommen som udlejer på LEJIO. Disse vilkår ("Udlejervilkårene") regulerer dit forhold til LEJIO som platformudbyder, når du vælger at udleje dit køretøj via vores platform på www.lejio.dk.
+                    Velkommen som udlejer på AUTOFIQ. Disse vilkår ("Udlejervilkårene") regulerer dit forhold til AUTOFIQ som platformudbyder, når du vælger at udleje dit køretøj via vores platform på www.autofiq.dk.
                   </p>
                   <p className="mt-4">
-                    Ved at oprette en udlejerprofil og liste køretøjer på LEJIO accepterer du disse vilkår i deres helhed.
+                    Ved at oprette en udlejerprofil og liste køretøjer på AUTOFIQ accepterer du disse vilkår i deres helhed.
                   </p>
                   <p className="mt-4">
-                    LEJIO er en formidlingsplatform, der forbinder private og erhvervsmæssige udlejere med lejere. LEJIO er ikke part i lejeaftalen mellem dig og lejeren.
+                    AUTOFIQ er en formidlingsplatform, der forbinder private og erhvervsmæssige udlejere med lejere. AUTOFIQ er ikke part i lejeaftalen mellem dig og lejeren.
                   </p>
                 </section>
 
@@ -74,13 +74,13 @@ const LessorTerms = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-t border-border"><td className="px-4 py-3 font-medium">Platformen</td><td className="px-4 py-3">LEJIOs hjemmeside (www.lejio.dk) og tilhørende applikationer</td></tr>
+                        <tr className="border-t border-border"><td className="px-4 py-3 font-medium">Platformen</td><td className="px-4 py-3">AUTOFIQs hjemmeside (www.autofiq.dk) og tilhørende applikationer</td></tr>
                         <tr className="border-t border-border bg-muted/30"><td className="px-4 py-3 font-medium">Udlejer</td><td className="px-4 py-3">En fysisk eller juridisk person, der lister køretøjer til udlejning på Platformen</td></tr>
                         <tr className="border-t border-border"><td className="px-4 py-3 font-medium">Lejer</td><td className="px-4 py-3">En fysisk eller juridisk person, der lejer et køretøj via Platformen</td></tr>
                         <tr className="border-t border-border bg-muted/30"><td className="px-4 py-3 font-medium">Køretøj</td><td className="px-4 py-3">Biler, motorcykler, scootere, campingvogne, autocampere og trailere</td></tr>
                         <tr className="border-t border-border"><td className="px-4 py-3 font-medium">Booking</td><td className="px-4 py-3">En bekræftet reservation af et Køretøj</td></tr>
                         <tr className="border-t border-border bg-muted/30"><td className="px-4 py-3 font-medium">Lejeperiode</td><td className="px-4 py-3">Tidsrummet fra afhentning til aflevering af Køretøjet</td></tr>
-                        <tr className="border-t border-border"><td className="px-4 py-3 font-medium">Kommission</td><td className="px-4 py-3">Det gebyr, LEJIO opkræver for formidling af udlejningen</td></tr>
+                        <tr className="border-t border-border"><td className="px-4 py-3 font-medium">Kommission</td><td className="px-4 py-3">Det gebyr, AUTOFIQ opkræver for formidling af udlejningen</td></tr>
                       </tbody>
                     </table>
                   </div>
@@ -91,7 +91,7 @@ const LessorTerms = () => {
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">3. Oprettelse af udlejerprofil</h2>
                   
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">3.1 Krav til udlejere</h3>
-                  <p>For at blive udlejer på LEJIO skal du:</p>
+                  <p>For at blive udlejer på AUTOFIQ skal du:</p>
                   <ol className="list-[lower-alpha] pl-6 space-y-2 mt-4">
                     <li>Være fyldt 18 år eller være en registreret virksomhed i Danmark.</li>
                     <li>Oprette en profil med fuldstændige og korrekte oplysninger, herunder:
@@ -104,8 +104,8 @@ const LessorTerms = () => {
                         <li>Bankoplysninger til udbetaling</li>
                       </ul>
                     </li>
-                    <li>Verificere din identitet via det af LEJIO anviste verifikationssystem.</li>
-                    <li>Acceptere disse Udlejervilkår samt LEJIOs generelle Handelsbetingelser og Privatlivspolitik.</li>
+                    <li>Verificere din identitet via det af AUTOFIQ anviste verifikationssystem.</li>
+                    <li>Acceptere disse Udlejervilkår samt AUTOFIQs generelle Handelsbetingelser og Privatlivspolitik.</li>
                   </ol>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">3.2 Verifikation af køretøjer</h3>
@@ -117,7 +117,7 @@ const LessorTerms = () => {
                     <li>Seneste synsrapport (hvis relevant)</li>
                   </ul>
                   <p className="mt-4">
-                    LEJIO forbeholder sig retten til at afvise køretøjer, der ikke lever op til vores kvalitetsstandarder.
+                    AUTOFIQ forbeholder sig retten til at afvise køretøjer, der ikke lever op til vores kvalitetsstandarder.
                   </p>
                 </section>
 
@@ -126,7 +126,7 @@ const LessorTerms = () => {
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">4. Abonnementer og priser</h2>
                   
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">4.1 Abonnementstyper</h3>
-                  <p>LEJIO tilbyder følgende planer for udlejere:</p>
+                  <p>AUTOFIQ tilbyder følgende planer for udlejere:</p>
                   
                   <div className="overflow-x-auto mt-4">
                     <table className="min-w-full border border-border rounded-xl overflow-hidden">
@@ -146,7 +146,7 @@ const LessorTerms = () => {
                     </table>
                   </div>
 
-                  <p className="mt-6">For forhandlere/professionelle udlejere tilbyder LEJIO følgende betalte abonnementer:</p>
+                  <p className="mt-6">For forhandlere/professionelle udlejere tilbyder AUTOFIQ følgende betalte abonnementer:</p>
                   
                   <div className="overflow-x-auto mt-4">
                     <table className="min-w-full border border-border rounded-xl overflow-hidden">
@@ -177,7 +177,7 @@ const LessorTerms = () => {
                     <li><strong>Starter/Standard/Enterprise:</strong> Abonnementet kan opsiges med løbende måned + 30 dages varsel.</li>
                     <li><strong>Fleet:</strong> Vilkår for binding og opsigelse aftales individuelt.</li>
                   </ul>
-                  <p className="mt-4">Opsigelse sker via din udlejerprofil eller ved skriftlig henvendelse til support@lejio.dk.</p>
+                  <p className="mt-4">Opsigelse sker via din udlejerprofil eller ved skriftlig henvendelse til support@autofiq.dk.</p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">4.3 Ændring af abonnement</h3>
                   <p>
@@ -190,7 +190,7 @@ const LessorTerms = () => {
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">5. Kommission og betaling</h2>
                   
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">5.1 Kommission og abonnement – fakturering</h3>
-                  <p>LEJIO tilbyder følgende afregningsmodeller (som aftales pr. samarbejde/opsætning):</p>
+                  <p>AUTOFIQ tilbyder følgende afregningsmodeller (som aftales pr. samarbejde/opsætning):</p>
                   <div className="overflow-x-auto mt-4">
                     <table className="min-w-full border border-border rounded-xl overflow-hidden">
                       <thead className="bg-muted">
@@ -231,7 +231,7 @@ const LessorTerms = () => {
                     <li><strong>Starter/Standard/Enterprise:</strong> 3% kommission pr. booking.</li>
                   </ul>
                   
-                  <p className="mt-4">LEJIO fakturerer kommission og (hvis relevant) abonnement/kontingent månedligt:</p>
+                  <p className="mt-4">AUTOFIQ fakturerer kommission og (hvis relevant) abonnement/kontingent månedligt:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Der faktureres bagudrettet hver den 1. i måneden for den foregående måned.</li>
                     <li>Betalingsfrist og betalingsmåde fremgår af fakturaen.</li>
@@ -246,7 +246,7 @@ const LessorTerms = () => {
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">5.2 Betaling (pengevejen) – leje og depositum</h3>
                   <p className="font-medium text-foreground">Privat, Starter, Standard og Enterprise (direkte afregning mellem lejer og udlejer):</p>
                   <p className="mt-2">
-                    Leje og depositum afregnes direkte mellem lejer og udlejer via LEJIOs tekniske betalingsintegration. LEJIO modtager, opbevarer eller udbetaler ikke leje/depositum under disse abonnementer.
+                    Leje og depositum afregnes direkte mellem lejer og udlejer via AUTOFIQs tekniske betalingsintegration. AUTOFIQ modtager, opbevarer eller udbetaler ikke leje/depositum under disse abonnementer.
                   </p>
                   <p className="mt-4">Som udlejer skal du derfor:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
@@ -255,15 +255,15 @@ const LessorTerms = () => {
                   </ul>
                   <p className="mt-4 font-medium text-foreground">Fleet (særskilt aftale):</p>
                   <p className="mt-2">
-                    Fleet-løsningen følger en særskilt aftale vedrørende betalingshåndtering, herunder om LEJIO håndterer opkrævning og/eller udbetaling (payouts), samt vilkår for timing og eventuelle forudsætninger.
+                    Fleet-løsningen følger en særskilt aftale vedrørende betalingshåndtering, herunder om AUTOFIQ håndterer opkrævning og/eller udbetaling (payouts), samt vilkår for timing og eventuelle forudsætninger.
                   </p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">5.3 Depositum</h3>
-                  <p>LEJIO håndterer depositum på vegne af dig:</p>
+                  <p>AUTOFIQ håndterer depositum på vegne af dig:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Depositummet reserveres på lejerens betalingskort ved bookingbekræftelse.</li>
                     <li>Efter endt lejeperiode frigives depositummet til lejeren, medmindre du inden for 48 timer indrapporterer skader eller mangler med tilhørende dokumentation.</li>
-                    <li>Ved dokumenterede skader udbetales det relevante beløb til dig, jf. LEJIOs Handelsbetingelser.</li>
+                    <li>Ved dokumenterede skader udbetales det relevante beløb til dig, jf. AUTOFIQs Handelsbetingelser.</li>
                   </ul>
                 </section>
 
@@ -280,11 +280,11 @@ const LessorTerms = () => {
                     <li>Kilometergrænse og pris pr. ekstra kilometer</li>
                     <li>Depositum (anbefalet: 10-20% af køretøjets værdi)</li>
                   </ul>
-                  <p className="mt-4">LEJIO kan give vejledende prisanbefalinger, men den endelige pris er dit ansvar.</p>
+                  <p className="mt-4">AUTOFIQ kan give vejledende prisanbefalinger, men den endelige pris er dit ansvar.</p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">6.2 Køretøjets værdi</h3>
                   <p>
-                    Du skal angive en realistisk markedsværdi for dit køretøj. Denne værdi anvendes ved beregning af erstatning ved totalskade eller vanvidskørsel. LEJIO forbeholder sig ret til at foretage stikprøvekontrol og justere urimeligt høje værdisætninger.
+                    Du skal angive en realistisk markedsværdi for dit køretøj. Denne værdi anvendes ved beregning af erstatning ved totalskade eller vanvidskørsel. AUTOFIQ forbeholder sig ret til at foretage stikprøvekontrol og justere urimeligt høje værdisætninger.
                   </p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">6.3 Annoncekvalitet</h3>
@@ -310,17 +310,17 @@ const LessorTerms = () => {
                     <li>Du tegner en særskilt udlejningsforsikring, der dækker tredjemands brug af dit køretøj.</li>
                   </ul>
                   <p className="mt-4">
-                    LEJIO stiller ikke forsikring til rådighed for udlejere og foretager ikke en forsikringsretlig vurdering af din dækning.
+                    AUTOFIQ stiller ikke forsikring til rådighed for udlejere og foretager ikke en forsikringsretlig vurdering af din dækning.
                   </p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">7.2 Dokumentation</h3>
                   <p>
-                    LEJIO kan til enhver tid anmode om dokumentation for gyldig forsikringsdækning. Manglende dokumentation kan medføre midlertidig deaktivering af dine annoncer.
+                    AUTOFIQ kan til enhver tid anmode om dokumentation for gyldig forsikringsdækning. Manglende dokumentation kan medføre midlertidig deaktivering af dine annoncer.
                   </p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">7.3 Ansvarsfraskrivelse</h3>
                   <p>
-                    LEJIO påtager sig intet ansvar for skader, tab eller erstatningskrav, der opstår som følge af manglende eller utilstrækkelig forsikringsdækning.
+                    AUTOFIQ påtager sig intet ansvar for skader, tab eller erstatningskrav, der opstår som følge af manglende eller utilstrækkelig forsikringsdækning.
                   </p>
                 </section>
 
@@ -329,7 +329,7 @@ const LessorTerms = () => {
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">8. Dine forpligtelser som udlejer</h2>
                   
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">8.1 Generelle forpligtelser</h3>
-                  <p>Som udlejer på LEJIO forpligter du dig til at:</p>
+                  <p>Som udlejer på AUTOFIQ forpligter du dig til at:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Levere køretøjet i den stand, der er beskrevet i annoncen.</li>
                     <li>Sikre, at køretøjet er rengjort, tanket/opladet og klar til brug ved afhentning.</li>
@@ -352,7 +352,7 @@ const LessorTerms = () => {
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">8.3 Skattemæssige forhold</h3>
                   <p>
-                    Indtægter fra udlejning er skattepligtige. Du er selv ansvarlig for at indberette dine indtægter til SKAT. LEJIO indberetter årligt oplysninger om udbetalinger til relevante myndigheder i overensstemmelse med gældende lovgivning.
+                    Indtægter fra udlejning er skattepligtige. Du er selv ansvarlig for at indberette dine indtægter til SKAT. AUTOFIQ indberetter årligt oplysninger om udbetalinger til relevante myndigheder i overensstemmelse med gældende lovgivning.
                   </p>
                 </section>
 
@@ -388,28 +388,28 @@ const LessorTerms = () => {
                   </ol>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">10.2 Tvistløsning</h3>
-                  <p>LEJIO faciliterer tvister mellem udlejere og lejere. Processen er:</p>
+                  <p>AUTOFIQ faciliterer tvister mellem udlejere og lejere. Processen er:</p>
                   <ol className="list-decimal pl-6 space-y-2 mt-4">
                     <li>Lejeren får mulighed for at kommentere på dit krav inden for 48 timer.</li>
-                    <li>LEJIO gennemgår dokumentationen fra begge parter.</li>
-                    <li>LEJIO træffer afgørelse om udbetaling af depositum (helt, delvist eller intet).</li>
+                    <li>AUTOFIQ gennemgår dokumentationen fra begge parter.</li>
+                    <li>AUTOFIQ træffer afgørelse om udbetaling af depositum (helt, delvist eller intet).</li>
                   </ol>
                   <p className="mt-4">
-                    LEJIOs afgørelse er bindende for begge parter inden for rammerne af det stillede depositum. Ved krav, der overstiger depositummet, henvises til de almindelige domstole.
+                    AUTOFIQs afgørelse er bindende for begge parter inden for rammerne af det stillede depositum. Ved krav, der overstiger depositummet, henvises til de almindelige domstole.
                   </p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">10.3 Vanvidskørsel</h3>
                   <p>
-                    Ved dokumenteret vanvidskørsel (som defineret i LEJIOs Handelsbetingelser) hæfter lejeren for køretøjets fulde værdi, uanset depositummets størrelse. LEJIO bistår med opkrævning, men garanterer ikke fuld inddrivelse.
+                    Ved dokumenteret vanvidskørsel (som defineret i AUTOFIQs Handelsbetingelser) hæfter lejeren for køretøjets fulde værdi, uanset depositummets størrelse. AUTOFIQ bistår med opkrævning, men garanterer ikke fuld inddrivelse.
                   </p>
                 </section>
 
                 {/* Section 11 */}
                 <section>
-                  <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">11. LEJIOs GPS-udstyr (valgfrit)</h2>
+                  <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">11. AUTOFIQs GPS-udstyr (valgfrit)</h2>
                   
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">11.1 Tilbud om GPS</h3>
-                  <p>LEJIO tilbyder GPS-trackere til udlejere på Pro- og Fleet-abonnementer:</p>
+                  <p>AUTOFIQ tilbyder GPS-trackere til udlejere på Pro- og Fleet-abonnementer:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li><strong>Leje:</strong> 29 kr./md. pr. enhed</li>
                     <li><strong>Køb:</strong> 499 kr. pr. enhed (engangsbetaling)</li>
@@ -422,14 +422,14 @@ const LessorTerms = () => {
                     <li>Dokumentation af kørte kilometer.</li>
                     <li>Automatisk registrering af aflevering.</li>
                   </ul>
-                  <p className="mt-4">Lejere informeres om GPS-tracking i forbindelse med bookingen, jf. LEJIOs Privatlivspolitik.</p>
+                  <p className="mt-4">Lejere informeres om GPS-tracking i forbindelse med bookingen, jf. AUTOFIQs Privatlivspolitik.</p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">11.3 Ansvar for udstyr og installation</h3>
                   <p>
-                    Lejet GPS-udstyr forbliver LEJIOs ejendom og skal returneres ved ophør af abonnement. Ved bortkomst eller beskadigelse opkræves 499 kr. pr. enhed.
+                    Lejet GPS-udstyr forbliver AUTOFIQs ejendom og skal returneres ved ophør af abonnement. Ved bortkomst eller beskadigelse opkræves 499 kr. pr. enhed.
                   </p>
                   <p className="mt-4">
-                    Hvis du som udlejer vælger en GPS-løsning (uanset om det er LEJIOs udstyr eller andet), er du selv ansvarlig for korrekt og lovlig installation, opsætning og drift, herunder at udstyret ikke skader køretøjet eller påvirker køretøjets funktion.
+                    Hvis du som udlejer vælger en GPS-løsning (uanset om det er AUTOFIQs udstyr eller andet), er du selv ansvarlig for korrekt og lovlig installation, opsætning og drift, herunder at udstyret ikke skader køretøjet eller påvirker køretøjets funktion.
                   </p>
                 </section>
 
@@ -439,12 +439,12 @@ const LessorTerms = () => {
                   
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">12.1 Dit indhold</h3>
                   <p>
-                    Du bevarer alle rettigheder til de billeder og beskrivelser, du uploader. Ved at uploade indhold til Platformen giver du LEJIO en ikke-eksklusiv, vederlagsfri licens til at anvende materialet i forbindelse med markedsføring af Platformen.
+                    Du bevarer alle rettigheder til de billeder og beskrivelser, du uploader. Ved at uploade indhold til Platformen giver du AUTOFIQ en ikke-eksklusiv, vederlagsfri licens til at anvende materialet i forbindelse med markedsføring af Platformen.
                   </p>
 
-                  <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">12.2 LEJIOs indhold</h3>
+                  <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">12.2 AUTOFIQs indhold</h3>
                   <p>
-                    Alt indhold på Platformen, herunder logoer, design og tekster, tilhører LEJIO og må ikke kopieres eller anvendes uden skriftlig tilladelse.
+                    Alt indhold på Platformen, herunder logoer, design og tekster, tilhører AUTOFIQ og må ikke kopieres eller anvendes uden skriftlig tilladelse.
                   </p>
                 </section>
 
@@ -453,7 +453,7 @@ const LessorTerms = () => {
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">13. Suspension og ophør</h2>
                   
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">13.1 Suspension</h3>
-                  <p>LEJIO kan midlertidigt suspendere din profil ved:</p>
+                  <p>AUTOFIQ kan midlertidigt suspendere din profil ved:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Mistanke om svigagtig adfærd.</li>
                     <li>Gentagne klager fra lejere.</li>
@@ -463,11 +463,11 @@ const LessorTerms = () => {
                   <p className="mt-4">Du vil blive underrettet om suspensionen og årsagen hertil.</p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">13.2 Permanent udelukkelse</h3>
-                  <p>LEJIO kan permanent udelukke dig fra Platformen ved:</p>
+                  <p>AUTOFIQ kan permanent udelukke dig fra Platformen ved:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Grov eller gentagen overtrædelse af vilkårene.</li>
                     <li>Svindel eller dokumentfalsk.</li>
-                    <li>Trusler eller chikane mod lejere eller LEJIO-medarbejdere.</li>
+                    <li>Trusler eller chikane mod lejere eller AUTOFIQ-medarbejdere.</li>
                   </ul>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">13.3 Din opsigelse</h3>
@@ -483,8 +483,8 @@ const LessorTerms = () => {
                 <section>
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">14. Ansvarsbegrænsning</h2>
                   
-                  <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">14.1 LEJIOs ansvar</h3>
-                  <p>LEJIO er alene formidler og påtager sig ikke ansvar for:</p>
+                  <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">14.1 AUTOFIQs ansvar</h3>
+                  <p>AUTOFIQ er alene formidler og påtager sig ikke ansvar for:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li>Skader på dit køretøj forårsaget af lejere.</li>
                     <li>Lejeres manglende betalingsevne ud over det stillede depositum.</li>
@@ -494,7 +494,7 @@ const LessorTerms = () => {
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">14.2 Maksimalt ansvar</h3>
                   <p>
-                    LEJIOs samlede ansvar over for dig kan aldrig overstige det beløb, du har betalt i kommission og abonnementsgebyrer de seneste 12 måneder.
+                    AUTOFIQs samlede ansvar over for dig kan aldrig overstige det beløb, du har betalt i kommission og abonnementsgebyrer de seneste 12 måneder.
                   </p>
                 </section>
 
@@ -502,7 +502,7 @@ const LessorTerms = () => {
                 <section>
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">15. Ændringer af vilkårene</h2>
                   <p>
-                    LEJIO kan ændre disse vilkår med 30 dages varsel. Ændringer varsles via e-mail og/eller besked på Platformen.
+                    AUTOFIQ kan ændre disse vilkår med 30 dages varsel. Ændringer varsles via e-mail og/eller besked på Platformen.
                   </p>
                   <p className="mt-4">
                     Hvis du ikke kan acceptere de ændrede vilkår, kan du opsige din profil inden ikrafttrædelsesdatoen. Fortsat brug af Platformen efter ikrafttrædelse betragtes som accept af de nye vilkår.
@@ -524,11 +524,11 @@ const LessorTerms = () => {
                     Har du spørgsmål til disse vilkår, er du velkommen til at kontakte os:
                   </p>
                   <div className="mt-4 p-5 bg-primary/10 border border-primary/30 rounded-xl">
-                    <p className="font-semibold text-foreground">LEJIO</p>
+                    <p className="font-semibold text-foreground">AUTOFIQ</p>
                     <p>CVR: 44691507</p>
                     <p>Adresse: Erantisvej 2, st. 103, 8800 Viborg</p>
-                    <p>E-mail: <a href="mailto:support@lejio.dk" className="text-primary hover:underline">support@lejio.dk</a></p>
-                    <p>Hjemmeside: <a href="https://www.lejio.dk" className="text-primary hover:underline">www.lejio.dk</a></p>
+                    <p>E-mail: <a href="mailto:support@autofiq.dk" className="text-primary hover:underline">support@autofiq.dk</a></p>
+                    <p>Hjemmeside: <a href="https://www.autofiq.dk" className="text-primary hover:underline">www.autofiq.dk</a></p>
                   </div>
                   <p className="mt-6 text-sm text-muted-foreground italic">
                     Disse Udlejervilkår er senest opdateret den 22. januar 2026.

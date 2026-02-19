@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
 import { useUnreadMessages } from "@/hooks/useUnreadMessages";
-import LejioLogo from "./LejioLogo";
+import AUTOFIQLogo from "./AUTOFIQLogo";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -72,7 +72,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           <a href={user ? "/dashboard" : "/"} onClick={(e) => { e.preventDefault(); navigate(user ? "/dashboard" : "/"); }}>
-            <LejioLogo size="md" />
+            <AUTOFIQLogo size="md" />
           </a>
 
           {/* Desktop Navigation */}

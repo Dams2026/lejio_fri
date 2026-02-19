@@ -1,8 +1,8 @@
-# 🚀 Lejio Fri - Komplet System Forklaring for AI
+# 🚀 AUTOFIQ - Komplet System Forklaring for AI
 
 ## 📌 Executive Summary
 
-Vi bygger **Lejio Fri** - en white-label SaaS lessor platform (udlejningsplatform for privatpersoner og professionelle).
+Vi bygger **AUTOFIQ** - en white-label SaaS lessor platform (udlejningsplatform for privatpersoner og professionelle).
 
 **Status:** Frontend 100% live ✅ | Database schema 100% ready ✅ | API 0% (næste phase)
 
@@ -10,7 +10,7 @@ Vi bygger **Lejio Fri** - en white-label SaaS lessor platform (udlejningsplatfor
 
 ---
 
-## 🎯 Hvad er Lejio Fri?
+## 🎯 Hvad er AUTOFIQ?
 
 **Lessor Dashboard** - En lessor (privatperson) kan:
 - ✅ Tilføje sine egne køretøjer (biler)
@@ -20,7 +20,7 @@ Vi bygger **Lejio Fri** - en white-label SaaS lessor platform (udlejningsplatfor
 - ✅ Administrere team members (give adgang til andet staff)
 - ✅ Konfigurere settings (branding, domæne, etc)
 
-**Admin Portal** - Vi (Lejio) kan:
+**Admin Portal** - Vi (AUTOFIQ) kan:
 - ✅ Se alle lessors i systemet
 - ✅ Se detaljer for hver lessor (omsætning, antal vehicles, osv)
 - ✅ Administrere support tickets
@@ -141,7 +141,7 @@ Test data ready:
 ## 📁 Repository Structure
 
 ```
-/workspaces/lejio-b75cff1f/
+/workspaces/autofiq-b75cff1f/
 ├── src/
 │   ├── App.tsx - Main router
 │   ├── pages/
@@ -196,7 +196,7 @@ Test data ready:
 │
 ├── staticwebapp.config.json (SPA routing config)
 ├── vite.config.ts (build config - optimized for memory)
-└── LEJIO_FRI_SETUP_GUIDE.md (complete setup guide)
+└── AUTOFIQ_FRI_SETUP_GUIDE.md (complete setup guide)
 ```
 
 ---
@@ -226,7 +226,7 @@ Test data ready:
 3. Invoice auto-generated (trigger or Function)
 4. Lessor sees in /fri/dashboard/invoices
 5. Lessor marks as paid
-6. Lessor pays subscription to Lejio
+6. Lessor pays subscription to AUTOFIQ
 7. Admin sees payment in /fri/admin/payments
 ```
 
@@ -322,9 +322,9 @@ Update src/integrations/azure/clientFri.ts:
 
 ### 5. Optional - Custom Domain
 ```
-- Add custom domain: lejio-fri.dk
+- Add custom domain: autofiq.dk
 - Add SSL certificate
-- Setup lessor subdomains: lessor1.lejio-fri.dk
+- Setup lessor subdomains: lessor1.autofiq.dk
 ```
 
 ---
@@ -441,7 +441,7 @@ Update src/integrations/azure/clientFri.ts:
 - `/vite.config.ts` - Build configuration
 
 **Documentation:**
-- `/LEJIO_FRI_SETUP_GUIDE.md` - Complete setup guide
+- `/AUTOFIQ_FRI_SETUP_GUIDE.md` - Complete setup guide
 - `/AZURE_FUNCTION_EXAMPLES.js` - Function code examples
 
 ---

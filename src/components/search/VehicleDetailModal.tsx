@@ -197,7 +197,7 @@ export const VehicleDetailModal = ({
           {vehicle.owner_fleet_plan && (
             <Badge className="absolute top-4 right-4 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-md">
               <Shield className="w-3 h-3 mr-1" />
-              LEJIO Varetager
+              AUTOFIQ Varetager
             </Badge>
           )}
         </div>

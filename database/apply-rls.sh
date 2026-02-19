@@ -17,7 +17,7 @@ if [ -z "$DB_URL" ]; then
   exit 1
 fi
 
-echo "🔐 Applying RLS policies to LEJIO FRI database..."
+echo "🔐 Applying RLS policies to AUTOFIQ database..."
 echo ""
 
 # Get script directory

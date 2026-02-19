@@ -1,4 +1,4 @@
--- Lejio Fri Multi-Tenant Database Migration
+-- AUTOFIQ Multi-Tenant Database Migration
 -- Adds tenant isolation and Row Level Security (RLS)
 -- Run this after 001_initial_schema.sql
 
@@ -12,7 +12,7 @@ BEGIN
         id NVARCHAR(36) PRIMARY KEY,
         name NVARCHAR(255) NOT NULL,
         slug NVARCHAR(100) UNIQUE NOT NULL,  -- martinjensen, aarhusrent, etc.
-        domain NVARCHAR(255) UNIQUE,          -- martinbiludlejning.lejio-fri.dk
+        domain NVARCHAR(255) UNIQUE,          -- martinbiludlejning.autofiq.dk
         custom_domain NVARCHAR(255) UNIQUE,   -- rent.martinbiludlejning.dk (later)
         subdomain NVARCHAR(100) UNIQUE,       -- auto-generated from name
         plan NVARCHAR(50) NOT NULL DEFAULT 'trial', -- trial, starter, pro, enterprise

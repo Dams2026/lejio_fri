@@ -165,14 +165,14 @@ serve(async (req) => {
           messages: [
             {
               role: 'system',
-              content: `Du er en salgssupport AI for LEJIO, en biludlejningsplatform. 
+              content: `Du er en salgssupport AI for AUTOFIQ, en biludlejningsplatform. 
 Analyser søgeresultaterne og identificer potentielle kunder/leads.
 Fokuser på: biludlejningsfirmaer, bilforhandlere, leasingselskaber, værksteder med lånebiler.
 Returner JSON array med de bedste leads.`
             },
             {
               role: 'user',
-              content: `Analyser disse søgeresultater og find potentielle leads for LEJIO:
+              content: `Analyser disse søgeresultater og find potentielle leads for AUTOFIQ:
 
 ${JSON.stringify(results, null, 2)}
 

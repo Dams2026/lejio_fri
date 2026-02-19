@@ -2,7 +2,7 @@ import mssql from 'mssql';
 
 const config = {
   server: 'sql-vqiibdafjcmnc-dev.database.windows.net',
-  database: 'lejio-fri',
+  database: 'autofiq',
   user: 'sqladmin',
   password: 'Dit40102010?',
   port: 1433,

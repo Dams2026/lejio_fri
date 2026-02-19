@@ -114,8 +114,8 @@ export const FleetPremiumVehicleCard = ({ vehicle }: FleetPremiumVehicleCardProp
             <span className="font-medium">{formatCurrency(vehicle.monthlyGrossRevenue)} kr</span>
           </div>
           <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">LEJIO kommission ({Math.round(vehicle.commissionRate * 100)}%)</span>
-            <span className="font-medium text-destructive">-{formatCurrency(vehicle.lejioCommissionAmount)} kr</span>
+            <span className="text-muted-foreground">AUTOFIQ kommission ({Math.round(vehicle.commissionRate * 100)}%)</span>
+            <span className="font-medium text-destructive">-{formatCurrency(vehicle.autofiqCommissionAmount)} kr</span>
           </div>
           {vehicle.cleaningFees > 0 && (
             <div className="flex justify-between text-sm">

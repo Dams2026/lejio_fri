@@ -210,7 +210,7 @@ const Messages = () => {
                             <div className="flex items-center justify-between">
                               <p className="font-medium text-foreground truncate">
                                 {conv.is_customer_service
-                                  ? "LEJIO Kundeservice"
+                                  ? "AUTOFIQ Kundeservice"
                                   : conv.other_participant?.company_name ||
                                     conv.other_participant?.full_name ||
                                     conv.other_participant?.email ||
@@ -265,7 +265,7 @@ const Messages = () => {
                     <div>
                       <p className="font-medium text-foreground">
                         {activeConv.is_customer_service
-                          ? "LEJIO Kundeservice"
+                          ? "AUTOFIQ Kundeservice"
                           : activeConv.other_participant?.company_name ||
                             activeConv.other_participant?.full_name ||
                             activeConv.other_participant?.email}

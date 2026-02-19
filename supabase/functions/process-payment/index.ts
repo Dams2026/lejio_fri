@@ -6,11 +6,11 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// LEJIO commission rates
+// AUTOFIQ commission rates
 const PRIVATE_COMMISSION_RATE = 0.15; // 15% for private lessors
 const PRO_BOOKING_FEE = 19; // 19 kr per booking for pro users
 
-// Create Stripe checkout session for LEJIO commission payment
+// Create Stripe checkout session for AUTOFIQ commission payment
 async function createStripeCommissionPayment(
   amount: number,
   currency: string,
@@ -33,7 +33,7 @@ async function createStripeCommissionPayment(
       price_data: {
         currency: currency.toLowerCase(),
         product_data: {
-          name: 'LEJIO Kommission',
+          name: 'AUTOFIQ Kommission',
           description: description,
         },
         unit_amount: Math.round(amount * 100),
@@ -44,7 +44,7 @@ async function createStripeCommissionPayment(
     cancel_url: `${returnUrl}?payment=cancelled&booking=${bookingId}`,
     metadata: {
       booking_id: bookingId,
-      type: 'lejio_commission',
+      type: 'autofiq_commission',
     },
   });
 
@@ -63,7 +63,7 @@ const handler = async (req: Request): Promise<Response> => {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const lejioStripeKey = Deno.env.get('LEJIO_STRIPE_SECRET_KEY');
+    const autofiqStripeKey = Deno.env.get('AUTOFIQ_STRIPE_SECRET_KEY');
     
     // Validate authorization header
     const authHeader = req.headers.get('authorization');
@@ -105,7 +105,7 @@ const handler = async (req: Request): Promise<Response> => {
       });
     }
 
-    console.log(`Processing LEJIO commission for booking: ${bookingId}`);
+    console.log(`Processing AUTOFIQ commission for booking: ${bookingId}`);
 
     // Fetch booking
     const { data: booking, error: bookingError } = await supabase
@@ -158,7 +158,7 @@ const handler = async (req: Request): Promise<Response> => {
     let description: string;
 
     if (isPrivateUser) {
-      // Private users pay 15% commission to LEJIO
+      // Private users pay 15% commission to AUTOFIQ
       commissionAmount = booking.total_price * PRIVATE_COMMISSION_RATE;
       paymentMode = 'p2p_commission';
       description = `15% kommission for booking af ${booking.total_price} kr`;
@@ -171,20 +171,20 @@ const handler = async (req: Request): Promise<Response> => {
       console.log(`Pro user - charging fixed fee: ${commissionAmount} DKK`);
     }
 
-    // Check if LEJIO Stripe key is configured
-    if (!lejioStripeKey) {
-      console.error('LEJIO_STRIPE_SECRET_KEY not configured');
+    // Check if AUTOFIQ Stripe key is configured
+    if (!autofiqStripeKey) {
+      console.error('AUTOFIQ_STRIPE_SECRET_KEY not configured');
       return new Response(JSON.stringify({ 
         error: 'Payment system not configured',
-        message: 'LEJIO betalingssystem er ikke konfigureret'
+        message: 'AUTOFIQ betalingssystem er ikke konfigureret'
       }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // Create Stripe checkout for LEJIO commission
-    const baseReturnUrl = returnUrl || `${req.headers.get('origin') || 'https://lejio.dk'}/dashboard`;
+    // Create Stripe checkout for AUTOFIQ commission
+    const baseReturnUrl = returnUrl || `${req.headers.get('origin') || 'https://autofiq.dk'}/dashboard`;
     
     const { paymentUrl, sessionId } = await createStripeCommissionPayment(
       commissionAmount,
@@ -192,7 +192,7 @@ const handler = async (req: Request): Promise<Response> => {
       bookingId,
       lessor.email,
       baseReturnUrl,
-      lejioStripeKey,
+      autofiqStripeKey,
       description
     );
 
@@ -209,8 +209,8 @@ const handler = async (req: Request): Promise<Response> => {
         status: 'pending',
         type: paymentMode === 'p2p_commission' ? 'commission' : 'platform_fee',
         description: paymentMode === 'p2p_commission' 
-          ? `LEJIO kommission (15%) for booking ${bookingId.slice(0, 8)}`
-          : `LEJIO booking gebyr for booking ${bookingId.slice(0, 8)}`,
+          ? `AUTOFIQ kommission (15%) for booking ${bookingId.slice(0, 8)}`
+          : `AUTOFIQ booking gebyr for booking ${bookingId.slice(0, 8)}`,
       });
 
     if (transactionError) {

@@ -52,7 +52,7 @@ const AdminLogin = () => {
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <Shield className="w-8 h-8 text-primary" />
           </div>
-          <CardTitle className="text-2xl">LEJIO Admin</CardTitle>
+          <CardTitle className="text-2xl">AUTOFIQ Admin</CardTitle>
           <CardDescription>
             Log ind med din super admin konto
           </CardDescription>
@@ -68,7 +68,7 @@ const AdminLogin = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@lejio.dk"
+                  placeholder="admin@autofiq.dk"
                   className="pl-10"
                   required
                 />

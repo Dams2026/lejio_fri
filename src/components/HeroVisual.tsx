@@ -29,9 +29,9 @@ const HeroVisual = () => {
         <div className="absolute bottom-1/3 left-1/2 w-3 h-3 rounded-full bg-accent/40 animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      {/* Central LEJIO Hub */}
+      {/* Central AUTOFIQ Hub */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-2xl bg-gradient-to-br from-primary via-primary/80 to-primary/60 flex items-center justify-center shadow-2xl shadow-primary/30 z-20">
-        <span className="font-display text-lg font-extrabold text-primary-foreground tracking-tight">LEJIO</span>
+        <span className="font-display text-lg font-extrabold text-primary-foreground tracking-tight">AUTOFIQ</span>
       </div>
 
       {/* Pro Car Marker */}

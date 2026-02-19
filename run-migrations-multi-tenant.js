@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 
 // Configuration
 const SQL_SERVER = process.env.SQL_SERVER || 'sql-vqiibdafjcmnc-dev.database.windows.net';
-const SQL_DATABASE = process.env.SQL_DATABASE || 'lejio-fri';
+const SQL_DATABASE = process.env.SQL_DATABASE || 'autofiq';
 const SQL_USERNAME = process.env.SQL_USERNAME || 'sqladmin';
 const SQL_PASSWORD = process.env.SQL_PASSWORD;
 

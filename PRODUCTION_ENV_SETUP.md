@@ -9,7 +9,7 @@
 ## 📋 ENVIRONMENT FILES NEEDED
 
 ### 1. Frontend Environment (`.env.production`)
-Create file at root: `/workspaces/lejio-fri/.env.production`
+Create file at root: `/workspaces/autofiq/.env.production`
 
 ```bash
 # Supabase Configuration
@@ -23,12 +23,12 @@ VITE_SENTRY_DSN=https://key@sentry.io/projectid
 VITE_ANALYTICS_ID=G-XXXXXXXXXX
 
 # App Configuration
-VITE_APP_NAME=LEJIO FRI
+VITE_APP_NAME=AUTOFIQ
 VITE_APP_ENV=production
 ```
 
 ### 2. Backend Environment (`.env`)
-Create file at root: `/workspaces/lejio-fri/.env`
+Create file at root: `/workspaces/autofiq/.env`
 
 ```bash
 # Supabase - Admin Access (for backend APIs)
@@ -45,8 +45,8 @@ SMTP_HOST=smtp.gmail.com          # or your SMTP host
 SMTP_PORT=587                      # Usually 587 for TLS
 SMTP_USER=your-email@gmail.com
 SMTP_PASSWORD=app_password        # NOT your regular password
-SMTP_FROM_EMAIL=noreply@lejio.com
-SMTP_FROM_NAME=LEJIO FRI
+SMTP_FROM_EMAIL=noreply@autofiq.com
+SMTP_FROM_NAME=AUTOFIQ
 
 # Session Configuration
 SESSION_SECRET=your-random-secret-key-min-32-chars
@@ -55,8 +55,8 @@ NODE_ENV=production
 # Database (if using direct DB connections)
 DB_HOST=dpg-xxxxx.postgres.render.com
 DB_PORT=5432
-DB_NAME=lejio_fri_db
-DB_USER=lejio_fri_db_user
+DB_NAME=autofiq_db
+DB_USER=autofiq_db_user
 DB_PASSWORD=your_secure_password
 
 # Azure Configuration (if deploying to Azure)
@@ -310,4 +310,4 @@ Once deployed, test these critical paths:
 **Once this is complete, you're ready to go live! 🚀**
 
 *Created: January 27, 2026*  
-*For: LEJIO FRI Production Deployment*
+*For: AUTOFIQ Production Deployment*

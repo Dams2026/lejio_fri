@@ -173,7 +173,7 @@ serve(async (req: Request): Promise<Response> => {
 <body>
   <div class="container">
     <div class="header">
-      <h1>📄 Faktura fra LEJIO</h1>
+      <h1>📄 Faktura fra AUTOFIQ</h1>
     </div>
     <div class="content">
       <div class="invoice-header">
@@ -184,9 +184,9 @@ serve(async (req: Request): Promise<Response> => {
           ${safeCvr ? `CVR: ${safeCvr}` : ''}
         </div>
         <div class="company-info">
-          <strong>LEJIO ApS</strong><br>
+          <strong>AUTOFIQ ApS</strong><br>
           CVR: 12345678<br>
-          support@lejio.dk
+          support@autofiq.dk
         </div>
       </div>
 
@@ -208,7 +208,7 @@ serve(async (req: Request): Promise<Response> => {
         </thead>
         <tbody>
           <tr>
-            <td>LEJIO Pro abonnement (${vehicleCount || 0} køretøjer)</td>
+            <td>AUTOFIQ Pro abonnement (${vehicleCount || 0} køretøjer)</td>
             <td style="text-align: right;">1</td>
             <td style="text-align: right;">${subscriptionFee} kr</td>
             <td style="text-align: right;">${subscriptionFee} kr</td>
@@ -245,8 +245,8 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="footer">
-        <p>Tak for at du bruger LEJIO!</p>
-        <p>Har du spørgsmål til fakturaen? Kontakt os på faktura@lejio.dk</p>
+        <p>Tak for at du bruger AUTOFIQ!</p>
+        <p>Har du spørgsmål til fakturaen? Kontakt os på faktura@autofiq.dk</p>
       </div>
     </div>
   </div>
@@ -258,7 +258,7 @@ serve(async (req: Request): Promise<Response> => {
         await client.send({
           from: smtpFromEmail,
           to: user.email,
-          subject: `📄 LEJIO Faktura for ${monthName} - ${invoiceNumber}`,
+          subject: `📄 AUTOFIQ Faktura for ${monthName} - ${invoiceNumber}`,
           content: emailHtml,
           html: emailHtml,
         });

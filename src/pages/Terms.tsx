@@ -48,19 +48,19 @@ const Terms = () => {
             <div className="bg-card rounded-[2rem] border-2 border-border p-8 sm:p-12 shadow-xl">
               <div className="prose prose-lg max-w-none space-y-8 text-muted-foreground">
                 <p className="text-lg">
-                  Disse handelsbetingelser gælder for alle brugere af LEJIO's platform. LEJIO er en formidlingsplatform 
+                  Disse handelsbetingelser gælder for alle brugere af AUTOFIQ's platform. AUTOFIQ er en formidlingsplatform 
                   og er ikke part i selve lejeaftalen mellem lejer og udlejer.
                 </p>
 
                 <section>
-                  <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">1. Om LEJIO</h2>
+                  <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">1. Om AUTOFIQ</h2>
                   <p>
-                    LEJIO (lejio.dk) formidler kontakt mellem private/erhvervsmæssige udlejere og lejere af køretøjer.
+                    AUTOFIQ (autofiq.dk) formidler kontakt mellem private/erhvervsmæssige udlejere og lejere af køretøjer.
                   </p>
                   <ul className="list-disc pl-6 space-y-2 mt-4">
                     <li><strong>CVR:</strong> 44691507</li>
                     <li><strong>Adresse:</strong> Erantisvej 2, st. 103, 8800 Viborg</li>
-                    <li><strong>E-mail:</strong> hej@lejio.dk</li>
+                    <li><strong>E-mail:</strong> hej@autofiq.dk</li>
                     <li><strong>Telefon:</strong> 91 99 89 29</li>
                   </ul>
                 </section>
@@ -88,7 +88,7 @@ const Terms = () => {
                       fortrydelsesret ved leje af køretøjer til en specifik dato.
                     </p>
                   </div>
-                  <p className="mt-4">Afbestilling følger LEJIO's afbestillingspolitik:</p>
+                  <p className="mt-4">Afbestilling følger AUTOFIQ's afbestillingspolitik:</p>
                   <ul className="list-disc pl-6 space-y-2 mt-2">
                     <li>Afbestilling skal ske <strong>senest 48 timer</strong> før lejeperiodens start for at få refundering (minus gebyrer).</li>
                     <li>Ved afbestilling <strong>senere end 48 timer</strong> før gives ingen refundering.</li>
@@ -98,7 +98,7 @@ const Terms = () => {
                 <section>
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">4. Prisstruktur (ekskl. moms)</h2>
                   <p>
-                    Følgende prisstruktur gælder for LEJIO's modeller. Alle priser er ekskl. moms.
+                    Følgende prisstruktur gælder for AUTOFIQ's modeller. Alle priser er ekskl. moms.
                   </p>
 
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">4.1 Software-modellen (Udlej selv)</h3>
@@ -162,7 +162,7 @@ const Terms = () => {
                   </p>
                   <h3 className="font-display text-xl font-medium text-foreground mt-6 mb-3">Fastlæggelse af beløb</h3>
                   <p>
-                    Udlejer angiver køretøjets værdi i lejekontrakten. LEJIO foretager løbende stikprøvekontrol, hvor 
+                    Udlejer angiver køretøjets værdi i lejekontrakten. AUTOFIQ foretager løbende stikprøvekontrol, hvor 
                     udlejer skal kunne fremvise bevis for bilens pris/værdi (f.eks. købsfaktura eller aktuel vurdering) 
                     for at sikre, at kravet mod lejer er retfærdigt og dokumenteret.
                   </p>
@@ -171,7 +171,7 @@ const Terms = () => {
                 <section>
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">6. Forsikring</h2>
                   <p>
-                    Udlejer er ansvarlig for, at køretøjet er lovmæssigt forsikret til udlejning. LEJIO hæfter ikke for skader, 
+                    Udlejer er ansvarlig for, at køretøjet er lovmæssigt forsikret til udlejning. AUTOFIQ hæfter ikke for skader, 
                     der ikke dækkes af udlejers forsikring.
                   </p>
                   <p className="mt-4">
@@ -182,7 +182,7 @@ const Terms = () => {
                 <section>
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">7. Advarselssystem og Data</h2>
                   <p>
-                    LEJIO registrerer oplysninger om kontraktbrud, skader og vanvidskørsel for at beskytte platformens brugere.
+                    AUTOFIQ registrerer oplysninger om kontraktbrud, skader og vanvidskørsel for at beskytte platformens brugere.
                   </p>
                   <p className="mt-4">
                     Behandling af personoplysninger sker i overensstemmelse med vores{" "}
@@ -193,7 +193,7 @@ const Terms = () => {
                 <section>
                   <h2 className="font-display text-2xl font-bold text-foreground mt-8 mb-4">8. Ansvarsfraskrivelse</h2>
                   <p>
-                    LEJIO er ikke part i lejeaftalen og hæfter ikke for køretøjets stand, brugernes adfærd eller 
+                    AUTOFIQ er ikke part i lejeaftalen og hæfter ikke for køretøjets stand, brugernes adfærd eller 
                     økonomiske tab opstået i forbindelse med udlejningen.
                   </p>
                 </section>

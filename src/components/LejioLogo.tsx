@@ -1,9 +1,9 @@
-interface LejioLogoProps {
+interface AUTOFIQLogoProps {
   size?: "sm" | "md" | "lg";
   showText?: boolean;
 }
 
-const LejioLogo = ({ size = "md", showText = true }: LejioLogoProps) => {
+const AUTOFIQLogo = ({ size = "md", showText = true }: AUTOFIQLogoProps) => {
   const sizes = {
     sm: { container: "w-9 h-9", text: "text-xl", spark: "w-2 h-2 -top-0.5 -right-0.5" },
     md: { container: "w-11 h-11", text: "text-2xl", spark: "w-2.5 h-2.5 -top-0.5 -right-0.5" },
@@ -68,4 +68,4 @@ const LejioLogo = ({ size = "md", showText = true }: LejioLogoProps) => {
   );
 };
 
-export default LejioLogo;
+export default AUTOFIQLogo;

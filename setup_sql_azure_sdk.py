@@ -28,7 +28,7 @@ print("✅ Token received")
 
 # Now use sqlcmd with the access token via environment variable
 # For Azure SQL, we need to use SQLCMDPASSWORD with the token
-server = "lejio-fri-db"
+server = "autofiq-db"
 database = "master"
 
 print(f"🔌 Connecting to {server}.database.windows.net/{database}...")
@@ -39,38 +39,38 @@ env["SQLCMDPASSWORD"] = access_token
 
 # Create the login in master database
 sql_master = """
-IF NOT EXISTS (SELECT 1 FROM sys.sql_logins WHERE name = 'martin_lejio_user')
+IF NOT EXISTS (SELECT 1 FROM sys.sql_logins WHERE name = 'martin_autofiq_user')
 BEGIN
-    CREATE LOGIN martin_lejio_user WITH PASSWORD = 'Temp123456789!';
-    PRINT 'Login created: martin_lejio_user'
+    CREATE LOGIN martin_autofiq_user WITH PASSWORD = 'Temp123456789!';
+    PRINT 'Login created: martin_autofiq_user'
 END
 ELSE
 BEGIN
-    PRINT 'Login already exists: martin_lejio_user'
+    PRINT 'Login already exists: martin_autofiq_user'
 END
 """
 
-# Create user in lejio_fri database
+# Create user in autofiq database
 sql_db = """
-IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = 'martin_lejio_user')
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = 'martin_autofiq_user')
 BEGIN
-    CREATE USER martin_lejio_user FOR LOGIN martin_lejio_user;
-    PRINT 'User created: martin_lejio_user'
+    CREATE USER martin_autofiq_user FOR LOGIN martin_autofiq_user;
+    PRINT 'User created: martin_autofiq_user'
 END
 ELSE
 BEGIN
-    PRINT 'User already exists: martin_lejio_user'
+    PRINT 'User already exists: martin_autofiq_user'
 END
 
-ALTER ROLE db_datareader ADD MEMBER martin_lejio_user;
-ALTER ROLE db_datawriter ADD MEMBER martin_lejio_user;
+ALTER ROLE db_datareader ADD MEMBER martin_autofiq_user;
+ALTER ROLE db_datawriter ADD MEMBER martin_autofiq_user;
 PRINT 'Roles assigned: db_datareader, db_datawriter'
 """
 
 # Execute master queries
 print("\n👤 Creating login in master database...")
 result = subprocess.run(
-    ["sqlcmd", "-S", f"{server}.database.windows.net", "-d", database, "-U", "martin_lejio_user", "-G", "-q", sql_master],
+    ["sqlcmd", "-S", f"{server}.database.windows.net", "-d", database, "-U", "martin_autofiq_user", "-G", "-q", sql_master],
     capture_output=True,
     text=True,
     env=env,
@@ -85,11 +85,11 @@ else:
     print("STDOUT:", result.stdout)
     print("STDERR:", result.stderr)
 
-# Execute lejio_fri database queries
-print("\n👤 Creating user in lejio_fri database...")
-database = "lejio_fri"
+# Execute autofiq database queries
+print("\n👤 Creating user in autofiq database...")
+database = "autofiq"
 result = subprocess.run(
-    ["sqlcmd", "-S", f"{server}.database.windows.net", "-d", database, "-U", "martin_lejio_user", "-G", "-q", sql_db],
+    ["sqlcmd", "-S", f"{server}.database.windows.net", "-d", database, "-U", "martin_autofiq_user", "-G", "-q", sql_db],
     capture_output=True,
     text=True,
     env=env,

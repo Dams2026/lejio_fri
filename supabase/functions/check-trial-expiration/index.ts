@@ -153,7 +153,7 @@ serve(async (req: Request): Promise<Response> => {
       <p>Hej ${safeName},</p>
       
       <div class="warning-box">
-        <h4 style="margin-top: 0;">Din LEJIO Pro prøveperiode er udløbet</h4>
+        <h4 style="margin-top: 0;">Din AUTOFIQ Pro prøveperiode er udløbet</h4>
         <p style="margin: 0;">Dine køretøjer er nu skjult fra søgeresultaterne, og du kan ikke modtage nye bookinger.</p>
       </div>
 
@@ -168,7 +168,7 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="cta">
-        <a href="https://lejio.dk/settings?tab=subscription">Aktivér abonnement nu</a>
+        <a href="https://autofiq.dk/settings?tab=subscription">Aktivér abonnement nu</a>
       </div>
 
       <p style="text-align: center; color: #666; font-size: 14px;">
@@ -176,8 +176,8 @@ serve(async (req: Request): Promise<Response> => {
       </p>
 
       <div class="footer">
-        <p>Denne email er sendt automatisk fra LEJIO</p>
-        <p>Har du spørgsmål? Kontakt os på support@lejio.dk</p>
+        <p>Denne email er sendt automatisk fra AUTOFIQ</p>
+        <p>Har du spørgsmål? Kontakt os på support@autofiq.dk</p>
       </div>
     </div>
   </div>
@@ -189,7 +189,7 @@ serve(async (req: Request): Promise<Response> => {
           await client.send({
             from: smtpFromEmail,
             to: user.email,
-            subject: `⚠️ Din LEJIO prøveperiode er udløbet`,
+            subject: `⚠️ Din AUTOFIQ prøveperiode er udløbet`,
             content: emailHtml,
             html: emailHtml,
           });

@@ -20,10 +20,10 @@ function extractTenantFromHost(host) {
   // Remove port if present
   const domain = host.split(':')[0];
 
-  // For subdomains: customer-name.lejio-fri.dk
-  if (domain.includes('lejio-fri.dk')) {
+  // For subdomains: customer-name.autofiq.dk
+  if (domain.includes('autofiq.dk')) {
     const subdomain = domain.split('.')[0];
-    if (subdomain && subdomain !== 'www' && subdomain !== 'lejio-fri') {
+    if (subdomain && subdomain !== 'www' && subdomain !== 'autofiq') {
       return { type: 'subdomain', value: subdomain };
     }
   }

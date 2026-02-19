@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Crown } from 'lucide-react';
+import { AutofiqLogo } from '@/components/AutofiqLogo';
 
 interface FriMarketingLayoutProps {
   children: ReactNode;
@@ -16,13 +16,7 @@ export function FriMarketingLayout({ children, showCta = true }: FriMarketingLay
       <nav className="sticky top-0 z-50 backdrop-blur-lg bg-white/5 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-300 to-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.35)]">
-              <Crown className="h-5 w-5 text-white" />
-            </div>
-            <div>
-              <div className="text-xl font-semibold">Din platform</div>
-              <div className="text-xs text-amber-200/80">White‑label biludlejning</div>
-            </div>
+            <AutofiqLogo iconClassName="h-10 w-auto" showWordmark />
           </div>
           <div className="hidden md:flex gap-4 items-center">
             <Link to="/fri/features">
@@ -87,7 +81,7 @@ export function FriMarketingLayout({ children, showCta = true }: FriMarketingLay
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-            <p>© 2026 Din platform. Alle rettigheder forbeholdt.</p>
+            <p>© 2026 AUTOFIQ. Alle rettigheder forbeholdt.</p>
           </div>
         </div>
       </footer>

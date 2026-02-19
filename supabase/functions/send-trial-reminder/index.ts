@@ -165,10 +165,10 @@ serve(async (req: Request): Promise<Response> => {
         <p style="margin: 10px 0 0 0;">Når prøveperioden udløber, vil dine køretøjer ikke længere være synlige for lejere, og du kan ikke oprette nye bookinger.</p>
       </div>
 
-      <p>For at fortsætte med at bruge LEJIO Pro og modtage bookinger, skal du vælge et abonnement:</p>
+      <p>For at fortsætte med at bruge AUTOFIQ Pro og modtage bookinger, skal du vælge et abonnement:</p>
 
       <div class="features-box">
-        <h4 style="margin-top: 0;">Det får du med LEJIO Pro:</h4>
+        <h4 style="margin-top: 0;">Det får du med AUTOFIQ Pro:</h4>
         <div class="feature-item"><span class="feature-check">✓</span> Synlige køretøjer på markedspladsen</div>
         <div class="feature-item"><span class="feature-check">✓</span> Ubegrænsede bookinger</div>
         <div class="feature-item"><span class="feature-check">✓</span> Automatiske lejekontrakter</div>
@@ -182,7 +182,7 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="cta">
-        <a href="https://lejio.dk/settings?tab=subscription">Aktivér abonnement nu</a>
+        <a href="https://autofiq.dk/settings?tab=subscription">Aktivér abonnement nu</a>
       </div>
 
       <p style="text-align: center; color: #666; font-size: 14px;">
@@ -190,8 +190,8 @@ serve(async (req: Request): Promise<Response> => {
       </p>
 
       <div class="footer">
-        <p>Denne email er sendt automatisk fra LEJIO</p>
-        <p>Har du spørgsmål? Kontakt os på support@lejio.dk</p>
+        <p>Denne email er sendt automatisk fra AUTOFIQ</p>
+        <p>Har du spørgsmål? Kontakt os på support@autofiq.dk</p>
       </div>
     </div>
   </div>
@@ -203,7 +203,7 @@ serve(async (req: Request): Promise<Response> => {
         await client.send({
           from: smtpFromEmail,
           to: user.email,
-          subject: `⏰ Din LEJIO prøveperiode udløber om 3 dage`,
+          subject: `⏰ Din AUTOFIQ prøveperiode udløber om 3 dage`,
           content: emailHtml,
           html: emailHtml,
         });

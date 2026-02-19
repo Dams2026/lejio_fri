@@ -75,7 +75,7 @@ serve(async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       console.log("[CHECKINOUT-EMAIL] SMTP not configured");
@@ -183,9 +183,9 @@ serve(async (req: Request): Promise<Response> => {
     </div>
 
     <div class="footer">
-      <p><strong>LEJIO</strong> - Biludlejning gjort nemt</p>
+      <p><strong>AUTOFIQ</strong> - Biludlejning gjort nemt</p>
       <p>Har du spørgsmål? Kontakt din udlejer direkte via platformen.</p>
-      <p>© ${new Date().getFullYear()} LEJIO</p>
+      <p>© ${new Date().getFullYear()} AUTOFIQ</p>
     </div>
   </div>
 </body>

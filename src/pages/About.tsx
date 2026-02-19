@@ -54,7 +54,7 @@ const About = () => {
               <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.9] mb-6">
                 <span className="block text-foreground">Om</span>
                 <span className="block bg-gradient-to-r from-primary via-accent to-mint bg-clip-text text-transparent py-2">
-                  Lejio.dk
+                  AUTOFIQ.dk
                 </span>
               </h1>
               <p className="text-xl sm:text-2xl text-muted-foreground font-medium">
@@ -71,7 +71,7 @@ const About = () => {
             {/* Intro */}
             <div className="prose prose-lg max-w-none animate-fade-in">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Lejio.dk er ikke blot en hjemmeside; det er fremtidens infrastruktur for udlejning og deling af transportmidler. Vi opererer som en dansk, hybrid markedsplads, der nedbryder barriererne mellem den private deleøkonomi og forhandlere. Ved at samle alle typer transport – fra personbiler til trailere og campingvogne – skaber vi et økosystem, hvor tilgængelighed altid vinder over ejerskab.
+                AUTOFIQ.dk er ikke blot en hjemmeside; det er fremtidens infrastruktur for udlejning og deling af transportmidler. Vi opererer som en dansk, hybrid markedsplads, der nedbryder barriererne mellem den private deleøkonomi og forhandlere. Ved at samle alle typer transport – fra personbiler til trailere og campingvogne – skaber vi et økosystem, hvor tilgængelighed altid vinder over ejerskab.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Vores fundament hviler på principperne om <strong className="text-foreground">Minileasing</strong> og <strong className="text-foreground">Radikal Fleksibilitet</strong>. Vi tror på, at den traditionelle 3-årige leasingkontrakt er en forældet model i en verden, hvor behov ændrer sig hurtigere end nogensinde før.
@@ -84,7 +84,7 @@ const About = () => {
                 Ledelsen bag platformen
               </h2>
               <p className="text-muted-foreground text-center mb-10">
-                Bag Lejio.dk står et dedikeret team med en passion for teknologi og mobilitet.
+                Bag AUTOFIQ.dk står et dedikeret team med en passion for teknologi og mobilitet.
               </p>
 
               <div className="max-w-2xl mx-auto">
@@ -101,13 +101,13 @@ const About = () => {
                       <h3 className="font-display text-2xl font-black mb-1">Rasmus Damsgaard</h3>
                       <p className="text-primary font-bold mb-4">Medstifter & Partner</p>
                       <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                        Rasmus er medstifter af Lejio og står i spidsen for den daglige drift. Med en baggrund inden for teknologi og en passion for mobilitet har han været drivkraften bag platformens udvikling fra idé til virkelighed.
+                        Rasmus er medstifter af AUTOFIQ og står i spidsen for den daglige drift. Med en baggrund inden for teknologi og en passion for mobilitet har han været drivkraften bag platformens udvikling fra idé til virkelighed.
                       </p>
                       <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                        Han er garant for, at teknologien altid fungerer fejlfrit, og brænder for at levere fremragende kundeservice. Med fokus på innovation og brugeroplevelse sikrer Rasmus, at Lejio konstant udvikler sig for at møde brugernes behov.
+                        Han er garant for, at teknologien altid fungerer fejlfrit, og brænder for at levere fremragende kundeservice. Med fokus på innovation og brugeroplevelse sikrer Rasmus, at AUTOFIQ konstant udvikler sig for at møde brugernes behov.
                       </p>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Rasmus tror på, at deleøkonomi er fremtiden – og arbejder hver dag på at gøre det nemt og trygt for danskerne at udleje og leje køretøjer. Hos Lejio er hjælpen aldrig mere end et opkald væk.
+                        Rasmus tror på, at deleøkonomi er fremtiden – og arbejder hver dag på at gøre det nemt og trygt for danskerne at udleje og leje køretøjer. Hos AUTOFIQ er hjælpen aldrig mere end et opkald væk.
                       </p>
                     </div>
                   </div>
@@ -118,10 +118,10 @@ const About = () => {
             {/* Unique Concept */}
             <div className="animate-fade-in">
               <h2 className="font-display text-3xl font-black mb-8">
-                Det unikke Lejio-koncept: Mere end bare biler
+                Det unikke AUTOFIQ-koncept: Mere end bare biler
               </h2>
               <p className="text-muted-foreground mb-8">
-                Hvor andre platforme ofte begrænser sig til én kategori, er Lejio designet til at håndtere alt, hvad der ruller. Vi har skabt en platform, der favner bredden af den danske transportkultur:
+                Hvor andre platforme ofte begrænser sig til én kategori, er AUTOFIQ designet til at håndtere alt, hvad der ruller. Vi har skabt en platform, der favner bredden af den danske transportkultur:
               </p>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -143,7 +143,7 @@ const About = () => {
                   </div>
                   <h3 className="font-display text-xl font-black mb-3">🚐 Campingvogne – Frihed på landevejen</h3>
                   <p className="text-muted-foreground text-sm">
-                    Vi gør drømmen om den frie ferie tilgængelig. Gennem Lejio kan ejere af campingvogne få dækket deres årlige omkostninger ved at udleje vognen i de uger, de ikke selv bruger den, mens lejerne får adgang til kvalitetsvogne uden de store investeringsomkostninger.
+                    Vi gør drømmen om den frie ferie tilgængelig. Gennem AUTOFIQ kan ejere af campingvogne få dækket deres årlige omkostninger ved at udleje vognen i de uger, de ikke selv bruger den, mens lejerne får adgang til kvalitetsvogne uden de store investeringsomkostninger.
                   </p>
                 </div>
 
@@ -163,10 +163,10 @@ const About = () => {
             {/* Technology Section */}
             <div className="rounded-[2rem] bg-gradient-to-br from-primary/10 via-card to-accent/10 p-8 sm:p-12 border-2 border-primary/20">
               <h2 className="font-display text-3xl font-black mb-4">
-                Teknologien bag: Lejio Vision (AI-drevet tryghed)
+                Teknologien bag: AUTOFIQ Vision (AI-drevet tryghed)
               </h2>
               <p className="text-muted-foreground mb-8">
-                Vi ved, at den største bekymring ved udlejning er spørgsmålet om tillid og dokumentation. Derfor har vi udviklet <strong className="text-foreground">Lejio Vision</strong>, en teknologisk løsning, der fjerner det manuelle besvær og de juridiske gråzoner.
+                Vi ved, at den største bekymring ved udlejning er spørgsmålet om tillid og dokumentation. Derfor har vi udviklet <strong className="text-foreground">AUTOFIQ Vision</strong>, en teknologisk løsning, der fjerner det manuelle besvær og de juridiske gråzoner.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-6">
@@ -208,7 +208,7 @@ const About = () => {
                 Professionel Flådestyring for Forhandlere
               </h2>
               <p className="text-muted-foreground mb-8">
-                For forhandlere fungerer Lejio som et komplet Operating System. Vi leverer de værktøjer, der kræves for at skalere en moderne udlejningsforretning:
+                For forhandlere fungerer AUTOFIQ som et komplet Operating System. Vi leverer de værktøjer, der kræves for at skalere en moderne udlejningsforretning:
               </p>
 
               <div className="grid sm:grid-cols-3 gap-6">
@@ -256,7 +256,7 @@ const About = () => {
                 Sikkerhed og Tillid i Højsædet
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                På Lejio.dk er sikkerhed ikke et tilvalg, men en integreret del af platformen. Vi benytter avanceret brugerverificering for at sikre, at alle parter kan føle sig trygge.
+                På AUTOFIQ.dk er sikkerhed ikke et tilvalg, men en integreret del af platformen. Vi benytter avanceret brugerverificering for at sikre, at alle parter kan føle sig trygge.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -295,13 +295,13 @@ const About = () => {
                 Vores Vision for Fremtiden
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-                Hos Lejio.dk ser vi ind i en fremtid, hvor mobilitet er en service fremfor et aktiv. Vi ønsker at reducere antallet af biler, der holder stille i de danske indkørsler, ved at gøre det attraktivt og sikkert at dele dem.
+                Hos AUTOFIQ.dk ser vi ind i en fremtid, hvor mobilitet er en service fremfor et aktiv. Vi ønsker at reducere antallet af biler, der holder stille i de danske indkørsler, ved at gøre det attraktivt og sikkert at dele dem.
               </p>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                Hver gang en trailer eller en bil bliver delt på Lejio, optimerer vi udnyttelsen af planetens ressourcer. Vi skaber økonomisk værdi for ejeren og mobilitetsfrihed for lejeren.
+                Hver gang en trailer eller en bil bliver delt på AUTOFIQ, optimerer vi udnyttelsen af planetens ressourcer. Vi skaber økonomisk værdi for ejeren og mobilitetsfrihed for lejeren.
               </p>
               <p className="text-2xl font-display font-black bg-gradient-to-r from-primary via-accent to-mint bg-clip-text text-transparent">
-                Lejio.dk – Frihed uden binding, drevet af intelligent teknologi.
+                AUTOFIQ.dk – Frihed uden binding, drevet af intelligent teknologi.
               </p>
             </div>
 

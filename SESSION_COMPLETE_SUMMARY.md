@@ -1,4 +1,4 @@
-# 🎉 SESSION COMPLETE - LEJIO FRI AZURE INFRASTRUCTURE READY
+# 🎉 SESSION COMPLETE - AUTOFIQ AZURE INFRASTRUCTURE READY
 
 ## 📋 Summary of What Was Done Today
 
@@ -118,7 +118,7 @@ Push to main → GitHub Actions auto-deploys
 ## 📁 File Structure
 
 ```
-lejio-b75cff1f/
+autofiq-b75cff1f/
 ├─ src/
 │  ├─ pages/fri/dashboard/
 │  │  ├─ Dashboard.tsx (updated with buttons)
@@ -155,7 +155,7 @@ lejio-b75cff1f/
 1. Review `AZURE_SETUP_GUIDE.md`
 2. Run `.\deploy-azure.ps1`
 3. Wait 15 minutes
-4. You have a live Lejio Fri app!
+4. You have a live AUTOFIQ app!
 
 ### Testing (30 minutes)
 1. Visit your app URL

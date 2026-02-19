@@ -173,7 +173,7 @@ const VehicleSearchCard = ({
               {vehicle.owner_fleet_plan && (
                 <Badge className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg border-0">
                   <Shield className="w-3 h-3 mr-1" />
-                  LEJIO
+                  AUTOFIQ
                 </Badge>
               )}
             </div>
@@ -365,7 +365,7 @@ const VehicleSearchCard = ({
         {vehicle.owner_fleet_plan && (
           <Badge className="absolute bottom-3 right-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg border-0">
             <Shield className="w-3 h-3 mr-1" />
-            LEJIO
+            AUTOFIQ
           </Badge>
         )}
       </div>

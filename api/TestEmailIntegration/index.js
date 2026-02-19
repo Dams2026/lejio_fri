@@ -1,5 +1,5 @@
-import { HttpRequest, HttpResponseInit, app } from '@azure/functions';
-import * as nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
+
 
 /**
  * @typedef {Object} TestIntegrationRequest
@@ -10,7 +10,7 @@ import * as nodemailer from 'nodemailer';
 
 async function testEmailIntegration(request) {
   try {
-    const body = await request.json();
+    const body = request.body || {};
     const { type, email, metadata } = body;
 
     if (!type || !email || !metadata) {
@@ -87,8 +87,11 @@ async function testEmailIntegration(request) {
   }
 }
 
-app.function('TestEmailIntegration', {
-  methods: ['POST'],
-  authLevel: 'anonymous',
-  handler: testEmailIntegration,
-});
+module.exports = async function (context, request) {
+  const result = await testEmailIntegration(request);
+  return {
+    status: result?.status || 200,
+    headers: result?.headers || {},
+    body: result?.jsonBody ?? result?.body ?? null,
+  };
+};

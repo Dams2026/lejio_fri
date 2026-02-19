@@ -62,7 +62,7 @@ module.exports = async function (context, req) {
     }
 
     // Get user email from fri_users
-    let email = custom_domain + '@lejio.dk';
+    let email = custom_domain + '@autofiq.dk';
     const userResult = await db.query('SELECT email FROM fri_users WHERE id::text = $1', [user_id]);
     if (userResult.rows[0]) email = userResult.rows[0].email;
 

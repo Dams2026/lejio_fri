@@ -43,7 +43,7 @@ const Features = () => {
     "MC-specifik vedligeholdelse": "mc_maintenance",
     "Sæson-tjekliste": "season_checklist",
     "MC Check-in guide": "mc_checkin_guide",
-    "Smart Service hos LEJIO": "smart_service",
+    "Smart Service hos AUTOFIQ": "smart_service",
     "Syns-påmindelser": "inspection_reminders",
     "Dækstyring": "tire_management",
     "Byttebil-funktion": "replacement_car",
@@ -137,7 +137,7 @@ const Features = () => {
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-white">
             Hvorfor leje hos{" "}
             <span className="text-primary">
-              LEJIO?
+              AUTOFIQ?
             </span>
           </h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">
@@ -232,7 +232,7 @@ const Features = () => {
           </h3>
           
           <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
-            Bliv udlejer på LEJIO og lad dit køretøj arbejde for dig. Vi håndterer kontrakter, booking og formidling – så du kan fokusere på udlejningen.
+            Bliv udlejer på AUTOFIQ og lad dit køretøj arbejde for dig. Vi håndterer kontrakter, booking og formidling – så du kan fokusere på udlejningen.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -262,7 +262,7 @@ const Features = () => {
               variant="glass"
               size="lg" 
               className="font-bold text-lg px-8"
-              onClick={() => navigate('/hvad-er-lejio')}
+              onClick={() => navigate('/hvad-er-autofiq')}
             >
               Læs mere om platformen
             </Button>

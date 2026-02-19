@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link, useNavigate } from 'react-router-dom';
-import { Check, Clock, Shield, Zap, BarChart3, Users, Lock, ArrowRight, Crown } from 'lucide-react';
+import { Check, Clock, Shield, Zap, BarChart3, Users, Lock, ArrowRight } from 'lucide-react';
+import { AutofiqLogo } from '@/components/AutofiqLogo';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
@@ -49,10 +50,7 @@ export function FriTrialPage() {
       <nav className="sticky top-0 z-50 backdrop-blur-lg bg-white/5 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/fri" className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-300 to-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.35)]">
-              <Crown className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">Din platform</span>
+            <AutofiqLogo iconClassName="h-10 w-auto" showWordmark />
           </Link>
           <div className="flex gap-4 items-center">
             <Link to="/fri/features">
@@ -410,7 +408,7 @@ export function FriTrialPage() {
             </div>
           </div>
           <div className="border-t border-amber-500/20 pt-8 text-center text-sm text-white/50">
-            <p>© 2026 Din platform. Alle rettigheder forbeholdt.</p>
+            <p>© 2026 AUTOFIQ. Alle rettigheder forbeholdt.</p>
           </div>
         </div>
       </footer>

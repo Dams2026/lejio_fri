@@ -10,7 +10,7 @@
 
 2. **Navigate to Database**
    - Click on the SQL Server
-   - Click on Database: `lejio-fri`
+   - Click on Database: `autofiq`
 
 3. **Open Query Editor**
    - Left sidebar → "Query editor (preview)"
@@ -47,7 +47,7 @@
 2. **Connect to Azure SQL**
    - File → New Connection
    - Server: `sql-vqiibdafjcmnc-dev.database.windows.net`
-   - Database: `lejio-fri`
+   - Database: `autofiq`
    - Authentication: SQL Login
    - Username: `sqladmin`
    - Password: [Your SQL password]
@@ -64,7 +64,7 @@
 # Export credentials
 export SQL_PASSWORD="your-password"
 export SQL_SERVER="sql-vqiibdafjcmnc-dev.database.windows.net"
-export SQL_DATABASE="lejio-fri"
+export SQL_DATABASE="autofiq"
 export SQL_USERNAME="sqladmin"
 
 # Install sqlcmd (if not already installed)
@@ -94,9 +94,9 @@ sqlcmd -S $SQL_SERVER -U $SQL_USERNAME -P $SQL_PASSWORD -d $SQL_DATABASE -i AZUR
    - **ID**: `tenant-martin-001`
    - **Name**: Martin Biludlejning
    - **Subdomain**: `martinbiludlejning`
-   - **Domain**: `martinbiludlejning.lejio-fri.dk`
+   - **Domain**: `martinbiludlejning.autofiq.dk`
    - **Plan**: trial (30 days)
-   - **Owner**: martin@lejio.dk
+   - **Owner**: martin@autofiq.dk
 
 4. **Associates Existing Data**
    - All existing lessors, vehicles, bookings → assigned to Martin tenant

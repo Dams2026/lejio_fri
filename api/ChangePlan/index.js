@@ -7,8 +7,28 @@ const supabaseUrl = process.env.SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY || '';
 const stripeKey = process.env.STRIPE_SECRET_KEY || '';
 
-const supabase = createClient(supabaseUrl, supabaseKey);
-const stripe = new Stripe(stripeKey);
+let supabase = null;
+let stripe = null;
+
+function getSupabase() {
+  if (!supabase) {
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Supabase env vars missing');
+    }
+    supabase = createClient(supabaseUrl, supabaseKey);
+  }
+  return supabase;
+}
+
+function getStripe() {
+  if (!stripe) {
+    if (!stripeKey) {
+      throw new Error('STRIPE_SECRET_KEY missing');
+    }
+    stripe = new Stripe(stripeKey);
+  }
+  return stripe;
+}
 
 const TIERS = {
   starter: { name: 'Starter', monthlyPrice: 349, yearlyPrice: 3560, maxVehicles: 5, stripeId: 'price_starter_monthly' },
@@ -21,7 +41,7 @@ async function sendPlanChangeEmail(profile, newTier, paymentMethod, price) {
     const smtpHost = process.env.SMTP_HOST || '';
     const smtpUser = process.env.SMTP_USER || '';
     const smtpPassword = process.env.SMTP_PASSWORD || '';
-    const smtpFromEmail = process.env.SMTP_FROM_EMAIL || 'noreply@lejio.dk';
+    const smtpFromEmail = process.env.SMTP_FROM_EMAIL || 'noreply@autofiq.dk';
 
     const transporter = nodemailer.createTransport({
       host: smtpHost,
@@ -73,13 +93,13 @@ async function sendPlanChangeEmail(profile, newTier, paymentMethod, price) {
               <p>Du kan se detaljer om din plan anytime i dine indstillinger.</p>
 
               <p style="color: #666; margin-top: 30px;">
-                Spørgsmål? Kontakt os på <a href="mailto:support@lejio.dk">support@lejio.dk</a>
+                Spørgsmål? Kontakt os på <a href="mailto:support@autofiq.dk">support@autofiq.dk</a>
               </p>
             </div>
 
             <div class="footer">
-              <p>LEJIO | Alt til udlejning</p>
-              <p>© ${new Date().getFullYear()} LEJIO ApS</p>
+              <p>AUTOFIQ | Alt til udlejning</p>
+              <p>© ${new Date().getFullYear()} AUTOFIQ ApS</p>
             </div>
           </div>
         </body>
@@ -105,7 +125,7 @@ async function sendPaymentRequest(profile, newTier, paymentMethod, price) {
     const smtpHost = process.env.SMTP_HOST || '';
     const smtpUser = process.env.SMTP_USER || '';
     const smtpPassword = process.env.SMTP_PASSWORD || '';
-    const smtpFromEmail = process.env.SMTP_FROM_EMAIL || 'noreply@lejio.dk';
+    const smtpFromEmail = process.env.SMTP_FROM_EMAIL || 'noreply@autofiq.dk';
 
     const transporter = nodemailer.createTransport({
       host: smtpHost,
@@ -125,7 +145,7 @@ async function sendPaymentRequest(profile, newTier, paymentMethod, price) {
         <div style="margin-bottom: 20px;">
           <strong>Bankoplysninger for betaling:</strong>
         </div>
-        <div><span class="label">Modtager:</span> LEJIO ApS</div>
+        <div><span class="label">Modtager:</span> AUTOFIQ ApS</div>
         <div><span class="label">Kontonummer:</span> DK12 1234 5678 9012 34</div>
         <div><span class="label">SWIFT:</span> DABADK22</div>
         <div><span class="label">Beløb:</span> ${price} kr</div>
@@ -175,13 +195,13 @@ async function sendPaymentRequest(profile, newTier, paymentMethod, price) {
               </p>
 
               <p style="color: #666; margin-top: 30px;">
-                Har du spørgsmål? Kontakt os på <a href="mailto:support@lejio.dk">support@lejio.dk</a>
+                Har du spørgsmål? Kontakt os på <a href="mailto:support@autofiq.dk">support@autofiq.dk</a>
               </p>
             </div>
 
             <div class="footer">
-              <p>LEJIO | Alt til udlejning</p>
-              <p>© ${new Date().getFullYear()} LEJIO ApS</p>
+              <p>AUTOFIQ | Alt til udlejning</p>
+              <p>© ${new Date().getFullYear()} AUTOFIQ ApS</p>
             </div>
           </div>
         </body>
@@ -240,7 +260,7 @@ module.exports = async function (context, req) {
     console.log('[ChangePlan] Got userId:', userId);
 
     // Get user profile with current subscription
-    const { data: profile, error: profileError } = await supabase
+    const { data: profile, error: profileError } = await getSupabase()
       .from('profiles')
       .select('*')
       .eq('id', userId)
@@ -276,11 +296,11 @@ module.exports = async function (context, req) {
 
       try {
         console.log('[ChangePlan] Updating Stripe subscription:', stripeSubscriptionId);
-        const subscription = await stripe.subscriptions.retrieve(stripeSubscriptionId);
+        const subscription = await getStripe().subscriptions.retrieve(stripeSubscriptionId);
         const itemId = subscription.items.data[0].id;
         const tierConfig = TIERS[newTier];
 
-        await stripe.subscriptions.update(stripeSubscriptionId, {
+        await getStripe().subscriptions.update(stripeSubscriptionId, {
           items: [
             {
               id: itemId,
@@ -293,7 +313,7 @@ module.exports = async function (context, req) {
         console.log('[ChangePlan] Stripe subscription updated, now updating database');
 
         // Update database
-        const { error: updateError } = await supabase
+        const { error: updateError } = await getSupabase()
           .from('profiles')
           .update({
             subscription_tier: newTier,
@@ -337,7 +357,7 @@ module.exports = async function (context, req) {
         if (stripeSubscriptionId) {
           try {
             console.log('[ChangePlan] Cancelling Stripe subscription:', stripeSubscriptionId);
-            await stripe.subscriptions.del(stripeSubscriptionId);
+            await getStripe().subscriptions.del(stripeSubscriptionId);
           } catch (err) {
             console.error('[ChangePlan] Error cancelling Stripe subscription:', err);
           }
@@ -346,7 +366,7 @@ module.exports = async function (context, req) {
         console.log('[ChangePlan] Updating database with manual payment method');
 
         // Update database with new payment method
-        const { error: updateError } = await supabase
+        const { error: updateError } = await getSupabase()
           .from('profiles')
           .update({
             subscription_tier: newTier,

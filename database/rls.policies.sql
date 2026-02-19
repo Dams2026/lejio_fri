@@ -1,5 +1,5 @@
 -- ============================================================================
--- LEJIO FRI - RLS POLICIES (Render Postgres)
+-- AUTOFIQ - RLS POLICIES (Render Postgres)
 -- ============================================================================
 -- Uses SET LOCAL app.lessor_id = '<lessor-id>' per request via api/rls.js
 -- Run this AFTER schema.postgres.sql

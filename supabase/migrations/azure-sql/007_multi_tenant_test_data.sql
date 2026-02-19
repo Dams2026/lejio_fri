@@ -1,4 +1,4 @@
--- Lejio Fri Multi-Tenant Test Data
+-- AUTOFIQ Multi-Tenant Test Data
 -- Insert first tenant (Martin Biludlejning) with proper tenant isolation
 
 -- ============================================================================
@@ -30,10 +30,10 @@ BEGIN
         'Martin Biludlejning',
         'martinbiludlejning',
         'martinbiludlejning',
-        'martinbiludlejning.lejio-fri.dk',
+        'martinbiludlejning.autofiq.dk',
         'trial',
         'active',
-        'martin@lejio.dk',
+        'martin@autofiq.dk',
         '12345678',
         GETUTCDATE(),
         DATEADD(DAY, @TrialDays, GETUTCDATE()),
@@ -52,7 +52,7 @@ ELSE
 -- Update lessor to point to Martin tenant
 UPDATE fri_lessors 
 SET tenant_id = 'tenant-martin-001'
-WHERE email = 'martin@lejio.dk';
+WHERE email = 'martin@autofiq.dk';
 
 PRINT 'Updated lessors with tenant_id';
 
@@ -66,7 +66,7 @@ WHERE id IN (
     SELECT v.id 
     FROM fri_vehicles v
     INNER JOIN fri_lessors l ON v.lessor_id = l.id
-    WHERE l.email = 'martin@lejio.dk'
+    WHERE l.email = 'martin@autofiq.dk'
 );
 
 PRINT 'Updated vehicles with tenant_id';

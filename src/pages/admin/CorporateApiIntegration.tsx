@@ -108,7 +108,7 @@ const CorporateApiIntegration = () => {
     }
 
     try {
-      const key = 'lejio_' + Math.random().toString(36).substring(2, 15);
+      const key = 'autofiq_' + Math.random().toString(36).substring(2, 15);
       const secret = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
       const expiresAt = new Date();
       expiresAt.setDate(expiresAt.getDate() + parseInt(formData.expiryDays));

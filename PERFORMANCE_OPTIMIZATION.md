@@ -1,4 +1,4 @@
-# Performance Optimization Guide for LEJIO
+# Performance Optimization Guide for AUTOFIQ
 
 ## 🚀 6 Major Optimizations to Speed Up the System
 

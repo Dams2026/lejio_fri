@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useFriAuth } from '@/hooks/useFriAuth';
-import { Crown } from 'lucide-react';
+import { AutofiqLogo } from '@/components/AutofiqLogo';
 
 export function FriLoginPage() {
   const navigate = useNavigate();
@@ -24,7 +24,8 @@ export function FriLoginPage() {
     try {
       await signIn(email, password);
       // Redirect to where they came from or dashboard
-      const from = (location.state as any)?.from?.pathname || '/fri/dashboard';
+      const fromState = location.state as { from?: { pathname?: string } } | null;
+      const from = fromState?.from?.pathname || '/fri/dashboard';
       navigate(from);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Login failed');
@@ -40,12 +41,10 @@ export function FriLoginPage() {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <Link to="/fri" className="inline-flex items-center gap-3 mb-4">
-            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-300 to-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.35)]">
-              <Crown className="h-6 w-6 text-white" />
-            </div>
+          <Link to="/fri" className="inline-flex items-center mb-4">
+            <AutofiqLogo iconClassName="h-12 w-auto" alt="Autofiq" />
           </Link>
-          <h1 className="text-3xl font-bold text-white mb-2">Din platform</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">Din White-Label Platform</h1>
           <p className="text-amber-200/80">Log ind på dit dashboard</p>
         </div>
 

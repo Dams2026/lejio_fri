@@ -18,7 +18,7 @@ module.exports = async function (context, req) {
   try {
     // Get session ID from cookie
     const cookies = parseCookies(req.headers.cookie);
-    const sessionId = cookies.lejio_sid;
+    const sessionId = cookies.autofiq_sid;
 
     // Delete session from database
     if (sessionId) {
@@ -35,7 +35,7 @@ module.exports = async function (context, req) {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": req.headers.origin || "*",
       "Access-Control-Allow-Credentials": "true",
-      "Set-Cookie": `lejio_sid=; Path=/; HttpOnly; SameSite=${sameSite}; Max-Age=0${secure}`
+      "Set-Cookie": `autofiq_sid=; Path=/; HttpOnly; SameSite=${sameSite}; Max-Age=0${secure}`
     },
     body: { success: true, message: "Logget ud" }
   };

@@ -152,7 +152,7 @@ const AdminVehicleValueVerification = () => {
     const { error: emailError } = await supabase.functions.invoke('send-admin-email', {
       body: {
         to: vehicle.owner_email,
-        subject: 'LEJIO Stikprøvekontrol - Dokumentation påkrævet',
+        subject: 'AUTOFIQ Stikprøvekontrol - Dokumentation påkrævet',
         content: `Kære ${vehicle.owner_name || vehicle.owner_company || 'udlejer'},
 
 Vi foretager en stikprøvekontrol af bilværdien på dit køretøj:
@@ -170,7 +170,7 @@ Du kan svare direkte på denne email med dokumentationen vedhæftet.
 Bemærk: Den angivne værdi må aldrig overstige den faktiske købspris.
 
 Med venlig hilsen,
-LEJIO Team`,
+AUTOFIQ Team`,
       },
     });
 
@@ -212,15 +212,15 @@ LEJIO Team`,
         body: {
           to: selectedVehicle.owner_email,
           subject: approved 
-            ? 'LEJIO - Din bilværdi er blevet godkendt' 
-            : 'LEJIO - Din bilværdi kræver justering',
+            ? 'AUTOFIQ - Din bilværdi er blevet godkendt' 
+            : 'AUTOFIQ - Din bilværdi kræver justering',
           content: approved 
             ? `Kære ${selectedVehicle.owner_name || selectedVehicle.owner_company || 'udlejer'},
 
 Din angivne bilværdi for ${selectedVehicle.make} ${selectedVehicle.model} (${selectedVehicle.registration}) er blevet godkendt efter vores stikprøvekontrol.
 
 Med venlig hilsen,
-LEJIO Team`
+AUTOFIQ Team`
             : `Kære ${selectedVehicle.owner_name || selectedVehicle.owner_company || 'udlejer'},
 
 Efter gennemgang af dokumentationen for ${selectedVehicle.make} ${selectedVehicle.model} (${selectedVehicle.registration}) har vi fundet, at den angivne bilværdi kræver justering.
@@ -230,7 +230,7 @@ ${verificationNotes ? `Bemærkning: ${verificationNotes}` : ''}
 Kontakt os venligst for at opdatere værdien.
 
 Med venlig hilsen,
-LEJIO Team`,
+AUTOFIQ Team`,
         },
       });
 

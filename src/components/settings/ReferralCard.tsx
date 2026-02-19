@@ -41,7 +41,7 @@ const ReferralCard = () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Bliv lejer hos LEJIO',
+          title: 'Bliv lejer hos AUTOFIQ',
           text: 'Få 500 kr. rabat på din første måneds leje med min henvisningskode!',
           url: shareUrl,
         });
@@ -128,7 +128,7 @@ const ReferralCard = () => {
             <Input
               value={inputCode}
               onChange={(e) => setInputCode(e.target.value.toUpperCase())}
-              placeholder="LEJIO-XXXXXX"
+              placeholder="AUTOFIQ-XXXXXX"
               className="font-mono uppercase"
             />
             <Button 

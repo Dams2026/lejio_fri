@@ -36,10 +36,10 @@ export const useVisitorPresence = (options: UseVisitorPresenceOptions = {}) => {
   useEffect(() => {
     // Generate or retrieve visitor ID
     if (!isAdmin) {
-      let visitorId = sessionStorage.getItem('lejio_visitor_id');
+      let visitorId = sessionStorage.getItem('autofiq_visitor_id');
       if (!visitorId) {
         visitorId = `visitor_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-        sessionStorage.setItem('lejio_visitor_id', visitorId);
+        sessionStorage.setItem('autofiq_visitor_id', visitorId);
       }
       visitorIdRef.current = visitorId;
     }
@@ -93,15 +93,15 @@ export const useVisitorPresence = (options: UseVisitorPresenceOptions = {}) => {
       if (!isAdmin && channelRef.current) {
         channelRef.current.track({
           page: window.location.pathname,
-          enteredAt: sessionStorage.getItem('lejio_entered_at') || new Date().toISOString(),
+          enteredAt: sessionStorage.getItem('autofiq_entered_at') || new Date().toISOString(),
           userAgent: navigator.userAgent.substring(0, 100),
         });
       }
     };
 
     // Store entry time
-    if (!isAdmin && !sessionStorage.getItem('lejio_entered_at')) {
-      sessionStorage.setItem('lejio_entered_at', new Date().toISOString());
+    if (!isAdmin && !sessionStorage.getItem('autofiq_entered_at')) {
+      sessionStorage.setItem('autofiq_entered_at', new Date().toISOString());
     }
 
     // Listen for route changes
@@ -120,7 +120,7 @@ export const useVisitorPresence = (options: UseVisitorPresenceOptions = {}) => {
     if (!isAdmin && channelRef.current) {
       channelRef.current.track({
         page,
-        enteredAt: sessionStorage.getItem('lejio_entered_at') || new Date().toISOString(),
+        enteredAt: sessionStorage.getItem('autofiq_entered_at') || new Date().toISOString(),
         userAgent: navigator.userAgent.substring(0, 100),
       });
     }

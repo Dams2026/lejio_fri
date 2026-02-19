@@ -16,7 +16,7 @@ INSERT INTO public.users (
   updated_at
 ) VALUES (
   'test-admin-id-12345', -- Replace with actual UUID from your auth.users
-  'admin@lejio.dk',
+  'admin@autofiq.dk',
   'admin',
   'Test Admin',
   '+4512345678',

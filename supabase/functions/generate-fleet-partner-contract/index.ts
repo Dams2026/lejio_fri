@@ -11,8 +11,8 @@ interface ContractRequest {
   corporateAccountId: string;
 }
 
-// LEJIO brand colors
-const LEJIO_GREEN = rgb(0.2, 0.7, 0.4);
+// AUTOFIQ brand colors
+const AUTOFIQ_GREEN = rgb(0.2, 0.7, 0.4);
 const DARK_TEXT = rgb(0.1, 0.1, 0.1);
 const GRAY_TEXT = rgb(0.4, 0.4, 0.4);
 
@@ -125,7 +125,7 @@ async function generateContractPDF(contract: {
   const drawSection = (title: string, content: string[]) => {
     checkPageBreak(60);
     yPosition -= 15;
-    drawText(title, { size: 12, bold: true, color: LEJIO_GREEN });
+    drawText(title, { size: 12, bold: true, color: AUTOFIQ_GREEN });
     yPosition -= 5;
     for (const line of content) {
       drawText(line, { size: 10 });
@@ -133,7 +133,7 @@ async function generateContractPDF(contract: {
   };
   
   // Header
-  drawText('Fleet Partneraftale', { size: 24, bold: true, color: LEJIO_GREEN });
+  drawText('Fleet Partneraftale', { size: 24, bold: true, color: AUTOFIQ_GREEN });
   yPosition -= 10;
   drawText(`Kontraktnummer: ${contract.contract_number}`, { size: 11, color: GRAY_TEXT });
   drawText(`Dato: ${formatDate(new Date())}`, { size: 11, color: GRAY_TEXT });
@@ -144,11 +144,11 @@ async function generateContractPDF(contract: {
   yPosition -= 5;
   
   drawText('1.1 Platformsudbyder:', { size: 10, bold: true });
-  drawText('LEJIO', { size: 10 });
+  drawText('AUTOFIQ', { size: 10 });
   drawText('Erantisvej 2, st. 103', { size: 10 });
   drawText('8800 Viborg', { size: 10 });
   drawText('CVR-nr.: 44691507', { size: 10 });
-  drawText('Hjemmeside: www.lejio.dk', { size: 10 });
+  drawText('Hjemmeside: www.autofiq.dk', { size: 10 });
   yPosition -= 10;
   
   drawText('1.2 Fleet Partner (Partneren/Udlejer):', { size: 10, bold: true });
@@ -169,11 +169,11 @@ async function generateContractPDF(contract: {
   
   // Section 2: Definitions
   drawSection('§ 2. Definitioner', [
-    '2.1 "Platformen" henviser til LEJIO\'s digitale markedsplads tilgængelig via www.lejio.dk og tilhørende applikationer.',
+    '2.1 "Platformen" henviser til AUTOFIQ\'s digitale markedsplads tilgængelig via www.autofiq.dk og tilhørende applikationer.',
     '2.2 "Køretøjer" omfatter alle biler, motorcykler, scootere, campingvogne, autocampere og trailere, som Fleet Partner registrerer på Platformen.',
     '2.3 "Booking" betyder en bekræftet lejeaftale mellem Fleet Partner og en Lejer via Platformen.',
     '2.4 "Lejer" er en fysisk eller juridisk person, der lejer et Køretøj via Platformen.',
-    '2.5 "Kommission" er det procentvise gebyr, som LEJIO opkræver af hver gennemført Booking.',
+    '2.5 "Kommission" er det procentvise gebyr, som AUTOFIQ opkræver af hver gennemført Booking.',
     '2.6 "Flåde" defineres som en samling på mere end 35 Køretøjer registreret af samme Fleet Partner.',
     '2.7 "Kontraktperiode" er den aftalte bindingsperiode som angivet i § 5.',
   ]);
@@ -181,7 +181,7 @@ async function generateContractPDF(contract: {
   // Section 3: Purpose
   drawSection('§ 3. Aftalens Formål og Omfang', [
     '3.1 Denne aftale regulerer vilkårene for Fleet Partners anvendelse af Platformen til udlejning af Køretøjer til Lejere.',
-    '3.2 LEJIO stiller Platformen til rådighed, herunder:',
+    '3.2 AUTOFIQ stiller Platformen til rådighed, herunder:',
     '    • Eksponering af Fleet Partners Køretøjer',
     '    • Bookingsystem og kalenderadministration',
     '    • Automatisk kontraktgenerering',
@@ -207,7 +207,7 @@ async function generateContractPDF(contract: {
     '4.3 Kommissionen beregnes af den totale lejepris (ekskl. depositum).',
     '4.4 Der er intet fast månedligt gebyr i Fleet-modellerne.',
     '4.5 Eventuelle individuelle tillægsaftaler vedrørende særlige rabatter eller vilkår vedlægges som Bilag 1.',
-    '4.6 LEJIO forbeholder sig ret til at justere kommissionssatser med 3 måneders skriftligt varsel.',
+    '4.6 AUTOFIQ forbeholder sig ret til at justere kommissionssatser med 3 måneders skriftligt varsel.',
   ]);
   
   // Section 5: Binding period
@@ -224,7 +224,7 @@ async function generateContractPDF(contract: {
   // Section 6: Payment
   drawSection('§ 6. Betaling og Fakturering', [
     '6.1 Leje og depositum afregnes direkte mellem Lejer og Fleet Partner.',
-    '6.2 LEJIO fakturerer Fleet Partner månedligt bagud for kommission af gennemførte Bookings.',
+    '6.2 AUTOFIQ fakturerer Fleet Partner månedligt bagud for kommission af gennemførte Bookings.',
     '6.3 Betalingsbetingelser: Netto 14 dage fra fakturadato.',
     '6.4 Ved forsinket betaling pålægges rykkergebyr på 100 kr. samt morarente på 2% pr. påbegyndt måned.',
   ]);
@@ -238,35 +238,35 @@ async function generateContractPDF(contract: {
     '7.5 Overholdelse af lovgivning: Fleet Partner er ansvarlig for at overholde alle relevante love og regler.',
   ]);
   
-  // Section 8: LEJIO obligations
-  drawSection('§ 8. LEJIOs Forpligtelser', [
-    '8.1 LEJIO forpligter sig til at stille en stabil og funktionel Platform til rådighed.',
-    '8.2 LEJIO garanterer en oppetid på Platformen på minimum 99% målt på årsbasis.',
+  // Section 8: AUTOFIQ obligations
+  drawSection('§ 8. AUTOFIQs Forpligtelser', [
+    '8.1 AUTOFIQ forpligter sig til at stille en stabil og funktionel Platform til rådighed.',
+    '8.2 AUTOFIQ garanterer en oppetid på Platformen på minimum 99% målt på årsbasis.',
     '8.3 Ved driftsforstyrrelser ud over 24 timer kompenseres Fleet Partner med 1 dags kommissionsfritagelse.',
   ]);
   
   // Section 9-11: Responsibility and liability
   drawSection('§ 9. Betalingsflow og Ansvar', [
     '9.1 Leje og depositum afregnes direkte mellem Lejer og Fleet Partner.',
-    '9.2 LEJIO fungerer alene som formidlingsplatform.',
+    '9.2 AUTOFIQ fungerer alene som formidlingsplatform.',
     '9.3 Al økonomisk afregning sker direkte mellem Fleet Partner og Lejer.',
   ]);
   
   drawSection('§ 10. Misligholdelse og Sanktioner', [
-    '10.1 Ved Fleet Partners misligholdelse kan LEJIO iværksætte sanktioner jf. den fulde aftale.',
-    '10.2 Ved gentagen misligholdelse (3+ tilfælde inden for 6 måneder) kan LEJIO ophæve aftalen uden varsel.',
+    '10.1 Ved Fleet Partners misligholdelse kan AUTOFIQ iværksætte sanktioner jf. den fulde aftale.',
+    '10.2 Ved gentagen misligholdelse (3+ tilfælde inden for 6 måneder) kan AUTOFIQ ophæve aftalen uden varsel.',
   ]);
   
   drawSection('§ 11. Ansvarsbegrænsning', [
-    '11.1 LEJIOs samlede ansvar er begrænset til kommissionen betalt i de 12 måneder forud for skadens indtræden.',
-    '11.2 LEJIO er ikke ansvarlig for indirekte tab eller force majeure.',
+    '11.1 AUTOFIQs samlede ansvar er begrænset til kommissionen betalt i de 12 måneder forud for skadens indtræden.',
+    '11.2 AUTOFIQ er ikke ansvarlig for indirekte tab eller force majeure.',
   ]);
   
   // Section 12-16: Legal
   drawSection('§ 12-16. Fortrolighed, Persondata, Immaterielle Rettigheder, Ændringer, Lovvalg', [
     '12.1 Begge Parter forpligter sig til at behandle alle oplysninger som fortrolige.',
     '13.1 Begge Parter forpligter sig til at overholde GDPR.',
-    '14.1 Alle immaterielle rettigheder til Platformen tilhører LEJIO.',
+    '14.1 Alle immaterielle rettigheder til Platformen tilhører AUTOFIQ.',
     '15.1 Ændringer i denne aftale skal ske skriftligt.',
     '16.1 Denne aftale er underlagt dansk ret med Retten i Viborg som første instans.',
   ]);
@@ -274,13 +274,13 @@ async function generateContractPDF(contract: {
   // Signature section
   checkPageBreak(200);
   yPosition -= 30;
-  drawText('§ 18. Underskrifter', { size: 14, bold: true, color: LEJIO_GREEN });
+  drawText('§ 18. Underskrifter', { size: 14, bold: true, color: AUTOFIQ_GREEN });
   yPosition -= 10;
   drawText('Denne aftale er udarbejdet i to eksemplarer, hvoraf hver Part modtager ét.', { size: 10 });
   yPosition -= 20;
   
-  // LEJIO signature
-  drawText('For LEJIO:', { size: 11, bold: true });
+  // AUTOFIQ signature
+  drawText('For AUTOFIQ:', { size: 11, bold: true });
   yPosition -= 20;
   drawText('Navn: _________________________________', { size: 10 });
   yPosition -= 5;

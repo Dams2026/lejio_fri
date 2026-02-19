@@ -7,7 +7,7 @@ import { useUnreadMessages } from '@/hooks/useUnreadMessages';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import LejioLogo from '@/components/LejioLogo';
+import AUTOFIQLogo from '@/components/AUTOFIQLogo';
 import PendingFeesCard from '@/components/dashboard/PendingFeesCard';
 import TrialStatusCard from '@/components/dashboard/TrialStatusCard';
 import { 
@@ -73,7 +73,7 @@ export const DashboardLayout = ({ children, activeTab }: DashboardLayoutProps) =
                 />
               </SheetContent>
             </Sheet>
-            <LejioLogo size="sm" />
+            <AUTOFIQLogo size="sm" />
           </div>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="icon" onClick={() => navigate('/messages')} className="relative">

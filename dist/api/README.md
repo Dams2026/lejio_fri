@@ -113,7 +113,7 @@ Set these in your `.env` file:
 ```
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=lejio_fri
+DB_NAME=autofiq
 DB_USER=postgres
 DB_PASSWORD=your-password
 DB_SSL=false        # for local development
@@ -123,7 +123,7 @@ For Render production:
 ```
 DB_HOST=xxx.c.rendering.com
 DB_PORT=5432
-DB_NAME=lejio_fri
+DB_NAME=autofiq
 DB_USER=postgres
 DB_PASSWORD=secure-password
 DB_SSL=true
@@ -221,7 +221,7 @@ Key tables:
 
 Run migrations:
 ```bash
-psql postgresql://user:pass@host/lejio_fri < ../database/schema.postgres.sql
+psql postgresql://user:pass@host/autofiq < ../database/schema.postgres.sql
 ```
 
 ---

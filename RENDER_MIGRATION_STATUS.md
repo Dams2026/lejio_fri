@@ -65,17 +65,17 @@ curl http://localhost:3000/api/health
 ### Step 2: Opret Render Database
 1. Gå til [render.com](https://render.com)
 2. Click **"New +" → "PostgreSQL"**
-3. Name: `lejio-fri`
+3. Name: `autofiq`
 4. Region: Copenhagen
 5. Plan: Standard
 6. Copy connection credentials
 
 ### Step 3: Deploy til Render
 1. Click **"New +" → "Web Service"**
-2. Connect GitHub repository `lejio-fri`
+2. Connect GitHub repository `autofiq`
 3. Vælg branch: `main`
 4. Configure service:
-   - **Name:** `lejio-fri`
+   - **Name:** `autofiq`
    - **Environment:** Node
    - **Build Command:** `npm install && npm run build`
    - **Start Command:** `npm start`
@@ -83,7 +83,7 @@ curl http://localhost:3000/api/health
    ```
    DB_HOST=your-postgres-host
    DB_PORT=5432
-   DB_NAME=lejio_fri
+   DB_NAME=autofiq
    DB_USER=postgres
    DB_PASSWORD=your-password
    ```
@@ -92,7 +92,7 @@ curl http://localhost:3000/api/health
 ### Step 4: Migrate Database Schema
 ```bash
 # Download PostgreSQL migration tool
-psql postgresql://user:pass@host/lejio_fri < database/schema.postgres.sql
+psql postgresql://user:pass@host/autofiq < database/schema.postgres.sql
 ```
 
 ### Step 5: Test Live App
@@ -105,7 +105,7 @@ psql postgresql://user:pass@host/lejio_fri < database/schema.postgres.sql
 ## 📁 Filer der blev tilføjet/ændret
 
 ```
-📦 lejio-fri
+📦 autofiq
 ├── database/
 │   └── schema.postgres.sql          ← PostgreSQL schema
 ├── api/
@@ -152,7 +152,7 @@ Følg steppene i `RENDER_DEPLOYMENT_GUIDE.md`
 ### Opgave 4: Migrer Database
 ```bash
 # Fra din machine:
-psql postgresql://postgres:PASSWORD@HOST:5432/lejio_fri < database/schema.postgres.sql
+psql postgresql://postgres:PASSWORD@HOST:5432/autofiq < database/schema.postgres.sql
 
 # Eller via Render CLI:
 render psql < database/schema.postgres.sql
@@ -198,7 +198,7 @@ Response (JSON)
 |----------|--------|-------|
 | `DB_HOST` | Render PostgreSQL | `xxx.render.com` |
 | `DB_PORT` | Render PostgreSQL | `5432` |
-| `DB_NAME` | Render PostgreSQL | `lejio_fri` |
+| `DB_NAME` | Render PostgreSQL | `autofiq` |
 | `DB_USER` | Render PostgreSQL | `postgres` |
 | `DB_PASSWORD` | Render PostgreSQL | Secure password |
 | `NODE_ENV` | Manual | `production` |

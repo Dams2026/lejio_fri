@@ -221,7 +221,7 @@ const Features = () => {
       color: "from-orange-500 to-orange-500/60",
       tier: "pro",
       features: [
-        { title: "Smart Service hos LEJIO", description: "Book værkstedstider direkte i systemet – vi klarer servicen for dig.", icon: Wrench, status: "Fuldt implementeret" },
+        { title: "Smart Service hos AUTOFIQ", description: "Book værkstedstider direkte i systemet – vi klarer servicen for dig.", icon: Wrench, status: "Fuldt implementeret" },
         { title: "Syns-påmindelser", description: "Automatisk påmindelse når syn nærmer sig.", icon: Bell, status: "Fuldt implementeret" },
         { title: "Dækstyring", description: "Administrer sommer/vinterdæk og dækhotel-lokationer.", icon: CircleDot, status: "Beta" },
         { title: "Byttebil-funktion", description: "Udskift køretøj midt i lejeperiode ved service eller nedbrud.", icon: Truck, status: "Fuldt implementeret" },
@@ -393,7 +393,7 @@ const Features = () => {
               
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 Fra booking til betaling, fra GPS-sporing til AI-prissætning. 
-                LEJIO har alle funktioner du behøver for at drive en succesfuld udlejningsforretning.
+                AUTOFIQ har alle funktioner du behøver for at drive en succesfuld udlejningsforretning.
               </p>
               
               <div className="flex flex-wrap justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>

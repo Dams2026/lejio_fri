@@ -137,7 +137,7 @@ const Pricing = () => {
               </div>
 
               <ul className="space-y-4 mb-10">
-                {["LEJIO håndterer alt for dig", "Min. 30 dages abonnement", "70% udbetalt direkte til dig", "Ingen bekymringer", "Perfekt til privatbiler"].map((f, i) => (
+                {["AUTOFIQ håndterer alt for dig", "Min. 30 dages abonnement", "70% udbetalt direkte til dig", "Ingen bekymringer", "Perfekt til privatbiler"].map((f, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-mint/20 flex items-center justify-center">
                       <Check className="w-4 h-4 text-mint" />
@@ -274,7 +274,7 @@ const Pricing = () => {
                   <span>Alternativ til SaaS</span>
                 </div>
                 <h3 className="font-display text-3xl font-black mb-3">Fleet-planer</h3>
-                <p className="text-muted-foreground text-lg">Lad LEJIO drive din udlejning – vi tager os af alt</p>
+                <p className="text-muted-foreground text-lg">Lad AUTOFIQ drive din udlejning – vi tager os af alt</p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -327,7 +327,7 @@ const Pricing = () => {
                   </div>
 
                   <ul className="space-y-2 mb-6 text-sm">
-                    {["Ingen månedlig udgift", "LEJIO håndterer alt", "Badge på køretøjer"].map((f, i) => (
+                    {["Ingen månedlig udgift", "AUTOFIQ håndterer alt", "Badge på køretøjer"].map((f, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-lavender" />
                         <span className="text-muted-foreground">{f}</span>

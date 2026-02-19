@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import LejioLogo from '@/components/LejioLogo';
+import AUTOFIQLogo from '@/components/AUTOFIQLogo';
 import {
   ArrowLeft,
   User,
@@ -81,7 +81,7 @@ const PAYMENT_METHODS = [
 ];
 
 const PAYMENT_GATEWAYS = [
-  { value: 'none', label: 'Ingen (P2P via LEJIO)' },
+  { value: 'none', label: 'Ingen (P2P via AUTOFIQ)' },
   { value: 'quickpay', label: 'Quickpay' },
   { value: 'pensopay', label: 'PensoPay' },
   { value: 'reepay', label: 'Reepay' },
@@ -344,7 +344,7 @@ const Settings = () => {
                 <span className="hidden sm:inline">Tilbage</span>
               </Button>
               <div className="hidden sm:block h-6 w-px bg-border" />
-              <div className="hidden sm:block"><LejioLogo size="sm" /></div>
+              <div className="hidden sm:block"><AUTOFIQLogo size="sm" /></div>
             </div>
             <h1 className="font-display font-bold text-foreground text-sm sm:text-base truncate">Indstillinger</h1>
           </div>
@@ -530,7 +530,7 @@ const Settings = () => {
                       Virksomhedslogo
                     </Label>
                     <p className="text-xs text-muted-foreground">
-                      Dit logo vises på lejekontrakter i stedet for LEJIO-logoet
+                      Dit logo vises på lejekontrakter i stedet for AUTOFIQ-logoet
                     </p>
                     
                     <div className="flex items-center gap-4">

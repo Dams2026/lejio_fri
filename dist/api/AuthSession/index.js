@@ -2,7 +2,7 @@ const pool = require("../db");
 
 // Test users (always available)
 const testUsers = {
-  "test-martin": { id: "test-martin", email: "martin@lejio.dk", full_name: "Martin Jensen", lessor_id: "test-martin", user_type: "professionel", role: "owner" },
+  "test-martin": { id: "test-martin", email: "martin@autofiq.dk", full_name: "Martin Jensen", lessor_id: "test-martin", user_type: "professionel", role: "owner" },
   "test-user": { id: "test-user", email: "test@example.com", full_name: "Test User", lessor_id: "test-user", user_type: "professionel", role: "owner" },
 };
 
@@ -29,7 +29,7 @@ module.exports = async function (context, req) {
   try {
     // Get session ID from cookie (GDPR compliant - only session ID, no user data)
     const cookies = parseCookies(req.headers.cookie);
-    const sessionId = cookies.lejio_sid;
+    const sessionId = cookies.autofiq_sid;
 
     if (!sessionId) {
       context.res.status = 200;

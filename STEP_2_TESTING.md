@@ -177,7 +177,7 @@ npm run build 2>&1 | grep "✓ built in"
 - [ ] Key name input works
 - [ ] Scope selector shows 7 options
 - [ ] Expiration selector works
-- [ ] Key displays with prefix "lejio_"
+- [ ] Key displays with prefix "autofiq_"
 - [ ] Copy button copies key
 - [ ] Key secret visible once (security test)
 - [ ] Can deactivate key

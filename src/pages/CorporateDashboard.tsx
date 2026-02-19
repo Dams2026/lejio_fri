@@ -84,7 +84,7 @@ const CorporateDashboard = () => {
             </div>
             <CardTitle>Ingen virksomhedskonto</CardTitle>
             <CardDescription>
-              Du er ikke tilknyttet en virksomhedskonto. Kontakt din administrator eller LEJIO support.
+              Du er ikke tilknyttet en virksomhedskonto. Kontakt din administrator eller AUTOFIQ support.
             </CardDescription>
           </CardHeader>
           <CardContent>

@@ -129,7 +129,7 @@ serve(async (req: Request): Promise<Response> => {
     </div>
     <div class="content">
       <p>Hej ${safeLessorName},</p>
-      <p>Du har modtaget en ny bookingforespørgsel på LEJIO!</p>
+      <p>Du har modtaget en ny bookingforespørgsel på AUTOFIQ!</p>
       
       <div class="info-box">
         <h3 style="margin-top: 0; color: #2962FF;">📋 Lejer information</h3>
@@ -183,11 +183,11 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="cta">
-        <a href="https://lejio.dk/dashboard">Se booking i dashboard</a>
+        <a href="https://autofiq.dk/dashboard">Se booking i dashboard</a>
       </div>
 
       <div class="footer">
-        <p>Denne email er sendt automatisk fra LEJIO</p>
+        <p>Denne email er sendt automatisk fra AUTOFIQ</p>
       </div>
     </div>
   </div>

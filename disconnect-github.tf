@@ -14,19 +14,19 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_static_site" "lejio_fri" {
-  name                = "Lejio-fri"
-  resource_group_name = "Lejio-Fri"
+resource "azurerm_static_site" "autofiq" {
+  name                = "AUTOFIQ-fri"
+  resource_group_name = "AUTOFIQ-Fri"
   location            = "West Europe"
   
   # This will disconnect GitHub integration when applied
   # It creates a "disconnected" static site that accepts direct deployments
 }
 
-output "lejio_fri_default_host_name" {
-  value = azurerm_static_site.lejio_fri.default_host_name
+output "autofiq_default_host_name" {
+  value = azurerm_static_site.autofiq.default_host_name
 }
 
-output "lejio_fri_id" {
-  value = azurerm_static_site.lejio_fri.id
+output "autofiq_id" {
+  value = azurerm_static_site.autofiq.id
 }

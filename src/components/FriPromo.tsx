@@ -15,12 +15,12 @@ const FriPromo = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white font-semibold mb-6 border border-white/30">
             <Zap className="w-4 h-4" />
-            <span>Nyt fra Lejio</span>
+            <span>Nyt fra AUTOFIQ</span>
           </div>
 
           {/* Main heading */}
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
-            Lejio Fri
+            AUTOFIQ
           </h2>
           
           {/* Subtitle */}

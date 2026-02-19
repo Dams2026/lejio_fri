@@ -3,10 +3,10 @@ import * as mssql from 'mssql';
 import * as jwt from 'jsonwebtoken';
 
 const sqlConfig = {
-  user: process.env.DB_USER || 'martin_lejio_user',
+  user: process.env.DB_USER || 'martin_autofiq_user',
   password: process.env.DB_PASSWORD || 'TestPassword123!',
-  database: process.env.DB_NAME || 'lejio_fri',
-  server: process.env.DB_SERVER || 'lejio.database.windows.net',
+  database: process.env.DB_NAME || 'autofiq',
+  server: process.env.DB_SERVER || 'autofiq.database.windows.net',
   pool: {
     max: 10,
     min: 0,

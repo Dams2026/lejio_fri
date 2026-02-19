@@ -2,9 +2,9 @@ import mssql from 'mssql';
 
 const config = {
   server: 'sql-vqiibdafjcmnc-dev.database.windows.net',
-  database: 'lejio-fri',
+  database: 'autofiq',
   user: 'sqladmin',
-  password: 'SqlAdmin@2026!LejioSecure456',
+  password: 'SqlAdmin@2026!AUTOFIQSecure456',
   port: 1433,
   options: {
     encrypt: true,

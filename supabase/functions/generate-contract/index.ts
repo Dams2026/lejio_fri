@@ -253,7 +253,7 @@ serve(async (req) => {
       dropoff_time: booking.dropoff_time || vehicle.default_dropoff_time || '08:00',
       late_return_fee_enabled: vehicle.late_return_charge_enabled !== false,
       
-      // Logo - use company logo for professionals, otherwise null (LEJIO logo in frontend)
+      // Logo - use company logo for professionals, otherwise null (AUTOFIQ logo in frontend)
       logo_url: lessorProfile?.user_type === 'professionel' && lessorProfile?.company_logo_url 
         ? lessorProfile.company_logo_url 
         : null,

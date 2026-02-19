@@ -69,7 +69,7 @@ Emailen skal:
 - ${callContextString ? 'Inkludere eventuelle ting der blev lovet eller aftalt' : 'Tilbyde et kort møde eller demo'}
 - Være personlig og relevant
 - Max 150 ord
-- Nævne at LEJIO kan hjælpe med at effektivisere deres biludlejning
+- Nævne at AUTOFIQ kan hjælpe med at effektivisere deres biludlejning
 
 Returner kun email-teksten.`;
         break;
@@ -81,13 +81,13 @@ Virksomheden er${leadData.industry ? ` i branchen: ${leadData.industry}` : ' en 
 
 Emailen skal:
 ${callContextString ? '- Referere til jeres telefonsamtale og inkludere de ting der blev diskuteret' : ''}
-- Præsentere LEJIO som en moderne platform til biludlejning
+- Præsentere AUTOFIQ som en moderne platform til biludlejning
 - Fremhæve fordele som: nem online booking, digitale lejekontrakter med signatur direkte i systemet (IKKE NemID/MitID), GPS-sporing, automatisk fakturering
 - Være venlig og professionel
 - Ikke være for lang (max 150 ord)
 - Inkludere en opfordring til at høre mere
 
-VIGTIGT: LEJIO bruger IKKE NemID eller MitID. Vi har vores eget digitale signatur-system hvor begge parter signerer kontrakten direkte i platformen.
+VIGTIGT: AUTOFIQ bruger IKKE NemID eller MitID. Vi har vores eget digitale signatur-system hvor begge parter signerer kontrakten direkte i platformen.
 
 Returner kun email-teksten uden emne eller hilsner.`;
         break;
@@ -106,7 +106,7 @@ Returner kun email-teksten.`;
         break;
         
       default:
-        prompt = `Skriv en professionel salgs-email på dansk til ${leadData.company_name}. ${callContextString} Hold det kort og venligt. BEMÆRK: LEJIO bruger IKKE NemID/MitID - vi har vores eget digitale signatur-system.`;
+        prompt = `Skriv en professionel salgs-email på dansk til ${leadData.company_name}. ${callContextString} Hold det kort og venligt. BEMÆRK: AUTOFIQ bruger IKKE NemID/MitID - vi har vores eget digitale signatur-system.`;
     }
 
     const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
@@ -120,20 +120,20 @@ Returner kun email-teksten.`;
         messages: [
           {
             role: 'system',
-            content: `Du er en professionel salgs-specialist for LEJIO, en dansk biludlejningsplatform. Du skriver korte, professionelle og venlige emails på dansk. Brug aldrig emojis eller overdreven entusiasme.
+            content: `Du er en professionel salgs-specialist for AUTOFIQ, en dansk biludlejningsplatform. Du skriver korte, professionelle og venlige emails på dansk. Brug aldrig emojis eller overdreven entusiasme.
 
 VIGTIGT: 
-- LEJIO bruger IKKE NemID eller MitID til kontrakter. Vi har vores eget digitale signatur-system, hvor begge parter (udlejer og lejer) signerer kontrakten direkte i platformen med en signatur-pad. Nævn aldrig NemID eller MitID i dine emails.
+- AUTOFIQ bruger IKKE NemID eller MitID til kontrakter. Vi har vores eget digitale signatur-system, hvor begge parter (udlejer og lejer) signerer kontrakten direkte i platformen med en signatur-pad. Nævn aldrig NemID eller MitID i dine emails.
 - Alle emails skal ALTID afsluttes med denne signatur:
 
 Med venlig hilsen
 
 Rasmus Damsgaard
 Medstifter & Partner
-LEJIO
+AUTOFIQ
 Tlf: +45 XX XX XX XX
-Email: rasmus@lejio.dk
-www.lejio.dk`
+Email: rasmus@autofiq.dk
+www.autofiq.dk`
           },
           {
             role: 'user',
@@ -167,16 +167,16 @@ www.lejio.dk`
     let subject = '';
     switch (emailType) {
       case 'introduction':
-        subject = `LEJIO - Moderne biludlejning til ${leadData.company_name}`;
+        subject = `AUTOFIQ - Moderne biludlejning til ${leadData.company_name}`;
         break;
       case 'followup':
-        subject = `Opfølgning: LEJIO biludlejningsplatform`;
+        subject = `Opfølgning: AUTOFIQ biludlejningsplatform`;
         break;
       case 'offer':
         subject = `Særligt tilbud til ${leadData.company_name}`;
         break;
       default:
-        subject = `LEJIO - Effektiv biludlejning`;
+        subject = `AUTOFIQ - Effektiv biludlejning`;
     }
 
     return new Response(

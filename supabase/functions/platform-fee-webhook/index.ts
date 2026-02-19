@@ -68,7 +68,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const stripeSecretKey = Deno.env.get('LEJIO_STRIPE_SECRET_KEY');
+    const stripeSecretKey = Deno.env.get('AUTOFIQ_STRIPE_SECRET_KEY');
     if (!stripeSecretKey) {
       throw new Error('Stripe API key not configured');
     }

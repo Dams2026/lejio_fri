@@ -353,7 +353,7 @@ const CorporateAddPage = () => {
                 <p className="text-sm text-muted-foreground mt-1">
                   Når du opretter fleet-kunden, genereres der automatisk en Fleet Partneraftale (PDF) 
                   baseret på de indtastede oplysninger og den valgte kommissionsmodel. Aftalen inkluderer 
-                  alle vilkår fra LEJIOs standard Fleet Partneraftale med 6 måneders bindingsperiode.
+                  alle vilkår fra AUTOFIQs standard Fleet Partneraftale med 6 måneders bindingsperiode.
                 </p>
               </div>
             </div>

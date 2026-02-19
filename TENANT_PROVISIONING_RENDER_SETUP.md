@@ -23,7 +23,7 @@ Auto-deployed via git push. Endpoints live:
 
 **Verify:**
 ```bash
-curl https://lejio-fri.onrender.com/api/AutoTriggerProvisioning -X POST
+curl https://autofiq.onrender.com/api/AutoTriggerProvisioning -X POST
 # Should return 200 with empty stats (no trials yet)
 ```
 
@@ -31,12 +31,12 @@ curl https://lejio-fri.onrender.com/api/AutoTriggerProvisioning -X POST
 
 **In Render Dashboard → Your App → Custom Domains:**
 
-Add: `*.lejio-fri.dk`
+Add: `*.autofiq.dk`
 Render handles SSL automatically.
 
 **Verify:**
 ```bash
-nslookup test.lejio-fri.dk
+nslookup test.autofiq.dk
 # Should resolve to Render IP
 ```
 
@@ -46,7 +46,7 @@ nslookup test.lejio-fri.dk
 
 1. Go to https://www.easycron.com
 2. **Create new cron job:**
-   - URL: `https://lejio-fri.onrender.com/api/AutoTriggerProvisioning`
+   - URL: `https://autofiq.onrender.com/api/AutoTriggerProvisioning`
    - Frequency: `*/15 * * * *` (every 15 min)
    - Method: POST
 
@@ -76,8 +76,8 @@ CUSTOMER SIGNUP → TRIAL (shared server)
                     ↓
       Unique subdomain assigned & migrated
                     ↓
-        Customer gets own LEJIO FRI
-           (company.lejio-fri.dk)
+        Customer gets own AUTOFIQ
+           (company.autofiq.dk)
 ```
 
 ## Testing
@@ -88,7 +88,7 @@ CUSTOMER SIGNUP → TRIAL (shared server)
 # Find a test lessor (or use any UUID for testing)
 LESSOR_UUID="550e8400-e29b-41d4-a716-446655440000"
 
-curl -X POST https://lejio-fri.onrender.com/api/ProvisionTenant \
+curl -X POST https://autofiq.onrender.com/api/ProvisionTenant \
   -H "Content-Type: application/json" \
   -d "{
     \"lessor_id\": \"$LESSOR_UUID\",
@@ -100,7 +100,7 @@ curl -X POST https://lejio-fri.onrender.com/api/ProvisionTenant \
   "success": true,
   "tenant_id": "...",
   "subdomain": "...",
-  "domain": "....lejio-fri.dk",
+  "domain": "....autofiq.dk",
   "status": "provisioning"
 }
 ```
@@ -110,7 +110,7 @@ curl -X POST https://lejio-fri.onrender.com/api/ProvisionTenant \
 ```bash
 TENANT_UUID="[from response above]"
 
-curl "https://lejio-fri.onrender.com/api/CheckTenantProvisioningStatus?tenant_id=$TENANT_UUID"
+curl "https://autofiq.onrender.com/api/CheckTenantProvisioningStatus?tenant_id=$TENANT_UUID"
 
 # Should show progress increasing: 5% → 40% → 60% → 100%
 ```
@@ -119,9 +119,9 @@ curl "https://lejio-fri.onrender.com/api/CheckTenantProvisioningStatus?tenant_id
 
 ```bash
 # After provisioning completes (progress_percent = 100)
-curl https://[subdomain].lejio-fri.dk
+curl https://[subdomain].autofiq.dk
 
-# Should load LEJIO FRI for that customer
+# Should load AUTOFIQ for that customer
 ```
 
 ## Monitoring
@@ -152,7 +152,7 @@ ORDER BY created_at DESC;
 
 ```bash
 # See automatic provisioning runs
-curl https://lejio-fri.onrender.com/api/AutoTriggerProvisioning
+curl https://autofiq.onrender.com/api/AutoTriggerProvisioning
 
 # Returns stats on last run:
 {
@@ -171,11 +171,11 @@ curl https://lejio-fri.onrender.com/api/AutoTriggerProvisioning
 
 ```bash
 # 1. Verify DNS is set
-nslookup [subdomain].lejio-fri.dk
+nslookup [subdomain].autofiq.dk
 
 # 2. If not resolving:
 #    - Check Render Custom Domains setting
-#    - Wildcard must be: *.lejio-fri.dk
+#    - Wildcard must be: *.autofiq.dk
 #    - Wait 10 min for DNS propagation
 
 # 3. Flush local DNS
@@ -201,7 +201,7 @@ WHERE tenant_id = '...';
 
 ```bash
 # Option 1: Manual test
-curl -X POST https://lejio-fri.onrender.com/api/AutoTriggerProvisioning
+curl -X POST https://autofiq.onrender.com/api/AutoTriggerProvisioning
 
 # Option 2: Check Render logs
 # Dashboard → Your App → Logs

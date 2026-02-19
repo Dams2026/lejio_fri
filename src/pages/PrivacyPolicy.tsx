@@ -56,14 +56,14 @@ const PrivacyPolicy = () => {
               </div>
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
                 <p>
-                  <strong className="text-foreground">LEJIO</strong><br />
+                  <strong className="text-foreground">AUTOFIQ</strong><br />
                   CVR-nr.: 44691507<br />
                   Adresse: Erantisvej 2, st. 103, 8800 Viborg, Danmark<br />
-                  E-mail: <a href="mailto:hej@lejio.dk" className="text-primary hover:underline">hej@lejio.dk</a><br />
-                  Hjemmeside: <a href="https://www.lejio.dk" className="text-primary hover:underline">www.lejio.dk</a>
+                  E-mail: <a href="mailto:hej@autofiq.dk" className="text-primary hover:underline">hej@autofiq.dk</a><br />
+                  Hjemmeside: <a href="https://www.autofiq.dk" className="text-primary hover:underline">www.autofiq.dk</a>
                 </p>
                 <p>
-                  LEJIO (herefter "LEJIO", "vi", "os" eller "vores") er dataansvarlig for behandlingen af de personoplysninger, 
+                  AUTOFIQ (herefter "AUTOFIQ", "vi", "os" eller "vores") er dataansvarlig for behandlingen af de personoplysninger, 
                   som vi modtager om dig. Denne privatlivspolitik beskriver, hvordan vi indsamler, anvender, opbevarer og beskytter 
                   dine personoplysninger i overensstemmelse med Europa-Parlamentets og Rådets forordning (EU) 2016/679 af 27. april 2016 (GDPR) 
                   samt den danske databeskyttelseslov.
@@ -364,7 +364,7 @@ const PrivacyPolicy = () => {
               </div>
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p>
-                  For at beskytte alle brugere på platformen har LEJIO implementeret et advarselssystem, 
+                  For at beskytte alle brugere på platformen har AUTOFIQ implementeret et advarselssystem, 
                   der registrerer overtrædelser af vores handelsbetingelser.
                 </p>
 
@@ -398,7 +398,7 @@ const PrivacyPolicy = () => {
                 <div className="p-5 bg-mint/10 border border-mint/30 rounded-xl">
                   <h4 className="font-semibold text-foreground mb-3">Proces for indsigelse:</h4>
                   <ol className="list-decimal pl-6 space-y-2">
-                    <li>Send en skriftlig indsigelse/klage til <a href="mailto:hej@lejio.dk" className="text-primary hover:underline">hej@lejio.dk</a> med dokumentation for din påstand</li>
+                    <li>Send en skriftlig indsigelse/klage til <a href="mailto:hej@autofiq.dk" className="text-primary hover:underline">hej@autofiq.dk</a> med dokumentation for din påstand</li>
                     <li>Vi genvurderer sagen inden for 14 dage fra modtagelse</li>
                     <li>Hvis indsigelsen imødekommes, slettes advarslen straks</li>
                     <li>Hvis indsigelsen afvises, modtager du en begrundet afgørelse, som du kan indbringe for Datatilsynet</li>
@@ -491,7 +491,7 @@ const PrivacyPolicy = () => {
                 <div className="mt-6 p-5 bg-mint/10 border border-mint/30 rounded-xl">
                   <h4 className="font-semibold text-foreground mb-3">Sådan udøver du dine rettigheder</h4>
                   <p>
-                    Kontakt os på <a href="mailto:privacy@lejio.dk" className="text-primary hover:underline">privacy@lejio.dk</a> med 
+                    Kontakt os på <a href="mailto:privacy@autofiq.dk" className="text-primary hover:underline">privacy@autofiq.dk</a> med 
                     din anmodning. Vi besvarer din henvendelse inden for 30 dage. Ved komplekse anmodninger kan fristen forlænges med yderligere 60 dage.
                   </p>
                 </div>
@@ -592,7 +592,7 @@ const PrivacyPolicy = () => {
                 <p>
                   Vi kan opdatere denne privatlivspolitik fra tid til anden. Ved væsentlige ændringer vil vi informere 
                   dig via e-mail eller en tydelig meddelelse på platformen. Den seneste version vil altid være 
-                  tilgængelig på www.lejio.dk/privatlivspolitik.
+                  tilgængelig på www.autofiq.dk/privatlivspolitik.
                 </p>
               </div>
             </div>
@@ -637,9 +637,9 @@ const PrivacyPolicy = () => {
                   er du velkommen til at kontakte os:
                 </p>
                 <div className="mt-4 p-5 bg-mint/10 border border-mint/30 rounded-xl">
-                  <p className="font-semibold text-foreground">LEJIO</p>
-                  <p>E-mail: <a href="mailto:privacy@lejio.dk" className="text-primary hover:underline">privacy@lejio.dk</a></p>
-                  <p>Hjemmeside: <a href="https://www.lejio.dk" className="text-primary hover:underline">www.lejio.dk</a></p>
+                  <p className="font-semibold text-foreground">AUTOFIQ</p>
+                  <p>E-mail: <a href="mailto:privacy@autofiq.dk" className="text-primary hover:underline">privacy@autofiq.dk</a></p>
+                  <p>Hjemmeside: <a href="https://www.autofiq.dk" className="text-primary hover:underline">www.autofiq.dk</a></p>
                 </div>
                 <p className="mt-6 text-sm text-muted-foreground">
                   Denne privatlivspolitik er gældende fra januar 2026.

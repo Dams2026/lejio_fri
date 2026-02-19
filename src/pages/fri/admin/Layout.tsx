@@ -50,7 +50,7 @@ export const FriAdminLayout = ({ children }: FriAdminLayoutProps) => {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-sm font-bold text-brown-900">Lejio Fri</h1>
+                <h1 className="text-sm font-bold text-brown-900">AUTOFIQ</h1>
                 <p className="text-[10px] text-gray-400 font-medium tracking-wider uppercase">Admin Panel</p>
               </div>
             </div>

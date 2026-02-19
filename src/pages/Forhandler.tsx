@@ -189,7 +189,7 @@ const Forhandler = () => {
               </Badge>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Velkommen til Lejio
+                Velkommen til AUTOFIQ
                 <span className="block text-primary">– på lige vilkår</span>
               </h1>
               
@@ -428,7 +428,7 @@ const Forhandler = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span className="text-sm">Platform & support fra LEJIO</span>
+                      <span className="text-sm">Platform & support fra AUTOFIQ</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -451,7 +451,7 @@ const Forhandler = () => {
                 </div>
                 <CardHeader className="text-center pb-2">
                   <CardTitle className="text-2xl">Fleet Basic</CardTitle>
-                  <CardDescription>LEJIO-styret platform</CardDescription>
+                  <CardDescription>AUTOFIQ-styret platform</CardDescription>
                   <div className="pt-4">
                     <span className="text-4xl font-bold">25%</span>
                     <span className="text-muted-foreground ml-1">kommission</span>
@@ -465,7 +465,7 @@ const Forhandler = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span className="text-sm">LEJIO håndterer booking & support</span>
+                      <span className="text-sm">AUTOFIQ håndterer booking & support</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -500,7 +500,7 @@ const Forhandler = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span className="text-sm">LEJIO håndterer alt operationelt</span>
+                      <span className="text-sm">AUTOFIQ håndterer alt operationelt</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -601,15 +601,15 @@ const Forhandler = () => {
               Klar til at komme i gang?
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">
-              Opret en gratis konto i dag og se, hvordan Lejio kan hjælpe din forhandler med at tjene mere.
+              Opret en gratis konto i dag og se, hvordan AUTOFIQ kan hjælpe din forhandler med at tjene mere.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8" onClick={() => navigate("/auth")}>
                 Opret gratis konto
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => navigate("/hvad-er-lejio")}>
-                Læs mere om Lejio
+              <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => navigate("/hvad-er-autofiq")}>
+                Læs mere om AUTOFIQ
               </Button>
             </div>
           </div>

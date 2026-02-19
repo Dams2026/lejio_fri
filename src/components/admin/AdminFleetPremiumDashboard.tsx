@@ -297,7 +297,7 @@ export const AdminFleetPremiumDashboard = () => {
               <DonutChart 
                 value={currentVehicle?.netPayout || 0}
                 gross={currentVehicle?.monthlyGrossRevenue || 0}
-                commission={currentVehicle?.lejioCommissionAmount || 0}
+                commission={currentVehicle?.autofiqCommissionAmount || 0}
               />
             </CardContent>
           </Card>

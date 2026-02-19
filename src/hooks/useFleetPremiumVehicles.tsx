@@ -60,7 +60,7 @@ export interface FleetVehicleStats {
   monthlyGrossRevenue: number;
   yearlyGrossRevenue: number;
   commissionRate: number; // 35% -> 20% baseret på 4-trins model
-  lejioCommissionAmount: number;
+  autofiqCommissionAmount: number;
   cleaningFees: number;
   netPayout: number; // Brutto - Salær - Afdrag
   
@@ -229,7 +229,7 @@ export const useFleetPremiumVehicles = () => {
         const cleaningFees = 0; // Cleaning fees are handled separately in Fleet Premium
 
         // Commission calculation
-        const lejioCommissionAmount = monthlyGrossRevenue * commissionRate;
+        const autofiqCommissionAmount = monthlyGrossRevenue * commissionRate;
 
         // Loan data for this vehicle
         const vehicleLoans = loansData.filter(l => l.vehicle_id === vehicle.id);
@@ -242,7 +242,7 @@ export const useFleetPremiumVehicles = () => {
         const loanPaymentHistory = loanPaymentsData.filter(p => loanIds.includes(p.loan_id));
 
         // Net payout: Brutto - Commission - Installments
-        const netPayout = monthlyGrossRevenue - lejioCommissionAmount - monthlyInstallment;
+        const netPayout = monthlyGrossRevenue - autofiqCommissionAmount - monthlyInstallment;
 
         // Calculate days rented this year
         const daysRentedThisYear = vehicleYearlyBookings.reduce((total, booking) => {
@@ -317,7 +317,7 @@ export const useFleetPremiumVehicles = () => {
           monthlyGrossRevenue,
           yearlyGrossRevenue,
           commissionRate,
-          lejioCommissionAmount,
+          autofiqCommissionAmount,
           cleaningFees,
           netPayout,
           
@@ -383,7 +383,7 @@ export const useFleetPremiumVehicles = () => {
       // Calculate summary
       const totalMonthlyGrossRevenue = processedVehicles.reduce((sum, v) => sum + v.monthlyGrossRevenue, 0);
       const totalYearlyGrossRevenue = processedVehicles.reduce((sum, v) => sum + v.yearlyGrossRevenue, 0);
-      const totalCommission = processedVehicles.reduce((sum, v) => sum + v.lejioCommissionAmount, 0);
+      const totalCommission = processedVehicles.reduce((sum, v) => sum + v.autofiqCommissionAmount, 0);
       const totalCleaningFees = processedVehicles.reduce((sum, v) => sum + v.cleaningFees, 0);
       const totalMonthlyInstallments = processedVehicles.reduce((sum, v) => sum + v.monthlyInstallment, 0);
       const totalLoanBalance = processedVehicles.reduce((sum, v) => sum + v.totalLoanBalance, 0);

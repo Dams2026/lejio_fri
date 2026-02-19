@@ -40,7 +40,7 @@ function isValidEmail(email: string): boolean {
   return emailRegex.test(email) && email.length <= 254;
 }
 
-// Colors matching the LEJIO design system
+// Colors matching the AUTOFIQ design system
 const COLORS = {
   primary: rgb(0.16, 0.38, 1),        // #2962FF
   primaryLight: rgb(0.9, 0.93, 1),    // Light blue background
@@ -93,10 +93,10 @@ async function generateDemoContractPDF(): Promise<Uint8Array> {
   const demoContract = {
     contract_number: '2025-000001',
     created_at: new Date().toLocaleDateString('da-DK', { day: 'numeric', month: 'long', year: 'numeric' }),
-    lessor_name: 'LEJIO Demo ApS',
-    lessor_company_name: 'LEJIO Demo ApS',
+    lessor_name: 'AUTOFIQ Demo ApS',
+    lessor_company_name: 'AUTOFIQ Demo ApS',
     lessor_cvr: '12345678',
-    lessor_email: 'demo@lejio.dk',
+    lessor_email: 'demo@autofiq.dk',
     lessor_phone: '+45 12 34 56 78',
     lessor_address: 'Demovej 123, 2100 København Ø',
     renter_name: 'Martin Jensen',
@@ -149,8 +149,8 @@ async function generateDemoContractPDF(): Promise<Uint8Array> {
       height: 30,
       color: COLORS.bgLight,
     });
-    page.drawText('LEJIO', { x: margin + 10, y: 30, size: 10, font: helveticaBold, color: COLORS.primary });
-    page.drawText('• lejio.dk', { x: margin + 50, y: 30, size: 9, font: helvetica, color: COLORS.textMuted });
+    page.drawText('AUTOFIQ', { x: margin + 10, y: 30, size: 10, font: helveticaBold, color: COLORS.primary });
+    page.drawText('• autofiq.dk', { x: margin + 50, y: 30, size: 9, font: helvetica, color: COLORS.textMuted });
     page.drawText(`Kontrakt nr. ${demoContract.contract_number}  •  Side ${pNum}`, { 
       x: width - margin - 150, y: 30, size: 9, font: helvetica, color: COLORS.textMuted 
     });
@@ -215,7 +215,7 @@ async function generateDemoContractPDF(): Promise<Uint8Array> {
   
   // Logo box
   drawRoundedRect(margin, height - 75, 80, 45, COLORS.white);
-  drawText('LEJIO', margin + 10, height - 60, 22, helveticaBold, COLORS.primary);
+  drawText('AUTOFIQ', margin + 10, height - 60, 22, helveticaBold, COLORS.primary);
   
   // Title
   drawText('Lejekontrakt', margin + 100, height - 45, 24, helveticaBold, COLORS.white);
@@ -828,7 +828,7 @@ const handler = async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const fromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const fromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       console.error("SMTP not configured");
@@ -854,13 +854,13 @@ const handler = async (req: Request): Promise<Response> => {
       </head>
       <body style="font-family: 'Nunito', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #2962FF; margin: 0; font-size: 32px;">LEJIO</h1>
+          <h1 style="color: #2962FF; margin: 0; font-size: 32px;">AUTOFIQ</h1>
           <p style="color: #666; margin: 5px 0;">Danmarks bedste biludlejningsplatform</p>
         </div>
         
         <div style="background: linear-gradient(135deg, #2962FF 0%, #1e4bd8 100%); color: white; padding: 30px; border-radius: 16px; margin-bottom: 25px;">
           <h2 style="margin: 0 0 10px 0; font-size: 24px;">Din demo lejekontrakt</h2>
-          <p style="margin: 0; opacity: 0.9;">Tak for din interesse i LEJIO!</p>
+          <p style="margin: 0; opacity: 0.9;">Tak for din interesse i AUTOFIQ!</p>
         </div>
         
         <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 25px;">
@@ -874,17 +874,17 @@ const handler = async (req: Request): Promise<Response> => {
           </ul>
         </div>
         
-        <p style="color: #555;">Vedhæftet finder du en demo-version af vores lejekontrakt. Denne viser, hvordan dine kontrakter vil se ud, når du bruger LEJIO til at administrere dine biludlejninger.</p>
+        <p style="color: #555;">Vedhæftet finder du en demo-version af vores lejekontrakt. Denne viser, hvordan dine kontrakter vil se ud, når du bruger AUTOFIQ til at administrere dine biludlejninger.</p>
         
         <div style="text-align: center; margin: 30px 0;">
-          <a href="https://lejio.dk" style="display: inline-block; background: #2962FF; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">Kom i gang med LEJIO</a>
+          <a href="https://autofiq.dk" style="display: inline-block; background: #2962FF; color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">Kom i gang med AUTOFIQ</a>
         </div>
         
         <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
         
         <p style="color: #888; font-size: 12px; text-align: center;">
-          © ${new Date().getFullYear()} LEJIO • Danmarks bedste biludlejningsplatform<br>
-          <a href="https://lejio.dk" style="color: #2962FF;">lejio.dk</a>
+          © ${new Date().getFullYear()} AUTOFIQ • Danmarks bedste biludlejningsplatform<br>
+          <a href="https://autofiq.dk" style="color: #2962FF;">autofiq.dk</a>
         </p>
       </body>
       </html>
@@ -907,12 +907,12 @@ const handler = async (req: Request): Promise<Response> => {
     await client.send({
       from: fromEmail,
       to: recipientEmail,
-      subject: "Din LEJIO Demo Lejekontrakt",
+      subject: "Din AUTOFIQ Demo Lejekontrakt",
       content: "auto",
       html: emailHtml,
       attachments: [
         {
-          filename: `LEJIO-Demo-Lejekontrakt-2025-000001.pdf`,
+          filename: `AUTOFIQ-Demo-Lejekontrakt-2025-000001.pdf`,
           content: pdfBase64,
           encoding: "base64",
           contentType: "application/pdf",
