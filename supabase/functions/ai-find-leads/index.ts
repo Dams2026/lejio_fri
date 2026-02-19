@@ -82,7 +82,7 @@ serve(async (req) => {
           messages: [
             {
               role: 'system',
-              content: `Du er en salgsekspert for LEJIO, en dansk biludlejningsplatform. 
+              content: `Du er en salgsekspert for AUTOFIQ, en dansk biludlejningsplatform. 
 Analyser de eksisterende leads og foreslå nye typer virksomheder at kontakte.
 
 VIGTIGT:
@@ -145,7 +145,7 @@ Returner et JSON array med objekter der har:
           messages: [
             {
               role: 'system',
-              content: `Du er en salgsekspert for LEJIO, en dansk biludlejningsplatform.
+              content: `Du er en salgsekspert for AUTOFIQ, en dansk biludlejningsplatform.
 Din opgave er at generere konkrete søgeforslag for at finde potentielle kunder.
 
 Målbrancher: ${industries.join(', ')}
@@ -249,7 +249,7 @@ Returner KUN et JSON array, ingen anden tekst.`
           company_name: 'MC-forhandlere',
           industry: 'Motorcykeludlejning',
           city: 'København',
-          reason: 'LEJIO understøtter også motorcykeludlejning',
+          reason: 'AUTOFIQ understøtter også motorcykeludlejning',
           score: 6,
           search_query: 'motorcykel forhandler',
           source: 'ai_discovery',

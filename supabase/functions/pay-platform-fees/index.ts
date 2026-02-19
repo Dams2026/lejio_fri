@@ -16,7 +16,7 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const stripeSecretKey = Deno.env.get('LEJIO_STRIPE_SECRET_KEY');
+    const stripeSecretKey = Deno.env.get('AUTOFIQ_STRIPE_SECRET_KEY');
 
     if (!stripeSecretKey) {
       throw new Error('Stripe API key not configured');
@@ -79,7 +79,7 @@ const handler = async (req: Request): Promise<Response> => {
         price_data: {
           currency: 'dkk',
           product_data: {
-            name: `LEJIO Platform Gebyr`,
+            name: `AUTOFIQ Platform Gebyr`,
             description: `${fees.length} booking gebyr${fees.length > 1 ? 'er' : ''} á 49 kr`,
           },
           unit_amount: Math.round(totalAmount * 100), // Stripe uses cents

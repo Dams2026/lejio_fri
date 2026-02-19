@@ -27,7 +27,7 @@ serve(async (req) => {
   try {
     const { vehicle, postType, targetAudience } = await req.json() as { 
       vehicle: VehicleData | null; 
-      postType: 'dagens_bil' | 'promotion' | 'custom' | 'lejio_promo';
+      postType: 'dagens_bil' | 'promotion' | 'custom' | 'autofiq_promo';
       targetAudience?: string;
     };
     
@@ -41,17 +41,17 @@ serve(async (req) => {
       ? `\n\nMÅLGRUPPE: Opslaget skal målrettes til: ${targetAudience}. Tilpas sproget, tonaliteten og argumenterne til denne specifikke målgruppe.`
       : '';
 
-    const systemPrompt = `Du er en professionel markedsføringsekspert for en biludlejningsplatform kaldet LEJIO. 
-    Du skriver engagerende Facebook-opslag på dansk der får folk til at leje biler eller bruge LEJIO platformen.
+    const systemPrompt = `Du er en professionel markedsføringsekspert for en biludlejningsplatform kaldet AUTOFIQ. 
+    Du skriver engagerende Facebook-opslag på dansk der får folk til at leje biler eller bruge AUTOFIQ platformen.
     Brug emojis passende og gør teksten fængende.
     Hold opslaget under 300 ord.
     Inkluder altid en call-to-action.
-    LEJIO er "Hotels.com for biludlejning" - en platform der gør det nemt at leje bil fra private og professionelle udlejere.${audienceContext}`;
+    AUTOFIQ er "Hotels.com for biludlejning" - en platform der gør det nemt at leje bil fra private og professionelle udlejere.${audienceContext}`;
 
     let userPrompt = '';
     
-    if (postType === 'lejio_promo') {
-      userPrompt = `Skriv et generelt reklameopslag for LEJIO platformen. Dette er IKKE om en specifik bil, men om LEJIO som platform.
+    if (postType === 'autofiq_promo') {
+      userPrompt = `Skriv et generelt reklameopslag for AUTOFIQ platformen. Dette er IKKE om en specifik bil, men om AUTOFIQ som platform.
       
       Fokuser på:
       - Nem online booking
@@ -61,9 +61,9 @@ serve(async (req) => {
       - Fleksibel udlejning (dag, uge, måned)
       - Tryghed og sikkerhed
       
-      Call-to-action: Besøg lejio.dk
+      Call-to-action: Besøg autofiq.dk
       ${targetAudience ? `\nHusk at målrette til: ${targetAudience}` : ''}
-      Gør opslaget engagerende og få folk til at ville prøve LEJIO til deres næste biludlejning.`;
+      Gør opslaget engagerende og få folk til at ville prøve AUTOFIQ til deres næste biludlejning.`;
     } else if (postType === 'dagens_bil' && vehicle) {
       userPrompt = `Skriv et Facebook-opslag om "Dagens Bil" for følgende køretøj:
       
@@ -79,7 +79,7 @@ serve(async (req) => {
       Antal sæder: ${vehicle.seats || 'Ikke angivet'}
       ${targetAudience ? `\nMålgruppe: ${targetAudience}` : ''}
       
-      Gør opslaget spændende og fremhæv at det er dagens særlige tilbud på LEJIO.`;
+      Gør opslaget spændende og fremhæv at det er dagens særlige tilbud på AUTOFIQ.`;
     } else if (postType === 'promotion' && vehicle) {
       userPrompt = `Skriv et promotions-opslag for følgende køretøj:
       
@@ -90,7 +90,7 @@ serve(async (req) => {
       Beskrivelse: ${vehicle.description || 'Ingen beskrivelse'}
       ${targetAudience ? `\nMålgruppe: ${targetAudience}` : ''}
       
-      Fokuser på bilens fordele og hvorfor den er perfekt til udlejning via LEJIO.`;
+      Fokuser på bilens fordele og hvorfor den er perfekt til udlejning via AUTOFIQ.`;
     } else if (vehicle) {
       userPrompt = `Skriv et generelt Facebook-opslag der promoverer dette køretøj:
       
@@ -100,7 +100,7 @@ serve(async (req) => {
       
       Gør det kort og fængende.`;
     } else {
-      userPrompt = `Skriv et kort og fængende reklameopslag for LEJIO - Danmarks smarteste biludlejningsplatform. Inkluder en call-to-action til lejio.dk.${targetAudience ? ` Målret til: ${targetAudience}` : ''}`;
+      userPrompt = `Skriv et kort og fængende reklameopslag for AUTOFIQ - Danmarks smarteste biludlejningsplatform. Inkluder en call-to-action til autofiq.dk.${targetAudience ? ` Målret til: ${targetAudience}` : ''}`;
     }
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {

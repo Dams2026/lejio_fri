@@ -1,4 +1,4 @@
-# 🏗️ LEJIO FRI - MULTI-TENANT PROVISIONING SYSTEM
+# 🏗️ AUTOFIQ - MULTI-TENANT PROVISIONING SYSTEM
 
 ## Overview
 
@@ -18,10 +18,10 @@ AUTO-PROVISIONING SYSTEM
     └── GetTenantByDomain (domain routing)
     ↓
 DEDICATED TENANT SERVER
-    ├── Unique subdomain: customer.lejio-fri.dk
+    ├── Unique subdomain: customer.autofiq.dk
     ├── Custom domain support
     ├── Isolated database context
-    ├── Full LEJIO FRI functionality
+    ├── Full AUTOFIQ functionality
     └── Independent operations
 ```
 
@@ -32,7 +32,7 @@ DEDICATED TENANT SERVER
 id                    VARCHAR(36) PRIMARY KEY
 name                  VARCHAR(255)              -- Company name
 slug                  VARCHAR(100) UNIQUE       -- URL-safe slug
-domain                VARCHAR(255)              -- lejio-fri.dk subdomain
+domain                VARCHAR(255)              -- autofiq.dk subdomain
 custom_domain         VARCHAR(255) UNIQUE       -- Custom domain if provided
 subdomain             VARCHAR(100) UNIQUE       -- customer-name
 plan                  VARCHAR(50)               -- dealer_start, dealer_plus, etc
@@ -93,9 +93,9 @@ Manuelt eller automatisk trigger af tenant provisioning
   "tenant_id": "uuid",
   "company_name": "Company A/S",
   "subdomain": "company-a",
-  "domain": "company-a.lejio-fri.dk",
+  "domain": "company-a.autofiq.dk",
   "status": "provisioning",
-  "url": "https://company-a.lejio-fri.dk",
+  "url": "https://company-a.autofiq.dk",
   "message": "Tenant provisioning initiated. Setup will complete automatically within 5-10 minutes."
 }
 ```
@@ -123,11 +123,11 @@ GET /CheckTenantProvisioningStatus?lessor_id={id}
   },
   "tenant": {
     "name": "Company A/S",
-    "domain": "company-a.lejio-fri.dk",
+    "domain": "company-a.autofiq.dk",
     "subdomain": "company-a",
     "plan": "dealer_plus",
     "status": "provisioning",
-    "url": "https://company-a.lejio-fri.dk"
+    "url": "https://company-a.autofiq.dk"
   },
   "migrations": [
     {
@@ -147,7 +147,7 @@ Cron endpoint - automatisk find og provision expiring trial customers
 **Usage:**
 ```bash
 # Call every 15 minutes via external cron service
-curl -X POST https://lejio-fri.onrender.com/api/AutoTriggerProvisioning \
+curl -X POST https://autofiq.onrender.com/api/AutoTriggerProvisioning \
   -H "Content-Type: application/json"
 ```
 
@@ -170,7 +170,7 @@ curl -X POST https://lejio-fri.onrender.com/api/AutoTriggerProvisioning \
       "company_name": "Company B",
       "tenant_id": "uuid",
       "status": "provisioning_started",
-      "url": "https://company-b.lejio-fri.dk"
+      "url": "https://company-b.autofiq.dk"
     }
   ]
 }
@@ -181,7 +181,7 @@ Domain routing lookup
 
 **Input:**
 ```
-GET /GetTenantByDomain?domain=company-a.lejio-fri.dk
+GET /GetTenantByDomain?domain=company-a.autofiq.dk
 GET /GetTenantByDomain?subdomain=company-a
 GET /GetTenantByDomain?domain=custom.example.com
 ```
@@ -193,7 +193,7 @@ GET /GetTenantByDomain?domain=custom.example.com
     "id": "uuid",
     "name": "Company A/S",
     "slug": "company-a",
-    "domain": "company-a.lejio-fri.dk",
+    "domain": "company-a.autofiq.dk",
     "subdomain": "company-a",
     "plan": "dealer_plus",
     "status": "active",
@@ -219,7 +219,7 @@ GET /GetTenantByDomain?domain=custom.example.com
    └─ trial_end_date = CURRENT_DATE + 14 days
 
 2. TRIAL RUNNING
-   └─ Customer uses LEJIO FRI features
+   └─ Customer uses AUTOFIQ features
    └─ All data stored on shared server
    └─ Isolated via RLS (lessor_id)
 
@@ -249,7 +249,7 @@ GET /GetTenantByDomain?domain=custom.example.com
 
 7. CUSTOMER REDIRECTED
    └─ Automatic redirect to their unique domain
-   └─ Full access to dedicated LEJIO FRI instance
+   └─ Full access to dedicated AUTOFIQ instance
 ```
 
 ### B. Manual Subscription Upgrade
@@ -270,7 +270,7 @@ GET /GetTenantByDomain?domain=custom.example.com
 
 ### How Domain Resolution Works
 
-1. **Request arrives** at `company-a.lejio-fri.dk`
+1. **Request arrives** at `company-a.autofiq.dk`
 2. **Node.js middleware** (`tenant-routing.js`) extracts subdomain
 3. **Cache lookup** checks if tenant resolved before (5 min cache)
 4. **Database query** looks up in `fri_tenants` table
@@ -297,7 +297,7 @@ await tenantResolutionMiddleware(context, req);
 
 ```bash
 # Schedule every 15 minutes
-URL: https://lejio-fri.onrender.com/api/AutoTriggerProvisioning
+URL: https://autofiq.onrender.com/api/AutoTriggerProvisioning
 METHOD: POST
 FREQUENCY: Every 15 minutes
 TIMEOUT: 30 seconds
@@ -324,7 +324,7 @@ services:
 # Google Cloud Scheduler
 gcloud scheduler jobs create http tenant-provisioning-trigger \
   --schedule="*/15 * * * *" \
-  --uri="https://lejio-fri.onrender.com/api/AutoTriggerProvisioning" \
+  --uri="https://autofiq.onrender.com/api/AutoTriggerProvisioning" \
   --http-method=POST \
   --message-body='{}'
 ```
@@ -347,7 +347,7 @@ SELECT * FROM fri_vehicles;  -- Only returns FRIVehicles for this tenant+lessor
 ### Subdomain Routing (Automatic)
 
 ```
-*.lejio-fri.dk  →  CNAME lejio-fri.onrender.com
+*.autofiq.dk  →  CNAME autofiq.onrender.com
 ```
 
 All subdomains automatically resolve to application, which routes based on subdomain part.
@@ -355,7 +355,7 @@ All subdomains automatically resolve to application, which routes based on subdo
 ### Custom Domain Support
 
 ```
-customer.com  →  CNAME lejio-fri.onrender.com
+customer.com  →  CNAME autofiq.onrender.com
 
 # Customer adds this to their DNS settings
 ```
@@ -364,7 +364,7 @@ customer.com  →  CNAME lejio-fri.onrender.com
 
 ### Check Provisioning Progress
 ```bash
-curl https://lejio-fri.onrender.com/api/CheckTenantProvisioningStatus?tenant_id={id}
+curl https://autofiq.onrender.com/api/CheckTenantProvisioningStatus?tenant_id={id}
 ```
 
 ### View Recent Provisioning Activity

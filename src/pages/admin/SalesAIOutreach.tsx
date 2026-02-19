@@ -484,7 +484,7 @@ const SalesAIOutreachPage = () => {
                     <p className="font-medium mb-2">💡 Forberedelsestips</p>
                     <ul className="text-sm space-y-1 text-muted-foreground">
                       <li>• Undersøg virksomhedens hjemmeside inden du ringer</li>
-                      <li>• Identificer hvordan LEJIO kan løse deres specifikke behov</li>
+                      <li>• Identificer hvordan AUTOFIQ kan løse deres specifikke behov</li>
                       <li>• Hav et klart formål med opkaldet</li>
                       <li>• Vær klar til at besvare spørgsmål om priser og funktioner</li>
                     </ul>
@@ -636,7 +636,7 @@ const SalesAIOutreachPage = () => {
                         <SelectItem value="introduction">
                           <div>
                             <p className="font-medium">Introduktion</p>
-                            <p className="text-xs text-muted-foreground">Generel præsentation af LEJIO</p>
+                            <p className="text-xs text-muted-foreground">Generel præsentation af AUTOFIQ</p>
                           </div>
                         </SelectItem>
                         <SelectItem value="offer">

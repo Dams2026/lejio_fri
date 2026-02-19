@@ -126,7 +126,7 @@ export const AdminDashboardLayout = ({ children, activeTab }: AdminDashboardLayo
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                     <Shield className="w-5 h-5 text-white" />
                   </div>
-                  <span className="font-display font-bold">LEJIO Admin</span>
+                  <span className="font-display font-bold">AUTOFIQ Admin</span>
                 </div>
                 <nav className="p-2 max-h-[calc(100vh-80px)] overflow-y-auto">
                   {filteredMenuItems.map((item) => (
@@ -151,7 +151,7 @@ export const AdminDashboardLayout = ({ children, activeTab }: AdminDashboardLayo
               <Shield className="w-5 h-5 md:w-6 md:h-6 text-white" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg md:text-xl font-display font-bold">LEJIO Admin</h1>
+              <h1 className="text-lg md:text-xl font-display font-bold">AUTOFIQ Admin</h1>
               <p className="text-xs text-muted-foreground truncate max-w-[200px]">{user?.email}</p>
             </div>
           </div>

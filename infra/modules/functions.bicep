@@ -57,7 +57,7 @@ resource functionApp 'Microsoft.Web/sites@2023-12-01' = {
         }
         {
           name: 'WEBSITE_CONTENTSHARE'
-          value: 'lejio-fri-${uniqueString(resourceGroup().id)}'
+          value: 'autofiq-${uniqueString(resourceGroup().id)}'
         }
         {
           name: 'FUNCTIONS_EXTENSION_VERSION'

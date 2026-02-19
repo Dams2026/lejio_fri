@@ -15,7 +15,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Get credentials from environment
 const config = {
   server: process.env.SQL_SERVER || 'sql-vqiibdafjcmnc-dev.database.windows.net',
-  database: process.env.SQL_DATABASE || 'lejio-fri',
+  database: process.env.SQL_DATABASE || 'autofiq',
   authentication: {
     type: 'default',
     options: {
@@ -137,7 +137,7 @@ async function runMigrations() {
 
 // Run migrations
 console.log('╔════════════════════════════════════════════════╗');
-console.log('║  Lejio Fri Multi-Tenant Database Migration    ║');
+console.log('║  AUTOFIQ Multi-Tenant Database Migration    ║');
 console.log('╚════════════════════════════════════════════════╝');
 
 runMigrations().catch(error => {

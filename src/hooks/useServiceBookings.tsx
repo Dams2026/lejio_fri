@@ -102,7 +102,7 @@ export const useServiceBookings = () => {
       if (error) throw error;
 
       setBookings(prev => [...prev, data as ServiceBooking]);
-      toast.success('Værkstedstid booket hos LEJIO');
+      toast.success('Værkstedstid booket hos AUTOFIQ');
       return data;
     } catch (err) {
       console.error('Error creating service booking:', err);

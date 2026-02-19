@@ -1,7 +1,7 @@
 # Page Builder Implementation - Integration Guide
 
 ## Overview
-Complete website builder system for Lejio Fri that allows lessors to create custom websites via drag-and-drop editor.
+Complete website builder system for AUTOFIQ that allows lessors to create custom websites via drag-and-drop editor.
 
 ## Files Created
 

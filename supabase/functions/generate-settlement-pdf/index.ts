@@ -206,7 +206,7 @@ function generateSettlementHTML(report: SettlementReport): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LEJIO Opgørelse - ${report.period}</title>
+  <title>AUTOFIQ Opgørelse - ${report.period}</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
@@ -297,7 +297,7 @@ function generateSettlementHTML(report: SettlementReport): string {
 </head>
 <body>
   <div class="header">
-    <div class="logo">LEJIO</div>
+    <div class="logo">AUTOFIQ</div>
     <div class="doc-info">
       <h2>Månedlig Opgørelse</h2>
       <p>${report.period}</p>
@@ -359,7 +359,7 @@ function generateSettlementHTML(report: SettlementReport): string {
       <span>${formatCurrency(report.totalGrossRevenue)} kr</span>
     </div>
     <div class="summary-row">
-      <span>LEJIO kommission (${report.commissionRate}%)</span>
+      <span>AUTOFIQ kommission (${report.commissionRate}%)</span>
       <span class="deduction">-${formatCurrency(report.commissionAmount)} kr</span>
     </div>
     ${report.totalLoanDeductions > 0 ? `
@@ -375,8 +375,8 @@ function generateSettlementHTML(report: SettlementReport): string {
   </div>
 
   <div class="footer">
-    <p>LEJIO ApS · CVR: XXXXXXXX · www.lejio.dk</p>
-    <p>Denne opgørelse er automatisk genereret. Ved spørgsmål kontakt support@lejio.dk</p>
+    <p>AUTOFIQ ApS · CVR: XXXXXXXX · www.autofiq.dk</p>
+    <p>Denne opgørelse er automatisk genereret. Ved spørgsmål kontakt support@autofiq.dk</p>
   </div>
 </body>
 </html>

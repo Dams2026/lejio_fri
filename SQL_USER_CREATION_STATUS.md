@@ -2,19 +2,19 @@
 
 ## Current Status: ⏳ PENDING
 
-The SQL database user `martin_lejio_user` **has NOT YET been created** due to authentication challenges.
+The SQL database user `martin_autofiq_user` **has NOT YET been created** due to authentication challenges.
 
 ## What We've Accomplished So Far
 
 ✅ **Deployment Complete:**
-- Lejio Fri application successfully deployed to Azure Static Web Apps
+- AUTOFIQ application successfully deployed to Azure Static Web Apps
 - URL: https://zealous-stone-04c86dd03.2.azurestaticapps.net
 - 146 frontend files + 22 Azure Functions deployed
 - All code updated to match Azure SQL schema
 
 ✅ **Database Verified:**
-- Azure SQL Server: `lejio-fri-db.database.windows.net` (Lejio_group)
-- Database: `lejio_fri` (14 tables)
+- Azure SQL Server: `autofiq-db.database.windows.net` (AUTOFIQ_group)
+- Database: `autofiq` (14 tables)
 - Firewall configured with multiple rules
 
 ✅ **Required Scripts Created:**
@@ -26,7 +26,7 @@ The SQL database user `martin_lejio_user` **has NOT YET been created** due to au
 
 ### Why It Failed:
 1. **sqlcmd authentication errors:**
-   - Username: `martin_lejio_admin` with password `TestPassword123!` → Login failed
+   - Username: `martin_autofiq_admin` with password `TestPassword123!` → Login failed
    - Reason: This user doesn't exist. The actual admin is `CloudSAf59bf0c5`
 
 2. **Local Windows auth doesn't work:**
@@ -40,7 +40,7 @@ The SQL database user `martin_lejio_user` **has NOT YET been created** due to au
 ## Solution Options
 
 ### Option 1: Use Azure Portal (EASIEST - NO SETUP NEEDED) ✅
-1. Go to Azure Portal → SQL Servers → lejio-fri-db
+1. Go to Azure Portal → SQL Servers → autofiq-db
 2. Click "Query editor" on the left menu
 3. Sign in with your Azure AD account
 4. Copy-paste the SQL from `create_sql_user_final.sql` and execute
@@ -51,22 +51,22 @@ The SQL database user `martin_lejio_user` **has NOT YET been created** due to au
 -- Master DB: Create login
 USE master
 GO
-CREATE LOGIN martin_lejio_user WITH PASSWORD = 'Temp123456789!';
+CREATE LOGIN martin_autofiq_user WITH PASSWORD = 'Temp123456789!';
 GO
 
--- lejio_fri DB: Create user and grant roles
-USE lejio_fri
+-- autofiq DB: Create user and grant roles
+USE autofiq
 GO
-CREATE USER martin_lejio_user FOR LOGIN martin_lejio_user;
-ALTER ROLE db_datareader ADD MEMBER martin_lejio_user;
-ALTER ROLE db_datawriter ADD MEMBER martin_lejio_user;
+CREATE USER martin_autofiq_user FOR LOGIN martin_autofiq_user;
+ALTER ROLE db_datareader ADD MEMBER martin_autofiq_user;
+ALTER ROLE db_datawriter ADD MEMBER martin_autofiq_user;
 GO
 ```
 
 ### Option 2: Use SQL Server Management Studio (SSMS)
 1. Download & install SSMS (if not already installed)
 2. Open SSMS
-3. Connect to: `lejio-fri-db.database.windows.net`
+3. Connect to: `autofiq-db.database.windows.net`
 4. Authentication: Azure AD - Universal with MFA
 5. Run the SQL script above
 
@@ -82,9 +82,9 @@ $token = (az account get-access-token --resource "https://database.windows.net" 
 ## Credentials Reference
 
 **New Database User (TO BE CREATED):**
-- Username: `martin_lejio_user`
+- Username: `martin_autofiq_user`
 - Password: `Temp123456789!`
-- Database: `lejio_fri`
+- Database: `autofiq`
 - Roles: `db_datareader`, `db_datawriter`
 
 **Current SQL Server Admin:**
@@ -109,11 +109,11 @@ $token = (az account get-access-token --resource "https://database.windows.net" 
 3. **[FALLBACK]** Contact Azure support to have admin execute the script
 
 ### AFTER User Created:
-1. Test connection: `sqlcmd -S lejio-fri-db.database.windows.net -U martin_lejio_user -d lejio_fri`
+1. Test connection: `sqlcmd -S autofiq-db.database.windows.net -U martin_autofiq_user -d autofiq`
 2. Verify permissions: `SELECT USER_NAME(), DB_NAME(), @@SERVERNAME`
 3. Update `.env.azure`:
    ```
-   DB_USER=martin_lejio_user
+   DB_USER=martin_autofiq_user
    DB_PASSWORD=Temp123456789!
    ```
 4. Test Azure Functions connection to database
@@ -160,4 +160,4 @@ PRODUCTION READY ✅
 ---
 
 **Last Updated:** 2026-02-04
-**Contact:** martin@lejio.dk for support
+**Contact:** martin@autofiq.dk for support

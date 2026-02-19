@@ -67,10 +67,10 @@ const ServiceBookingPage = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Wrench className="w-5 h-5" />
-              LEJIO Værksted
+              AUTOFIQ Værksted
             </CardTitle>
             <CardDescription>
-              Book service direkte hos LEJIOs eget værksted
+              Book service direkte hos AUTOFIQs eget værksted
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

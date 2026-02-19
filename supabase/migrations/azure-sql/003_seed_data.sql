@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lejio Fri - Seed Data for Development & Testing
+-- AUTOFIQ - Seed Data for Development & Testing
 -- ============================================================================
 
 -- ============================================================================
@@ -10,9 +10,9 @@ IF NOT EXISTS (SELECT 1 FROM fri_admins WHERE id = 'admin-001')
 INSERT INTO fri_admins (id, email, admin_name, admin_email, is_super_admin)
 VALUES (
     'admin-001',
-    'admin@lejio-fri.dk',
+    'admin@autofiq.dk',
     'Admin User',
-    'admin@lejio-fri.dk',
+    'admin@autofiq.dk',
     1
 )
 
@@ -31,7 +31,7 @@ VALUES
     'john@carrentals.dk',
     'John Car Rentals',
     '12345678',
-    'john-car-rentals.lejio-fri.dk',
+    'john-car-rentals.autofiq.dk',
     '#3b82f6',
     GETUTCDATE(),
     DATEADD(DAY, 14, GETUTCDATE()),
@@ -49,7 +49,7 @@ VALUES
     'maria@mobilityplus.dk',
     'Mobility Plus',
     '87654321',
-    'mobility-plus.lejio-fri.dk',
+    'mobility-plus.autofiq.dk',
     '#10b981',
     GETUTCDATE(),
     DATEADD(DAY, 365, GETUTCDATE()),
@@ -67,7 +67,7 @@ VALUES
     'erik@elrentals.dk',
     'EL Rentals',
     '55555555',
-    'el-rentals.lejio-fri.dk',
+    'el-rentals.autofiq.dk',
     '#f59e0b',
     GETUTCDATE(),
     DATEADD(DAY, 7, GETUTCDATE()),

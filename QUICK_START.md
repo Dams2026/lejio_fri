@@ -1,8 +1,8 @@
-# 🚀 Lejio Fri - Quick Start Checklist
+# 🚀 AUTOFIQ - Quick Start Checklist
 
 ## ✅ Deployment Status: COMPLETE
 
-Your Lejio Fri application has been successfully deployed to Azure!
+Your AUTOFIQ application has been successfully deployed to Azure!
 
 ---
 
@@ -11,8 +11,8 @@ Your Lejio Fri application has been successfully deployed to Azure!
 | Item | Link/Reference |
 |------|-----------------|
 | **Live App** | https://zealous-stone-04c86dd03.2.azurestaticapps.net |
-| **Azure SQL Server** | lejio-fri-db.database.windows.net |
-| **Database** | lejio_fri (14 tables ready) |
+| **Azure SQL Server** | autofiq-db.database.windows.net |
+| **Database** | autofiq (14 tables ready) |
 | **API Functions** | 22 endpoints deployed |
 
 ---
@@ -36,7 +36,7 @@ Your Lejio Fri application has been successfully deployed to Azure!
 **You need to:**
 1. Go to https://portal.azure.com
 2. Search for "SQL databases"
-3. Click on `lejio_fri`
+3. Click on `autofiq`
 4. Click "Query editor" on the left menu
 5. Sign in with your Azure account
 6. Copy-paste this SQL:
@@ -45,15 +45,15 @@ Your Lejio Fri application has been successfully deployed to Azure!
 -- Create login in master database
 USE master
 GO
-CREATE LOGIN martin_lejio_user WITH PASSWORD = 'Temp123456789!';
+CREATE LOGIN martin_autofiq_user WITH PASSWORD = 'Temp123456789!';
 GO
 
--- Create user in lejio_fri database
-USE lejio_fri
+-- Create user in autofiq database
+USE autofiq
 GO
-CREATE USER martin_lejio_user FOR LOGIN martin_lejio_user;
-ALTER ROLE db_datareader ADD MEMBER martin_lejio_user;
-ALTER ROLE db_datawriter ADD MEMBER martin_lejio_user;
+CREATE USER martin_autofiq_user FOR LOGIN martin_autofiq_user;
+ALTER ROLE db_datareader ADD MEMBER martin_autofiq_user;
+ALTER ROLE db_datawriter ADD MEMBER martin_autofiq_user;
 GO
 ```
 
@@ -106,10 +106,10 @@ curl https://zealous-stone-04c86dd03.2.azurestaticapps.net/api/GetBookings
 ### Database
 ```bash
 # Connect to verify SQL user works (after creation)
-sqlcmd -S lejio-fri-db.database.windows.net \
-       -U martin_lejio_user \
+sqlcmd -S autofiq-db.database.windows.net \
+       -U martin_autofiq_user \
        -P "Temp123456789!" \
-       -d lejio_fri \
+       -d autofiq \
        -Q "SELECT COUNT(*) AS Tables FROM information_schema.tables"
 ```
 
@@ -140,11 +140,11 @@ THIS WEEK:
 1. Check you're logged into Azure Portal
 2. Verify you have permissions on SQL server
 3. Check firewall rules allow your IP
-4. Try again or contact: martin@lejio.dk
+4. Try again or contact: martin@autofiq.dk
 
 ### Azure Portal Issues:
 - Go to https://portal.azure.com
-- Search: "lejio_fri"
+- Search: "autofiq"
 - Click the database
 - Click "Query editor"
 
@@ -180,7 +180,7 @@ THIS WEEK:
 
 ## ✨ You're All Set!
 
-**Your Lejio Fri application is:**
+**Your AUTOFIQ application is:**
 - 🟢 **LIVE** - https://zealous-stone-04c86dd03.2.azurestaticapps.net
 - 🟢 **DEPLOYED** - All 146 frontend files ready
 - 🟢 **API READY** - 22 functions standing by

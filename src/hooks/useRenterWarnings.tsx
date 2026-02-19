@@ -232,7 +232,7 @@ export const useRenterWarnings = () => {
       reported_by: '',
       booking_id: null,
       reason: (summary.reasons[0] as WarningReason) || 'other',
-      description: `Denne lejer har ${summary.warningCount} aktiv(e) advarsel(er). Kontakt LEJIO support for detaljer.`,
+      description: `Denne lejer har ${summary.warningCount} aktiv(e) advarsel(er). Kontakt AUTOFIQ support for detaljer.`,
       severity: summary.maxSeverity,
       damage_amount: 0,
       unpaid_amount: 0,

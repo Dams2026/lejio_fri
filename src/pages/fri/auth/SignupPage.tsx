@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/input';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useFriAuth } from '@/hooks/useFriAuth';
 import { createLessorAccount } from '@/hooks/useLessorAccount';
-import { Crown, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { AutofiqLogo } from '@/components/AutofiqLogo';
 
 type PackageOption = {
   id: string;
@@ -298,10 +299,10 @@ export function FriSignupPage() {
         <div className="text-center mb-8">
           <Link to="/fri" className="inline-flex items-center gap-3 mb-4">
             <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-300 to-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.35)]">
-              <Crown className="h-6 w-6 text-white" />
+              <AutofiqLogo iconClassName="h-12 w-auto" alt="Autofiq" />
             </div>
           </Link>
-          <h1 className="text-3xl font-bold text-white mb-2">Din platform</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">Din White-Label Platform</h1>
           <p className="text-amber-200/80">Kom i gang med din bilutlejningsplatform</p>
         </div>
 

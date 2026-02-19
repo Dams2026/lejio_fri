@@ -28,7 +28,7 @@ const FleetPage = () => {
       <div>
         <h2 className="text-2xl font-bold mb-2">Fleet Management</h2>
         <p className="text-muted-foreground mb-6">
-          Lad LEJIO varetage din biludlejning
+          Lad AUTOFIQ varetage din biludlejning
         </p>
         <FleetDashboard />
       </div>

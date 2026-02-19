@@ -157,7 +157,7 @@ serve(async (req: Request): Promise<Response> => {
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo">⚠️ LEJIO ALERT</div>
+      <div class="logo">⚠️ AUTOFIQ ALERT</div>
       <h1>Kritisk Handling Udført</h1>
     </div>
     <div class="content">
@@ -197,13 +197,13 @@ serve(async (req: Request): Promise<Response> => {
       
       <div style="margin-top: 25px; padding: 15px; background: #e7f3ff; border-radius: 8px; border-left: 4px solid #2962FF;">
         <p style="margin: 0; color: #1a5276;">
-          <strong>💡 Anbefaling:</strong> Gennemgå denne handling i <a href="https://lejio.lovable.app/admin/audit-log" style="color: #2962FF;">Audit Log</a> for at sikre, at den var autoriseret.
+          <strong>💡 Anbefaling:</strong> Gennemgå denne handling i <a href="https://autofiq.lovable.app/admin/audit-log" style="color: #2962FF;">Audit Log</a> for at sikre, at den var autoriseret.
         </p>
       </div>
     </div>
     <div class="footer">
       <p style="margin: 0; color: #666;">
-        Denne notifikation blev sendt automatisk af LEJIO's sikkerhedssystem.<br>
+        Denne notifikation blev sendt automatisk af AUTOFIQ's sikkerhedssystem.<br>
         Du modtager denne email fordi du er super administrator.
       </p>
     </div>
@@ -221,7 +221,7 @@ serve(async (req: Request): Promise<Response> => {
         await client.send({
           from: smtpFromEmail,
           to: profile.email,
-          subject: `⚠️ LEJIO Alert: ${actionLabel} af ${entityLabel}${data.entity_identifier ? ` (${data.entity_identifier})` : ''}`,
+          subject: `⚠️ AUTOFIQ Alert: ${actionLabel} af ${entityLabel}${data.entity_identifier ? ` (${data.entity_identifier})` : ''}`,
           content: emailHtml,
           html: emailHtml,
         });

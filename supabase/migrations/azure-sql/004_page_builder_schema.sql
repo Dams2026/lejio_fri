@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lejio Fri - Page Builder Schema
+-- AUTOFIQ - Page Builder Schema
 -- Purpose: Enable lessors to create custom websites with drag-and-drop builder
 -- ============================================================================
 

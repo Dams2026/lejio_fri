@@ -1,11 +1,21 @@
-import { HttpRequest, HttpResponseInit, app } from '@azure/functions';
-import { createClient } from '@supabase/supabase-js';
-import * as nodemailer from 'nodemailer';
+const { createClient } = require('@supabase/supabase-js');
+const nodemailer = require('nodemailer');
+
 
 const supabaseUrl = process.env.SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY || '';
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+let supabase = null;
+
+function getSupabase() {
+  if (!supabase) {
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Supabase env vars missing');
+    }
+    supabase = createClient(supabaseUrl, supabaseKey);
+  }
+  return supabase;
+}
 
 /**
  * @typedef {Object} SendTestEmailRequest
@@ -15,7 +25,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function sendTestEmail(request) {
   try {
-    const body = await request.json();
+    const body = request.body || {};
     const { integrationId, testEmail } = body;
 
     if (!integrationId || !testEmail) {
@@ -26,7 +36,7 @@ async function sendTestEmail(request) {
     }
 
     // Fetch integration details
-    const { data: integration, error: integrationError } = await supabase
+    const { data: integration, error: integrationError } = await getSupabase()
       .from('lessor_email_integrations')
       .select('*')
       .eq('id', integrationId)
@@ -120,7 +130,7 @@ async function sendTestEmail(request) {
                 }</p>
               </div>
               
-              <p>Du kan nu bruge denne email til at sende beskeder gennem LEJIO platformen.</p>
+              <p>Du kan nu bruge denne email til at sende beskeder gennem AUTOFIQ platformen.</p>
               
               <p style="margin-top: 30px; color: #666; font-size: 14px;">
                 Denne email blev sendt automatisk for at teste din email integration.
@@ -128,7 +138,7 @@ async function sendTestEmail(request) {
             </div>
             
             <div class="footer">
-              <p>&copy; 2026 LEJIO. Alle rettigheder forbeholdt.</p>
+              <p>&copy; 2026 AUTOFIQ. Alle rettigheder forbeholdt.</p>
             </div>
           </div>
         </body>
@@ -136,15 +146,15 @@ async function sendTestEmail(request) {
     `;
 
     await transporter.sendMail({
-      from: `${integration.display_name || 'LEJIO'} <${integration.email}>`,
+      from: `${integration.display_name || 'AUTOFIQ'} <${integration.email}>`,
       to: testEmail,
-      subject: 'Test Email fra LEJIO - Integration Virker ✅',
+      subject: 'Test Email fra AUTOFIQ - Integration Virker ✅',
       html: emailHtml,
       text: `Test email from ${integration.email} - Din email integration fungerer korrekt!`,
     });
 
     // Update last_tested_at
-    await supabase
+    await getSupabase()
       .from('lessor_email_integrations')
       .update({
         last_tested_at: new Date().toISOString(),
@@ -153,12 +163,12 @@ async function sendTestEmail(request) {
 
     // Log activity
     const lessorId = integration.lessor_id;
-    await supabase.from('email_activity_log').insert([
+    await getSupabase().from('email_activity_log').insert([
       {
         lessor_id: lessorId,
         integration_id: integrationId,
         recipient: testEmail,
-        subject: 'Test Email fra LEJIO',
+        subject: 'Test Email fra AUTOFIQ',
         email_type: 'test',
         status: 'sent',
       },
@@ -185,8 +195,11 @@ async function sendTestEmail(request) {
   }
 }
 
-app.function('SendTestEmail', {
-  methods: ['POST'],
-  authLevel: 'anonymous',
-  handler: sendTestEmail,
-});
+module.exports = async function (context, request) {
+  const result = await sendTestEmail(request);
+  return {
+    status: result?.status || 200,
+    headers: result?.headers || {},
+    body: result?.jsonBody ?? result?.body ?? null,
+  };
+};

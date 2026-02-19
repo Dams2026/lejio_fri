@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 // Test users (always available)
 const testUsers = {
-  "martin@lejio.dk": { id: "test-martin", email: "martin@lejio.dk", full_name: "Martin Jensen", lessor_id: "test-martin", user_type: "professionel", role: "owner" },
+  "martin@autofiq.dk": { id: "test-martin", email: "martin@autofiq.dk", full_name: "Martin Jensen", lessor_id: "test-martin", user_type: "professionel", role: "owner" },
   "test@example.com": { id: "test-user", email: "test@example.com", full_name: "Test User", lessor_id: "test-user", user_type: "professionel", role: "owner" },
 };
 
@@ -22,7 +22,7 @@ function setCookie(sessionId, isSecure) {
   const maxAge = 30 * 24 * 60 * 60;
   const secure = isSecure ? '; Secure' : '';
   const sameSite = isSecure ? 'None' : 'Lax';
-  return `lejio_sid=${sessionId}; Path=/; HttpOnly; SameSite=${sameSite}; Max-Age=${maxAge}${secure}`;
+  return `autofiq_sid=${sessionId}; Path=/; HttpOnly; SameSite=${sameSite}; Max-Age=${maxAge}${secure}`;
 }
 
 module.exports = async function (context, req) {

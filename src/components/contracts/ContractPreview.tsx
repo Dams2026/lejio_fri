@@ -43,7 +43,7 @@ const ContractPreview = ({ contract, pickupDamageReport, returnDamageReport }: C
               </div>
             ) : (
               <div className="bg-white rounded-xl px-5 py-3 shadow-lg">
-                <span className="text-3xl font-black text-primary tracking-tight">LEJIO</span>
+                <span className="text-3xl font-black text-primary tracking-tight">AUTOFIQ</span>
               </div>
             )}
             {/* QR-kode check-in */}
@@ -520,9 +520,9 @@ const ContractPreview = ({ contract, pickupDamageReport, returnDamageReport }: C
         <footer className="border-t border-gray-200 bg-gray-50 rounded-b-xl p-4">
           <div className="flex items-center justify-between text-xs text-gray-500">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-primary">LEJIO</span>
+              <span className="font-semibold text-primary">AUTOFIQ</span>
               <span>•</span>
-              <a href="https://www.lejio.dk" className="hover:text-primary transition-colors">www.lejio.dk</a>
+              <a href="https://www.autofiq.dk" className="hover:text-primary transition-colors">www.autofiq.dk</a>
             </div>
             <div>
               Kontrakt nr. {contract.contract_number}

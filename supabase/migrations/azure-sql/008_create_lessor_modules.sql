@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lejio Fri - Module Activation
+-- AUTOFIQ - Module Activation
 -- Purpose: Persist enabled workshop modules per lessor
 -- ============================================================================
 

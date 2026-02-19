@@ -1,7 +1,7 @@
 # Corporate Features Implementation Guide
 
 ## Overview
-This document covers the three core enterprise revenue-generating features now implemented in LEJIO:
+This document covers the three core enterprise revenue-generating features now implemented in AUTOFIQ:
 1. **Employee Administration** - Manage corporate employee access and permissions
 2. **Budget Management** - Track departmental spending and budgets
 3. **Settlement Reports** - Generate and track monthly invoices

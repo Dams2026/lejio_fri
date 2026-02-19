@@ -219,7 +219,7 @@ const CreateWarningPage = () => {
             <div className="p-4 bg-amber-500/10 rounded-lg border border-amber-500/30">
               <p className="text-sm text-foreground">
                 <strong>Vigtigt:</strong> Lejeren vil modtage en email om advarslen og kan klage. 
-                LEJIO vil behandle eventuelle klager. Advarslen gemmes i op til 5 år.
+                AUTOFIQ vil behandle eventuelle klager. Advarslen gemmes i op til 5 år.
               </p>
             </div>
 

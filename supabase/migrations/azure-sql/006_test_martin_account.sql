@@ -1,5 +1,5 @@
--- Create test Martin account for Lejio Fri
--- Email: martin@lejio.dk
+-- Create test Martin account for AUTOFIQ
+-- Email: martin@autofiq.dk
 -- Idempotent: Safe to run multiple times
 
 IF NOT EXISTS (SELECT 1 FROM fri_lessors WHERE id = 'lessor-martin-001')
@@ -8,7 +8,7 @@ BEGIN
     VALUES 
     (
         'lessor-martin-001',
-        'martin@lejio.dk',
+        'martin@autofiq.dk',
         'Martin Biludlejning',
         '88888888',
         '#3b82f6',
@@ -24,14 +24,14 @@ ELSE
     PRINT 'Martin lessor already exists'
 
 -- Insert team member
-IF NOT EXISTS (SELECT 1 FROM fri_lessor_team_members WHERE lessor_id = 'lessor-martin-001' AND email = 'martin@lejio.dk')
+IF NOT EXISTS (SELECT 1 FROM fri_lessor_team_members WHERE lessor_id = 'lessor-martin-001' AND email = 'martin@autofiq.dk')
 BEGIN
     INSERT INTO fri_lessor_team_members (id, lessor_id, email, name, role, status, invited_at, accepted_at, created_at)
     VALUES
     (
         NEWID(),
         'lessor-martin-001',
-        'martin@lejio.dk',
+        'martin@autofiq.dk',
         'Martin Jensen',
         'owner',
         'active',
@@ -55,5 +55,5 @@ END
 
 PRINT 'Martin account setup complete!'
 PRINT 'Lessor ID: lessor-martin-001'
-PRINT 'Email: martin@lejio.dk'
+PRINT 'Email: martin@autofiq.dk'
 PRINT 'Note: Create auth user in Supabase with same email & password: TestPassword123!'

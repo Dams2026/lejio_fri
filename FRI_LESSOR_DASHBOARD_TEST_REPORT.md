@@ -1,4 +1,4 @@
-# ✅ Lejio Fri Lessor Dashboard - Test Report
+# ✅ AUTOFIQ Lessor Dashboard - Test Report
 
 ## Build Status
 - ✅ **Build Success**: `✓ built in 10.08s`

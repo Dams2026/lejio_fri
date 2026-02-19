@@ -415,7 +415,7 @@ export default function FriDealerHubPage() {
         <Card className="border-gray-100 shadow-sm">
           <CardHeader>
             <CardTitle>Bilforhandler funktioner</CardTitle>
-            <CardDescription>Funktioner uden Lejio-vaerkstedsmoduler</CardDescription>
+            <CardDescription>Funktioner uden AUTOFIQ-vaerkstedsmoduler</CardDescription>
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {dealerFeatures.map((feature) => (

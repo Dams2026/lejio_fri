@@ -119,7 +119,7 @@
 ## 🗂️ File Structure
 
 ```
-LEJIO Root/
+AUTOFIQ Root/
 ├── src/
 │   ├── pages/admin/
 │   │   ├── CorporateEmployeeAdmin.tsx ...................... NEW (650 lines)

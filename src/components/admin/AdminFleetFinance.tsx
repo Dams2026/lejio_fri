@@ -450,9 +450,9 @@ export const AdminFleetFinance = () => {
     if (!statement) return;
     const doc = new jsPDF();
     // Logo (hvis muligt)
-    // doc.addImage('/public/lejio-logo.png', 'PNG', 150, 10, 40, 12); // kræver base64 eller ekstern url
+    // doc.addImage('/public/autofiq-logo.png', 'PNG', 150, 10, 40, 12); // kræver base64 eller ekstern url
     doc.setFontSize(18);
-    doc.text('Lejio - Månedlig Opgørelse', 10, 20);
+    doc.text('AUTOFIQ - Månedlig Opgørelse', 10, 20);
     doc.setFontSize(12);
     doc.text(`Periode: ${selectedMonth}`, 10, 30);
     if (selectedCustomer) {

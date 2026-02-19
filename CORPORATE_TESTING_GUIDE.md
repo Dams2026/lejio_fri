@@ -2,7 +2,7 @@
 
 ## Prerequisites
 - Node.js and npm installed
-- LEJIO dev environment set up
+- AUTOFIQ dev environment set up
 - Supabase project configured
 - Admin account with access to `/admin` dashboard
 
@@ -10,7 +10,7 @@
 
 ```bash
 # Navigate to project
-cd /workspaces/lejio-b75cff1f
+cd /workspaces/autofiq-b75cff1f
 
 # Install dependencies (if needed)
 npm install

@@ -80,7 +80,7 @@
 - ✅ Trial Page - Trial information
 - ✅ Signup Page - Registration flow
 - ✅ Landing Page - Public homepage
-- ✅ What is LEJIO - Information page
+- ✅ What is AUTOFIQ - Information page
 
 ---
 
@@ -350,4 +350,4 @@ supabase migration up
 
 *Last Updated: January 27, 2026*  
 *Prepared by: GitHub Copilot*  
-*Repository: github.com/martinjensen9988-sudo/lejio-fri*
+*Repository: github.com/martinjensen9988-sudo/autofiq*

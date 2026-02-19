@@ -123,8 +123,8 @@ interface FleetBooking {
 
 const FLEET_PLAN_LABELS: Record<string, string> = {
   fleet_private: 'Privat Fleet (30%)',
-  fleet_basic: 'LEJIO Varetager (20%)',
-  fleet_premium: 'LEJIO Varetager Pro (35%)',
+  fleet_basic: 'AUTOFIQ Varetager (20%)',
+  fleet_premium: 'AUTOFIQ Varetager Pro (35%)',
 };
 
 const AdminFleetManagement = () => {
@@ -698,7 +698,7 @@ const AdminFleetManagement = () => {
                     <Truck className="w-5 h-5" />
                     Fleet Kunder
                   </CardTitle>
-                  <CardDescription>Virksomheder med LEJIO Varetager-planer</CardDescription>
+                  <CardDescription>Virksomheder med AUTOFIQ Varetager-planer</CardDescription>
                 </div>
                 <div className="relative w-64">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -1266,8 +1266,8 @@ const AdminFleetManagement = () => {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="fleet_basic">LEJIO Varetager (Basis)</SelectItem>
-                  <SelectItem value="fleet_premium">LEJIO Varetager Pro</SelectItem>
+                  <SelectItem value="fleet_basic">AUTOFIQ Varetager (Basis)</SelectItem>
+                  <SelectItem value="fleet_premium">AUTOFIQ Varetager Pro</SelectItem>
                 </SelectContent>
               </Select>
             </div>

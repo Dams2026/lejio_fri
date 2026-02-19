@@ -1,6 +1,6 @@
 # Sentry Error Tracking Setup
 
-This guide explains how to set up error tracking for LEJIO using Sentry.
+This guide explains how to set up error tracking for AUTOFIQ using Sentry.
 
 ## What is Sentry?
 
@@ -19,7 +19,7 @@ Sentry is a real-time error tracking platform that:
 2. Sign up (free tier includes 5,000 error events/month)
 3. Create a new project:
    - Platform: **React**
-   - Project name: `lejio`
+   - Project name: `autofiq`
    - Team: Select your team
 
 ### 2. Get Your DSN
@@ -223,7 +223,7 @@ Send alerts to:
 
 1. In Sentry, go to Settings → Integrations → Slack
 2. Click "Add Integration"
-3. Authorize LEJIO workspace
+3. Authorize AUTOFIQ workspace
 4. Go to Issue Settings, enable notifications to #errors channel
 
 ### Track Deploy
@@ -251,7 +251,7 @@ sentry-cli releases set-commits <version> --auto
 - Professional: $29/month (100K events)
 - Enterprise: Custom pricing
 
-For LEJIO (~50-100 errors/month), free tier is sufficient.
+For AUTOFIQ (~50-100 errors/month), free tier is sufficient.
 
 ## Troubleshooting
 

@@ -21,9 +21,9 @@ print("✅ Token received")
 # Connect to master database as admin to create login
 print("🔌 Connecting to master database...")
 
-server = "lejio-fri-db.database.windows.net"
+server = "autofiq-db.database.windows.net"
 database = "master"
-user = "martin_lejio_admin"
+user = "martin_autofiq_admin"
 password = "TestPassword123!"
 
 try:
@@ -35,9 +35,9 @@ try:
     print("✅ Connected to master database")
     
     # Create login
-    print("👤 Creating login martin_lejio_user...")
+    print("👤 Creating login martin_autofiq_user...")
     try:
-        cursor.execute("CREATE LOGIN martin_lejio_user WITH PASSWORD = 'Temp123456789!'")
+        cursor.execute("CREATE LOGIN martin_autofiq_user WITH PASSWORD = 'Temp123456789!'")
         conn.commit()
         print("✅ Login created")
     except pyodbc.Error as e:
@@ -50,19 +50,19 @@ try:
     cursor.close()
     conn.close()
     
-    # Connect to lejio_fri database to create user
-    print("🔌 Connecting to lejio_fri database...")
-    database = "lejio_fri"
+    # Connect to autofiq database to create user
+    print("🔌 Connecting to autofiq database...")
+    database = "autofiq"
     conn_str = f"Driver={{ODBC Driver 17 for SQL Server}};Server={server};Database={database};UID={user};PWD={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30"
     conn = pyodbc.connect(conn_str)
     cursor = conn.cursor()
     
-    print("✅ Connected to lejio_fri database")
+    print("✅ Connected to autofiq database")
     
     # Create user
     print("👤 Creating database user...")
     try:
-        cursor.execute("CREATE USER martin_lejio_user FOR LOGIN martin_lejio_user")
+        cursor.execute("CREATE USER martin_autofiq_user FOR LOGIN martin_autofiq_user")
         conn.commit()
         print("✅ User created")
     except pyodbc.Error as e:
@@ -73,8 +73,8 @@ try:
     
     # Grant roles
     print("🔐 Granting permissions...")
-    cursor.execute("ALTER ROLE db_datareader ADD MEMBER martin_lejio_user")
-    cursor.execute("ALTER ROLE db_datawriter ADD MEMBER martin_lejio_user")
+    cursor.execute("ALTER ROLE db_datareader ADD MEMBER martin_autofiq_user")
+    cursor.execute("ALTER ROLE db_datawriter ADD MEMBER martin_autofiq_user")
     conn.commit()
     print("✅ Permissions granted (db_datareader + db_datawriter)")
     
@@ -84,8 +84,8 @@ try:
     print("\n✅ SQL User Setup Complete!")
     print("📋 Summary:")
     print(f"  Server: {server}")
-    print(f"  Database: lejio_fri")
-    print(f"  Username: martin_lejio_user")
+    print(f"  Database: autofiq")
+    print(f"  Username: martin_autofiq_user")
     print(f"  Password: Temp123456789!")
     print(f"  Roles: db_datareader, db_datawriter")
     

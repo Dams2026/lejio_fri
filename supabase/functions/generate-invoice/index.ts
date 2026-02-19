@@ -122,10 +122,10 @@ serve(async (req) => {
       }
     ];
 
-    // Tilføj selvrisiko-forsikring som særskilt line item (Lejio’s andel)
+    // Tilføj selvrisiko-forsikring som særskilt line item (AUTOFIQ’s andel)
     if (insuranceFee > 0) {
       lineItems.push({
-        description: "Nul selvrisiko-forsikring (Lejio)",
+        description: "Nul selvrisiko-forsikring (AUTOFIQ)",
         quantity: insuranceDays,
         unit: "dage",
         unit_price: Math.round((insuranceFee / insuranceDays) * 100) / 100,

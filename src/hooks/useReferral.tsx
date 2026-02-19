@@ -56,7 +56,7 @@ export const useReferral = () => {
           .from('referral_codes')
           .insert({
             user_id: user.id,
-            code: newCode || `LEJIO-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+            code: newCode || `AUTOFIQ-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
           })
           .select()
           .single();

@@ -140,7 +140,7 @@ export const SettlementDownloadCard = ({ summary }: SettlementDownloadCardProps)
             <div className="bg-accent/10 rounded-xl p-4 text-center border border-accent/20">
               <CreditCard className="w-5 h-5 mx-auto mb-2 text-accent" />
               <p className="text-xl font-bold">{formatCurrency(summary.totalCommission)} kr</p>
-              <p className="text-xs text-muted-foreground">LEJIO kommission</p>
+              <p className="text-xs text-muted-foreground">AUTOFIQ kommission</p>
             </div>
             <div className="bg-destructive/10 rounded-xl p-4 text-center border border-destructive/20">
               <TrendingDown className="w-5 h-5 mx-auto mb-2 text-destructive" />

@@ -12,7 +12,7 @@ const PrivateFleetExplainer = () => {
       title: "Kontakt os",
       description: "Fortæl os om dit køretøj. Vi vurderer bilen og laver en aftale.",
       details: [
-        "Kontakt LEJIO via telefon, mail eller formular",
+        "Kontakt AUTOFIQ via telefon, mail eller formular",
         "Vi vurderer bilen og fastsætter månedsprisen",
         "Du sørger for forsikring der dækker udlejning",
         "Vi udarbejder en samarbejdsaftale"
@@ -23,7 +23,7 @@ const PrivateFleetExplainer = () => {
       number: "2",
       icon: Car,
       title: "Aflever bilen til os",
-      description: "Du afleverer bilen til LEJIO – herefter tager vi os af absolut alt.",
+      description: "Du afleverer bilen til AUTOFIQ – herefter tager vi os af absolut alt.",
       details: [
         "Aflever bilen på vores adresse",
         "Vi tager professionelle billeder af bilen",
@@ -36,12 +36,12 @@ const PrivateFleetExplainer = () => {
       number: "3",
       icon: Users,
       title: "Vi opretter annoncen",
-      description: "LEJIO sætter prisen, tager billeder og opretter en professionel annonce.",
+      description: "AUTOFIQ sætter prisen, tager billeder og opretter en professionel annonce.",
       details: [
         "Vi fastsætter den optimale månedspris",
         "Professionelle billeder og beskrivelse",
         "Din bil udbydes som abonnement (min. 30 dage)",
-        "Annoncen vises på LEJIO's platform"
+        "Annoncen vises på AUTOFIQ's platform"
       ],
       color: "primary"
     },
@@ -67,7 +67,7 @@ const PrivateFleetExplainer = () => {
         "Abonnementskontrakt genereres af os",
         "Lejers kørekort og ID verificeres",
         "Grundig check-in med fotodokumentation",
-        "Nøgler udleveres af LEJIO"
+        "Nøgler udleveres af AUTOFIQ"
       ],
       color: "secondary"
     },
@@ -78,7 +78,7 @@ const PrivateFleetExplainer = () => {
       description: "Lejeren betaler månedligt, og vi overfører din andel til dig.",
       details: [
         "Lejer betaler abonnement hver måned",
-        "Vi tilbageholder 30% til LEJIO",
+        "Vi tilbageholder 30% til AUTOFIQ",
         "Du modtager 70% af lejeindtægten",
         "Fast udbetaling hver måned"
       ],
@@ -163,7 +163,7 @@ const PrivateFleetExplainer = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              Du ejer bilen – vi klarer resten. LEJIO håndterer alt fra markedsføring til kontrakter og dokumentation, 
+              Du ejer bilen – vi klarer resten. AUTOFIQ håndterer alt fra markedsføring til kontrakter og dokumentation, 
               så du kan læne dig tilbage og se pengene tikke ind.
             </p>
             
@@ -176,7 +176,7 @@ const PrivateFleetExplainer = () => {
               <div className="w-px h-16 bg-border" />
               <div className="text-center">
                 <p className="font-display text-5xl font-black text-mint">30%</p>
-                <p className="text-sm text-muted-foreground font-medium">til LEJIO</p>
+                <p className="text-sm text-muted-foreground font-medium">til AUTOFIQ</p>
               </div>
             </div>
           </div>
@@ -300,7 +300,7 @@ const PrivateFleetExplainer = () => {
                         <span className="font-medium">{tier.price.toLocaleString('da-DK')} kr</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">LEJIO (30%)</span>
+                        <span className="text-muted-foreground">AUTOFIQ (30%)</span>
                         <span className="text-muted-foreground">-{Math.round(tier.price * 0.3).toLocaleString('da-DK')} kr</span>
                       </div>
                       <div className="pt-3 border-t border-border/50">
@@ -345,7 +345,7 @@ const PrivateFleetExplainer = () => {
                 },
                 {
                   q: "Hvem sætter prisen?",
-                  a: "Det gør vi. LEJIO fastsætter den optimale månedspris baseret på bilens stand, model og markedet. Vi sørger for at maksimere din indtjening."
+                  a: "Det gør vi. AUTOFIQ fastsætter den optimale månedspris baseret på bilens stand, model og markedet. Vi sørger for at maksimere din indtjening."
                 },
                 {
                   q: "Hvem står for forsikringen?",

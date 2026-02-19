@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useFriAuthContext } from '@/providers/FriAuthProvider';
 import { useRole, roleLabels } from '@/hooks/useRole';
+import { AutofiqLogo } from '@/components/AutofiqLogo';
 
 const FriSidebar = () => {
   const location = useLocation();
@@ -51,13 +52,9 @@ const FriSidebar = () => {
       {/* Logo/Branding Area */}
       <div className="p-6 border-b border-gray-100">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center shadow-md">
-            <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
+          <AutofiqLogo iconClassName="h-10 w-auto" alt="Autofiq" />
           <div>
-            <h1 className="text-lg font-bold text-brown-900">Din platform</h1>
+            <h1 className="text-sm font-bold text-brown-900">Din White-Label Platform</h1>
             <p className="text-xs text-gray-500">Alt-i-én til autobranchen</p>
           </div>
         </div>

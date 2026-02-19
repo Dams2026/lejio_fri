@@ -3,9 +3,9 @@ const { Pool } = pg;
 
 const pool = new Pool({
   host: 'dpg-d6298k2g5rbc73f1k04g-a.frankfurt-postgres.render.com',
-  user: 'lejio_fri_db_user',
+  user: 'autofiq_db_user',
   password: 'F6TnsEAtqSG2o5FF2PTLgCvzB4ZyaHcQ',
-  database: 'lejio_fri_db',
+  database: 'autofiq_db',
   port: 5432,
   ssl: {
     rejectUnauthorized: false

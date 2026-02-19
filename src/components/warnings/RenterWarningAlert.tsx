@@ -36,7 +36,7 @@ export const RenterWarningAlert = ({ warnings }: RenterWarningAlertProps) => {
               ⚠️ Advarsel! {warnings.length} {warnings.length === 1 ? 'registrering' : 'registreringer'} fundet
             </h4>
             <p className="text-sm opacity-80">
-              Denne lejer har advarsler registreret af andre udlejere i LEJIO-systemet.
+              Denne lejer har advarsler registreret af andre udlejere i AUTOFIQ-systemet.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export const RenterWarningAlert = ({ warnings }: RenterWarningAlertProps) => {
           </div>
 
           <p className="text-xs opacity-70">
-            Overvej nøje om du vil godkende denne booking. Du kan kontakte LEJIO for mere information.
+            Overvej nøje om du vil godkende denne booking. Du kan kontakte AUTOFIQ for mere information.
           </p>
         </div>
       </div>

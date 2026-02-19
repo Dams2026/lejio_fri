@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Azure Deployment Script for Lejio Fri (DANSK)
+# Azure Deployment Script for AUTOFIQ (DANSK)
 # Kør dette i Azure Cloud Shell eller lokalt med Azure CLI
 # bash azure-deploy.sh
 
 set -e
 
-echo "🚀 Starter Azure Deployment for Lejio Fri..."
+echo "🚀 Starter Azure Deployment for AUTOFIQ..."
 
 # Konfiguration
-RESOURCE_GROUP="lejio-fri-rg"
+RESOURCE_GROUP="autofiq-rg"
 LOCATION="eastus"
-PROJECT_NAME="lejio-fri"
+PROJECT_NAME="autofiq"
 ENVIRONMENT="dev"
-DEPLOYMENT_NAME="lejio-fri-deployment-$(date +%s)"
+DEPLOYMENT_NAME="autofiq-deployment-$(date +%s)"
 
 # Farver til output
 GREEN='\033[0;32m'
@@ -135,18 +135,18 @@ echo "   VITE_API_URL=https://${FUNCTION_APP}/api"
 echo "   VITE_SQL_SERVER=${SQL_SERVER}"
 echo ""
 echo "2. Konfigurer GitHub Static Web Apps:"
-echo "   - Gå til Azure Portal → Static Web Apps → swa-lejio-fri-dev"
+echo "   - Gå til Azure Portal → Static Web Apps → swa-autofiq-dev"
 echo "   - Kopier Repository token fra Overview"
 echo "   - Tilføj til GitHub Secrets: AZURE_STATIC_WEB_APPS_API_TOKEN"
 echo ""
 echo "3. Kør database migrationer:"
-echo "   sqlcmd -S ${SQL_SERVER}.database.windows.net -U sqladmin -P <PASSWORD> -d lejio-fri"
+echo "   sqlcmd -S ${SQL_SERVER}.database.windows.net -U sqladmin -P <PASSWORD> -d autofiq"
 echo "   > :r supabase/migrations/azure-sql/001_initial_schema.sql"
 echo "   > :r supabase/migrations/azure-sql/006_test_martin_account.sql"
 echo ""
 echo "4. Deploy Azure Functions:"
 echo "   cd azure-functions"
-echo "   func azure functionapp publish func-lejio-fri-dev"
+echo "   func azure functionapp publish func-autofiq-dev"
 echo ""
 echo "5. Push til GitHub for at trigger Static Web Apps auto-deployment:"
 echo "   git add ."

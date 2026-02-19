@@ -17,7 +17,7 @@ async function createSQLUser() {
 
     // Connect with Azure AD token
     const config = {
-      server: 'lejio-fri-db.database.windows.net',
+      server: 'autofiq-db.database.windows.net',
       authentication: {
         type: 'azure-active-directory-access-token',
         options: {
@@ -55,10 +55,10 @@ async function createSQLUser() {
 
     await pool.close();
     console.log('\n✅ SQL User Created Successfully!');
-    console.log('Username: martin_lejio_user');
+    console.log('Username: martin_autofiq_user');
     console.log('Password: TestPassword123!');
-    console.log('Server: lejio-fri-db.database.windows.net');
-    console.log('Database: lejio_fri');
+    console.log('Server: autofiq-db.database.windows.net');
+    console.log('Database: autofiq');
     
   } catch (error) {
     console.error('❌ Error:', error.message);

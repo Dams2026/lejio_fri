@@ -17,12 +17,12 @@ const FleetWidgetDemo = () => {
   const [copied, setCopied] = useState(false);
   const [widgetKey, setWidgetKey] = useState(0);
 
-  const embedCode = `<!-- Lejio Fleet Widget -->
+  const embedCode = `<!-- AUTOFIQ Fleet Widget -->
 <div 
-  id="lejio-fleet-widget" 
+  id="autofiq-fleet-widget" 
   data-api-key="${apiKey}"${!showVehicles ? '\n  data-show-vehicles="false"' : ''}${!showServices ? '\n  data-show-services="false"' : ''}
 ></div>
-<script src="https://lejio.lovable.app/fleet-widget.js"></script>`;
+<script src="https://autofiq.lovable.app/fleet-widget.js"></script>`;
 
   const handleCopyCode = async () => {
     try {
@@ -206,14 +206,14 @@ const FleetWidgetDemo = () => {
                       <pre className="bg-muted p-3 rounded text-xs overflow-x-auto">
 {`useEffect(() => {
   const script = document.createElement('script');
-  script.src = 'https://lejio.lovable.app/fleet-widget.js';
+  script.src = 'https://autofiq.lovable.app/fleet-widget.js';
   document.body.appendChild(script);
   return () => script.remove();
 }, []);
 
 return (
   <div 
-    id="lejio-fleet-widget" 
+    id="autofiq-fleet-widget" 
     data-api-key="${apiKey}"
   />
 );`}
@@ -447,12 +447,12 @@ const WidgetPreview = ({
       {/* Footer */}
       <div className="p-3 bg-gray-50 border-t text-center">
         <a 
-          href="https://lejio.lovable.app" 
+          href="https://autofiq.lovable.app" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-xs text-muted-foreground hover:text-primary transition-colors"
         >
-          Powered by Lejio
+          Powered by AUTOFIQ
         </a>
       </div>
     </div>

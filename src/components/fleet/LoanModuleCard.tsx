@@ -290,7 +290,7 @@ export const LoanModuleCard = ({
             <div className="bg-accent/50 rounded-lg p-3 flex gap-2">
               <AlertTriangle className="w-5 h-5 text-accent-foreground flex-shrink-0" />
               <p className="text-sm text-muted-foreground">
-                LEJIO gennemgår din anmodning og beregner et forslag til afdrag baseret på din resterende kontraktperiode.
+                AUTOFIQ gennemgår din anmodning og beregner et forslag til afdrag baseret på din resterende kontraktperiode.
               </p>
             </div>
           </div>

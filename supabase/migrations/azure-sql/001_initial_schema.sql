@@ -1,5 +1,5 @@
--- Lejio Fri Azure SQL Database Schema
--- Database: lejio_fri_db
+-- AUTOFIQ Azure SQL Database Schema
+-- Database: autofiq_db
 -- Purpose: Multi-tenant lessor platform backend
 
 -- ============================================================================

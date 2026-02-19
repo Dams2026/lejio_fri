@@ -315,7 +315,7 @@ Forhandler ønsker at blive kontaktet (Hurtig kontakt):
               Forhandler-ansøgning
             </Badge>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Ansøg om partnerskab hos LEJIO
+              Ansøg om partnerskab hos AUTOFIQ
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Som forhandler gennemgår vi din ansøgning og kontakter dig inden for 1-2 hverdage 
@@ -803,7 +803,7 @@ Forhandler ønsker at blive kontaktet (Hurtig kontakt):
                               {formData.wantsCallback && <Check className="w-3 h-3 text-white" />}
                             </div>
                             <div>
-                              <p className="font-semibold">LEJIO skal hjælpe mig</p>
+                              <p className="font-semibold">AUTOFIQ skal hjælpe mig</p>
                               <p className="text-sm text-muted-foreground">Vi ringer dig op og finder den bedste løsning sammen</p>
                             </div>
                           </div>

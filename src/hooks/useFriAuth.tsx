@@ -35,7 +35,7 @@ export function useFriAuth(): UseFriAuthReturn {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        // Check session via cookie (server resolves lejio_sid)
+        // Check session via cookie (server resolves autofiq_sid)
         const response = await fetch(`${apiBaseUrl}/auth-session`, {
           credentials: 'include',
         });

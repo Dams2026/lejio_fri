@@ -195,7 +195,7 @@ serve(async (req) => {
       color: primaryColor,
     });
 
-    page.drawText("LEJIO", {
+    page.drawText("AUTOFIQ", {
       x: 50,
       y: height - 45,
       size: 24,
@@ -483,7 +483,7 @@ serve(async (req) => {
       color: rgb(0.9, 0.9, 0.9),
     });
 
-    page.drawText("Genereret af LEJIO - lejio.dk", {
+    page.drawText("Genereret af AUTOFIQ - autofiq.dk", {
       x: 50,
       y: 40,
       size: 8,

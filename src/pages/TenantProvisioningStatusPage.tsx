@@ -118,7 +118,7 @@ export function TenantProvisioningStatusPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            🚀 Din LEJIO FRI er på vej!
+            🚀 Din AUTOFIQ er på vej!
           </h1>
           <p className="text-lg text-gray-600">
             {status?.tenant?.name} bliver sat up nu...
@@ -245,7 +245,7 @@ export function TenantProvisioningStatusPage() {
               ✓ Din unikke domæne {status?.tenant?.domain} bliver acktiveret
             </p>
             <p>
-              ✓ Du får fuld adgang til alle LEJIO FRI features
+              ✓ Du får fuld adgang til alle AUTOFIQ features
             </p>
             <p className="text-gray-600 italic">
               Normalt tager dette 5-10 minutter. Du kan vente her eller vende tilbage senere.

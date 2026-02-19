@@ -402,7 +402,7 @@ export function FriDashboard() {
                 <p className="text-xs text-gray-500 mb-4">Kontakt os, så hjælper vi dig i gang</p>
                 <button
                   className="w-full text-sm font-semibold text-violet-600 bg-white hover:bg-violet-50 border border-violet-100 rounded-xl py-2.5 transition-colors"
-                  onClick={() => window.open('mailto:support@lejio.dk')}
+                  onClick={() => window.open('mailto:support@autofiq.dk')}
                 >
                   Kontakt support
                 </button>

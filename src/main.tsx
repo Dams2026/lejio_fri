@@ -93,7 +93,7 @@ const SentryApp = Sentry.withProfiler(App);
 
 // Initialize debug tracking - this WILL be in the minified bundle
 const debugInit = () => {
-  window.__LEJIO_DEBUG = {
+  window.__AUTOFIQ_DEBUG = {
     appVersion: "2026.02.05.001",
     bundleTime: Date.now(),
     environment: "production"

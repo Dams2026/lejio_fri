@@ -1,5 +1,5 @@
 {
-  "name": "lejio-api",
+  "name": "autofiq-api",
   "version": "1.0.0",
   "dependencies": {
     "pg": "^8.10.0",

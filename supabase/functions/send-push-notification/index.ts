@@ -64,7 +64,7 @@ const handler = async (req: Request): Promise<Response> => {
       icon: "/pwa-192x192.png",
       badge: "/pwa-192x192.png",
       url: url || "/",
-      tag: tag || "lejio-notification",
+      tag: tag || "autofiq-notification",
     });
 
     let sentCount = 0;

@@ -1,4 +1,4 @@
-# ✅ LEJIO FRI - SETUP COMPLETE & RUNNING
+# ✅ AUTOFIQ - SETUP COMPLETE & RUNNING
 
 **Status:** 🟢 PRODUCTION READY  
 **Date:** February 4, 2026  
@@ -15,9 +15,9 @@
 - **Result:** `npm run build` now succeeds in 11 seconds
 
 ### 2. Configured Database Connection ✅
-- Server: `lejio-fri-db.database.windows.net`
-- Database: `lejio_fri`
-- User: `martin_lejio_user`
+- Server: `autofiq-db.database.windows.net`
+- Database: `autofiq`
+- User: `martin_autofiq_user`
 - Updated `.env.azure` with all credentials
 - All Azure Functions configured to use env variables
 
@@ -43,13 +43,13 @@
 ### Immediate (This Session)
 **1. Create SQL User** (Server Admin Only)
 - Open SQL Server Management Studio (SSMS)
-- Connect to: `lejio-fri-db.database.windows.net`
+- Connect to: `autofiq-db.database.windows.net`
 - Run the SQL scripts in **QUICK_REFERENCE.md** (Step 1)
 
 **2. Test Connection**
 ```powershell
 $env:SQLCMDPASSWORD='TestPassword123!'
-sqlcmd -S tcp:lejio-fri-db.database.windows.net,1433 -U martin_lejio_user -d "lejio_fri" -C -Q "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES"
+sqlcmd -S tcp:autofiq-db.database.windows.net,1433 -U martin_autofiq_user -d "autofiq" -C -Q "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES"
 ```
 
 **3. Access Dev Server**
@@ -59,9 +59,9 @@ sqlcmd -S tcp:lejio-fri-db.database.windows.net,1433 -U martin_lejio_user -d "le
 ### For Deployment
 **1. Set Azure Environment Variables**
 ```
-DB_SERVER=lejio-fri-db.database.windows.net
-DB_NAME=lejio_fri
-DB_USER=martin_lejio_user
+DB_SERVER=autofiq-db.database.windows.net
+DB_NAME=autofiq
+DB_USER=martin_autofiq_user
 DB_PASSWORD=TestPassword123!
 ```
 
@@ -84,7 +84,7 @@ DB_PASSWORD=TestPassword123!
 ✅ Tailwind CSS + shadcn/ui
 ✅ React Router v6.30
 ✅ TanStack React Query
-✅ Supabase client (for Lejio auth)
+✅ Supabase client (for AUTOFIQ auth)
 ✅ Azure SDK (for blob storage)
 ```
 
@@ -103,7 +103,7 @@ DB_PASSWORD=TestPassword123!
 ✅ 14 tables created (fri_* schema)
 ✅ Sample data seeded
 ✅ Foreign key relationships
-✅ Ready for martin_lejio_user
+✅ Ready for martin_autofiq_user
 ```
 
 ### Infrastructure
@@ -152,7 +152,7 @@ DB_PASSWORD=TestPassword123!
 ✅ npm run dev          → http://localhost:8080 (RUNNING)
 ✅ npm run build        → dist/ (READY)
 ✅ npm run preview      → Preview build (Ready to run)
-✅ Database connected   → lejio-fri-db.database.windows.net (READY)
+✅ Database connected   → autofiq-db.database.windows.net (READY)
 ```
 
 ### Available Commands
@@ -186,7 +186,7 @@ Invoke-WebRequest -Uri $uri -Method GET
 ### Database
 ```powershell
 # Verify schema
-sqlcmd -S lejio-fri-db.database.windows.net -U martin_lejio_user -d lejio_fri -Q "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='dbo' ORDER BY TABLE_NAME;"
+sqlcmd -S autofiq-db.database.windows.net -U martin_autofiq_user -d autofiq -Q "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='dbo' ORDER BY TABLE_NAME;"
 ```
 
 ---
@@ -204,7 +204,7 @@ sqlcmd -S lejio-fri-db.database.windows.net -U martin_lejio_user -d lejio_fri -Q
 
 ## 💡 Key Features Ready
 
-### Lejio Fri (White-Label Rental Platform)
+### AUTOFIQ (White-Label Rental Platform)
 - ✅ Landing page with pricing tiers
 - ✅ User authentication (signup/login)
 - ✅ Lessor dashboard
@@ -217,7 +217,7 @@ sqlcmd -S lejio-fri-db.database.windows.net -U martin_lejio_user -d lejio_fri -Q
 - ✅ Analytics & reporting
 - ✅ Admin portal
 
-### Lejio Main (Private/Professional Rentals)
+### AUTOFIQ Main (Private/Professional Rentals)
 - ✅ Dashboard
 - ✅ Admin panel
 - ✅ User management
@@ -240,7 +240,7 @@ sqlcmd -S lejio-fri-db.database.windows.net -U martin_lejio_user -d lejio_fri -Q
 ## 🔗 Useful Links
 
 **Azure Portal:** https://portal.azure.com  
-**GitHub Repo:** https://github.com/martinjensen9988-sudo/lejio-b75cff1f  
+**GitHub Repo:** https://github.com/martinjensen9988-sudo/autofiq-b75cff1f  
 **Documentation:** See ./docs folder  
 **Status Page:** ./DATABASE_SETUP_COMPLETE.md  
 

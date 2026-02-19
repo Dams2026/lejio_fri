@@ -7,12 +7,12 @@
    - Migrations 004-007 created and deployed to Azure SQL
    - fri_pages, fri_page_blocks, fri_page_templates tables
    - fri_custom_domains, fri_block_types, fri_lessor_team_members
-   - Test data: martin@lejio.dk + test@lessor.dk accounts
-   - Database user: martin_lejio_user created
+   - Test data: martin@autofiq.dk + test@lessor.dk accounts
+   - Database user: martin_autofiq_user created
 
 2. **Frontend Refactor**
    - Removed all customer-facing routes
-   - Lejio Fri only: /fri/*, /fri/admin/*, /dashboard/pages/*, /site/*
+   - AUTOFIQ only: /fri/*, /fri/admin/*, /dashboard/pages/*, /site/*
    - 5 React components for page builder (PageBuilder, BlockComponents, BlockSettings, PublicSite, PagesDashboard)
    - usePages hook with mock data for testing
 
@@ -40,7 +40,7 @@
 
 ## Test Credentials
 ```
-Email: martin@lejio.dk
+Email: martin@autofiq.dk
 Password: TestPassword123!
 Lessor ID: lessor-martin-001
 Company: Martin Biludlejning
@@ -73,7 +73,7 @@ Vehicles: 3 (BMW, Audi, Volvo)
 ## Git Commits
 ```
 1. feat: add page builder system with database schema, API, and React components
-2. refactor: streamline to Lejio Fri only - remove customer-facing routes
+2. refactor: streamline to AUTOFIQ only - remove customer-facing routes
 3. fix: PWA service worker caching - include index.html and html files
 4. fix: disable PWA temporarily for auth testing
 5. feat: add test martin account migration
@@ -84,13 +84,13 @@ Vehicles: 3 (BMW, Audi, Volvo)
 
 ## Architecture Summary
 ```
-React Frontend (Lejio Fri Dashboard)
+React Frontend (AUTOFIQ Dashboard)
          ↓
    Azure Static Web Apps
          ↓
    Azure Functions (Serverless API)
          ↓
-   Azure SQL Database (lejio_fri)
+   Azure SQL Database (autofiq)
 ```
 
 **All code is production-ready for testing.**

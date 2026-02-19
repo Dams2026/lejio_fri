@@ -10,7 +10,7 @@
 ## What Was Built
 
 ### 🎯 Three Enterprise-Grade Features
-A complete corporate customer management system enabling LEJIO to serve mid-market and enterprise customers with sophisticated fleet management, budgeting, and invoicing capabilities.
+A complete corporate customer management system enabling AUTOFIQ to serve mid-market and enterprise customers with sophisticated fleet management, budgeting, and invoicing capabilities.
 
 #### 1️⃣ Employee Administration Portal
 - Manage up to 100+ employees per corporate account
@@ -173,7 +173,7 @@ A complete corporate customer management system enabling LEJIO to serve mid-mark
 ## Competitive Advantage
 
 ### vs. Traditional Leasing
-| Feature | LEJIO | Leasing Company |
+| Feature | AUTOFIQ | Leasing Company |
 |---------|-------|---|
 | Employee Management | ✅ Real-time | ❌ Manual forms |
 | Budget Tracking | ✅ Automated | ❌ Spreadsheets |
@@ -181,7 +181,7 @@ A complete corporate customer management system enabling LEJIO to serve mid-mark
 | Cost Control | ✅ Per-department | ❌ Company-wide |
 | Integration | ✅ API ready | ❌ Manual |
 
-### vs. Existing LEJIO Features
+### vs. Existing AUTOFIQ Features
 - **New Revenue Stream**: Corporate segment ($500-2K/month)
 - **Higher LTV**: 3-5x longer customer retention
 - **Operational Efficiency**: Reduced support overhead

@@ -1,5 +1,5 @@
-// Simple API client for Lejio Fri on Render
-// Uses cookie-based sessions (lejio_sid) — no Bearer tokens
+// Simple API client for AUTOFIQ on Render
+// Uses cookie-based sessions (autofiq_sid) — no Bearer tokens
 
 const API_BASE = '/api';
 

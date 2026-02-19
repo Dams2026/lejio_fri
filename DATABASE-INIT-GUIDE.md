@@ -1,8 +1,8 @@
-# Lejio Fri Database Initialization Guide
+# AUTOFIQ Database Initialization Guide
 
 ## 🚀 Quick Start
 
-Follow these two simple steps to initialize your Lejio Fri Azure SQL database.
+Follow these two simple steps to initialize your AUTOFIQ Azure SQL database.
 
 ### Step 1: Drop Existing Tables (ONLY IF UPGRADING)
 
@@ -11,7 +11,7 @@ Follow these two simple steps to initialize your Lejio Fri Azure SQL database.
 If you have existing `fri_*` tables, you need to drop them first.
 
 1. Go to [Azure Portal](https://portal.azure.com)
-2. Search for and open your SQL Database: **lejio-fri**
+2. Search for and open your SQL Database: **autofiq**
 3. Click **Query editor (preview)**
 4. Enter login credentials:
    - **Login**: sqladmin
@@ -138,4 +138,4 @@ If you encounter issues:
 ---
 
 **Last Updated**: February 3, 2026
-**Lejio Fri Database Schema**: v1.0
+**AUTOFIQ Database Schema**: v1.0

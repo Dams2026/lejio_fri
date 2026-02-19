@@ -25,17 +25,17 @@ interface SubscriptionConfirmationRequest {
 
 const TIER_INFO = {
   starter: {
-    name: "LEJIO Pro - Starter",
+    name: "AUTOFIQ Pro - Starter",
     maxVehicles: 5,
     price: 299,
   },
   standard: {
-    name: "LEJIO Pro - Standard",
+    name: "AUTOFIQ Pro - Standard",
     maxVehicles: 15,
     price: 499,
   },
   enterprise: {
-    name: "LEJIO Pro - Enterprise",
+    name: "AUTOFIQ Pro - Enterprise",
     maxVehicles: "35",
     price: 899,
   },
@@ -138,13 +138,13 @@ serve(async (req: Request): Promise<Response> => {
   <div class="container">
     <div class="header">
       <div class="success-icon">🎉</div>
-      <h1>Velkommen til LEJIO Pro!</h1>
+      <h1>Velkommen til AUTOFIQ Pro!</h1>
       <p>Dit abonnement er nu aktivt</p>
     </div>
     <div class="content">
       <div class="welcome-box">
         <h2>Hej ${displayName}!</h2>
-        <p>Tak fordi du valgte LEJIO Pro. Din konto er nu opgraderet og klar til brug.</p>
+        <p>Tak fordi du valgte AUTOFIQ Pro. Din konto er nu opgraderet og klar til brug.</p>
       </div>
 
       <div class="subscription-card">
@@ -229,21 +229,21 @@ serve(async (req: Request): Promise<Response> => {
         </div>
       </div>
 
-      <a href="https://lejio.dk/dashboard" class="cta-button">
+      <a href="https://autofiq.dk/dashboard" class="cta-button">
         🚀 Gå til dit dashboard
       </a>
 
       <div class="info-box">
         <h4>💳 Administrer dit abonnement</h4>
-        <p style="margin: 0;">Du kan til enhver tid ændre eller opsige dit abonnement via dine indstillinger på LEJIO. Gå til <strong>Indstillinger → Abonnement</strong> for at administrere din konto.</p>
+        <p style="margin: 0;">Du kan til enhver tid ændre eller opsige dit abonnement via dine indstillinger på AUTOFIQ. Gå til <strong>Indstillinger → Abonnement</strong> for at administrere din konto.</p>
       </div>
 
       <div class="footer">
-        <p><strong>LEJIO ApS</strong></p>
+        <p><strong>AUTOFIQ ApS</strong></p>
         <p>Denne email er din kvittering for abonnementsaktivering.</p>
-        <p>Har du spørgsmål? <a href="mailto:support@lejio.dk">support@lejio.dk</a></p>
+        <p>Har du spørgsmål? <a href="mailto:support@autofiq.dk">support@autofiq.dk</a></p>
         <p style="margin-top: 15px; font-size: 11px; color: #aaa;">
-          Du modtager denne email fordi du har aktiveret et Pro-abonnement på lejio.dk
+          Du modtager denne email fordi du har aktiveret et Pro-abonnement på autofiq.dk
         </p>
       </div>
     </div>
@@ -255,7 +255,7 @@ serve(async (req: Request): Promise<Response> => {
     await client.send({
       from: smtpFromEmail,
       to: data.email,
-      subject: `🎉 Velkommen til LEJIO Pro - Dit abonnement er aktiveret`,
+      subject: `🎉 Velkommen til AUTOFIQ Pro - Dit abonnement er aktiveret`,
       content: emailHtml,
       html: emailHtml,
     });

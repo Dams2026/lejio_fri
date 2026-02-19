@@ -2,7 +2,7 @@ const pool = require('../db');
 const { getSessionUserId } = require('../session');
 
 const testUsers = {
-  "test-martin": { id: "test-martin", email: "martin@lejio.dk", full_name: "Martin Jensen", lessor_id: "test-martin", company_name: "Lejio Test" },
+  "test-martin": { id: "test-martin", email: "martin@autofiq.dk", full_name: "Martin Jensen", lessor_id: "test-martin", company_name: "AUTOFIQ Test" },
   "test-user": { id: "test-user", email: "test@example.com", full_name: "Test User", lessor_id: "test-user", company_name: "Test Company" },
 };
 
@@ -43,7 +43,7 @@ module.exports = async function (context, req) {
         email: user.email,
         full_name: user.full_name,
         lessor_id: user.id,
-        company_name: user.company_name || 'Lejio',
+        company_name: user.company_name || 'AUTOFIQ',
       };
     } else {
       context.res.status = 200;

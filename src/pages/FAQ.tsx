@@ -36,7 +36,7 @@ const FAQ = () => {
       icon: User,
       questions: [
         {
-          q: "Hvordan lejer jeg en bil på LEJIO?",
+          q: "Hvordan lejer jeg en bil på AUTOFIQ?",
           a: "Det er nemt! Søg efter en bil i din ønskede lokation, vælg datoer, udfyld dine oplysninger og book. Du modtager en lejekontrakt, som du skal underskrive digitalt, før udlejningen kan begynde."
         },
         {
@@ -65,7 +65,7 @@ const FAQ = () => {
         },
         {
           q: "Hvad er en advarsel, og hvordan påvirker det mig?",
-          a: "En advarsel gives ved brud på lejeaftalen eller god skik. Hvis du har modtaget en advarsel, du er uenig i, har du ret til at gøre indsigelse. Kontakt os på hej@lejio.dk, hvis du ønsker at få revurderet en advarsel eller få den slettet, hvis dokumentationen ikke er korrekt."
+          a: "En advarsel gives ved brud på lejeaftalen eller god skik. Hvis du har modtaget en advarsel, du er uenig i, har du ret til at gøre indsigelse. Kontakt os på hej@autofiq.dk, hvis du ønsker at få revurderet en advarsel eller få den slettet, hvis dokumentationen ikke er korrekt."
         },
         {
           q: "Hvordan fungerer dynamisk selvrisiko?",
@@ -77,7 +77,7 @@ const FAQ = () => {
         },
         {
           q: "Hvad er henvisningsprogrammet?",
-          a: "Når du henviser en ven til LEJIO, får I begge 500 kr. i kredit. Del din personlige henvisningskode, og få kredit når din ven gennemfører sin første booking."
+          a: "Når du henviser en ven til AUTOFIQ, får I begge 500 kr. i kredit. Del din personlige henvisningskode, og få kredit når din ven gennemfører sin første booking."
         }
       ]
     },
@@ -90,16 +90,16 @@ const FAQ = () => {
           a: "Opret en konto, vælg om du er privat udlejer eller forhandler, tilføj dine køretøjer med billeder og priser, og du er klar til at modtage bookinger!"
         },
         {
-          q: "Hvad koster det at bruge LEJIO?",
+          q: "Hvad koster det at bruge AUTOFIQ?",
           a: "For private udlejere koster det 59 kr pr. booking. For professionelle forhandlere har vi tre pakker: Starter (349 kr./md.), Standard (599 kr./md.) og Enterprise (899 kr./md.). Alle professionelle pakker tillægges en kommission på 3% pr. gennemført udlejning."
         },
         {
           q: "Hvordan får jeg mine penge?",
-          a: "LEJIO fungerer som den tekniske platform, der formidler kontakten og kontrakten. Selve betalingen for lejen og depositum afregnes direkte mellem lejer og udlejer (f.eks. via MobilePay eller bankoverførsel). LEJIO fakturerer efterfølgende udlejeren for platformens kommission."
+          a: "AUTOFIQ fungerer som den tekniske platform, der formidler kontakten og kontrakten. Selve betalingen for lejen og depositum afregnes direkte mellem lejer og udlejer (f.eks. via MobilePay eller bankoverførsel). AUTOFIQ fakturerer efterfølgende udlejeren for platformens kommission."
         },
         {
           q: "Skal jeg have forsikring på min bil?",
-          a: "Som udlejer på LEJIO er det dit eget ansvar at sikre, at dit køretøj er korrekt forsikret til udlejning. LEJIO tilbyder ikke en kollektiv forsikring. Vi anbefaler altid, at du kontakter dit forsikringsselskab og informerer dem om, at du udlejer dit køretøj via en platform."
+          a: "Som udlejer på AUTOFIQ er det dit eget ansvar at sikre, at dit køretøj er korrekt forsikret til udlejning. AUTOFIQ tilbyder ikke en kollektiv forsikring. Vi anbefaler altid, at du kontakter dit forsikringsselskab og informerer dem om, at du udlejer dit køretøj via en platform."
         },
         {
           q: "Hvordan opretter jeg en advarsel mod en lejer?",
@@ -110,8 +110,8 @@ const FAQ = () => {
           a: "Private udlejere betaler pr. booking (59 kr), mens Forhandlere (med CVR) betaler fast månedsbeløb (fra 349 kr/md) + 3% kommission pr. booking. Forhandlere kan uploade firmalogo til kontrakter og får adgang til alle Pro-funktioner."
         },
         {
-          q: "Hvordan fungerer LEJIO Varetager?",
-          a: "Med LEJIO Varetager håndterer vi platform og kundeservice (15% kommission), eller alt inkl. afhentning, levering og rengøring (10% kommission). Kontakt os for mere info."
+          q: "Hvordan fungerer AUTOFIQ Varetager?",
+          a: "Med AUTOFIQ Varetager håndterer vi platform og kundeservice (15% kommission), eller alt inkl. afhentning, levering og rengøring (10% kommission). Kontakt os for mere info."
         },
         {
           q: "Kan jeg have flere udlejningslokationer?",
@@ -175,7 +175,7 @@ const FAQ = () => {
         },
         {
           q: "Hvordan dokumenterer jeg bilens stand?",
-          a: "Både ved udlevering og aflevering skal der tages tydelige billeder af køretøjet fra alle fire sider samt af interiør og kilometerstand. Disse billeder er jeres primære dokumentation i tilfælde af en skade. LEJIO gemmer disse billeder sammen med lejekontrakten, men det er altid udlejerens ansvar at sikre, at billederne er skarpe og dækkende."
+          a: "Både ved udlevering og aflevering skal der tages tydelige billeder af køretøjet fra alle fire sider samt af interiør og kilometerstand. Disse billeder er jeres primære dokumentation i tilfælde af en skade. AUTOFIQ gemmer disse billeder sammen med lejekontrakten, men det er altid udlejerens ansvar at sikre, at billederne er skarpe og dækkende."
         }
       ]
     },
@@ -185,11 +185,11 @@ const FAQ = () => {
       questions: [
         {
           q: "Hvordan sender jeg en bøde videre til lejeren?",
-          a: "Hvis du modtager en parkeringsbøde eller en fartbøde i udlejningsperioden, skal du som udlejer indsende dokumentation for lejeforholdet (lejekontrakten fra LEJIO) til den relevante myndighed eller p-selskab. Herefter vil ansvaret for bøden normalt blive overført til lejeren."
+          a: "Hvis du modtager en parkeringsbøde eller en fartbøde i udlejningsperioden, skal du som udlejer indsende dokumentation for lejeforholdet (lejekontrakten fra AUTOFIQ) til den relevante myndighed eller p-selskab. Herefter vil ansvaret for bøden normalt blive overført til lejeren."
         },
         {
           q: "Kan jeg tage et administrationsgebyr?",
-          a: "Ja! Som udlejer kan du opkræve et administrationsgebyr for håndtering af bøder, hvis dette er angivet i dine lejebetingelser. LEJIO anbefaler et standardgebyr på f.eks. 250 kr. for besværet. Du kan indstille gebyret fra 0-800 kr i dit dashboard."
+          a: "Ja! Som udlejer kan du opkræve et administrationsgebyr for håndtering af bøder, hvis dette er angivet i dine lejebetingelser. AUTOFIQ anbefaler et standardgebyr på f.eks. 250 kr. for besværet. Du kan indstille gebyret fra 0-800 kr i dit dashboard."
         },
         {
           q: "Hvordan ved lejeren, at de har fået en bøde?",
@@ -197,7 +197,7 @@ const FAQ = () => {
         },
         {
           q: "Hvad hvis lejeren bestrider bøden?",
-          a: "Kommuniker med lejeren via beskedsystemet. Har du dokumentation fra check-in/check-out, kan denne bruges som bevis. Ved alvorlige tvister kan LEJIO mægle."
+          a: "Kommuniker med lejeren via beskedsystemet. Har du dokumentation fra check-in/check-out, kan denne bruges som bevis. Ved alvorlige tvister kan AUTOFIQ mægle."
         },
         {
           q: "Hvilke typer afgifter kan jeg registrere?",
@@ -240,7 +240,7 @@ const FAQ = () => {
       icon: Bike,
       questions: [
         {
-          q: "Hvordan validerer LEJIO MC-kørekort?",
+          q: "Hvordan validerer AUTOFIQ MC-kørekort?",
           a: "Ved booking af motorcykler tjekker systemet automatisk lejerens kørekorttype (A1, A2, A) mod motorcyklens effekt. Er kørekortet ikke tilstrækkeligt, afvises bookingen."
         },
         {
@@ -256,7 +256,7 @@ const FAQ = () => {
           a: "Ja! MC Check-in guiden fokuserer på MC-specifikke kontrolpunkter som kæde, dæk, bremser, lys og udstyr (hjelm, handsker). Dette sikrer grundig dokumentation."
         },
         {
-          q: "Kan jeg leje scootere ud via LEJIO?",
+          q: "Kan jeg leje scootere ud via AUTOFIQ?",
           a: "Absolut! Scootere og knallerter håndteres på samme måde som motorcykler, med passende kørekortvalidering (AM/A1) afhængig af scooterens specifikationer."
         }
       ]
@@ -440,20 +440,20 @@ const FAQ = () => {
       icon: Shield,
       questions: [
         {
-          q: "Hvordan verificerer LEJIO lejeres identitet?",
+          q: "Hvordan verificerer AUTOFIQ lejeres identitet?",
           a: "Vi kræver foto-upload af kørekort, som valideres med AI. Derudover kan du som udlejer kræve fysisk fremvisning ved afhentning."
         },
         {
           q: "Hvad dækker forsikringen?",
-          a: "Som udlejer på LEJIO er det dit eget ansvar at sikre, at dit køretøj er korrekt forsikret til udlejning. LEJIO tilbyder ikke en kollektiv forsikring. Vi anbefaler altid, at du kontakter dit forsikringsselskab og informerer dem om, at du udlejer dit køretøj via en platform."
+          a: "Som udlejer på AUTOFIQ er det dit eget ansvar at sikre, at dit køretøj er korrekt forsikret til udlejning. AUTOFIQ tilbyder ikke en kollektiv forsikring. Vi anbefaler altid, at du kontakter dit forsikringsselskab og informerer dem om, at du udlejer dit køretøj via en platform."
         },
         {
           q: "Hvordan håndteres skader?",
-          a: "Hvis der opstår en skade, skal den registreres i LEJIO-appen med det samme ved check-out. Da forsikringsforholdet er mellem udlejer og dennes forsikringsselskab, skal skadesanmeldelsen ske direkte til forsikringen. LEJIO leverer de nødvendige data (kontrakt, tjekliste og fotos) til brug for din skadessag."
+          a: "Hvis der opstår en skade, skal den registreres i AUTOFIQ-appen med det samme ved check-out. Da forsikringsforholdet er mellem udlejer og dennes forsikringsselskab, skal skadesanmeldelsen ske direkte til forsikringen. AUTOFIQ leverer de nødvendige data (kontrakt, tjekliste og fotos) til brug for din skadessag."
         },
         {
           q: "Hvad er vanvidskørsel-klausulen?",
-          a: "I lejekontrakten, som genereres via LEJIO, accepterer lejeren det fulde økonomiske ansvar for køretøjets værdi i tilfælde af vanvidskørsel. Dette betyder, at hvis bilen beslaglægges eller konfiskeres af politiet som følge af lejerens kørsel, hæfter lejeren for bilens fulde værdi over for ejeren."
+          a: "I lejekontrakten, som genereres via AUTOFIQ, accepterer lejeren det fulde økonomiske ansvar for køretøjets værdi i tilfælde af vanvidskørsel. Dette betyder, at hvis bilen beslaglægges eller konfiskeres af politiet som følge af lejerens kørsel, hæfter lejeren for bilens fulde værdi over for ejeren."
         }
       ]
     },
@@ -463,10 +463,10 @@ const FAQ = () => {
       questions: [
         {
           q: "Hvordan modtager jeg betaling?",
-          a: "LEJIO fungerer som den tekniske platform, der formidler kontakten og kontrakten. Selve betalingen for lejen og depositum afregnes direkte mellem lejer og udlejer (f.eks. via MobilePay eller bankoverførsel). LEJIO fakturerer efterfølgende udlejeren for platformens kommission."
+          a: "AUTOFIQ fungerer som den tekniske platform, der formidler kontakten og kontrakten. Selve betalingen for lejen og depositum afregnes direkte mellem lejer og udlejer (f.eks. via MobilePay eller bankoverførsel). AUTOFIQ fakturerer efterfølgende udlejeren for platformens kommission."
         },
         {
-          q: "Hvad koster det at bruge LEJIO?",
+          q: "Hvad koster det at bruge AUTOFIQ?",
           a: "For private udlejere koster det 59 kr pr. booking. For professionelle forhandlere har vi tre pakker: Starter (349 kr./md.), Standard (599 kr./md.) og Enterprise (899 kr./md.). Alle professionelle pakker tillægges en kommission på 3% pr. gennemført udlejning."
         },
         {
@@ -497,7 +497,7 @@ const FAQ = () => {
         },
         {
           q: "Hvad hvis lejeren ikke underskriver?",
-          a: "Udlever aldrig nøglerne til et køretøj, før lejekontrakten er underskrevet digitalt via LEJIO, og du har set gyldig legitimation (kørekort). En udlevering uden underskrevet kontrakt betyder, at du ikke er dækket af platformens vilkår eller din forsikring."
+          a: "Udlever aldrig nøglerne til et køretøj, før lejekontrakten er underskrevet digitalt via AUTOFIQ, og du har set gyldig legitimation (kørekort). En udlevering uden underskrevet kontrakt betyder, at du ikke er dækket af platformens vilkår eller din forsikring."
         }
       ]
     },
@@ -507,7 +507,7 @@ const FAQ = () => {
       questions: [
         {
           q: "Hvordan kontakter jeg support?",
-          a: "Brug Live Chat i appen for hurtig hjælp. Du kan også ringe til os på 91 99 89 29 eller sende email til support@lejio.dk på hverdage 9-17."
+          a: "Brug Live Chat i appen for hurtig hjælp. Du kan også ringe til os på 91 99 89 29 eller sende email til support@autofiq.dk på hverdage 9-17."
         },
         {
           q: "Er der videoguides?",
@@ -569,7 +569,7 @@ const FAQ = () => {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-bold text-primary mb-8 animate-slide-up">
                 <Zap className="w-4 h-4" />
-                <span>Alt du skal vide om LEJIO</span>
+                <span>Alt du skal vide om AUTOFIQ</span>
               </div>
               
               <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-black mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>

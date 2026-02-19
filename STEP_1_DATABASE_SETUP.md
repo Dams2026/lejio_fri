@@ -30,7 +30,7 @@ supabase login
 
 #### 3. Navigate to project
 ```bash
-cd /path/to/lejio-b75cff1f
+cd /path/to/autofiq-b75cff1f
 ```
 
 #### 4. Push migrations to your Supabase project

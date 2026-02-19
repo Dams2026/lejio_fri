@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lejio Fri - Row Level Security & Security Policies
+-- AUTOFIQ - Row Level Security & Security Policies
 -- Purpose: Ensure lessors can only see/edit their own data
 -- ============================================================================
 

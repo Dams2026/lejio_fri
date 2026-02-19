@@ -48,7 +48,7 @@ module.exports = async function (context, req) {
       `;
       params = [domain];
     } else {
-      // Look up by subdomain (e.g., "customer-name" from "customer-name.lejio-fri.dk")
+      // Look up by subdomain (e.g., "customer-name" from "customer-name.autofiq.dk")
       query = `
         SELECT 
           id,

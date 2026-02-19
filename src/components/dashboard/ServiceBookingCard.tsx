@@ -76,10 +76,10 @@ export const ServiceBookingCard = ({ vehicleId, serviceReminderId, onBooked }: S
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Wrench className="w-5 h-5 text-primary" />
-          LEJIO Værksted
+          AUTOFIQ Værksted
         </CardTitle>
         <CardDescription>
-          Book service direkte hos LEJIOs eget værksted med et klik
+          Book service direkte hos AUTOFIQs eget værksted med et klik
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -87,7 +87,7 @@ export const ServiceBookingCard = ({ vehicleId, serviceReminderId, onBooked }: S
         <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 space-y-2">
           <div className="flex items-center gap-2 text-sm">
             <MapPin className="w-4 h-4 text-primary" />
-            <span>LEJIO Værksted, Industrivej 12, 2630 Taastrup</span>
+            <span>AUTOFIQ Værksted, Industrivej 12, 2630 Taastrup</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
             <Phone className="w-4 h-4 text-primary" />
@@ -161,7 +161,7 @@ export const ServiceBookingCard = ({ vehicleId, serviceReminderId, onBooked }: S
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Book værkstedstid hos LEJIO</DialogTitle>
+              <DialogTitle>Book værkstedstid hos AUTOFIQ</DialogTitle>
               <DialogDescription>
                 Vælg service type og foretrukken dato
               </DialogDescription>

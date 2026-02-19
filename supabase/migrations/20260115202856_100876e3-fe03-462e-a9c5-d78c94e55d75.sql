@@ -45,7 +45,7 @@ CREATE TRIGGER update_fines_updated_at
   EXECUTE FUNCTION public.update_updated_at_column();
 
 -- ==========================================
--- 2. SERVICE BOOKINGS TABLE (for Lejio workshop)
+-- 2. SERVICE BOOKINGS TABLE (for AUTOFIQ workshop)
 -- ==========================================
 CREATE TABLE public.service_bookings (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -175,7 +175,7 @@ SET search_path TO 'public'
 AS $$
 DECLARE
   chars TEXT := 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  result TEXT := 'LEJIO-';
+  result TEXT := 'AUTOFIQ-';
   i INTEGER;
 BEGIN
   FOR i IN 1..6 LOOP

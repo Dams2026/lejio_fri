@@ -1,6 +1,6 @@
-import { HttpRequest, HttpResponseInit, app } from '@azure/functions';
-import { createClient } from '@supabase/supabase-js';
-import * as nodemailer from 'nodemailer';
+const { createClient } = require('@supabase/supabase-js');
+const nodemailer = require('nodemailer');
+
 
 const supabaseUrl = process.env.SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY || '';
@@ -9,7 +9,17 @@ const mailPort = parseInt(process.env.MAIL_PORT || '587');
 const mailUser = process.env.MAIL_USER || '';
 const mailPassword = process.env.MAIL_PASSWORD || '';
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+let supabase = null;
+
+function getSupabase() {
+  if (!supabase) {
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Supabase env vars missing');
+    }
+    supabase = createClient(supabaseUrl, supabaseKey);
+  }
+  return supabase;
+}
 
 const transporter = nodemailer.createTransport({
   host: mailHost,
@@ -30,7 +40,7 @@ const transporter = nodemailer.createTransport({
 
 async function sendInvoicePaymentRequest(request) {
   try {
-    const body = await request.json();
+    const body = request.body || {};
     const { invoiceId, email, paymentMethod = 'invoice' } = body;
 
     if (!invoiceId || !email) {
@@ -41,7 +51,7 @@ async function sendInvoicePaymentRequest(request) {
     }
 
     // Get invoice details
-    const { data: invoice, error: invoiceError } = await supabase
+    const { data: invoice, error: invoiceError } = await getSupabase()
       .from('invoices')
       .select('*, bookings(*, lessor_id)')
       .eq('id', invoiceId)
@@ -55,7 +65,7 @@ async function sendInvoicePaymentRequest(request) {
     }
 
     // Get lessor details
-    const { data: lessor, error: lessorError } = await supabase
+    const { data: lessor, error: lessorError } = await getSupabase()
       .from('profiles')
       .select('company_name, email, full_name')
       .eq('id', invoice.bookings.lessor_id)
@@ -72,7 +82,7 @@ async function sendInvoicePaymentRequest(request) {
     const bankDetails = `
       <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
         <h3 style="margin-top: 0;">Bankoplysninger</h3>
-        <p><strong>Modtager:</strong> LEJIO ApS</p>
+        <p><strong>Modtager:</strong> AUTOFIQ ApS</p>
         <p><strong>IBAN:</strong> DK5520000000000000000000</p>
         <p><strong>BIC:</strong> NORSDK22</p>
         <p><strong>Reference:</strong> ${invoice.invoice_number}</p>
@@ -85,7 +95,7 @@ async function sendInvoicePaymentRequest(request) {
         ? bankDetails
         : `
         <p>Du kan betale denne faktura ved at klikke på knappen nedenfor:</p>
-        <a href="https://lejio.dk/invoices/${invoiceId}/pay" 
+        <a href="https://autofiq.dk/invoices/${invoiceId}/pay" 
            style="display: inline-block; background-color: #667eea; color: white; padding: 12px 24px; 
                   border-radius: 8px; text-decoration: none; font-weight: 600; margin: 20px 0;">
           Betal nu
@@ -132,14 +142,14 @@ async function sendInvoicePaymentRequest(request) {
               
               <div style="background-color: #e8f4f8; padding: 15px; border-left: 4px solid #667eea; margin: 20px 0;">
                 <p style="margin: 0;">
-                  <strong>Spørgsmål?</strong> Kontakt vores support på support@lejio.dk
+                  <strong>Spørgsmål?</strong> Kontakt vores support på support@autofiq.dk
                 </p>
               </div>
             </div>
             
             <div class="footer">
-              <p>Denne email er sendt automatisk fra LEJIO. Du kan ikke svare direkte på denne email.</p>
-              <p>&copy; 2026 LEJIO ApS. Alle rettigheder forbeholdt.</p>
+              <p>Denne email er sendt automatisk fra AUTOFIQ. Du kan ikke svare direkte på denne email.</p>
+              <p>&copy; 2026 AUTOFIQ ApS. Alle rettigheder forbeholdt.</p>
             </div>
           </div>
         </body>
@@ -148,15 +158,15 @@ async function sendInvoicePaymentRequest(request) {
 
     // Send email
     await transporter.sendMail({
-      from: process.env.MAIL_FROM || 'noreply@lejio.dk',
+      from: process.env.MAIL_FROM || 'noreply@autofiq.dk',
       to: email,
       subject: `Betalingsanmodning - Faktura ${invoice.invoice_number}`,
       html: emailContent,
-      text: `Betalingsanmodning for faktura ${invoice.invoice_number}\n\nBeløb: ${invoice.amount} kr\nForfaldsdato: ${new Date(invoice.due_date).toLocaleDateString('da-DK')}\n\nBetaling kan foretages på: https://lejio.dk/invoices/${invoiceId}/pay`,
+      text: `Betalingsanmodning for faktura ${invoice.invoice_number}\n\nBeløb: ${invoice.amount} kr\nForfaldsdato: ${new Date(invoice.due_date).toLocaleDateString('da-DK')}\n\nBetaling kan foretages på: https://autofiq.dk/invoices/${invoiceId}/pay`,
     });
 
     // Update invoice record
-    await supabase
+    await getSupabase()
       .from('invoices')
       .update({
         payment_method: paymentMethod,
@@ -184,8 +194,11 @@ async function sendInvoicePaymentRequest(request) {
   }
 }
 
-app.function('SendInvoicePaymentRequest', {
-  methods: ['POST'],
-  authLevel: 'anonymous',
-  handler: sendInvoicePaymentRequest,
-});
+module.exports = async function (context, request) {
+  const result = await sendInvoicePaymentRequest(request);
+  return {
+    status: result?.status || 200,
+    headers: result?.headers || {},
+    body: result?.jsonBody ?? result?.body ?? null,
+  };
+};

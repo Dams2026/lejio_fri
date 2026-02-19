@@ -6,10 +6,10 @@ const LeaderSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
-            Mød folkene bag <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Lejio</span>
+            Mød folkene bag <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AUTOFIQ</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Bag Lejio.dk står et dedikeret team med en passion for teknologi og mobilitet.
+            Bag AUTOFIQ.dk står et dedikeret team med en passion for teknologi og mobilitet.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ const LeaderSection = () => {
               <h3 className="font-display text-2xl font-bold mb-1">Rasmus Damsgaard</h3>
               <p className="text-primary font-medium mb-4">Medstifter & Partner</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Som medstifter og daglig leder er Rasmus hjertet bag Lejio. Han har været med fra dag ét og brænder for at skabe Danmarks mest brugervenlige udlejningsplatform. Med fokus på teknologi og kundeservice sikrer han, at både udlejere og lejere får en problemfri oplevelse. Hos Lejio er hjælpen aldrig mere end et opkald væk.
+                Som medstifter og daglig leder er Rasmus hjertet bag AUTOFIQ. Han har været med fra dag ét og brænder for at skabe Danmarks mest brugervenlige udlejningsplatform. Med fokus på teknologi og kundeservice sikrer han, at både udlejere og lejere får en problemfri oplevelse. Hos AUTOFIQ er hjælpen aldrig mere end et opkald væk.
               </p>
             </div>
           </div>

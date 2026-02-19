@@ -48,7 +48,7 @@ module.exports = async function (context, req) {
     password: process.env.POSTGRES_PASSWORD,
   });
 
-  const baseUrl = process.env.SITE_URL || 'https://lejio-fri.onrender.com';
+  const baseUrl = process.env.SITE_URL || 'https://autofiq.onrender.com';
   const results = [];
 
   try {

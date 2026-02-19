@@ -131,7 +131,7 @@ Deno.serve(async (req) => {
         });
         const monthlyGrossRevenue = vehicleMonthlyBookings.reduce((sum: number, b: unknown) => sum + (b.total_price || 0), 0);
 
-        const lejioCommissionAmount = monthlyGrossRevenue * commissionRate;
+        const autofiqCommissionAmount = monthlyGrossRevenue * commissionRate;
 
         const vehicleLoans = loansData.filter((l: unknown) => l.vehicle_id === vehicle.id);
         const activeLoan = vehicleLoans[0] || null;
@@ -141,7 +141,7 @@ Deno.serve(async (req) => {
         const loanIds = vehicleLoans.map((l: unknown) => l.id);
         const loanPaymentHistory = loanPaymentsData.filter((p: unknown) => loanIds.includes(p.loan_id));
 
-        const netPayout = monthlyGrossRevenue - lejioCommissionAmount - monthlyInstallment;
+        const netPayout = monthlyGrossRevenue - autofiqCommissionAmount - monthlyInstallment;
 
         const daysRentedThisYear = vehicleYearlyBookings.reduce((total: number, booking: unknown) => {
           const start = new Date(Math.max(new Date(booking.start_date).getTime(), new Date(yearStart).getTime()));
@@ -206,7 +206,7 @@ Deno.serve(async (req) => {
           monthlyGrossRevenue,
           yearlyGrossRevenue,
           commissionRate,
-          lejioCommissionAmount,
+          autofiqCommissionAmount,
           cleaningFees: 0,
           netPayout,
           activeLoan: activeLoan ? {
@@ -263,7 +263,7 @@ Deno.serve(async (req) => {
 
       const totalMonthlyGrossRevenue = processedVehicles.reduce((sum: number, v: unknown) => sum + v.monthlyGrossRevenue, 0);
       const totalYearlyGrossRevenue = processedVehicles.reduce((sum: number, v: unknown) => sum + v.yearlyGrossRevenue, 0);
-      const totalCommission = processedVehicles.reduce((sum: number, v: unknown) => sum + v.lejioCommissionAmount, 0);
+      const totalCommission = processedVehicles.reduce((sum: number, v: unknown) => sum + v.autofiqCommissionAmount, 0);
       const totalMonthlyInstallments = processedVehicles.reduce((sum: number, v: unknown) => sum + v.monthlyInstallment, 0);
       const totalLoanBalance = processedVehicles.reduce((sum: number, v: unknown) => sum + v.totalLoanBalance, 0);
       const finalNetPayout = processedVehicles.reduce((sum: number, v: unknown) => sum + v.netPayout, 0);
@@ -298,7 +298,7 @@ Deno.serve(async (req) => {
     // Calculate global summary
     const globalTotalMonthlyGross = allProcessedVehicles.reduce((sum: number, v: unknown) => sum + v.monthlyGrossRevenue, 0);
     const globalTotalYearlyGross = allProcessedVehicles.reduce((sum: number, v: unknown) => sum + v.yearlyGrossRevenue, 0);
-    const globalTotalCommission = allProcessedVehicles.reduce((sum: number, v: unknown) => sum + v.lejioCommissionAmount, 0);
+    const globalTotalCommission = allProcessedVehicles.reduce((sum: number, v: unknown) => sum + v.autofiqCommissionAmount, 0);
     const globalTotalInstallments = allProcessedVehicles.reduce((sum: number, v: unknown) => sum + v.monthlyInstallment, 0);
     const globalTotalLoanBalance = allProcessedVehicles.reduce((sum: number, v: unknown) => sum + v.totalLoanBalance, 0);
     const globalFinalNetPayout = allProcessedVehicles.reduce((sum: number, v: unknown) => sum + v.netPayout, 0);

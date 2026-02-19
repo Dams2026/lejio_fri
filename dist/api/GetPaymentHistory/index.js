@@ -1,10 +1,20 @@
-import { HttpRequest, HttpResponseInit, app } from '@azure/functions';
-import { createClient } from '@supabase/supabase-js';
+const { createClient } = require('@supabase/supabase-js');
+
 
 const supabaseUrl = process.env.SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY || '';
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+let supabase = null;
+
+function getSupabase() {
+  if (!supabase) {
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Supabase env vars missing');
+    }
+    supabase = createClient(supabaseUrl, supabaseKey);
+  }
+  return supabase;
+}
 
 /**
  * @typedef {Object} PaymentHistoryResponse
@@ -17,9 +27,9 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function getPaymentHistory(request) {
   try {
-    const lessorId = request.query.get('lessor_id');
-    const startDate = request.query.get('start_date');
-    const endDate = request.query.get('end_date');
+    const lessorId = request.query?.lessor_id;
+    const startDate = request.query?.start_date;
+    const endDate = request.query?.end_date;
 
     if (!lessorId) {
       return {
@@ -29,7 +39,7 @@ async function getPaymentHistory(request) {
     }
 
     // Get all invoices for this lessor
-    let query = supabase
+    let query = getSupabase()
       .from('invoices')
       .select(
         'id, invoice_number, amount, due_date, status, payment_date, payment_method, created_at, bookings(lessor:profiles(company_name, full_name))'
@@ -55,7 +65,7 @@ async function getPaymentHistory(request) {
     }
 
     // Get lessor details
-    const { data: lessor } = await supabase
+    const { data: lessor } = await getSupabase()
       .from('profiles')
       .select('company_name, full_name, email')
       .eq('id', lessorId)
@@ -93,8 +103,7 @@ async function getPaymentHistory(request) {
           );
           paymentTimes.push(daysToPay);
         } else if (inv.status !== 'cancelled') {
-          const status: 'unpaid' | 'overdue' =
-            new Date(inv.due_date) < today ? 'overdue' : 'unpaid';
+          const status = new Date(inv.due_date) < today ? 'overdue' : 'unpaid';
           if (status === 'overdue') {
             overdueCount++;
           }
@@ -149,8 +158,11 @@ async function getPaymentHistory(request) {
   }
 }
 
-app.function('GetPaymentHistory', {
-  methods: ['GET'],
-  authLevel: 'anonymous',
-  handler: getPaymentHistory,
-});
+module.exports = async function (context, request) {
+  const result = await getPaymentHistory(request);
+  return {
+    status: result?.status || 200,
+    headers: result?.headers || {},
+    body: result?.jsonBody ?? result?.body ?? null,
+  };
+};

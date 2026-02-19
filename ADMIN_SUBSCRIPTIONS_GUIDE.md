@@ -283,7 +283,7 @@ MAIL_HOST=smtp.sendgrid.net
 MAIL_PORT=587
 MAIL_USER=apikey
 MAIL_PASSWORD=${SENDGRID_API_KEY}
-MAIL_FROM=noreply@lejio.dk
+MAIL_FROM=noreply@autofiq.dk
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 ```
@@ -333,5 +333,5 @@ STRIPE_WEBHOOK_SECRET=
 ## Support
 
 For issues or questions about payment processing, contact:
-- Technical: support@lejio.dk
-- Billing: billing@lejio.dk
+- Technical: support@autofiq.dk
+- Billing: billing@autofiq.dk

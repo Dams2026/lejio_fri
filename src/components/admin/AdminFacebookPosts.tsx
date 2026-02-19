@@ -96,7 +96,7 @@ const AdminFacebookPosts = () => {
   const [generatedPost, setGeneratedPost] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [isPosting, setIsPosting] = useState(false);
-  const [postType, setPostType] = useState<'dagens_bil' | 'promotion' | 'custom' | 'lejio_promo'>('dagens_bil');
+  const [postType, setPostType] = useState<'dagens_bil' | 'promotion' | 'custom' | 'autofiq_promo'>('dagens_bil');
   const [showPromoDialog, setShowPromoDialog] = useState(false);
   
   // Target audience
@@ -161,8 +161,8 @@ const AdminFacebookPosts = () => {
   }, []);
 
   const handleGeneratePost = async () => {
-    // For lejio_promo, we don't need a vehicle
-    if (postType !== 'lejio_promo' && !selectedVehicle) {
+    // For autofiq_promo, we don't need a vehicle
+    if (postType !== 'autofiq_promo' && !selectedVehicle) {
       toast.error('Vælg venligst et køretøj først');
       return;
     }
@@ -241,7 +241,7 @@ const AdminFacebookPosts = () => {
   const openPromoDialog = () => {
     setSelectedVehicle(null);
     setGeneratedPost('');
-    setPostType('lejio_promo');
+    setPostType('autofiq_promo');
     setTargetAudience('private');
     setCustomTargetAudience('');
     setShowPromoDialog(true);
@@ -317,21 +317,21 @@ const AdminFacebookPosts = () => {
         {/* Create Post Tab */}
         <TabsContent value="create">
           <div className="space-y-6">
-            {/* LEJIO Promo Card */}
+            {/* AUTOFIQ Promo Card */}
             <Card className="border-primary/50 bg-gradient-to-br from-primary/5 to-transparent">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-primary" />
-                  LEJIO Reklame
+                  AUTOFIQ Reklame
                 </CardTitle>
                 <CardDescription>
-                  Opret et generelt reklameopslag for LEJIO uden specifikt køretøj
+                  Opret et generelt reklameopslag for AUTOFIQ uden specifikt køretøj
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button onClick={openPromoDialog} className="w-full">
                   <Facebook className="w-4 h-4 mr-2" />
-                  Opret LEJIO reklameopslag
+                  Opret AUTOFIQ reklameopslag
                 </Button>
               </CardContent>
             </Card>
@@ -502,7 +502,7 @@ const AdminFacebookPosts = () => {
                             {format(new Date(post.posted_at), 'dd. MMM yyyy HH:mm', { locale: da })}
                           </TableCell>
                           <TableCell>
-                            {vehicle ? `${vehicle.make} ${vehicle.model}` : post.vehicle_id ? 'Ukendt' : 'LEJIO Reklame'}
+                            {vehicle ? `${vehicle.make} ${vehicle.model}` : post.vehicle_id ? 'Ukendt' : 'AUTOFIQ Reklame'}
                           </TableCell>
                           <TableCell className="max-w-md truncate">
                             {post.message.substring(0, 100)}...
@@ -511,7 +511,7 @@ const AdminFacebookPosts = () => {
                             {post.is_dagens_bil ? (
                               <Badge className="bg-yellow-500">Dagens Bil</Badge>
                             ) : !post.vehicle_id ? (
-                              <Badge className="bg-primary">LEJIO Promo</Badge>
+                              <Badge className="bg-primary">AUTOFIQ Promo</Badge>
                             ) : (
                               <Badge variant="secondary">Standard</Badge>
                             )}
@@ -652,16 +652,16 @@ const AdminFacebookPosts = () => {
         </DialogContent>
       </Dialog>
 
-      {/* LEJIO Promo Dialog */}
+      {/* AUTOFIQ Promo Dialog */}
       <Dialog open={showPromoDialog} onOpenChange={setShowPromoDialog}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-primary" />
-              LEJIO Reklameopslag
+              AUTOFIQ Reklameopslag
             </DialogTitle>
             <DialogDescription>
-              Opret et generelt reklameopslag for LEJIO platformen
+              Opret et generelt reklameopslag for AUTOFIQ platformen
             </DialogDescription>
           </DialogHeader>
 
@@ -723,11 +723,11 @@ const AdminFacebookPosts = () => {
             </div>
 
             <div className="p-4 bg-muted rounded-lg text-sm text-muted-foreground">
-              <p className="font-medium mb-1">Tips til LEJIO reklameopslag:</p>
+              <p className="font-medium mb-1">Tips til AUTOFIQ reklameopslag:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Fremhæv fordelene ved at leje bil via LEJIO</li>
+                <li>Fremhæv fordelene ved at leje bil via AUTOFIQ</li>
                 <li>Nævn nem booking og digitale kontrakter</li>
-                <li>Inkluder en call-to-action (besøg lejio.dk)</li>
+                <li>Inkluder en call-to-action (besøg autofiq.dk)</li>
               </ul>
             </div>
           </div>

@@ -49,7 +49,7 @@ const CalendarIcon = ({ className }: { className?: string }) => (
   <Calendar className={className} />
 );
 
-const WhatIsLejio = () => {
+const WhatIsAUTOFIQ = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -61,7 +61,7 @@ const WhatIsLejio = () => {
       emoji: '🏗️',
       title: 'Administrations-Dashboard',
       subtitle: 'B2B & Pro',
-      description: 'For forhandlere og flådeejere fungerer Lejio som det interne "Operating System", der erstatter papir og Excel.',
+      description: 'For forhandlere og flådeejere fungerer AUTOFIQ som det interne "Operating System", der erstatter papir og Excel.',
       color: 'from-primary to-primary/60',
       features: [
         { icon: CalendarIcon, title: 'Direkte Bookinger', description: 'Opret bookinger manuelt til walk-in kunder eller telefoniske aftaler. Systemet sender automatisk kontrakt og betalingslink.' },
@@ -75,7 +75,7 @@ const WhatIsLejio = () => {
       id: 'vision',
       icon: Bot,
       emoji: '🤖',
-      title: 'Lejio Vision',
+      title: 'AUTOFIQ Vision',
       subtitle: 'AI-Teknologi',
       description: 'Vores egenudviklede AI-scanner fjerner menneskelige fejl og sikrer uomtvistelig dokumentation.',
       color: 'from-accent to-accent/60',
@@ -92,7 +92,7 @@ const WhatIsLejio = () => {
       emoji: '📝',
       title: 'Juridisk Automatisering & Jura',
       subtitle: 'Automatisering',
-      description: 'Lejio fjerner behovet for fysiske dokumenter og advokatbistand til kontrakter.',
+      description: 'AUTOFIQ fjerner behovet for fysiske dokumenter og advokatbistand til kontrakter.',
       color: 'from-mint to-mint/60',
       features: [
         { icon: FileText, title: 'Automatiske Lejekontrakter', description: 'Systemet genererer øjeblikkeligt en juridisk bindende kontrakt (B2B, B2C eller P2P) med alle relevante data.' },
@@ -152,10 +152,10 @@ const WhatIsLejio = () => {
       emoji: '🌍',
       title: 'Markedspladsen: Eksponering & Salg',
       subtitle: 'Synlighed',
-      description: 'Når alt det administrative er på plads, sørger Lejio for at fylde din ordrebog.',
+      description: 'Når alt det administrative er på plads, sørger AUTOFIQ for at fylde din ordrebog.',
       color: 'from-cyan-500 to-cyan-500/60',
       features: [
-        { icon: Car, title: 'Eksponering af Flåde', description: 'Dine ledige køretøjer (biler, trailere, campingvogne) vises til tusindvis af brugere på Lejio.dk.' },
+        { icon: Car, title: 'Eksponering af Flåde', description: 'Dine ledige køretøjer (biler, trailere, campingvogne) vises til tusindvis af brugere på AUTOFIQ.dk.' },
         { icon: Filter, title: 'Avanceret Filtrering', description: 'Lejere kan søge specifikt på lokation, totalvægt (vigtigt for trailere), sovepladser og udstyr.' },
         { icon: MessageCircle, title: 'Kommunikation', description: 'Indbygget chat-modul så du kan tale med kunden uden at oplyse dit private nummer.' },
       ]
@@ -185,12 +185,12 @@ const WhatIsLejio = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black mb-6 leading-tight">
               Hvad er{' '}
               <span className="bg-gradient-to-r from-primary via-accent to-mint bg-clip-text text-transparent">
-                Lejio?
+                AUTOFIQ?
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Lejio er et teknologisk økosystem designet til at transformere måden, vi tænker udlejning på. Det er ikke bare en markedsplads; det er et avanceret administrationsværktøj (SaaS), en teknisk infrastruktur og en salgskanal samlet i ét.
+              AUTOFIQ er et teknologisk økosystem designet til at transformere måden, vi tænker udlejning på. Det er ikke bare en markedsplads; det er et avanceret administrationsværktøj (SaaS), en teknisk infrastruktur og en salgskanal samlet i ét.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -307,7 +307,7 @@ const WhatIsLejio = () => {
             </h2>
             
             <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
-              Kort sagt: Lejio tager hånd om alt fra den første søgning på Google til den endelige fakturering og service af bilen. Det er en komplet løsning, der automatiserer alt det kedelige, så du kan fokusere på det vigtige – at drive din forretning.
+              Kort sagt: AUTOFIQ tager hånd om alt fra den første søgning på Google til den endelige fakturering og service af bilen. Det er en komplet løsning, der automatiserer alt det kedelige, så du kan fokusere på det vigtige – at drive din forretning.
             </p>
 
             <div className="grid sm:grid-cols-3 gap-6 mb-12">
@@ -347,4 +347,4 @@ const WhatIsLejio = () => {
   );
 };
 
-export default WhatIsLejio;
+export default WhatIsAUTOFIQ;

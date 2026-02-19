@@ -32,7 +32,7 @@ serve(async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       console.log("[WELCOME-EMAIL] SMTP not configured");
@@ -75,7 +75,7 @@ serve(async (req: Request): Promise<Response> => {
 <body>
   <div class="container">
     <div class="header">
-      <h1>🚗 Velkommen til LEJIO!</h1>
+      <h1>🚗 Velkommen til AUTOFIQ!</h1>
       <p>Din konto er nu oprettet</p>
     </div>
     
@@ -140,18 +140,18 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="cta">
-        <a href="https://lejio.dk/dashboard">Gå til dit dashboard</a>
+        <a href="https://autofiq.dk/dashboard">Gå til dit dashboard</a>
       </div>
 
       <p style="text-align: center; color: #888; font-size: 14px; margin-top: 30px;">
-        Har du spørgsmål? Du kan altid kontakte os på <a href="mailto:support@lejio.dk" style="color: #2962FF;">support@lejio.dk</a>
+        Har du spørgsmål? Du kan altid kontakte os på <a href="mailto:support@autofiq.dk" style="color: #2962FF;">support@autofiq.dk</a>
       </p>
     </div>
 
     <div class="footer">
-      <p><strong>LEJIO</strong> - Biludlejning gjort nemt</p>
-      <p>© ${new Date().getFullYear()} LEJIO. Alle rettigheder forbeholdes.</p>
-      <p><a href="https://lejio.dk">lejio.dk</a></p>
+      <p><strong>AUTOFIQ</strong> - Biludlejning gjort nemt</p>
+      <p>© ${new Date().getFullYear()} AUTOFIQ. Alle rettigheder forbeholdes.</p>
+      <p><a href="https://autofiq.dk">autofiq.dk</a></p>
     </div>
   </div>
 </body>
@@ -170,7 +170,7 @@ serve(async (req: Request): Promise<Response> => {
     await client.send({
       from: smtpFromEmail,
       to: email,
-      subject: `🚗 Velkommen til LEJIO, ${safeName}!`,
+      subject: `🚗 Velkommen til AUTOFIQ, ${safeName}!`,
       content: emailHtml,
       html: emailHtml,
     });

@@ -6,7 +6,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
-import LejioLogo from "@/components/LejioLogo";
+import AUTOFIQLogo from "@/components/AUTOFIQLogo";
 
 interface MenuItem {
   label: string;
@@ -102,7 +102,7 @@ export const DashboardSidebar = ({ activeTab, unreadCount = 0, pendingBookings =
       {/* Logo */}
       <div className="p-4 border-b border-border/50">
         <div className="flex items-center gap-3">
-          <LejioLogo size="sm" />
+          <AUTOFIQLogo size="sm" />
           <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-bold text-primary">
             <Zap className="w-3 h-3" />
             Pro

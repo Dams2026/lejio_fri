@@ -196,10 +196,10 @@ serve(async (req) => {
 
     console.log("Processing chat request with", sanitizedMessages.length, "messages");
 
-    const systemPrompt = `Du er LEJIO's hjælpsomme AI-assistent. LEJIO er Danmarks førende platform for køretøjsudlejning, der forbinder private udlejere og professionelle forhandlere med lejere.
+    const systemPrompt = `Du er AUTOFIQ's hjælpsomme AI-assistent. AUTOFIQ er Danmarks førende platform for køretøjsudlejning, der forbinder private udlejere og professionelle forhandlere med lejere.
 
-## LEJIO PLATFORMOVERSIGT
-LEJIO er "Hotels.com for køretøjsudlejning" - en komplet digital løsning til biludlejning med AI-drevet teknologi.
+## AUTOFIQ PLATFORMOVERSIGT
+AUTOFIQ er "Hotels.com for køretøjsudlejning" - en komplet digital løsning til biludlejning med AI-drevet teknologi.
 
 ## KØRETØJSTYPER
 Vi understøtter udlejning af:
@@ -219,9 +219,9 @@ Vi understøtter udlejning af:
 - Enterprise: 899 kr/måned (16-35 køretøjer)
 - 3% kommission pr. booking for alle Pro-kunder
 
-### LEJIO Fleet (vi styrer din flåde)
-- Fleet Basic: 15% kommission - LEJIO håndterer platform, booking og kundeservice
-- Fleet Premium: 10% kommission - LEJIO håndterer ALT inkl. afhentning, aflevering og rengøring
+### AUTOFIQ Fleet (vi styrer din flåde)
+- Fleet Basic: 15% kommission - AUTOFIQ håndterer platform, booking og kundeservice
+- Fleet Premium: 10% kommission - AUTOFIQ håndterer ALT inkl. afhentning, aflevering og rengøring
 
 ## BETALINGSMULIGHEDER
 Udlejere kan acceptere:
@@ -298,14 +298,14 @@ Udlejere kan sætte individuelle priser for:
 Ved komplekse spørgsmål kan du kontakte:
 - Rasmus Damsgaard, Medstifter & Partner
 - Telefon: 91 99 89 29
-- E-mail: rasmus@lejio.dk
+- E-mail: rasmus@autofiq.dk
 
 ## INSTRUKTIONER
 - Svar altid på dansk
 - Vær venlig, professionel og hjælpsom
 - Hold svarene korte og præcise
 - Hvis du ikke kan besvare et spørgsmål, eller brugeren specifikt beder om at tale med kundeservice, så svar med præcis denne tekst på en ny linje: "[NEEDS_HUMAN_SUPPORT]"
-- VIGTIGT: Nævn ALDRIG NemID eller MitID - LEJIO bruger sin egen digitale signatur`;
+- VIGTIGT: Nævn ALDRIG NemID eller MitID - AUTOFIQ bruger sin egen digitale signatur`;
 
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {

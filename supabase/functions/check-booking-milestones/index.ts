@@ -110,7 +110,7 @@ serve(async (req) => {
     const smtpHost = Deno.env.get('SMTP_HOST');
     const smtpUser = Deno.env.get('SMTP_USER');
     const smtpPassword = Deno.env.get('SMTP_PASSWORD');
-    const smtpFromEmail = Deno.env.get('SMTP_FROM_EMAIL') || 'noreply@lejio.dk';
+    const smtpFromEmail = Deno.env.get('SMTP_FROM_EMAIL') || 'noreply@autofiq.dk';
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       logStep('SMTP not configured, skipping email notifications');
@@ -180,7 +180,7 @@ serve(async (req) => {
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo">LEJIO</div>
+      <div class="logo">AUTOFIQ</div>
     </div>
     
     <h1>Tillykke, ${achievement.name}! 🎉</h1>
@@ -191,7 +191,7 @@ serve(async (req) => {
     </div>
     
     <p>
-      Du har nu gennemført <strong>${achievement.milestone} bookinger</strong> på LEJIO. 
+      Du har nu gennemført <strong>${achievement.milestone} bookinger</strong> på AUTOFIQ. 
       Det er en fantastisk milepæl, og vi er stolte af at have dig som en del af vores platform.
     </p>
     
@@ -201,12 +201,12 @@ serve(async (req) => {
     </p>
     
     <p style="text-align: center;">
-      <a href="https://lejio.dk/dashboard" class="cta">Se dit dashboard</a>
+      <a href="https://autofiq.dk/dashboard" class="cta">Se dit dashboard</a>
     </p>
     
     <div class="footer">
-      <p>Med venlig hilsen,<br>Holdet bag LEJIO</p>
-      <p>lejio.dk</p>
+      <p>Med venlig hilsen,<br>Holdet bag AUTOFIQ</p>
+      <p>autofiq.dk</p>
     </div>
   </div>
 </body>
@@ -216,7 +216,7 @@ serve(async (req) => {
         await smtpClient.send({
           from: smtpFromEmail,
           to: achievement.email,
-          subject: `🎉 Tillykke! Du har nået ${achievement.milestone} bookinger på LEJIO`,
+          subject: `🎉 Tillykke! Du har nået ${achievement.milestone} bookinger på AUTOFIQ`,
           html: emailHtml,
         });
 

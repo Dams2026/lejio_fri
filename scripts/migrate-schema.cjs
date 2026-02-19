@@ -6,8 +6,8 @@ const { Pool } = require('pg');
 const pool = new Pool({
   host: process.env.DB_HOST || 'dpg-d6298k2g5rbc73f1k04g-a',
   port: process.env.DB_PORT || 5432,
-  database: process.env.DB_NAME || 'lejio_fri_db',
-  user: process.env.DB_USER || 'lejio_fri_db_user',
+  database: process.env.DB_NAME || 'autofiq_db',
+  user: process.env.DB_USER || 'autofiq_db_user',
   password: process.env.DB_PASSWORD || 'F6TnsEAtqSG2o5FF2PTLgCvzB4ZyaHcQ',
   ssl: { rejectUnauthorized: false }
 });

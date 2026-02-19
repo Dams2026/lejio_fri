@@ -32,10 +32,10 @@ Option B (recommended for scale):
 1. Customer adds a domain in dashboard.
 2. System generates a verification token.
 3. Customer creates a DNS TXT record:
-   - _lejio-verify.<domain> = <token>
+   - _autofiq-verify.<domain> = <token>
 4. System verifies the record and marks domain as verified.
 5. Customer points domain to platform:
-   - CNAME <domain> -> public.lejio.dk (example)
+   - CNAME <domain> -> public.autofiq.dk (example)
 6. Platform serves the correct lessor site based on Host.
 
 ## Request Resolution

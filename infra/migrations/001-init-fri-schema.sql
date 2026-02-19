@@ -1,5 +1,5 @@
--- Lejio Fri Azure SQL Database Schema
--- Complete initialization script for Lejio Fri platform
+-- AUTOFIQ Azure SQL Database Schema
+-- Complete initialization script for AUTOFIQ platform
 -- Includes all tables for lessors, vehicles, bookings, invoices, and page builder
 
 -- ============================================

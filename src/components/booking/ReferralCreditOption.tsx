@@ -115,7 +115,7 @@ export const ReferralCreditOption = ({
               <Input
                 value={inputCode}
                 onChange={(e) => setInputCode(e.target.value.toUpperCase())}
-                placeholder="LEJIO-XXXXXX"
+                placeholder="AUTOFIQ-XXXXXX"
                 className="font-mono uppercase"
               />
               <Button

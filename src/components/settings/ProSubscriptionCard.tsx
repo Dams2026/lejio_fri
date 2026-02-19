@@ -540,7 +540,7 @@ const ProSubscriptionCard = ({ vehicleCount = 0 }: ProSubscriptionCardProps) => 
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <CreditCard className="w-5 h-5" />
-            LEJIO Pro Abonnement
+            AUTOFIQ Pro Abonnement
           </CardTitle>
           <CardDescription>
             Vælg det abonnement der passer til din flåde. Ingen bindingsperiode - annuller når som helst.

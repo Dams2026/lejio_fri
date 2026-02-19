@@ -1,10 +1,10 @@
 /**
- * Lejio Fleet Widget
+ * AUTOFIQ Fleet Widget
  * Embedbar widget til visning af flådedata på eksterne websites
  * 
  * Brug:
- * <div id="lejio-fleet-widget" data-api-key="flk_xxx"></div>
- * <script src="https://lejio.lovable.app/fleet-widget.js"></script>
+ * <div id="autofiq-fleet-widget" data-api-key="flk_xxx"></div>
+ * <script src="https://autofiq.lovable.app/fleet-widget.js"></script>
  */
 (function() {
   'use strict';
@@ -13,12 +13,12 @@
 
   // Inject styles
   function injectStyles() {
-    if (document.getElementById('lejio-fleet-styles')) return;
+    if (document.getElementById('autofiq-fleet-styles')) return;
     
     const styles = document.createElement('style');
-    styles.id = 'lejio-fleet-styles';
+    styles.id = 'autofiq-fleet-styles';
     styles.textContent = `
-      .lejio-widget {
+      .autofiq-widget {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
         max-width: 100%;
         background: #ffffff;
@@ -26,10 +26,10 @@
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         overflow: hidden;
       }
-      .lejio-widget * {
+      .autofiq-widget * {
         box-sizing: border-box;
       }
-      .lejio-widget-header {
+      .autofiq-widget-header {
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         color: white;
         padding: 24px;
@@ -37,29 +37,29 @@
         align-items: center;
         gap: 16px;
       }
-      .lejio-widget-logo {
+      .autofiq-widget-logo {
         width: 64px;
         height: 64px;
         border-radius: 12px;
         object-fit: cover;
         background: rgba(255,255,255,0.1);
       }
-      .lejio-widget-company h2 {
+      .autofiq-widget-company h2 {
         margin: 0 0 4px 0;
         font-size: 1.5rem;
         font-weight: 700;
       }
-      .lejio-widget-company p {
+      .autofiq-widget-company p {
         margin: 0;
         opacity: 0.8;
         font-size: 0.875rem;
       }
-      .lejio-widget-tabs {
+      .autofiq-widget-tabs {
         display: flex;
         border-bottom: 1px solid #e5e7eb;
         background: #f9fafb;
       }
-      .lejio-widget-tab {
+      .autofiq-widget-tab {
         flex: 1;
         padding: 12px 16px;
         border: none;
@@ -71,57 +71,57 @@
         transition: all 0.2s;
         border-bottom: 2px solid transparent;
       }
-      .lejio-widget-tab:hover {
+      .autofiq-widget-tab:hover {
         color: #111827;
         background: #f3f4f6;
       }
-      .lejio-widget-tab.active {
+      .autofiq-widget-tab.active {
         color: #2563eb;
         border-bottom-color: #2563eb;
         background: white;
       }
-      .lejio-widget-content {
+      .autofiq-widget-content {
         padding: 16px;
         max-height: 500px;
         overflow-y: auto;
       }
-      .lejio-widget-grid {
+      .autofiq-widget-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 16px;
       }
-      .lejio-vehicle-card {
+      .autofiq-vehicle-card {
         border: 1px solid #e5e7eb;
         border-radius: 8px;
         overflow: hidden;
         transition: transform 0.2s, box-shadow 0.2s;
       }
-      .lejio-vehicle-card:hover {
+      .autofiq-vehicle-card:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       }
-      .lejio-vehicle-image {
+      .autofiq-vehicle-image {
         width: 100%;
         height: 160px;
         object-fit: cover;
         background: #f3f4f6;
       }
-      .lejio-vehicle-info {
+      .autofiq-vehicle-info {
         padding: 12px;
       }
-      .lejio-vehicle-title {
+      .autofiq-vehicle-title {
         margin: 0 0 4px 0;
         font-size: 1rem;
         font-weight: 600;
         color: #111827;
       }
-      .lejio-vehicle-meta {
+      .autofiq-vehicle-meta {
         display: flex;
         gap: 8px;
         flex-wrap: wrap;
         margin-bottom: 8px;
       }
-      .lejio-vehicle-badge {
+      .autofiq-vehicle-badge {
         display: inline-flex;
         align-items: center;
         padding: 2px 8px;
@@ -130,17 +130,17 @@
         font-size: 0.75rem;
         color: #4b5563;
       }
-      .lejio-vehicle-price {
+      .autofiq-vehicle-price {
         font-size: 1.125rem;
         font-weight: 700;
         color: #2563eb;
       }
-      .lejio-vehicle-price span {
+      .autofiq-vehicle-price span {
         font-size: 0.75rem;
         font-weight: 400;
         color: #6b7280;
       }
-      .lejio-service-card {
+      .autofiq-service-card {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -149,47 +149,47 @@
         border-radius: 8px;
         transition: background 0.2s;
       }
-      .lejio-service-card:hover {
+      .autofiq-service-card:hover {
         background: #f9fafb;
       }
-      .lejio-service-info h4 {
+      .autofiq-service-info h4 {
         margin: 0 0 4px 0;
         font-size: 0.9375rem;
         font-weight: 600;
         color: #111827;
       }
-      .lejio-service-info p {
+      .autofiq-service-info p {
         margin: 0;
         font-size: 0.8125rem;
         color: #6b7280;
       }
-      .lejio-service-price {
+      .autofiq-service-price {
         text-align: right;
       }
-      .lejio-service-price strong {
+      .autofiq-service-price strong {
         display: block;
         font-size: 1rem;
         color: #111827;
       }
-      .lejio-service-price span {
+      .autofiq-service-price span {
         font-size: 0.75rem;
         color: #6b7280;
       }
-      .lejio-widget-footer {
+      .autofiq-widget-footer {
         padding: 12px 16px;
         background: #f9fafb;
         border-top: 1px solid #e5e7eb;
         text-align: center;
       }
-      .lejio-widget-footer a {
+      .autofiq-widget-footer a {
         color: #6b7280;
         text-decoration: none;
         font-size: 0.75rem;
       }
-      .lejio-widget-footer a:hover {
+      .autofiq-widget-footer a:hover {
         color: #2563eb;
       }
-      .lejio-widget-loading {
+      .autofiq-widget-loading {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -197,40 +197,40 @@
         padding: 48px;
         color: #6b7280;
       }
-      .lejio-widget-spinner {
+      .autofiq-widget-spinner {
         width: 32px;
         height: 32px;
         border: 3px solid #e5e7eb;
         border-top-color: #2563eb;
         border-radius: 50%;
-        animation: lejio-spin 0.8s linear infinite;
+        animation: autofiq-spin 0.8s linear infinite;
         margin-bottom: 12px;
       }
-      @keyframes lejio-spin {
+      @keyframes autofiq-spin {
         to { transform: rotate(360deg); }
       }
-      .lejio-widget-error {
+      .autofiq-widget-error {
         padding: 32px;
         text-align: center;
         color: #dc2626;
       }
-      .lejio-widget-empty {
+      .autofiq-widget-empty {
         padding: 32px;
         text-align: center;
         color: #6b7280;
       }
       @media (max-width: 480px) {
-        .lejio-widget-header {
+        .autofiq-widget-header {
           padding: 16px;
         }
-        .lejio-widget-logo {
+        .autofiq-widget-logo {
           width: 48px;
           height: 48px;
         }
-        .lejio-widget-company h2 {
+        .autofiq-widget-company h2 {
           font-size: 1.25rem;
         }
-        .lejio-widget-grid {
+        .autofiq-widget-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -251,9 +251,9 @@
   // Render loading state
   function renderLoading(container) {
     container.innerHTML = `
-      <div class="lejio-widget">
-        <div class="lejio-widget-loading">
-          <div class="lejio-widget-spinner"></div>
+      <div class="autofiq-widget">
+        <div class="autofiq-widget-loading">
+          <div class="autofiq-widget-spinner"></div>
           <span>Indlæser flådedata...</span>
         </div>
       </div>
@@ -263,8 +263,8 @@
   // Render error state
   function renderError(container, message) {
     container.innerHTML = `
-      <div class="lejio-widget">
-        <div class="lejio-widget-error">
+      <div class="autofiq-widget">
+        <div class="autofiq-widget-error">
           <p>⚠️ ${message}</p>
         </div>
       </div>
@@ -275,16 +275,16 @@
   function renderVehicleCard(vehicle) {
     const imageUrl = vehicle.image_url || 'https://placehold.co/400x300/f3f4f6/9ca3af?text=Ingen+billede';
     return `
-      <div class="lejio-vehicle-card">
-        <img class="lejio-vehicle-image" src="${imageUrl}" alt="${vehicle.make} ${vehicle.model}" loading="lazy" onerror="this.src='https://placehold.co/400x300/f3f4f6/9ca3af?text=Ingen+billede'">
-        <div class="lejio-vehicle-info">
-          <h3 class="lejio-vehicle-title">${vehicle.make} ${vehicle.model}</h3>
-          <div class="lejio-vehicle-meta">
-            ${vehicle.year ? `<span class="lejio-vehicle-badge">${vehicle.year}</span>` : ''}
-            ${vehicle.fuel_type ? `<span class="lejio-vehicle-badge">${vehicle.fuel_type}</span>` : ''}
-            ${vehicle.vehicle_type ? `<span class="lejio-vehicle-badge">${vehicle.vehicle_type}</span>` : ''}
+      <div class="autofiq-vehicle-card">
+        <img class="autofiq-vehicle-image" src="${imageUrl}" alt="${vehicle.make} ${vehicle.model}" loading="lazy" onerror="this.src='https://placehold.co/400x300/f3f4f6/9ca3af?text=Ingen+billede'">
+        <div class="autofiq-vehicle-info">
+          <h3 class="autofiq-vehicle-title">${vehicle.make} ${vehicle.model}</h3>
+          <div class="autofiq-vehicle-meta">
+            ${vehicle.year ? `<span class="autofiq-vehicle-badge">${vehicle.year}</span>` : ''}
+            ${vehicle.fuel_type ? `<span class="autofiq-vehicle-badge">${vehicle.fuel_type}</span>` : ''}
+            ${vehicle.vehicle_type ? `<span class="autofiq-vehicle-badge">${vehicle.vehicle_type}</span>` : ''}
           </div>
-          <div class="lejio-vehicle-price">
+          <div class="autofiq-vehicle-price">
             ${formatPrice(vehicle.daily_price)} <span>/ dag</span>
           </div>
         </div>
@@ -295,12 +295,12 @@
   // Render service card
   function renderServiceCard(service) {
     return `
-      <div class="lejio-service-card">
-        <div class="lejio-service-info">
+      <div class="autofiq-service-card">
+        <div class="autofiq-service-info">
           <h4>${service.name}</h4>
           ${service.description ? `<p>${service.description}</p>` : ''}
         </div>
-        <div class="lejio-service-price">
+        <div class="autofiq-service-price">
           <strong>${formatPrice(service.price)}</strong>
           ${service.estimated_minutes ? `<span>ca. ${service.estimated_minutes} min</span>` : ''}
         </div>
@@ -321,51 +321,51 @@
     
     function render() {
       container.innerHTML = `
-        <div class="lejio-widget">
-          <div class="lejio-widget-header">
+        <div class="autofiq-widget">
+          <div class="autofiq-widget-header">
             ${fleet_owner.logo_url 
-              ? `<img class="lejio-widget-logo" src="${fleet_owner.logo_url}" alt="${fleet_owner.company_name || 'Logo'}">`
-              : `<div class="lejio-widget-logo" style="display:flex;align-items:center;justify-content:center;font-size:1.5rem;">🚗</div>`
+              ? `<img class="autofiq-widget-logo" src="${fleet_owner.logo_url}" alt="${fleet_owner.company_name || 'Logo'}">`
+              : `<div class="autofiq-widget-logo" style="display:flex;align-items:center;justify-content:center;font-size:1.5rem;">🚗</div>`
             }
-            <div class="lejio-widget-company">
+            <div class="autofiq-widget-company">
               <h2>${fleet_owner.company_name || 'Udlejning'}</h2>
               ${fleet_owner.address ? `<p>📍 ${fleet_owner.address}</p>` : ''}
             </div>
           </div>
           
           ${(showVehicles && hasVehicles) || (showServices && hasServices) ? `
-            <div class="lejio-widget-tabs">
-              ${showVehicles && hasVehicles ? `<button class="lejio-widget-tab ${activeTab === 'vehicles' ? 'active' : ''}" data-tab="vehicles">🚗 Køretøjer (${vehicles.length})</button>` : ''}
-              ${showServices && hasServices ? `<button class="lejio-widget-tab ${activeTab === 'services' ? 'active' : ''}" data-tab="services">🔧 Services (${services.length})</button>` : ''}
+            <div class="autofiq-widget-tabs">
+              ${showVehicles && hasVehicles ? `<button class="autofiq-widget-tab ${activeTab === 'vehicles' ? 'active' : ''}" data-tab="vehicles">🚗 Køretøjer (${vehicles.length})</button>` : ''}
+              ${showServices && hasServices ? `<button class="autofiq-widget-tab ${activeTab === 'services' ? 'active' : ''}" data-tab="services">🔧 Services (${services.length})</button>` : ''}
             </div>
           ` : ''}
           
-          <div class="lejio-widget-content">
+          <div class="autofiq-widget-content">
             ${activeTab === 'vehicles' && hasVehicles ? `
-              <div class="lejio-widget-grid">
+              <div class="autofiq-widget-grid">
                 ${vehicles.map(renderVehicleCard).join('')}
               </div>
             ` : ''}
             ${activeTab === 'services' && hasServices ? `
-              <div class="lejio-widget-grid">
+              <div class="autofiq-widget-grid">
                 ${services.map(renderServiceCard).join('')}
               </div>
             ` : ''}
             ${!activeTab ? `
-              <div class="lejio-widget-empty">
+              <div class="autofiq-widget-empty">
                 <p>Ingen data tilgængelig</p>
               </div>
             ` : ''}
           </div>
           
-          <div class="lejio-widget-footer">
-            <a href="https://lejio.lovable.app" target="_blank" rel="noopener">Powered by Lejio</a>
+          <div class="autofiq-widget-footer">
+            <a href="https://autofiq.lovable.app" target="_blank" rel="noopener">Powered by AUTOFIQ</a>
           </div>
         </div>
       `;
       
       // Add tab click handlers
-      container.querySelectorAll('.lejio-widget-tab').forEach(tab => {
+      container.querySelectorAll('.autofiq-widget-tab').forEach(tab => {
         tab.addEventListener('click', function() {
           activeTab = this.dataset.tab;
           render();
@@ -380,9 +380,9 @@
   async function initWidget() {
     injectStyles();
     
-    const container = document.getElementById('lejio-fleet-widget');
+    const container = document.getElementById('autofiq-fleet-widget');
     if (!container) {
-      console.error('Lejio Fleet Widget: Container #lejio-fleet-widget not found');
+      console.error('AUTOFIQ Fleet Widget: Container #autofiq-fleet-widget not found');
       return;
     }
     
@@ -418,7 +418,7 @@
       renderWidget(container, result.data, options);
       
     } catch (error) {
-      console.error('Lejio Fleet Widget error:', error);
+      console.error('AUTOFIQ Fleet Widget error:', error);
       renderError(container, 'Netværksfejl. Prøv igen senere.');
     }
   }
@@ -431,5 +431,5 @@
   }
 
   // Expose for manual initialization
-  window.LejioFleetWidget = { init: initWidget };
+  window.AUTOFIQFleetWidget = { init: initWidget };
 })();

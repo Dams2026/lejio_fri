@@ -171,7 +171,7 @@ module.exports = async function (context, req) {
             timestamp,
             ipAddress,
             userAgent,
-            confirmationUrl: `https://lejio-fri.onrender.com/sign-contract/${contractId}?code=${signatureCode}`
+            confirmationUrl: `https://autofiq.onrender.com/sign-contract/${contractId}?code=${signatureCode}`
           }),
           true
         ]
@@ -215,7 +215,7 @@ module.exports = async function (context, req) {
         browser: `${uaData.browserName} ${uaData.browserVersion}`,
         os: `${uaData.osName} ${uaData.osVersion}`,
         device: `${uaData.deviceType} - ${uaData.deviceBrand} ${uaData.deviceModel}`,
-        certificateUrl: `https://lejio-fri.onrender.com/signature-certificate/${signatureCode}`
+        certificateUrl: `https://autofiq.onrender.com/signature-certificate/${signatureCode}`
       })
     };
 

@@ -18,7 +18,7 @@ const PRO_TIERS = {
       price_id: "price_1SdzLQHoHnimcmNgi3q91qmL", // 3560 kr/year (15% discount)
       price: 3560,
     },
-    name: "LEJIO Pro - Starter",
+    name: "AUTOFIQ Pro - Starter",
     max_vehicles: 5,
   },
   standard: {
@@ -30,7 +30,7 @@ const PRO_TIERS = {
       price_id: "price_1SdzLTHoHnimcmNgTQ4W3lvA", // 6110 kr/year (15% discount)
       price: 6110,
     },
-    name: "LEJIO Pro - Standard",
+    name: "AUTOFIQ Pro - Standard",
     max_vehicles: 15,
   },
   enterprise: {
@@ -42,7 +42,7 @@ const PRO_TIERS = {
       price_id: "price_1SdzLXHoHnimcmNgXWg8YYBC", // 9170 kr/year (15% discount)
       price: 9170,
     },
-    name: "LEJIO Pro - Enterprise",
+    name: "AUTOFIQ Pro - Enterprise",
     max_vehicles: 999,
   },
 };
@@ -99,7 +99,7 @@ serve(async (req) => {
     }
     logStep("User is professional", { companyName: profile.company_name });
 
-    const stripe = new Stripe(Deno.env.get("LEJIO_STRIPE_SECRET_KEY") || "", {
+    const stripe = new Stripe(Deno.env.get("AUTOFIQ_STRIPE_SECRET_KEY") || "", {
       apiVersion: "2025-08-27.basil",
     });
 
@@ -123,7 +123,7 @@ serve(async (req) => {
       }
     }
 
-    const origin = req.headers.get("origin") || "https://lejio.dk";
+    const origin = req.headers.get("origin") || "https://autofiq.dk";
     
     const session = await stripe.checkout.sessions.create({
       customer: customerId,

@@ -15,9 +15,9 @@ const PRICE_TO_TIER: Record<string, string> = {
 };
 
 const TIER_DETAILS: Record<string, { name: string; maxVehicles: number; price: number }> = {
-  starter: { name: "LEJIO Pro - Starter", maxVehicles: 5, price: 349 },
-  standard: { name: "LEJIO Pro - Standard", maxVehicles: 15, price: 599 },
-  enterprise: { name: "LEJIO Pro - Enterprise", maxVehicles: 35, price: 899 },
+  starter: { name: "AUTOFIQ Pro - Starter", maxVehicles: 5, price: 349 },
+  standard: { name: "AUTOFIQ Pro - Standard", maxVehicles: 15, price: 599 },
+  enterprise: { name: "AUTOFIQ Pro - Enterprise", maxVehicles: 35, price: 899 },
 };
 
 const logStep = (step: string, details?: unknown) => {
@@ -37,8 +37,8 @@ serve(async (req) => {
   try {
     logStep("Function started");
 
-    const stripeKey = Deno.env.get("LEJIO_STRIPE_SECRET_KEY");
-    if (!stripeKey) throw new Error("LEJIO_STRIPE_SECRET_KEY is not set");
+    const stripeKey = Deno.env.get("AUTOFIQ_STRIPE_SECRET_KEY");
+    if (!stripeKey) throw new Error("AUTOFIQ_STRIPE_SECRET_KEY is not set");
 
     const authHeader = req.headers.get("Authorization");
     if (!authHeader?.startsWith("Bearer ")) {

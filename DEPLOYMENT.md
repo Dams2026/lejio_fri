@@ -1,1 +1,1 @@
-# Lejio Fri - Azure Deployment Complete
+# AUTOFIQ - Azure Deployment Complete

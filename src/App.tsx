@@ -16,7 +16,7 @@ import { TenantProvider } from "@/hooks/useTenant";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import NotFound from "./pages/NotFound";
 
-// Lejio Fri (White-label lessor platform) - lazy loaded
+// AUTOFIQ (White-label lessor platform) - lazy loaded
 const FriLandingPage = lazy(() => import("./pages/fri/landing/LandingPage").then(m => ({ default: m.FriLandingPage })));
 const FriTrialPage = lazy(() => import("./pages/fri/TrialPage").then(m => ({ default: m.FriTrialPage })));
 const FriFeaturesPage = lazy(() => import("./pages/fri/FeaturesPage").then(m => ({ default: m.FriFeaturesPage })));
@@ -25,7 +25,7 @@ const FriSignupPage = lazy(() => import("./pages/fri/auth/SignupPage").then(m =>
 const FriDashboard = lazy(() => import("./pages/fri/dashboard/Dashboard").then(m => ({ default: m.FriDashboard })));
 const TenantSignupPage = lazy(() => import("./pages/fri/tenant/SignupPage").then(m => ({ default: m.TenantSignupPage })));
 
-// Lejio Fri Admin - lazy loaded
+// AUTOFIQ Admin - lazy loaded
 const FriAdminLoginPage = lazy(() => import("./pages/fri/admin/LoginPage").then(m => ({ default: m.FriAdminLoginPage })));
 const FriAdminDashboard = lazy(() => import("./pages/fri/admin/Dashboard").then(m => ({ default: m.FriAdminDashboard })));
 const FriAdminLessorsPage = lazy(() => import("./pages/fri/admin/LessorsPage").then(m => ({ default: m.FriAdminLessorsPage })));
@@ -107,9 +107,10 @@ export default function App() {
                 <Routes>
                 {/* Debug route */}
         <Route path="/debug" element={<div className="p-8"><h1>Debug: App is working! (v2)</h1><p>This is the NEW compiled version</p></div>} />
-                {/* Lejio Fri - Main Platform */}
+                {/* AUTOFIQ - Main Platform */}
                 <Route path="/" element={<FriLandingPage />} />
                 <Route path="/fri" element={<Navigate to="/" replace />} />
+                <Route path="/fri/landing" element={<Navigate to="/" replace />} />
                 <Route path="/trial" element={<FriTrialPage />} />
                 <Route path="/fri/trial" element={<Navigate to="/trial" replace />} />
                 <Route path="/features" element={<FriFeaturesPage />} />
@@ -120,14 +121,14 @@ export default function App() {
                 <Route path="/fri/signup" element={<Navigate to="/signup" replace />} />
                 <Route path="/fri/tenant/signup" element={<TenantSignupPage />} />
                 <Route path="/fri/dashboard" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <FriDashboard />
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/team" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <ProtectedRoute permission="team">
                         <FriTeamManagement />
@@ -136,7 +137,7 @@ export default function App() {
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/analytics" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <ProtectedRoute permission="analytics">
                         <FriLessorDashboard />
@@ -145,7 +146,7 @@ export default function App() {
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/invoices" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <ProtectedRoute permission="invoices">
                         <FriInvoiceManagement />
@@ -155,14 +156,14 @@ export default function App() {
                 } />
                 
                 <Route path="/fri/dashboard/vehicles" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <FriVehiclesPage />
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/dealer" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <ProtectedRoute permission="dealer">
                         <FriDealerHubPage />
@@ -171,14 +172,14 @@ export default function App() {
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/bookings" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <FriBookingsPage />
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/payments" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <ProtectedRoute permission="payments">
                         <FriPaymentsPage />
@@ -187,7 +188,7 @@ export default function App() {
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/modules" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <ProtectedRoute permission="modules">
                         <FriModulesPage />
@@ -196,7 +197,7 @@ export default function App() {
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/api-keys" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <ProtectedRoute permission="api-keys">
                         <FriApiKeysPage />
@@ -205,7 +206,7 @@ export default function App() {
                   </BrandProvider>
                 } />
                 <Route path="/fri/dashboard/settings" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="fri">
                     <FriAuthProvider>
                       <ProtectedRoute permission="settings">
                         <FriSettingsPage />
@@ -225,7 +226,7 @@ export default function App() {
                 <Route path="/fri/workshop/pricing" element={<WorkshopPricingPage />} />
                 <Route path="/fri/workshop/modules" element={<WorkshopModulesPublic />} />
                 
-                {/* Lejio Fri Admin */}
+                {/* AUTOFIQ Admin */}
                 <Route path="/fri/admin/login" element={<FriAdminLoginPage />} />
                 <Route path="/fri/admin/*" element={
                   <FriAdminLayout>
@@ -242,7 +243,7 @@ export default function App() {
                   </FriAdminLayout>
                 } />
 
-                {/* Page Builder - Lejio Fri Dashboard */}
+                {/* Page Builder - AUTOFIQ Dashboard */}
                 <Route path="/dashboard/pages" element={
                   <FriAuthProvider>
                     <PagesDashboard />

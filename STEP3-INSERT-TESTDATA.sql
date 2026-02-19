@@ -15,7 +15,7 @@ DECLARE @lessor_id_2 UNIQUEIDENTIFIER = NEWID();
 
 INSERT INTO fri_lessors (id, company_name, contact_email, contact_phone, subscription_plan, subscription_status, primary_color, secondary_color, is_active)
 VALUES 
-  (@lessor_id_1, 'Test Biludlejning ApS', 'martin@testlejio.dk', '+4540123456', 'professional', 'active', '#0066cc', '#00cc99', 1),
+  (@lessor_id_1, 'Test Biludlejning ApS', 'martin@testautofiq.dk', '+4540123456', 'professional', 'active', '#0066cc', '#00cc99', 1),
   (@lessor_id_2, 'Premium Car Rentals', 'info@premiumrentals.dk', '+4540654321', 'business', 'active', '#ff6600', '#0099cc', 1);
 
 PRINT '✅ Inserted 2 lessors';
@@ -26,8 +26,8 @@ PRINT '✅ Inserted 2 lessors';
 
 INSERT INTO fri_lessor_team_members (lessor_id, full_name, email, phone, role, is_active, joined_at)
 VALUES 
-  (@lessor_id_1, 'Martin Jensen', 'martin@testlejio.dk', '+4540123456', 'owner', 1, GETUTCDATE()),
-  (@lessor_id_1, 'Anne Andersen', 'anne@testlejio.dk', '+4540111111', 'manager', 1, GETUTCDATE()),
+  (@lessor_id_1, 'Martin Jensen', 'martin@testautofiq.dk', '+4540123456', 'owner', 1, GETUTCDATE()),
+  (@lessor_id_1, 'Anne Andersen', 'anne@testautofiq.dk', '+4540111111', 'manager', 1, GETUTCDATE()),
   (@lessor_id_2, 'Peter Petersen', 'peter@premiumrentals.dk', '+4540654321', 'owner', 1, GETUTCDATE());
 
 PRINT '✅ Inserted 3 team members';
@@ -156,7 +156,7 @@ SELECT 'Page Blocks', COUNT(*) FROM fri_page_blocks;
 
 PRINT '=== Sample Data Summary ==='
 PRINT '✅ Test data inserted successfully!'
-PRINT 'Lessor 1: Test Biludlejning ApS - martin@testlejio.dk'
+PRINT 'Lessor 1: Test Biludlejning ApS - martin@testautofiq.dk'
 PRINT 'Lessor 2: Premium Car Rentals - info@premiumrentals.dk'
 PRINT ''
 PRINT 'You can now test the frontend with real database data.'
