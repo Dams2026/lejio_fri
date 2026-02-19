@@ -9,7 +9,7 @@
       "value": "westeurope"
     },
     "projectName": {
-      "value": "lejio-fri"
+      "value": "autofiq"
     },
     "sqlAdminUsername": {
       "value": "sqladmin"
@@ -23,7 +23,7 @@
       }
     },
     "githubRepo": {
-      "value": "martinjensen9988-sudo/lejio-b75cff1f"
+      "value": "martinjensen9988-sudo/autofiq-b75cff1f"
     },
     "githubBranch": {
       "value": "main"

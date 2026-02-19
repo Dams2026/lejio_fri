@@ -46,7 +46,7 @@
 - ✅ Integration UI (Google Calendar, Outlook, SMS)
 
 **Implementation:**
-- Page: [src/pages/fri/workshop/GaragePlan.tsx](../src/pages/fri/workshop/GaragePlan.tsx)
+- Page: [src/pages/autofiq/workshop/GaragePlan.tsx](../src/pages/autofiq/workshop/GaragePlan.tsx)
 - Metadata: workshopModules.ts (id: 'garageplan')
 - Database: Stored in fri_lessors.selected_modules
 
@@ -78,7 +78,7 @@
 - Detail Page: MISSING - needs implementation
 
 **Pre-Deployment Actions:**
-- [ ] Create dedicated page: [src/pages/fri/workshop/GarageTeam.tsx](../src/pages/fri/workshop/GarageTeam.tsx)
+- [ ] Create dedicated page: [src/pages/autofiq/workshop/GarageTeam.tsx](../src/pages/autofiq/workshop/GarageTeam.tsx)
 - [ ] Implement basic feature listing (match GaragePlan pattern)
 - [ ] Add module activation tracking
 - [ ] Verify ModulesPage shows status correctly
@@ -105,7 +105,7 @@
 - Detail Page: MISSING - needs implementation
 
 **Pre-Deployment Actions:**
-- [ ] Create dedicated page: [src/pages/fri/workshop/GarageBooks.tsx](../src/pages/fri/workshop/GarageBooks.tsx)
+- [ ] Create dedicated page: [src/pages/autofiq/workshop/GarageBooks.tsx](../src/pages/autofiq/workshop/GarageBooks.tsx)
 - [ ] List features and integrations
 - [ ] Link to payment integration if exists
 - [ ] Add module activation tracking
@@ -134,7 +134,7 @@
 
 **Pre-Deployment Actions:**
 - [ ] Verify e-conomic API credentials/setup
-- [ ] Create dedicated page: [src/pages/fri/workshop/GarageSync.tsx](../src/pages/fri/workshop/GarageSync.tsx)
+- [ ] Create dedicated page: [src/pages/autofiq/workshop/GarageSync.tsx](../src/pages/autofiq/workshop/GarageSync.tsx)
 - [ ] Document e-conomic integration requirements
 - [ ] Add module activation tracking
 
@@ -163,7 +163,7 @@
 **Pre-Deployment Actions:**
 - [ ] Verify SMTP configuration working
 - [ ] Verify SMS gateway configured (if needed)
-- [ ] Create dedicated page: [src/pages/fri/workshop/GarageChat.tsx](../src/pages/fri/workshop/GarageChat.tsx)
+- [ ] Create dedicated page: [src/pages/autofiq/workshop/GarageChat.tsx](../src/pages/autofiq/workshop/GarageChat.tsx)
 - [ ] Add module activation tracking
 
 **Deployment Check:**
@@ -189,7 +189,7 @@
 - Contract System: Needs implementation
 
 **Pre-Deployment Actions:**
-- [ ] Create dedicated page: [src/pages/fri/workshop/GarageDeal.tsx](../src/pages/fri/workshop/GarageDeal.tsx)
+- [ ] Create dedicated page: [src/pages/autofiq/workshop/GarageDeal.tsx](../src/pages/autofiq/workshop/GarageDeal.tsx)
 - [ ] Implement contract template system
 - [ ] Verify VAT calculation logic
 - [ ] Add license plate lookup integration
@@ -217,7 +217,7 @@
 - Content: Could be CMS-based or static guides
 
 **Pre-Deployment Actions:**
-- [ ] Create dedicated page: [src/pages/fri/workshop/GarageHub.tsx](../src/pages/fri/workshop/GarageHub.tsx)
+- [ ] Create dedicated page: [src/pages/autofiq/workshop/GarageHub.tsx](../src/pages/autofiq/workshop/GarageHub.tsx)
 - [ ] Define content structure (guides, news, etc.)
 - [ ] Add module activation tracking
 - [ ] Implement news/guide listing
@@ -340,7 +340,7 @@ curl http://localhost:7071/api/set-module -X POST
 ```
 
 ### Step 2: Module Status Verification
-1. Log into FRI dashboard
+1. Log into AUTOFIQ dashboard
 2. Navigate to "Garage Moduler" section
 3. Verify stats show:
    - Aktive moduler: 0-7 (depending on current setup)
@@ -529,7 +529,7 @@ SMS_GATEWAY_API_KEY=
 ## Support & Questions
 
 For module development guidance:
-- Check [src/pages/fri/workshop/GaragePlan.tsx](../src/pages/fri/workshop/GaragePlan.tsx) as reference implementation
+- Check [src/pages/autofiq/workshop/GaragePlan.tsx](../src/pages/autofiq/workshop/GaragePlan.tsx) as reference implementation
 - Follow pattern: Metadata → Detail Page → Feature Implementation → Testing → Deployment
 - Use [src/hooks/useFriModules.tsx](../src/hooks/useFriModules.tsx) for module management
 

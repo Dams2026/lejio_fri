@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Connection string from user
-const connectionString = 'Server=tcp:lejio-fri-db.database.windows.net,1433;Initial Catalog=lejio_fri;Persist Security Info=False;User ID=CloudSAf59bf0c5;Password=Luggen89;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;';
+const connectionString = 'Server=tcp:autofiq-db.database.windows.net,1433;Initial Catalog=autofiq;Persist Security Info=False;User ID=CloudSAf59bf0c5;Password=Luggen89;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;';
 
 // Parse connection string to mssql config
 function parseConnectionString(connStr) {

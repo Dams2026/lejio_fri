@@ -1,0 +1,17 @@
+<svg width="900" height="300" viewBox="0 0 900 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Autofiq logo">
+  <defs>
+    <linearGradient id="g" x1="80" y1="20" x2="820" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6C2"/>
+      <stop offset="0.45" stop-color="#F2C75C"/>
+      <stop offset="1" stop-color="#B67A1B"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 130L300 40L450 130L420 210L300 255L180 210L150 130Z"/>
+    <path d="M208 150C238 130 274 132 304 152"/>
+    <path d="M248 180C278 160 314 162 344 182"/>
+    <circle cx="314" cy="152" r="8" fill="url(#g)" stroke="none"/>
+    <circle cx="354" cy="182" r="8" fill="url(#g)" stroke="none"/>
+  </g>
+  <text x="500" y="190" fill="url(#g)" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="86" font-weight="800" letter-spacing="2">AUTOFIQ</text>
+</svg>

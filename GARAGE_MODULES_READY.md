@@ -50,13 +50,13 @@ Each "Klar" module now has a dedicated detail page with:
 
 | Module | Route | File | Status |
 |--------|-------|------|--------|
-| GaragePlan | `/fri/workshop/garageplan` | [GaragePlan.tsx](#) | ✅ Complete |
-| GarageTeam | `/fri/workshop/garageteam` | [GarageTeam.tsx](#) | ✅ Complete |
-| GarageBooks | `/fri/workshop/garagebooks` | [GarageBooks.tsx](#) | ✅ Complete |
-| GarageSync | `/fri/workshop/garagesync` | [GarageSync.tsx](#) | ✅ Complete |
-| GarageChat | `/fri/workshop/garagechat` | [GarageChat.tsx](#) | ✅ Complete |
-| GarageDeal | `/fri/workshop/garagedeal` | [GarageDeal.tsx](#) | ✅ Complete |
-| GarageHub | `/fri/workshop/garagehub` | [GarageHub.tsx](#) | ✅ Complete |
+| GaragePlan | `/autofiq/workshop/garageplan` | [GaragePlan.tsx](#) | ✅ Complete |
+| GarageTeam | `/autofiq/workshop/garageteam` | [GarageTeam.tsx](#) | ✅ Complete |
+| GarageBooks | `/autofiq/workshop/garagebooks` | [GarageBooks.tsx](#) | ✅ Complete |
+| GarageSync | `/autofiq/workshop/garagesync` | [GarageSync.tsx](#) | ✅ Complete |
+| GarageChat | `/autofiq/workshop/garagechat` | [GarageChat.tsx](#) | ✅ Complete |
+| GarageDeal | `/autofiq/workshop/garagedeal` | [GarageDeal.tsx](#) | ✅ Complete |
+| GarageHub | `/autofiq/workshop/garagehub` | [GarageHub.tsx](#) | ✅ Complete |
 
 ---
 
@@ -136,7 +136,7 @@ Each "Klar" module now has a dedicated detail page with:
 ## User Experience
 
 ### Lessor/Workshop Owner Flow
-1. Log into FRI dashboard
+1. Log into AUTOFIQ dashboard
 2. Navigate to "Garage Moduler" section
 3. View 7 modules marked "Klar til aktivering"
 4. Click module card to view details

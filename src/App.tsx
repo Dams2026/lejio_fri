@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import { AdminAuthProvider } from "@/hooks/useAdminAuth";
 import { FriAuthProvider } from "@/providers/FriAuthProvider";
@@ -16,37 +16,37 @@ import { TenantProvider } from "@/hooks/useTenant";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import NotFound from "./pages/NotFound";
 
-// Lejio Fri (White-label lessor platform) - lazy loaded
-const FriLandingPage = lazy(() => import("./pages/fri/landing/LandingPage").then(m => ({ default: m.FriLandingPage })));
-const FriTrialPage = lazy(() => import("./pages/fri/TrialPage").then(m => ({ default: m.FriTrialPage })));
-const FriFeaturesPage = lazy(() => import("./pages/fri/FeaturesPage").then(m => ({ default: m.FriFeaturesPage })));
-const FriLoginPage = lazy(() => import("./pages/fri/auth/LoginPage").then(m => ({ default: m.FriLoginPage })));
-const FriSignupPage = lazy(() => import("./pages/fri/auth/SignupPage").then(m => ({ default: m.FriSignupPage })));
-const FriDashboard = lazy(() => import("./pages/fri/dashboard/Dashboard").then(m => ({ default: m.FriDashboard })));
+// AUTOFIQ (White-label lessor platform) - lazy loaded
+const AutofiqLandingPage = lazy(() => import("./pages/fri/landing/LandingPage").then(m => ({ default: m.FriLandingPage })));
+const AutofiqTrialPage = lazy(() => import("./pages/fri/TrialPage").then(m => ({ default: m.FriTrialPage })));
+const AutofiqFeaturesPage = lazy(() => import("./pages/fri/FeaturesPage").then(m => ({ default: m.FriFeaturesPage })));
+const AutofiqLoginPage = lazy(() => import("./pages/fri/auth/LoginPage").then(m => ({ default: m.FriLoginPage })));
+const AutofiqSignupPage = lazy(() => import("./pages/fri/auth/SignupPage").then(m => ({ default: m.FriSignupPage })));
+const AutofiqDashboard = lazy(() => import("./pages/fri/dashboard/Dashboard").then(m => ({ default: m.FriDashboard })));
 const TenantSignupPage = lazy(() => import("./pages/fri/tenant/SignupPage").then(m => ({ default: m.TenantSignupPage })));
 
-// Lejio Fri Admin - lazy loaded
-const FriAdminLoginPage = lazy(() => import("./pages/fri/admin/LoginPage").then(m => ({ default: m.FriAdminLoginPage })));
-const FriAdminDashboard = lazy(() => import("./pages/fri/admin/Dashboard").then(m => ({ default: m.FriAdminDashboard })));
-const FriAdminLessorsPage = lazy(() => import("./pages/fri/admin/LessorsPage").then(m => ({ default: m.FriAdminLessorsPage })));
-const FriAdminLessorDetailsPage = lazy(() => import("./pages/fri/admin/LessorDetailsPage").then(m => ({ default: m.FriAdminLessorDetailsPage })));
-const FriAdminTicketsPage = lazy(() => import("./pages/fri/admin/TicketsPage").then(m => ({ default: m.FriAdminTicketsPage })));
-const FriAdminTicketDetailsPage = lazy(() => import("./pages/fri/admin/TicketDetailsPage").then(m => ({ default: m.FriAdminTicketDetailsPage })));
-const FriAdminPaymentsPage = lazy(() => import("./pages/fri/admin/PaymentsPage").then(m => ({ default: m.FriAdminPaymentsPage })));
-const FriAdminModulesPage = lazy(() => import("./pages/fri/admin/ModulesPage").then(m => ({ default: m.FriAdminModulesPage })));
-const FriAdminLayout = lazy(() => import("./pages/fri/admin/Layout").then(m => ({ default: m.FriAdminLayout })));
+// AUTOFIQ Admin - lazy loaded
+const AutofiqAdminLoginPage = lazy(() => import("./pages/fri/admin/LoginPage").then(m => ({ default: m.FriAdminLoginPage })));
+const AutofiqAdminDashboard = lazy(() => import("./pages/fri/admin/Dashboard").then(m => ({ default: m.FriAdminDashboard })));
+const AutofiqAdminLessorsPage = lazy(() => import("./pages/fri/admin/LessorsPage").then(m => ({ default: m.FriAdminLessorsPage })));
+const AutofiqAdminLessorDetailsPage = lazy(() => import("./pages/fri/admin/LessorDetailsPage").then(m => ({ default: m.FriAdminLessorDetailsPage })));
+const AutofiqAdminTicketsPage = lazy(() => import("./pages/fri/admin/TicketsPage").then(m => ({ default: m.FriAdminTicketsPage })));
+const AutofiqAdminTicketDetailsPage = lazy(() => import("./pages/fri/admin/TicketDetailsPage").then(m => ({ default: m.FriAdminTicketDetailsPage })));
+const AutofiqAdminPaymentsPage = lazy(() => import("./pages/fri/admin/PaymentsPage").then(m => ({ default: m.FriAdminPaymentsPage })));
+const AutofiqAdminModulesPage = lazy(() => import("./pages/fri/admin/ModulesPage").then(m => ({ default: m.FriAdminModulesPage })));
+const AutofiqAdminLayout = lazy(() => import("./pages/fri/admin/Layout").then(m => ({ default: m.FriAdminLayout })));
 
-// Fri Lessor Pages - lazy loaded
-const FriApiKeysPage = lazy(() => import("./pages/fri/dashboard/ApiKeysPage").then(m => ({ default: m.FriApiKeysPage })));
-const FriTeamManagement = lazy(() => import("./pages/fri/dashboard/FriTeamManagement").then(m => ({ default: m.default })));
-const FriLessorDashboard = lazy(() => import("./pages/fri/dashboard/FriLessorDashboard").then(m => ({ default: m.default })));
-const FriInvoiceManagement = lazy(() => import("./pages/fri/dashboard/FriInvoiceManagement").then(m => ({ default: m.default })));
-const FriModulesPage = lazy(() => import("./pages/fri/dashboard/ModulesPage").then(m => ({ default: m.FriModulesPage })));
-const FriVehiclesPage = lazy(() => import("./pages/fri/dashboard/VehiclesPage").then(m => ({ default: m.FriVehiclesPage })));
-const FriBookingsPage = lazy(() => import("./pages/fri/dashboard/BookingsPage").then(m => ({ default: m.FriBookingsPage })));
-const FriPaymentsPage = lazy(() => import("./pages/fri/dashboard/PaymentsPage").then(m => ({ default: m.FriPaymentsPage })));
-const FriSettingsPage = lazy(() => import("./pages/fri/dashboard/SettingsPage").then(m => ({ default: m.FriSettingsPage })));
-const FriDealerHubPage = lazy(() => import("./pages/fri/dashboard/DealerHubPage").then(m => ({ default: m.default })));
+// Autofiq Lessor Pages - lazy loaded
+const AutofiqApiKeysPage = lazy(() => import("./pages/fri/dashboard/ApiKeysPage").then(m => ({ default: m.FriApiKeysPage })));
+const AutofiqTeamManagement = lazy(() => import("./pages/fri/dashboard/FriTeamManagement").then(m => ({ default: m.default })));
+const AutofiqLessorDashboard = lazy(() => import("./pages/fri/dashboard/FriLessorDashboard").then(m => ({ default: m.default })));
+const AutofiqInvoiceManagement = lazy(() => import("./pages/fri/dashboard/FriInvoiceManagement").then(m => ({ default: m.default })));
+const AutofiqModulesPage = lazy(() => import("./pages/fri/dashboard/ModulesPage").then(m => ({ default: m.FriModulesPage })));
+const AutofiqVehiclesPage = lazy(() => import("./pages/fri/dashboard/VehiclesPage").then(m => ({ default: m.FriVehiclesPage })));
+const AutofiqBookingsPage = lazy(() => import("./pages/fri/dashboard/BookingsPage").then(m => ({ default: m.FriBookingsPage })));
+const AutofiqPaymentsPage = lazy(() => import("./pages/fri/dashboard/PaymentsPage").then(m => ({ default: m.FriPaymentsPage })));
+const AutofiqSettingsPage = lazy(() => import("./pages/fri/dashboard/SettingsPage").then(m => ({ default: m.FriSettingsPage })));
+const AutofiqDealerHubPage = lazy(() => import("./pages/fri/dashboard/DealerHubPage").then(m => ({ default: m.default })));
 
 // Workshop Pages - lazy loaded
 const GaragePlanPage = lazy(() => import("./pages/fri/workshop/GaragePlan").then(m => ({ default: m.GaragePlanPage })));
@@ -87,6 +87,12 @@ const queryClient = new QueryClient({
 });
 
 // Minimal loading fallback
+const LegacyAutofiqRedirect = () => {
+  const location = useLocation();
+  const nextPath = location.pathname.replace(/^\/fri/, '/autofiq') || '/autofiq';
+  return <Navigate to={`${nextPath}${location.search}${location.hash}`} replace />;
+};
+
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
@@ -107,142 +113,144 @@ export default function App() {
                 <Routes>
                 {/* Debug route */}
         <Route path="/debug" element={<div className="p-8"><h1>Debug: App is working! (v2)</h1><p>This is the NEW compiled version</p></div>} />
-                {/* Lejio Fri - Main Platform */}
-                <Route path="/" element={<FriLandingPage />} />
-                <Route path="/fri" element={<Navigate to="/" replace />} />
-                <Route path="/trial" element={<FriTrialPage />} />
-                <Route path="/fri/trial" element={<Navigate to="/trial" replace />} />
-                <Route path="/features" element={<FriFeaturesPage />} />
-                <Route path="/fri/features" element={<Navigate to="/features" replace />} />
-                <Route path="/login" element={<FriLoginPage />} />
-                <Route path="/fri/login" element={<Navigate to="/login" replace />} />
-                <Route path="/signup" element={<FriSignupPage />} />
-                <Route path="/fri/signup" element={<Navigate to="/signup" replace />} />
-                <Route path="/fri/tenant/signup" element={<TenantSignupPage />} />
-                <Route path="/fri/dashboard" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/fri/*" element={<LegacyAutofiqRedirect />} />
+                {/* AUTOFIQ - Main Platform */}
+                <Route path="/" element={<Navigate to="/autofiq" replace />} />
+                <Route path="/autofiq" element={<AutofiqLandingPage />} />
+                <Route path="/autofiq/landing" element={<Navigate to="/autofiq" replace />} />
+                <Route path="/trial" element={<Navigate to="/autofiq/trial" replace />} />
+                <Route path="/autofiq/trial" element={<AutofiqTrialPage />} />
+                <Route path="/features" element={<Navigate to="/autofiq/features" replace />} />
+                <Route path="/autofiq/features" element={<AutofiqFeaturesPage />} />
+                <Route path="/login" element={<Navigate to="/autofiq/login" replace />} />
+                <Route path="/autofiq/login" element={<AutofiqLoginPage />} />
+                <Route path="/signup" element={<Navigate to="/autofiq/signup" replace />} />
+                <Route path="/autofiq/signup" element={<AutofiqSignupPage />} />
+                <Route path="/autofiq/tenant/signup" element={<TenantSignupPage />} />
+                <Route path="/autofiq/dashboard" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
-                      <FriDashboard />
+                      <AutofiqDashboard />
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/team" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/team" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
                       <ProtectedRoute permission="team">
-                        <FriTeamManagement />
+                        <AutofiqTeamManagement />
                       </ProtectedRoute>
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/analytics" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/analytics" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
                       <ProtectedRoute permission="analytics">
-                        <FriLessorDashboard />
+                        <AutofiqLessorDashboard />
                       </ProtectedRoute>
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/invoices" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/invoices" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
                       <ProtectedRoute permission="invoices">
-                        <FriInvoiceManagement />
+                        <AutofiqInvoiceManagement />
                       </ProtectedRoute>
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
                 
-                <Route path="/fri/dashboard/vehicles" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/vehicles" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
-                      <FriVehiclesPage />
+                      <AutofiqVehiclesPage />
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/dealer" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/dealer" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
                       <ProtectedRoute permission="dealer">
-                        <FriDealerHubPage />
+                        <AutofiqDealerHubPage />
                       </ProtectedRoute>
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/bookings" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/bookings" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
-                      <FriBookingsPage />
+                      <AutofiqBookingsPage />
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/payments" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/payments" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
                       <ProtectedRoute permission="payments">
-                        <FriPaymentsPage />
+                        <AutofiqPaymentsPage />
                       </ProtectedRoute>
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/modules" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/modules" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
                       <ProtectedRoute permission="modules">
-                        <FriModulesPage />
+                        <AutofiqModulesPage />
                       </ProtectedRoute>
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/api-keys" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/api-keys" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
                       <ProtectedRoute permission="api-keys">
-                        <FriApiKeysPage />
+                        <AutofiqApiKeysPage />
                       </ProtectedRoute>
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
-                <Route path="/fri/dashboard/settings" element={
-                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Lejio Fri' }} domain="fri">
+                <Route path="/autofiq/dashboard/settings" element={
+                  <BrandProvider branding={{ primary_color: '#0066cc', secondary_color: '#00cc99', company_name: 'Autofiq' }} domain="autofiq">
                     <FriAuthProvider>
                       <ProtectedRoute permission="settings">
-                        <FriSettingsPage />
+                        <AutofiqSettingsPage />
                       </ProtectedRoute>
                     </FriAuthProvider>
                   </BrandProvider>
                 } />
                 
                 {/* Workshop Pages */}
-                <Route path="/fri/workshop/garageplan" element={<GaragePlanPage />} />
-                <Route path="/fri/workshop/garageteam" element={<GarageTeamPage />} />
-                <Route path="/fri/workshop/garagebooks" element={<GarageBooksPage />} />
-                <Route path="/fri/workshop/garagesync" element={<GarageSyncPage />} />
-                <Route path="/fri/workshop/garagechat" element={<GarageChatPage />} />
-                <Route path="/fri/workshop/garagedeal" element={<GarageDealPage />} />
-                <Route path="/fri/workshop/garagehub" element={<GarageHubPage />} />
-                <Route path="/fri/workshop/pricing" element={<WorkshopPricingPage />} />
-                <Route path="/fri/workshop/modules" element={<WorkshopModulesPublic />} />
+                <Route path="/autofiq/workshop/garageplan" element={<GaragePlanPage />} />
+                <Route path="/autofiq/workshop/garageteam" element={<GarageTeamPage />} />
+                <Route path="/autofiq/workshop/garagebooks" element={<GarageBooksPage />} />
+                <Route path="/autofiq/workshop/garagesync" element={<GarageSyncPage />} />
+                <Route path="/autofiq/workshop/garagechat" element={<GarageChatPage />} />
+                <Route path="/autofiq/workshop/garagedeal" element={<GarageDealPage />} />
+                <Route path="/autofiq/workshop/garagehub" element={<GarageHubPage />} />
+                <Route path="/autofiq/workshop/pricing" element={<WorkshopPricingPage />} />
+                <Route path="/autofiq/workshop/modules" element={<WorkshopModulesPublic />} />
                 
-                {/* Lejio Fri Admin */}
-                <Route path="/fri/admin/login" element={<FriAdminLoginPage />} />
-                <Route path="/fri/admin/*" element={
-                  <FriAdminLayout>
+                {/* AUTOFIQ Admin */}
+                <Route path="/autofiq/admin/login" element={<AutofiqAdminLoginPage />} />
+                <Route path="/autofiq/admin/*" element={
+                  <AutofiqAdminLayout>
                     <Routes>
-                      <Route path="/dashboard" element={<FriAdminDashboard />} />
-                      <Route path="/lessors" element={<FriAdminLessorsPage />} />
-                      <Route path="/lessors/:lessorId" element={<FriAdminLessorDetailsPage />} />
-                      <Route path="/support" element={<FriAdminTicketsPage />} />
-                      <Route path="/support/:ticketId" element={<FriAdminTicketDetailsPage />} />
-                      <Route path="/payments" element={<FriAdminPaymentsPage />} />
-                      <Route path="/modules" element={<FriAdminModulesPage />} />
-                      <Route path="/" element={<Navigate to="/fri/admin/dashboard" replace />} />
+                      <Route path="/dashboard" element={<AutofiqAdminDashboard />} />
+                      <Route path="/lessors" element={<AutofiqAdminLessorsPage />} />
+                      <Route path="/lessors/:lessorId" element={<AutofiqAdminLessorDetailsPage />} />
+                      <Route path="/support" element={<AutofiqAdminTicketsPage />} />
+                      <Route path="/support/:ticketId" element={<AutofiqAdminTicketDetailsPage />} />
+                      <Route path="/payments" element={<AutofiqAdminPaymentsPage />} />
+                      <Route path="/modules" element={<AutofiqAdminModulesPage />} />
+                      <Route path="/" element={<Navigate to="/autofiq/admin/dashboard" replace />} />
                     </Routes>
-                  </FriAdminLayout>
+                  </AutofiqAdminLayout>
                 } />
 
-                {/* Page Builder - Lejio Fri Dashboard */}
+                {/* Page Builder - AUTOFIQ Dashboard */}
                 <Route path="/dashboard/pages" element={
                   <FriAuthProvider>
                     <PagesDashboard />

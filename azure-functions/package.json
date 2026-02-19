@@ -1,7 +1,7 @@
 {
-  "name": "lejio-fri-azure-functions",
+  "name": "autofiq-azure-functions",
   "version": "1.0.0",
-  "description": "Azure Functions backend for Lejio Fri",
+  "description": "Azure Functions backend for AUTOFIQ",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",

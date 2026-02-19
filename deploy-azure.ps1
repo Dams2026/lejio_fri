@@ -1,14 +1,14 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-Quick deployment script for Lejio Fri on Azure using AZD
+Quick deployment script for AUTOFIQ on Azure using AZD
 .DESCRIPTION
 One-command deployment of entire infrastructure using Azure Developer CLI
 #>
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "🚀 Lejio Fri - Azure Deployment Script" -ForegroundColor Cyan
+Write-Host "🚀 AUTOFIQ - Azure Deployment Script" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -107,7 +107,7 @@ Write-Host "   1. Wait 2-3 minutes for Static Web App to fully deploy"
 Write-Host "   2. Visit your app URL above"
 Write-Host "   3. Run database migrations:"
 Write-Host ""
-Write-Host "   sqlcmd -S '<server>.database.windows.net' -U sqladmin -P '<password>' -d 'lejio-fri' -i 'infra/migrations/001-init-fri-schema.sql'" -ForegroundColor Cyan
+Write-Host "   sqlcmd -S '<server>.database.windows.net' -U sqladmin -P '<password>' -d 'autofiq' -i 'infra/migrations/001-init-fri-schema.sql'" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "📚 Full guide: AZURE_SETUP_GUIDE.md" -ForegroundColor Gray
 Write-Host ""

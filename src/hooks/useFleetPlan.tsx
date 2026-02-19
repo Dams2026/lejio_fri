@@ -28,7 +28,7 @@ export interface FleetPlanInfo {
 export const FLEET_PLANS = {
   fleet_private: {
     name: 'Privat Fleet',
-    description: 'LEJIO varetager udlejningen af dine private biler',
+    description: 'AUTOFIQ varetager udlejningen af dine private biler',
     commissionRate: 30,
     features: [
       'Booking og kalender-styring',
@@ -42,7 +42,7 @@ export const FLEET_PLANS = {
   },
   fleet_basic: {
     name: 'Fleet Basic',
-    description: 'LEJIO varetager alt med udlejning af dine biler',
+    description: 'AUTOFIQ varetager alt med udlejning af dine biler',
     commissionRate: 20,
     features: [
       'Booking og kalender-styring',

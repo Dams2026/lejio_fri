@@ -48,7 +48,7 @@ const handler = async (req: Request): Promise<Response> => {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const stripeSecretKey = Deno.env.get('LEJIO_STRIPE_SECRET_KEY');
+    const stripeSecretKey = Deno.env.get('AUTOFIQ_STRIPE_SECRET_KEY');
 
     // Validate authorization header
     const authHeader = req.headers.get('authorization');

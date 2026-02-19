@@ -9,8 +9,8 @@ module.exports = async function (context, req) {
   const config = {
     user: 'adminuser',
     password: 'Abc123!@#$Pass', // From Step 2
-    server: 'lejio-fri-db.database.windows.net',
-    database: 'lejio_fri',
+    server: 'autofiq-db.database.windows.net',
+    database: 'autofiq',
     authentication: {
       type: 'default',
     },

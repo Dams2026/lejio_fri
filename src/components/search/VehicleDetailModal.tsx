@@ -183,7 +183,7 @@ export const VehicleDetailModal = ({
             {vehicle.unlimited_km && vehicle.vehicle_type === "bil" && (
               <Badge className="bg-accent text-accent-foreground">
                 <Check className="w-3 h-3 mr-1" />
-                Fri km
+                Ubegrænset km
               </Badge>
             )}
             {vehicle.tempo_approved && (
@@ -197,7 +197,7 @@ export const VehicleDetailModal = ({
           {vehicle.owner_fleet_plan && (
             <Badge className="absolute top-4 right-4 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-md">
               <Shield className="w-3 h-3 mr-1" />
-              LEJIO Varetager
+              AUTOFIQ Varetager
             </Badge>
           )}
         </div>
@@ -271,7 +271,7 @@ export const VehicleDetailModal = ({
                 <span className="text-muted-foreground">Kilometer:</span>
                 <span className="font-medium">
                   {vehicle.unlimited_km
-                    ? "Fri kilometer"
+                    ? "Ubegrænsede kilometer"
                     : `${vehicle.included_km || 0} km/dag inkl.`}
                 </span>
               </div>

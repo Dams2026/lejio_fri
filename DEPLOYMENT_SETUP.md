@@ -5,7 +5,7 @@
 Du skal sætte dette secret i GitHub før deployment virker:
 
 ### 1. Gå til Repository Settings
-- https://github.com/martinjensen9988-sudo/lejio-b75cff1f/settings
+- https://github.com/martinjensen9988-sudo/autofiq-b75cff1f/settings
 
 ### 2. Klik "Secrets and variables" > "Actions"
 
@@ -13,7 +13,7 @@ Du skal sætte dette secret i GitHub før deployment virker:
 
 ### 4. Tilføj secret med disse detaljer:
 - **Name:** `AZURE_STATIC_WEB_APPS_API_TOKEN`
-- **Value:** (Hent fra Azure Portal → Lejio-fri Static Web App → Manage deployment token)
+- **Value:** (Hent fra Azure Portal → AUTOFIQ Static Web App → Manage deployment token)
 
 Aktuel token (hold privat):
 ```
@@ -33,7 +33,7 @@ Aktuel token (hold privat):
 ## Fejlfinding
 
 ### Deployment fejler?
-1. Tjek GitHub Actions logs: https://github.com/martinjensen9988-sudo/lejio-b75cff1f/actions
+1. Tjek GitHub Actions logs: https://github.com/martinjensen9988-sudo/autofiq-b75cff1f/actions
 2. Tjek hvis secret `AZURE_STATIC_WEB_APPS_API_TOKEN` er sat
 3. Tjek hvis token er udløbet (skal regenereres i Azure)
 4. Se Azure Static Web Apps deployment logs

@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
@@ -26,9 +27,69 @@ import {
   MessageSquare,
   Package,
   Truck,
+  Bus,
   TrendingDown,
-  Crown
 } from 'lucide-react';
+import { AutofiqLogo } from '@/components/AutofiqLogo';
+
+
+const TrailerIcon = ({ className = '' }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    role="img"
+    aria-label="Trailer"
+  >
+    <path d="M3 12H16V17H3V12Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M16 14H20L22 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="7" cy="18" r="2" stroke="currentColor" strokeWidth="1.8" />
+    <circle cx="14" cy="18" r="2" stroke="currentColor" strokeWidth="1.8" />
+  </svg>
+);
+
+const ContractorMachinesIcon = ({ className = '' }: { className?: string }) => (
+  <span className={className} role="img" aria-label="Gravemaskine og minilæsser">
+    🚜🛻
+  </span>
+);
+
+const BikeElectricIcon = ({ className = '' }: { className?: string }) => (
+  <span className={className} role="img" aria-label="Cykel og elcykel">
+    🚲⚡
+  </span>
+);
+
+const ScooterIcon = ({ className = '' }: { className?: string }) => (
+  <span className={className} role="img" aria-label="Scooter">
+    🛵
+  </span>
+);
+
+const MotorcycleIcon = ({ className = '' }: { className?: string }) => (
+  <span className={className} role="img" aria-label="Motorcykel">
+    🏍️
+  </span>
+);
+
+const CampingCaravanIcon = ({ className = '' }: { className?: string }) => (
+  <span className={className} role="img" aria-label="Campingvogn">
+    🏕️
+  </span>
+);
+
+const MotorhomeIcon = ({ className = '' }: { className?: string }) => (
+  <span className={className} role="img" aria-label="Autocamper">
+    🚐🏕️
+  </span>
+);
+
+const VanCategoryIcon = ({ className = '' }: { className?: string }) => (
+  <span className={className} role="img" aria-label="Varebil">
+    🚐
+  </span>
+);
 
 export function FriFeaturesPage() {
   const garageModules = [
@@ -129,6 +190,136 @@ export function FriFeaturesPage() {
         'Bilcontraktsgen­ere­ring',
         'Momsberegning',
         'Finansieringsintegration'
+      ]
+    },
+    {
+      category: '🚚 Trailerhandel & Administration',
+      icon: TrailerIcon,
+      description: 'Trailere, booking og afregning samlet ét sted',
+      features: [
+        'Trailer workflow',
+        'Trailerordre og planlægning',
+        'Automatisk pris- og depositumberegning',
+        'Trailerkontraktgenerering',
+        'Skadesregistrering og return-check',
+        'Kapacitets- og tilgængelighedsstyring'
+      ]
+    },
+    {
+      category: '🚛 Lastbilhandel & Drift',
+      icon: Truck,
+      description: 'Disponering og økonomi for lastbiler',
+      features: [
+        'Lastbil workflow',
+        'Lastbilordre og disponering',
+        'Rute- og kapacitetsplanlægning',
+        'Automatisk kontrakt- og fragtgrundlag',
+        'Kilometer- og brændstofforbrugssporing',
+        'Service, syn og compliance-overblik'
+      ]
+    },
+    {
+      category: '🚐 Varebilhandel & Drift',
+      icon: VanCategoryIcon,
+      description: 'Planlægning og økonomi for varebiler',
+      features: [
+        'Varebil workflow',
+        'Varebilordre og disponering',
+        'Rute- og kapacitetsplanlægning for varebiler',
+        'Automatisk kontrakt- og leveringsgrundlag',
+        'Kilometer-, brændstof- og serviceoverblik',
+        'Skader, afleveringer og compliance-overblik'
+      ]
+    },
+    {
+      category: '🚌 Bushandel & Drift',
+      icon: Bus,
+      description: 'Planlægning og økonomi for busdrift',
+      features: [
+        'Bus workflow',
+        'Busordre og disponering',
+        'Ruteplanlægning og kapacitetsstyring',
+        'Automatisk kontrakt- og kørselsgrundlag',
+        'Kilometer-, brændstof- og passageroverblik',
+        'Service, syn og compliance-overblik'
+      ]
+    },
+    {
+      category: '🚲 Cykel- & Elcykelhandel',
+      icon: BikeElectricIcon,
+      description: 'Salg, service og administration af cykler og elcykler',
+      features: [
+        'Cykel workflow',
+        'Ordrestyring for cykler og elcykler',
+        'Batteri- og komponentregistrering',
+        'Automatisk kontrakt- og leveringsgrundlag',
+        'Servicehistorik, klargøring og garanti',
+        'Reservedele, tilbehør og kampagnestyring'
+      ]
+    },
+    {
+      category: '🛵 Scooterhandel & Drift',
+      icon: ScooterIcon,
+      description: 'Styring af scooterforretning fra ordre til aflevering',
+      features: [
+        'Scooter workflow',
+        'Ordrestyring og disponering',
+        'Klargøring, registrering og udstyrsoverblik',
+        'Automatisk kontrakt- og salgsdokumenter',
+        'Service, reservedele og garantiforløb',
+        'Skadeshistorik og compliance-overblik'
+      ]
+    },
+    {
+      category: '🏍️ MChandel & Drift',
+      icon: MotorcycleIcon,
+      description: 'Komplet drift til motorcykler og performance-segmentet',
+      features: [
+        'MC workflow',
+        'Ordre- og disponeringsstyring',
+        'Model-, udstyrs- og tilstandsregistrering',
+        'Automatisk kontrakt- og leveringsgrundlag',
+        'Service, tuning og vedligeholdelsesplaner',
+        'Forsikring, syn og compliance-overblik'
+      ]
+    },
+    {
+      category: '🏕️ Campingvognhandel & Drift',
+      icon: CampingCaravanIcon,
+      description: 'Administration af campingvogne med fuldt overblik',
+      features: [
+        'Campingvogn workflow',
+        'Ordre- og leveringsstyring',
+        'Udstyrspakker og tilbehørsadministration',
+        'Automatisk kontrakt- og finansieringsgrundlag',
+        'Service, fugttest og klargøringshistorik',
+        'Skadehåndtering og garantiopfølgning'
+      ]
+    },
+    {
+      category: '🚐 Autocamperhandel & Drift',
+      icon: MotorhomeIcon,
+      description: 'Styring af salg, service og drift af autocampere',
+      features: [
+        'Autocamper workflow',
+        'Ordrestyring og disponering',
+        'Plads-, layout- og udstyrsoverblik',
+        'Automatisk kontrakt- og afleveringsgrundlag',
+        'Service, klargøring og sæsoneftersyn',
+        'Forsikring, skade og compliance-overblik'
+      ]
+    },
+    {
+      category: '🚜 Entreprenørmateriel',
+      icon: ContractorMachinesIcon,
+      description: 'Drift og styring af gravemaskiner og minilæssere',
+      features: [
+        'Entreprenørworkflow',
+        'Ordrestyring for gravemaskiner og minilæssere',
+        'Drifttimer og brugssporing',
+        'Automatisk kontrakt- og afleveringsrapport',
+        'Skade- og servicehistorik',
+        'Prisstyring med dags-/uge-/månedsleje'
       ]
     },
     {
@@ -318,7 +509,7 @@ export function FriFeaturesPage() {
   ];
 
   // Icon mapping since we can't pass icon functions directly
-  const iconMap: { [key: string]: any } = {
+  const iconMap: Record<string, ComponentType<{ className?: string }>> = {
     'Flådestyring': Zap,
     'Bookinger & Kalenderstyring': Calendar,
     'Fakturaering & Betalinger': DollarSign,
@@ -330,7 +521,8 @@ export function FriFeaturesPage() {
     'Branding & Tilpasning': Settings,
     'Integration & API': Cloud,
     'Support & Onboarding': Clock,
-    'Performance & Reliability': TrendingUp
+    'Performance & Reliability': TrendingUp,
+    '🚜 Entreprenørmateriel': ContractorMachinesIcon
   };
 
   return (
@@ -340,17 +532,14 @@ export function FriFeaturesPage() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 backdrop-blur-lg bg-white/5 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link to="/fri" className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-300 to-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.35)]">
-              <Crown className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold">Din platform</span>
+          <Link to="/autofiq" className="flex items-center gap-3">
+            <AutofiqLogo iconClassName="h-10 w-auto" showWordmark />
           </Link>
           <div className="flex gap-4">
-            <Link to="/fri/login">
+            <Link to="/autofiq/login">
               <Button variant="ghost" className="text-white/80 hover:text-amber-100 hover:bg-white/10">Log ind</Button>
             </Link>
-            <Link to="/fri/trial">
+            <Link to="/autofiq/trial">
               <Button className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">Start prøveperiode</Button>
             </Link>
           </div>
@@ -366,7 +555,7 @@ export function FriFeaturesPage() {
           <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
             En komplet løsning til bilutlejning. Ingen skjulte funktioner – alt er inkluderet i din plan.
           </p>
-          <Link to="/fri/trial">
+          <Link to="/autofiq/trial">
             <Button size="lg" className="gap-2 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">
               Start gratis prøveperiode <ArrowRight className="w-4 h-4" />
             </Button>
@@ -376,7 +565,7 @@ export function FriFeaturesPage() {
         {/* Feature Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
-            const IconComponent = iconMap[feature.category];
+            const IconComponent = iconMap[feature.category] || feature.icon;
             return (
               <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all h-full">
                 <CardHeader>
@@ -493,7 +682,7 @@ export function FriFeaturesPage() {
           <p className="text-xl mb-8 text-white/70">
             Prøv alle funktioner helt gratis i 14 dage. Intet kreditkort påkrævet.
           </p>
-          <Link to="/fri/trial">
+          <Link to="/autofiq/trial">
             <Button size="lg" className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">
               Start gratis prøveperiode
             </Button>
@@ -508,9 +697,9 @@ export function FriFeaturesPage() {
             <div>
               <h4 className="font-bold text-lg mb-4 text-amber-200">Om platformen</h4>
               <ul className="space-y-2 text-sm text-white/60">
-                <li><Link to="/fri" className="hover:text-amber-300">Hjem</Link></li>
-                <li><Link to="/fri/features" className="hover:text-amber-300">Funktioner</Link></li>
-                <li><Link to="/fri/landing" className="hover:text-amber-300">Priser</Link></li>
+                <li><Link to="/autofiq" className="hover:text-amber-300">Hjem</Link></li>
+                <li><Link to="/autofiq/features" className="hover:text-amber-300">Funktioner</Link></li>
+                <li><Link to="/autofiq/landing" className="hover:text-amber-300">Priser</Link></li>
               </ul>
             </div>
             <div>
@@ -539,7 +728,7 @@ export function FriFeaturesPage() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-sm text-white/40">
-            <p>© 2026 Din platform. Alle rettigheder forbeholdt.</p>
+            <p>© 2026 AUTOFIQ. Alle rettigheder forbeholdt.</p>
           </div>
         </div>
       </footer>

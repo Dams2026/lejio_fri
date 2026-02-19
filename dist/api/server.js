@@ -312,7 +312,7 @@ app.get('*', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 LEJIO FRI server running on port ${PORT}`);
+  console.log(`🚀 AUTOFIQ server running on port ${PORT}`);
   console.log(`📦 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`🗄️  Database: ${process.env.DB_HOST}`);
   console.log(`📁 Static files: ${distPath}`);

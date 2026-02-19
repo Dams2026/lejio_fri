@@ -488,7 +488,7 @@ const FleetVehicleEditPage = () => {
                   checked={formData.unlimited_km || false}
                   onCheckedChange={(checked) => setFormData(prev => ({ ...prev, unlimited_km: !!checked }))}
                 />
-                <Label>Fri kilometer</Label>
+                <Label>Ubegrænsede kilometer</Label>
               </div>
 
               {!formData.unlimited_km && (

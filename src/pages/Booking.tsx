@@ -1573,7 +1573,7 @@ const { applyCreditAmount, completePendingReferral } = useReferral();
                       <div className="flex justify-between text-accent">
                         <span>Kilometer</span>
                         <span className="flex items-center gap-1">
-                          <Check className="w-4 h-4" /> Fri km
+                          <Check className="w-4 h-4" /> Ubegrænset km
                         </span>
                       </div>
                     )}

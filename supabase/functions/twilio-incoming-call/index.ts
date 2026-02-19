@@ -36,7 +36,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     // Try to match caller to a lead/deal
-    let greeting = "Velkommen til Lejio. ";
+    let greeting = "Velkommen til AUTOFIQ. ";
     
     if (from) {
       // Check if we have a lead with this phone number

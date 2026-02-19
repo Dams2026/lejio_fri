@@ -1,7 +1,7 @@
 # 🚀 Corporate Portal - Deployment & Setup Guide
 
 ## Overview
-Complete enterprise feature set for LEJIO including role management, email integration, document management, and API integration.
+Complete enterprise feature set for AUTOFIQ including role management, email integration, document management, and API integration.
 
 **Status:** ✅ Production-ready on main branch  
 **Latest Commit:** 5eb23d8  
@@ -57,7 +57,7 @@ All tables include:
 #### Option 1: Using Supabase CLI (Recommended)
 ```bash
 # Navigate to project directory
-cd /workspaces/lejio-b75cff1f
+cd /workspaces/autofiq-b75cff1f
 
 # Push migrations to your Supabase project
 supabase db push
@@ -165,7 +165,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_key
 - Stored in Supabase Storage
 
 ### API Integration
-- Generate API keys with prefix `lejio_`
+- Generate API keys with prefix `autofiq_`
 - Configure scopes: employees.read/write, budget.read/write, reports.read, bookings.read/write
 - Set expiration (default 90 days)
 - Track all API requests in logs
@@ -288,7 +288,7 @@ All components:
 
 ## 13. Git Information
 
-**Repository:** lejio-b75cff1f  
+**Repository:** autofiq-b75cff1f  
 **Branch:** main  
 **Recent Commits:**
 - 5eb23d8 - Type casting fixes

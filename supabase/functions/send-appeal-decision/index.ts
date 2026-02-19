@@ -135,7 +135,7 @@ serve(async (req: Request): Promise<Response> => {
 
       ${safeNotes ? `
       <div class="admin-notes">
-        <strong>📝 Begrundelse fra LEJIO:</strong>
+        <strong>📝 Begrundelse fra AUTOFIQ:</strong>
         <p style="margin-bottom: 0;">${safeNotes}</p>
       </div>
       ` : ''}
@@ -143,8 +143,8 @@ serve(async (req: Request): Promise<Response> => {
       <p>Har du spørgsmål til afgørelsen, er du velkommen til at kontakte vores support.</p>
 
       <div class="footer">
-        <p>Med venlig hilsen,<br>LEJIO Support Team</p>
-        <p>Har du spørgsmål? Kontakt os på support@lejio.dk</p>
+        <p>Med venlig hilsen,<br>AUTOFIQ Support Team</p>
+        <p>Har du spørgsmål? Kontakt os på support@autofiq.dk</p>
       </div>
     </div>
   </div>
@@ -155,7 +155,7 @@ serve(async (req: Request): Promise<Response> => {
     await client.send({
       from: smtpFromEmail,
       to: appellantEmail,
-      subject: `${statusIcon} Din LEJIO klage er blevet ${statusText.toLowerCase()}`,
+      subject: `${statusIcon} Din AUTOFIQ klage er blevet ${statusText.toLowerCase()}`,
       content: emailHtml,
       html: emailHtml,
     });

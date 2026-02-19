@@ -64,7 +64,7 @@ export function WorkshopModulesPublic() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Lejio Fri til Autoindustrien
+              AUTOFIQ til Autoindustrien
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               Komplet digital løsning for værksteder, biludlejning, bilsalg, og autodele-distributører. 
@@ -232,7 +232,7 @@ export function WorkshopModulesPublic() {
           <div className="bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-500/30 rounded-2xl p-8 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Klar til at transformere dit forretning?</h2>
             <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-              Bliv med tusindvis af værksteder, leasingselskaber og bilsælgere som bruger Lejio Fri til at drive deres business digitalt
+              Bliv med tusindvis af værksteder, leasingselskaber og bilsælgere som bruger AUTOFIQ til at drive deres business digitalt
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-brown-900 font-bold">

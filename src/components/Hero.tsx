@@ -245,8 +245,8 @@ const Hero = () => {
                 <Sparkles className="w-5 h-5" />
                 Bliv udlejer
               </Button>
-              <Button variant="glass" size="lg" onClick={() => navigate('/hvad-er-lejio')}>
-                Læs mere om Lejio
+              <Button variant="glass" size="lg" onClick={() => navigate('/hvad-er-autofiq')}>
+                Læs mere om AUTOFIQ
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </div>

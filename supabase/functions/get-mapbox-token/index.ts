@@ -29,8 +29,8 @@ function checkRateLimit(ip: string): boolean {
 
 // Allowed origins for the Mapbox token
 const ALLOWED_ORIGINS = [
-  "https://lejio.dk",
-  "https://www.lejio.dk",
+  "https://autofiq.dk",
+  "https://www.autofiq.dk",
   "http://localhost:5173",
   "http://localhost:3000",
 ];

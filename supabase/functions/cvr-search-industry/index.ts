@@ -119,7 +119,7 @@ serve(async (req) => {
     const response = await fetch(apiUrl, {
       method: 'GET',
       headers: {
-        'User-Agent': 'LEJIO - Biludlejning Platform',
+        'User-Agent': 'AUTOFIQ - Biludlejning Platform',
       },
     });
 

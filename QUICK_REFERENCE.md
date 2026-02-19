@@ -4,9 +4,9 @@
 
 ### Configuration Summary
 ```
-Server:   lejio-fri-db.database.windows.net:1433
-Database: lejio_fri
-User:     martin_lejio_user
+Server:   autofiq-db.database.windows.net:1433
+Database: autofiq
+User:     martin_autofiq_user
 Password: TestPassword123!
 ```
 
@@ -24,20 +24,20 @@ Password: TestPassword123!
 
 ### In SQL Server Management Studio (SSMS)
 
-**Connection:** `lejio-fri-db.database.windows.net` (as server admin)
+**Connection:** `autofiq-db.database.windows.net` (as server admin)
 
 **Master Database:**
 ```sql
 USE master;
-CREATE LOGIN martin_lejio_user WITH PASSWORD = 'TestPassword123!';
+CREATE LOGIN martin_autofiq_user WITH PASSWORD = 'TestPassword123!';
 ```
 
-**lejio_fri Database:**
+**autofiq Database:**
 ```sql
-USE lejio_fri;
-CREATE USER martin_lejio_user FOR LOGIN martin_lejio_user;
-ALTER ROLE db_datareader ADD MEMBER martin_lejio_user;
-ALTER ROLE db_datawriter ADD MEMBER martin_lejio_user;
+USE autofiq;
+CREATE USER martin_autofiq_user FOR LOGIN martin_autofiq_user;
+ALTER ROLE db_datareader ADD MEMBER martin_autofiq_user;
+ALTER ROLE db_datawriter ADD MEMBER martin_autofiq_user;
 ```
 
 ---
@@ -46,8 +46,8 @@ ALTER ROLE db_datawriter ADD MEMBER martin_lejio_user;
 
 ```powershell
 $env:SQLCMDPASSWORD='TestPassword123!'
-sqlcmd -S tcp:lejio-fri-db.database.windows.net,1433 `
-  -U martin_lejio_user -d "lejio_fri" -C `
+sqlcmd -S tcp:autofiq-db.database.windows.net,1433 `
+  -U martin_autofiq_user -d "autofiq" -C `
   -Q "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='dbo' ORDER BY TABLE_NAME;"
 ```
 
@@ -116,9 +116,9 @@ az staticwebapp publish --name zealous-stone-04c86dd03 --source-language typescr
 Go to: **Static Web Apps** → **Configuration** → Add:
 
 ```
-DB_SERVER        = lejio-fri-db.database.windows.net
-DB_NAME          = lejio_fri
-DB_USER          = martin_lejio_user
+DB_SERVER        = autofiq-db.database.windows.net
+DB_NAME          = autofiq
+DB_USER          = martin_autofiq_user
 DB_PASSWORD      = TestPassword123!
 VITE_API_URL     = https://zealous-stone-04c86dd03.azurestaticapps.net/api
 VITE_ENVIRONMENT = production
@@ -128,11 +128,11 @@ VITE_ENVIRONMENT = production
 
 ## Troubleshooting
 
-### ❌ "Login failed for user 'martin_lejio_user'"
+### ❌ "Login failed for user 'martin_autofiq_user'"
 → SQL user hasn't been created yet (Step 1 not complete)
 
 ### ❌ "Server is not found or not accessible"
-→ Use full hostname: `lejio-fri-db.database.windows.net`
+→ Use full hostname: `autofiq-db.database.windows.net`
 → Check firewall allows your IP
 
 ### ❌ "Cannot find table 'fri_vehicles'"

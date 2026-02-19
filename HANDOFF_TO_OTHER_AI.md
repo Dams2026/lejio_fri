@@ -1,8 +1,8 @@
-# 🚀 Lejio Fri - Komplet System Forklaring for AI
+# 🚀 AUTOFIQ - Komplet System Forklaring for AI
 
 ## 📌 Executive Summary
 
-Vi bygger **Lejio Fri** - en white-label SaaS lessor platform (udlejningsplatform for privatpersoner og professionelle).
+Vi bygger **AUTOFIQ** - en white-label SaaS lessor platform (udlejningsplatform for privatpersoner og professionelle).
 
 **Status:** Frontend 100% live ✅ | Database schema 100% ready ✅ | API 0% (næste phase)
 
@@ -10,7 +10,7 @@ Vi bygger **Lejio Fri** - en white-label SaaS lessor platform (udlejningsplatfor
 
 ---
 
-## 🎯 Hvad er Lejio Fri?
+## 🎯 Hvad er AUTOFIQ?
 
 **Lessor Dashboard** - En lessor (privatperson) kan:
 - ✅ Tilføje sine egne køretøjer (biler)
@@ -20,7 +20,7 @@ Vi bygger **Lejio Fri** - en white-label SaaS lessor platform (udlejningsplatfor
 - ✅ Administrere team members (give adgang til andet staff)
 - ✅ Konfigurere settings (branding, domæne, etc)
 
-**Admin Portal** - Vi (Lejio) kan:
+**Admin Portal** - Vi (AUTOFIQ) kan:
 - ✅ Se alle lessors i systemet
 - ✅ Se detaljer for hver lessor (omsætning, antal vehicles, osv)
 - ✅ Administrere support tickets
@@ -37,23 +37,23 @@ Vi bygger **Lejio Fri** - en white-label SaaS lessor platform (udlejningsplatfor
 ```
 React App (Vite build)
 ├── Landing page (/)
-├── Lessor side (/fri/*)
-│   ├── Dashboard (/fri/dashboard)
-│   ├── Vehicles (/fri/dashboard/vehicles)
-│   ├── Bookings (/fri/dashboard/bookings)
-│   ├── Invoices (/fri/dashboard/invoices)
-│   ├── Analytics (/fri/dashboard/analytics)
-│   ├── Team (/fri/dashboard/team)
-│   ├── Settings (/fri/dashboard/settings)
-│   └── Account (/fri/account)
-├── Admin side (/fri/admin/*)
-│   ├── Dashboard (/fri/admin/dashboard)
-│   ├── Lessors list (/fri/admin/lessors)
-│   ├── Lessor details (/fri/admin/lessors/:id)
-│   ├── Support tickets (/fri/admin/tickets)
-│   ├── Payments (/fri/admin/payments)
-│   └── API Keys (/fri/admin/api-keys)
-└── Auth (/fri/login, /fri/signup)
+├── Lessor side (/autofiq/*)
+│   ├── Dashboard (/autofiq/dashboard)
+│   ├── Vehicles (/autofiq/dashboard/vehicles)
+│   ├── Bookings (/autofiq/dashboard/bookings)
+│   ├── Invoices (/autofiq/dashboard/invoices)
+│   ├── Analytics (/autofiq/dashboard/analytics)
+│   ├── Team (/autofiq/dashboard/team)
+│   ├── Settings (/autofiq/dashboard/settings)
+│   └── Account (/autofiq/account)
+├── Admin side (/autofiq/admin/*)
+│   ├── Dashboard (/autofiq/admin/dashboard)
+│   ├── Lessors list (/autofiq/admin/lessors)
+│   ├── Lessor details (/autofiq/admin/lessors/:id)
+│   ├── Support tickets (/autofiq/admin/tickets)
+│   ├── Payments (/autofiq/admin/payments)
+│   └── API Keys (/autofiq/admin/api-keys)
+└── Auth (/autofiq/login, /autofiq/signup)
 
 Tech:
 - React 18 + TypeScript
@@ -141,7 +141,7 @@ Test data ready:
 ## 📁 Repository Structure
 
 ```
-/workspaces/lejio-b75cff1f/
+/workspaces/autofiq-b75cff1f/
 ├── src/
 │   ├── App.tsx - Main router
 │   ├── pages/
@@ -167,7 +167,7 @@ Test data ready:
 │   │       ├── FriAdminTicketDetailsPage.tsx
 │   │       ├── FriAdminPaymentsPage.tsx
 │   │       └── FriAdminApiKeysPage.tsx
-│   ├── components/fri/ - All Fri components
+│   ├── components/autofiq/ - All Autofiq components
 │   │   ├── FriVehicleList.tsx
 │   │   ├── FriBookingList.tsx
 │   │   ├── FriInvoiceList.tsx
@@ -196,7 +196,7 @@ Test data ready:
 │
 ├── staticwebapp.config.json (SPA routing config)
 ├── vite.config.ts (build config - optimized for memory)
-└── LEJIO_FRI_SETUP_GUIDE.md (complete setup guide)
+└── AUTOFIQ_SETUP_GUIDE.md (complete setup guide)
 ```
 
 ---
@@ -206,7 +206,7 @@ Test data ready:
 ### Lessor Creating a Vehicle
 
 ```
-1. Lessor fills form on /fri/dashboard/vehicles
+1. Lessor fills form on /autofiq/dashboard/vehicles
 2. Clicks "Add Vehicle"
 3. Form submitted → useFriVehicles hook
 4. Hook calls: POST /api/vehicles (future)
@@ -224,10 +224,10 @@ Test data ready:
 1. Customer books vehicle on public site
 2. Booking inserted into fri_bookings
 3. Invoice auto-generated (trigger or Function)
-4. Lessor sees in /fri/dashboard/invoices
+4. Lessor sees in /autofiq/dashboard/invoices
 5. Lessor marks as paid
-6. Lessor pays subscription to Lejio
-7. Admin sees payment in /fri/admin/payments
+6. Lessor pays subscription to AUTOFIQ
+7. Admin sees payment in /autofiq/admin/payments
 ```
 
 ---
@@ -322,9 +322,9 @@ Update src/integrations/azure/clientFri.ts:
 
 ### 5. Optional - Custom Domain
 ```
-- Add custom domain: lejio-fri.dk
+- Add custom domain: autofiq.dk
 - Add SSL certificate
-- Setup lessor subdomains: lessor1.lejio-fri.dk
+- Setup lessor subdomains: lessor1.autofiq.dk
 ```
 
 ---
@@ -396,7 +396,7 @@ Update src/integrations/azure/clientFri.ts:
 ## 🎯 Next Immediate Steps
 
 ### For You (Lessor/User):
-1. Go to: https://zealous-stone-04c86dd03.2.azurestaticapps.net/fri/
+1. Go to: https://zealous-stone-04c86dd03.2.azurestaticapps.net/autofiq/
 2. Try the dashboard (currently uses dummy data from Supabase)
 3. Give feedback on UI/UX
 
@@ -420,9 +420,9 @@ Update src/integrations/azure/clientFri.ts:
 ## 📚 Key Files for Reference
 
 **Frontend Entry:**
-- `/src/App.tsx` - Main router (includes /fri/* routes)
-- `/src/pages/fri/FriLayout.tsx` - Lessor dashboard layout
-- `/src/pages/fri/admin/FriAdminLayout.tsx` - Admin layout
+- `/src/App.tsx` - Main router (includes /autofiq/* routes)
+- `/src/pages/autofiq/FriLayout.tsx` - Lessor dashboard layout
+- `/src/pages/autofiq/admin/FriAdminLayout.tsx` - Admin layout
 
 **Hooks (Data Logic):**
 - `/src/hooks/useFriVehicles.tsx` - Vehicle CRUD
@@ -441,7 +441,7 @@ Update src/integrations/azure/clientFri.ts:
 - `/vite.config.ts` - Build configuration
 
 **Documentation:**
-- `/LEJIO_FRI_SETUP_GUIDE.md` - Complete setup guide
+- `/AUTOFIQ_SETUP_GUIDE.md` - Complete setup guide
 - `/AZURE_FUNCTION_EXAMPLES.js` - Function code examples
 
 ---

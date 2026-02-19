@@ -1,7 +1,19 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/images/*", "/css/*", "/js/*", "/fonts/*", "*.svg", "*.png", "*.jpg", "*.gif", "*.json", "/api/*"]
+    "exclude": [
+      "/assets/*",
+      "/images/*",
+      "/css/*",
+      "/js/*",
+      "/fonts/*",
+      "*.svg",
+      "*.png",
+      "*.jpg",
+      "*.gif",
+      "*.json",
+      "/api/*"
+    ]
   },
   "mimeTypes": {
     ".json": "application/json"
@@ -9,7 +21,10 @@
   "routes": [
     {
       "route": "/api/*",
-      "allowedRoles": ["anonymous", "authenticated"]
+      "allowedRoles": [
+        "anonymous",
+        "authenticated"
+      ]
     },
     {
       "route": "/api/auth/session",
@@ -17,11 +32,15 @@
     },
     {
       "route": "/",
-      "redirect": "/fri/",
+      "redirect": "/autofiq/",
       "statusCode": 301
     },
     {
       "route": "/fri/*",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/autofiq/*",
       "rewrite": "/index.html"
     }
   ],

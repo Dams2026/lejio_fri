@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: lejio-fri-web
+    name: autofiq-web
     env: node
     # Force rebuild: 2026-02-05T21:35:00Z - GDPR sessions fix
     region: copenhagen
@@ -25,7 +25,7 @@ services:
         value: 'true'
 
   - type: pserv
-    name: lejio-fri-db
+    name: autofiq-db
     ipAllowList: []
     plan: standard
     region: copenhagen

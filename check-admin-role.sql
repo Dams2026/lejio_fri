@@ -13,7 +13,7 @@ ORDER BY u.created_at DESC;
 
 INSERT INTO public.user_roles (user_id, role)
 SELECT id, 'admin' FROM public.users 
-WHERE email = 'admin@lejio.dk' AND id NOT IN (
+WHERE email = 'admin@autofiq.dk' AND id NOT IN (
   SELECT user_id FROM public.user_roles WHERE role = 'admin'
 );
 

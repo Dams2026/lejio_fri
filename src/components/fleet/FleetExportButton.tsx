@@ -35,8 +35,8 @@ export const FleetExportButton = ({ vehicles, summary, month, year }: FleetExpor
       'Årgang',
       'Kilometerstand',
       'Brutto lejeindtægt',
-      'LEJIO kommission (%)',
-      'LEJIO salær (kr)',
+      'AUTOFIQ kommission (%)',
+      'AUTOFIQ salær (kr)',
       'Rengøringsgebyr',
       'Månedligt afdrag',
       'Restgæld',
@@ -54,7 +54,7 @@ export const FleetExportButton = ({ vehicles, summary, month, year }: FleetExpor
       v.current_odometer || '',
       formatCurrency(v.monthlyGrossRevenue),
       `${Math.round(v.commissionRate * 100)}%`,
-      formatCurrency(v.lejioCommissionAmount),
+      formatCurrency(v.autofiqCommissionAmount),
       formatCurrency(v.cleaningFees),
       formatCurrency(v.monthlyInstallment),
       formatCurrency(v.totalLoanBalance),
@@ -105,7 +105,7 @@ export const FleetExportButton = ({ vehicles, summary, month, year }: FleetExpor
       `  Rengøringsgebyrer:        +${formatCurrency(summary.totalCleaningFees).padStart(12)} kr`,
       ``,
       `FRADRAG:`,
-      `  LEJIO kommission:         -${formatCurrency(summary.totalCommission).padStart(12)} kr`,
+      `  AUTOFIQ kommission:         -${formatCurrency(summary.totalCommission).padStart(12)} kr`,
       `  Månedlige afdrag:         -${formatCurrency(summary.totalMonthlyInstallments).padStart(12)} kr`,
       ``,
       `───────────────────────────────────────────────────────────`,
@@ -128,7 +128,7 @@ export const FleetExportButton = ({ vehicles, summary, month, year }: FleetExpor
       lines.push(`  Status: ${v.currentStatus === 'rented' ? 'Udlejet' : v.currentStatus === 'available' ? 'Klar til udlejning' : v.currentStatus === 'maintenance' ? 'Værksted' : 'Klargøring'}`);
       lines.push(``);
       lines.push(`  Brutto lejeindtægt:        ${formatCurrency(v.monthlyGrossRevenue).padStart(12)} kr`);
-      lines.push(`  LEJIO kommission (${Math.round(v.commissionRate * 100)}%):   -${formatCurrency(v.lejioCommissionAmount).padStart(12)} kr`);
+      lines.push(`  AUTOFIQ kommission (${Math.round(v.commissionRate * 100)}%):   -${formatCurrency(v.autofiqCommissionAmount).padStart(12)} kr`);
       if (v.cleaningFees > 0) {
         lines.push(`  Rengøringsgebyr:          +${formatCurrency(v.cleaningFees).padStart(12)} kr`);
       }
@@ -151,7 +151,7 @@ export const FleetExportButton = ({ vehicles, summary, month, year }: FleetExpor
     lines.push(`FORKLARING TIL REVISOR`);
     lines.push(`═══════════════════════════════════════════════════════════`);
     lines.push(``);
-    lines.push(`Fleet Premium er en udlejningsordning, hvor LEJIO ApS varetager`);
+    lines.push(`Fleet Premium er en udlejningsordning, hvor AUTOFIQ ApS varetager`);
     lines.push(`al udlejning af bilerne mod en kommission af omsætningen.`);
     lines.push(``);
     lines.push(`Kommissionssatser:`);
@@ -163,7 +163,7 @@ export const FleetExportButton = ({ vehicles, summary, month, year }: FleetExpor
     lines.push(`Afdrag på lån/reparationer modregnes direkte i udbetalingen.`);
     lines.push(`Oprettelsesgebyr på lån: 300 kr.`);
     lines.push(``);
-    lines.push(`10-måneders garanti: LEJIO garanterer mindst 300 udlejningsdage`);
+    lines.push(`10-måneders garanti: AUTOFIQ garanterer mindst 300 udlejningsdage`);
     lines.push(`pr. køretøj pr. år, under forudsætning af at bilen har været`);
     lines.push(`tilgængelig (ikke på værksted el.lign.).`);
 

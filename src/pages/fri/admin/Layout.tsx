@@ -18,7 +18,7 @@ export const FriAdminLayout = ({ children }: FriAdminLayoutProps) => {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/fri/admin/login');
+      navigate('/autofiq/admin/login');
     } catch (err) {
       console.error('Logout failed:', err);
     }
@@ -27,11 +27,11 @@ export const FriAdminLayout = ({ children }: FriAdminLayoutProps) => {
   const isActive = (path: string) => location.pathname.startsWith(path);
 
   const navItems = [
-    { path: '/fri/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard, gradient: 'from-violet-500 to-indigo-500' },
-    { path: '/fri/admin/lessors', label: 'Lessors', icon: Users, gradient: 'from-blue-500 to-cyan-400' },
-    { path: '/fri/admin/support', label: 'Support', icon: MessageSquare, gradient: 'from-emerald-500 to-teal-400' },
-    { path: '/fri/admin/payments', label: 'Betalinger', icon: DollarSign, gradient: 'from-amber-500 to-orange-400' },
-    { path: '/fri/admin/modules', label: 'Moduler', icon: Layers, gradient: 'from-amber-400 to-yellow-300' },
+    { path: '/autofiq/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard, gradient: 'from-violet-500 to-indigo-500' },
+    { path: '/autofiq/admin/lessors', label: 'Lessors', icon: Users, gradient: 'from-blue-500 to-cyan-400' },
+    { path: '/autofiq/admin/support', label: 'Support', icon: MessageSquare, gradient: 'from-emerald-500 to-teal-400' },
+    { path: '/autofiq/admin/payments', label: 'Betalinger', icon: DollarSign, gradient: 'from-amber-500 to-orange-400' },
+    { path: '/autofiq/admin/modules', label: 'Moduler', icon: Layers, gradient: 'from-amber-400 to-yellow-300' },
   ];
 
   return (
@@ -50,7 +50,7 @@ export const FriAdminLayout = ({ children }: FriAdminLayoutProps) => {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-sm font-bold text-brown-900">Lejio Fri</h1>
+                <h1 className="text-sm font-bold text-brown-900">AUTOFIQ</h1>
                 <p className="text-[10px] text-gray-400 font-medium tracking-wider uppercase">Admin Panel</p>
               </div>
             </div>

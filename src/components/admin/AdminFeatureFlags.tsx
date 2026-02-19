@@ -106,7 +106,7 @@ const FEATURE_CATEGORIES = {
     icon: '🔧',
     color: 'from-pink-500 to-pink-600',
     features: [
-      'Smart Service hos LEJIO',
+      'Smart Service hos AUTOFIQ',
       'Syns-påmindelser',
       'Dækstyring',
       'Byttebil-funktion',

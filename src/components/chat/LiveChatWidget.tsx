@@ -98,8 +98,8 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
 
   const loadOrCreateSession = async () => {
     try {
-      const storedSessionId = safeStorage.getItem('lejio_chat_session');
-      const storedSessionToken = safeStorage.getItem('lejio_chat_token');
+      const storedSessionId = safeStorage.getItem('autofiq_chat_session');
+      const storedSessionToken = safeStorage.getItem('autofiq_chat_token');
       
       // Validate UUID format
       const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -119,8 +119,8 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
       
       // If session not found, invalid, or error, clear old session data
       if (storedSessionId) {
-        safeStorage.removeItem('lejio_chat_session');
-        safeStorage.removeItem('lejio_chat_token');
+        safeStorage.removeItem('autofiq_chat_session');
+        safeStorage.removeItem('autofiq_chat_token');
       }
 
       // Create new session via secure Edge Function
@@ -134,15 +134,15 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
       }
 
       // Store session ID and token securely
-      safeStorage.setItem('lejio_chat_session', data.session.id);
-      safeStorage.setItem('lejio_chat_token', data.token);
+      safeStorage.setItem('autofiq_chat_session', data.session.id);
+      safeStorage.setItem('autofiq_chat_token', data.token);
       setSession(data.session as ChatSession);
       
       // Add welcome message
       const welcomeMsg: Message = {
         id: 'welcome',
         sender_type: 'ai',
-        content: 'Hej! 👋 Jeg er LEJIOs AI-assistent. Hvordan kan jeg hjælpe dig i dag? Du kan spørge mig om priser, hvordan platformen fungerer, eller noget helt andet.',
+        content: 'Hej! 👋 Jeg er AUTOFIQs AI-assistent. Hvordan kan jeg hjælpe dig i dag? Du kan spørge mig om priser, hvordan platformen fungerer, eller noget helt andet.',
         created_at: new Date().toISOString(),
       };
       setMessages([welcomeMsg]);
@@ -152,7 +152,7 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
   };
 
   const loadMessages = async (sessionId: string, sessionToken?: string) => {
-    const token = sessionToken || safeStorage.getItem('lejio_chat_token');
+    const token = sessionToken || safeStorage.getItem('autofiq_chat_token');
     if (!token) return;
 
     // Use secure Edge Function for message access
@@ -166,7 +166,7 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
       const welcomeMsg: Message = {
         id: 'welcome',
         sender_type: 'ai',
-        content: 'Hej! 👋 Jeg er LEJIOs AI-assistent. Hvordan kan jeg hjælpe dig i dag?',
+        content: 'Hej! 👋 Jeg er AUTOFIQs AI-assistent. Hvordan kan jeg hjælpe dig i dag?',
         created_at: new Date().toISOString(),
       };
       setMessages([welcomeMsg]);
@@ -270,7 +270,7 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
     setMessages((prev) => [...prev, userMsg]);
 
     // Save user message via edge function (bypasses RLS)
-    const sessionToken = safeStorage.getItem('lejio_chat_token');
+    const sessionToken = safeStorage.getItem('autofiq_chat_token');
     await supabase.functions.invoke('chat-session', {
       body: { action: 'send_message', sessionId: session.id, sessionToken, content: userMessage }
     });
@@ -290,7 +290,7 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
         const cleanResponse = aiResponse.replace('[NEEDS_HUMAN_SUPPORT]', '').trim();
         
         // Update session to need human support via edge function
-        const sessionToken = safeStorage.getItem('lejio_chat_token');
+        const sessionToken = safeStorage.getItem('autofiq_chat_token');
         await supabase.functions.invoke('chat-session', {
           body: { action: 'request_human', sessionId: session.id, sessionToken }
         });
@@ -398,7 +398,7 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
     if (!session) return;
 
     // Update session via edge function (bypasses RLS)
-    const sessionToken = safeStorage.getItem('lejio_chat_token');
+    const sessionToken = safeStorage.getItem('autofiq_chat_token');
     await supabase.functions.invoke('chat-session', {
       body: { action: 'request_human', sessionId: session.id, sessionToken }
     });
@@ -447,7 +447,7 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
       case 'visitor':
         return 'Dig';
       case 'ai':
-        return 'LEJIO AI';
+        return 'AUTOFIQ AI';
       case 'admin':
         return 'Kundeservice';
       default:
@@ -472,7 +472,7 @@ export const LiveChatWidget = forwardRef<HTMLDivElement>((props, ref) => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <MessageCircle className="w-5 h-5" />
-                <CardTitle className="text-lg font-semibold">LEJIO Support</CardTitle>
+                <CardTitle className="text-lg font-semibold">AUTOFIQ Support</CardTitle>
               </div>
               <Button
                 variant="ghost"

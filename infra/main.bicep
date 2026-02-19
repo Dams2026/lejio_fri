@@ -1,9 +1,9 @@
-// Main Bicep template for Lejio Fri on Azure
+// Main Bicep template for AUTOFIQ on Azure
 // Deploys: Static Web App, SQL Database, Key Vault, Functions, Storage
 
 param environment string = 'dev'
 param location string = resourceGroup().location
-param projectName string = 'lejio-fri'
+param projectName string = 'autofiq'
 
 // Database parameters
 param sqlAdminUsername string
@@ -11,7 +11,7 @@ param sqlAdminUsername string
 param sqlAdminPassword string
 
 // Static Web App GitHub integration
-param githubRepo string = 'martinjensen9988-sudo/lejio-b75cff1f'
+param githubRepo string = 'martinjensen9988-sudo/autofiq-b75cff1f'
 param githubBranch string = 'main'
 
 // Naming

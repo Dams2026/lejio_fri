@@ -73,15 +73,15 @@ serve(async (req: Request) => {
           messages: [
             {
               role: 'system',
-              content: `Du skriver professionelle, personaliserede sales-emails på dansk for LEJIO - en moderne biludlejningsplatform.
+              content: `Du skriver professionelle, personaliserede sales-emails på dansk for AUTOFIQ - en moderne biludlejningsplatform.
 
 Emailen skal:
 - Være varm og personlig (mentioner virksomhedsnavnet og industri)
-- Forklare hvordan LEJIO kan hjælpe deres forretning
+- Forklare hvordan AUTOFIQ kan hjælpe deres forretning
 - Inkludere konkrete fordele for deres industri
 - Afslutte med en stærk CTA (call to action) til at booke demo
 - Være kort (max 200 ord)
-- Signeres af LEJIO sales team
+- Signeres af AUTOFIQ sales team
 
 Return JSON med:
 {
@@ -111,12 +111,12 @@ Grund til at kontakte: ${reason}`,
 
       try {
         const parsed = JSON.parse(emailContent);
-        emailSubject = parsed.subject || 'Velkommen til LEJIO';
-        emailBody = parsed.body || 'Tak fordi du overvejer LEJIO!';
+        emailSubject = parsed.subject || 'Velkommen til AUTOFIQ';
+        emailBody = parsed.body || 'Tak fordi du overvejer AUTOFIQ!';
       } catch (e: any) {
         console.error('Failed to parse email generation:', e);
-        emailSubject = 'Velkommen til LEJIO';
-        emailBody = `Hej ${companyName},\n\nVi synes at LEJIO kunne være perfekt for jer!\n\nVed du gerne høre mere?\n\nMed venlig hilsen,\nLEJIO Sales Team`;
+        emailSubject = 'Velkommen til AUTOFIQ';
+        emailBody = `Hej ${companyName},\n\nVi synes at AUTOFIQ kunne være perfekt for jer!\n\nVed du gerne høre mere?\n\nMed venlig hilsen,\nAUTOFIQ Sales Team`;
       }
     }
 
@@ -168,8 +168,8 @@ Grund til at kontakte: ${reason}`,
               },
             ],
             from: {
-              email: 'sales@lejio.dk',
-              name: 'LEJIO Sales Team',
+              email: 'sales@autofiq.dk',
+              name: 'AUTOFIQ Sales Team',
             },
             content: [
               {
@@ -191,12 +191,12 @@ Grund til at kontakte: ${reason}`,
                     <body>
                       <div class="container">
                         <div class="header">
-                          <h1 style="margin: 0;">Velkommen til LEJIO</h1>
+                          <h1 style="margin: 0;">Velkommen til AUTOFIQ</h1>
                         </div>
                         <div class="content">
                           ${emailBody.replace(/\n/g, '<br>')}
                           <div class="footer">
-                            <p>Med venlig hilsen,<br><strong>LEJIO Sales Team</strong></p>
+                            <p>Med venlig hilsen,<br><strong>AUTOFIQ Sales Team</strong></p>
                           </div>
                         </div>
                       </div>
@@ -206,8 +206,8 @@ Grund til at kontakte: ${reason}`,
               },
             ],
             reply_to: {
-              email: 'support@lejio.dk',
-              name: 'LEJIO Support',
+              email: 'support@autofiq.dk',
+              name: 'AUTOFIQ Support',
             },
             categories: ['lead-welcome-email', 'sales'],
           }),

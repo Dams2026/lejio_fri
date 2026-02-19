@@ -64,7 +64,7 @@ export const FleetDashboard = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <User className="w-5 h-5" />
-              Lad LEJIO udleje for dig
+              Lad AUTOFIQ udleje for dig
             </CardTitle>
             <CardDescription>
               Slip for besværet - vi håndterer alt med udlejning af din bil mod 30% af omsætningen
@@ -106,7 +106,7 @@ export const FleetDashboard = () => {
               Fleet Management Planer
             </CardTitle>
             <CardDescription>
-              Lad LEJIO varetage din biludlejning - vælg den plan der passer til din virksomhed
+              Lad AUTOFIQ varetage din biludlejning - vælg den plan der passer til din virksomhed
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -188,7 +188,7 @@ export const FleetDashboard = () => {
                   kommission på <strong>{FLEET_PLANS[selectedPlan].commissionRate}%</strong> af
                   omsætningen.
                   <br /><br />
-                  LEJIO vil kontakte dig for at aftale de nærmere detaljer.
+                  AUTOFIQ vil kontakte dig for at aftale de nærmere detaljer.
                 </>
               )}
             </AlertDialogDescription>

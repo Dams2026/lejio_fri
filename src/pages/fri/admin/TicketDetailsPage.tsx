@@ -119,7 +119,7 @@ export const FriAdminTicketDetailsPage = () => {
       <div className="space-y-4">
         <Button
           variant="ghost"
-          onClick={() => navigate('/fri/admin/support')}
+          onClick={() => navigate('/autofiq/admin/support')}
           className="gap-2 text-gray-400 hover:text-gray-700 rounded-xl"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -141,7 +141,7 @@ export const FriAdminTicketDetailsPage = () => {
       {/* Header */}
       <Button
         variant="ghost"
-        onClick={() => navigate('/fri/admin/support')}
+        onClick={() => navigate('/autofiq/admin/support')}
         className="gap-2 text-gray-400 hover:text-gray-700 rounded-xl"
       >
         <ChevronLeft className="w-4 h-4" />

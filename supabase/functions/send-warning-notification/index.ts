@@ -47,7 +47,7 @@ function isValidEmail(email: string): boolean {
 function isValidAppealUrl(url: string): boolean {
   try {
     const parsed = new URL(url);
-    const trustedDomains = ['lejio.dk', 'www.lejio.dk', 'localhost'];
+    const trustedDomains = ['autofiq.dk', 'www.autofiq.dk', 'localhost'];
     return trustedDomains.some(domain => parsed.hostname === domain || parsed.hostname.endsWith('.' + domain));
   } catch {
     return false;
@@ -82,7 +82,7 @@ const handler = async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       console.error("SMTP not configured");
@@ -104,7 +104,7 @@ const handler = async (req: Request): Promise<Response> => {
       ? `<p style="text-align: center; margin: 30px 0;">
           <a href="${safeAppealUrl}" style="display: inline-block; background: #2962FF; color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold;">Indgiv klage</a>
         </p>`
-      : '<p>Kontakt venligst LEJIO support for at indgive en klage.</p>';
+      : '<p>Kontakt venligst AUTOFIQ support for at indgive en klage.</p>';
 
     const emailHtml = `
       <!DOCTYPE html>
@@ -139,10 +139,10 @@ const handler = async (req: Request): Promise<Response> => {
             
             ${appealLink}
             
-            <p>Med venlig hilsen,<br>LEJIO</p>
+            <p>Med venlig hilsen,<br>AUTOFIQ</p>
           </div>
           <div class="footer">
-            <p>Denne email er sendt automatisk fra LEJIO</p>
+            <p>Denne email er sendt automatisk fra AUTOFIQ</p>
           </div>
         </div>
       </body>

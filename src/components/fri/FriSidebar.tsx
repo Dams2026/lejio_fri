@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useFriAuthContext } from '@/providers/FriAuthProvider';
 import { useRole, roleLabels } from '@/hooks/useRole';
+import { AutofiqLogo } from '@/components/AutofiqLogo';
 
 const FriSidebar = () => {
   const location = useLocation();
@@ -23,25 +24,25 @@ const FriSidebar = () => {
   const { hasAccess, role, roleLabel } = useRole();
 
   const allMenuItems = [
-    { label: 'Dashboard', icon: Home, path: '/fri/dashboard', permission: 'dashboard' },
-    { label: 'Køretøjer', icon: Car, path: '/fri/dashboard/vehicles', permission: 'vehicles' },
-    { label: 'Bilforhandler', icon: Store, path: '/fri/dashboard/dealer', permission: 'dealer' },
-    { label: 'Bookinger', icon: Calendar, path: '/fri/dashboard/bookings', permission: 'bookings' },
-    { label: 'Fakturaer', icon: FileText, path: '/fri/dashboard/invoices', permission: 'invoices' },
-    { label: 'Team', icon: Users, path: '/fri/dashboard/team', permission: 'team' },
-    { label: 'Analytik', icon: BarChart3, path: '/fri/dashboard/analytics', permission: 'analytics' },
-    { label: 'Betalinger', icon: CreditCard, path: '/fri/dashboard/payments', permission: 'payments' },
-    { label: 'Moduler', icon: Package, path: '/fri/dashboard/modules', permission: 'modules' },
-    { label: 'API-nøgler', icon: Key, path: '/fri/dashboard/api-keys', permission: 'api-keys' },
-    { label: 'Indstillinger', icon: Settings, path: '/fri/dashboard/settings', permission: 'settings' },
+    { label: 'Dashboard', icon: Home, path: '/autofiq/dashboard', permission: 'dashboard' },
+    { label: 'Køretøjer', icon: Car, path: '/autofiq/dashboard/vehicles', permission: 'vehicles' },
+    { label: 'Bilforhandler', icon: Store, path: '/autofiq/dashboard/dealer', permission: 'dealer' },
+    { label: 'Bookinger', icon: Calendar, path: '/autofiq/dashboard/bookings', permission: 'bookings' },
+    { label: 'Fakturaer', icon: FileText, path: '/autofiq/dashboard/invoices', permission: 'invoices' },
+    { label: 'Team', icon: Users, path: '/autofiq/dashboard/team', permission: 'team' },
+    { label: 'Analytik', icon: BarChart3, path: '/autofiq/dashboard/analytics', permission: 'analytics' },
+    { label: 'Betalinger', icon: CreditCard, path: '/autofiq/dashboard/payments', permission: 'payments' },
+    { label: 'Moduler', icon: Package, path: '/autofiq/dashboard/modules', permission: 'modules' },
+    { label: 'API-nøgler', icon: Key, path: '/autofiq/dashboard/api-keys', permission: 'api-keys' },
+    { label: 'Indstillinger', icon: Settings, path: '/autofiq/dashboard/settings', permission: 'settings' },
   ];
 
   // Filter menu items based on user's role permissions
   const menuItems = allMenuItems.filter(item => hasAccess(item.permission));
 
   const isActive = (path: string) => {
-    if (path === '/fri/dashboard') {
-      return location.pathname === '/fri/dashboard';
+    if (path === '/autofiq/dashboard') {
+      return location.pathname === '/autofiq/dashboard';
     }
     return location.pathname.startsWith(path);
   };
@@ -51,13 +52,9 @@ const FriSidebar = () => {
       {/* Logo/Branding Area */}
       <div className="p-6 border-b border-gray-100">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center shadow-md">
-            <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
+          <AutofiqLogo iconClassName="h-10 w-auto" alt="Autofiq" />
           <div>
-            <h1 className="text-lg font-bold text-brown-900">Din platform</h1>
+            <h1 className="text-sm font-bold text-brown-900">Din White-Label Platform</h1>
             <p className="text-xs text-gray-500">Alt-i-én til autobranchen</p>
           </div>
         </div>

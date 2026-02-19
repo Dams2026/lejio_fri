@@ -1,5 +1,5 @@
 -- ============================================================================
--- LEJIO FRI - POSTGRESQL SCHEMA
+-- AUTOFIQ - POSTGRESQL SCHEMA
 -- ============================================================================
 -- PostgreSQL version of COMPLETE_DATABASE_SETUP.sql
 -- Run this in Render PostgreSQL database

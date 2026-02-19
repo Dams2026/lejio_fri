@@ -1,4 +1,4 @@
-# 🚀 LEJIO FRI - Render Deployment Guide
+# 🚀 AUTOFIQ - Render Deployment Guide
 
 **Status:** PostgreSQL Migration Complete ✅  
 **Date:** February 5, 2026  
@@ -36,7 +36,7 @@
 ### STEP 2: Forbind GitHub Repository
 1. Fra Render Dashboard: **"New +" → "Web Service"**
 2. Vælg **"Connect a repository"**
-3. Vælg dit repository: `lejio-fri`
+3. Vælg dit repository: `autofiq`
 4. Vælg branch: `main`
 5. Klik **"Connect"**
 
@@ -44,7 +44,7 @@
 
 #### Option A: Via Render Dashboard (Anbefalet)
 1. **"New +" → "PostgreSQL"**
-2. **Database Name:** `lejio-fri`
+2. **Database Name:** `autofiq`
 3. **Region:** Copenhagen (eller din region)
 4. **PostgreSQL Version:** 15
 5. **Plan:** Standard ($15/month)
@@ -53,7 +53,7 @@
 #### Option B: Konfigurer i render.yaml (Automatisk)
 ```yaml
 databases:
-  - name: lejio-fri-db
+  - name: autofiq-db
     engine: postgres
     ipAllowList: []
 ```
@@ -64,7 +64,7 @@ Efter at forbinde GitHub, udfyld felterne:
 
 | Field | Value |
 |-------|-------|
-| **Name** | `lejio-fri` |
+| **Name** | `autofiq` |
 | **Environment** | Node |
 | **Build Command** | `npm install && npm run build` |
 | **Start Command** | `npm start` |
@@ -79,7 +79,7 @@ I Render Dashboard → Your Web Service → **Environment**:
 NODE_ENV=production
 DB_HOST=[Kopier fra PostgreSQL instance]
 DB_PORT=5432
-DB_NAME=lejio_fri
+DB_NAME=autofiq
 DB_USER=postgres
 DB_PASSWORD=[Kopier fra PostgreSQL instance]
 DB_SSL=true
@@ -131,7 +131,7 @@ curl https://your-render-app.onrender.com/api/get-vehicles?lessor_id=test-123
 Kør denne SQL i Render PostgreSQL:
 
 ```sql
-\c lejio_fri;
+\c autofiq;
 
 -- Kopier hele indholdet af database/schema.postgres.sql
 -- og kør det her
@@ -139,16 +139,16 @@ Kør denne SQL i Render PostgreSQL:
 
 **Eller bruge psql command-line:**
 ```bash
-psql postgresql://postgres:PASSWORD@HOST:5432/lejio_fri < database/schema.postgres.sql
+psql postgresql://postgres:PASSWORD@HOST:5432/autofiq < database/schema.postgres.sql
 ```
 
 **Fra dit lokale terminal:**
 ```bash
 # 1. Download schema
-curl https://raw.githubusercontent.com/martinjensen9988-sudo/lejio-fri/main/database/schema.postgres.sql > schema.sql
+curl https://raw.githubusercontent.com/martinjensen9988-sudo/autofiq/main/database/schema.postgres.sql > schema.sql
 
 # 2. Kør migration
-psql postgresql://postgres:PASSWORD@HOST:5432/lejio_fri < schema.sql
+psql postgresql://postgres:PASSWORD@HOST:5432/autofiq < schema.sql
 ```
 
 ---
@@ -159,7 +159,7 @@ psql postgresql://postgres:PASSWORD@HOST:5432/lejio_fri < schema.sql
 ```
 DB_HOST              → PostgreSQL Host
 DB_PORT              → 5432 (standard)
-DB_NAME              → lejio_fri
+DB_NAME              → autofiq
 DB_USER              → postgres
 DB_PASSWORD          → Your secure password
 DB_SSL               → true
@@ -214,14 +214,14 @@ npm start
 ### Eksportér fra Azure SQL:
 ```powershell
 # Eksportér schema
-sqlcmd -S tcp:lejio-fri-db.database.windows.net,1433 -U martin_lejio_user `
-  -d lejio_fri -C -Q "SELECT * FROM fri_vehicles" -o vehicles_backup.csv
+sqlcmd -S tcp:autofiq-db.database.windows.net,1433 -U martin_autofiq_user `
+  -d autofiq -C -Q "SELECT * FROM fri_vehicles" -o vehicles_backup.csv
 ```
 
 ### Importer til PostgreSQL:
 ```bash
 # PostgreSQL copy command
-psql postgresql://user:pass@host:5432/lejio_fri -c "COPY fri_vehicles FROM '/path/to/vehicles_backup.csv'"
+psql postgresql://user:pass@host:5432/autofiq -c "COPY fri_vehicles FROM '/path/to/vehicles_backup.csv'"
 ```
 
 ---
@@ -252,7 +252,7 @@ psql postgresql://user:pass@host:5432/lejio_fri -c "COPY fri_vehicles FROM '/pat
 | File | Link | Description |
 |------|------|-------------|
 | **PostgreSQL Schema** | `database/schema.postgres.sql` | Komplet PostgreSQL schema |
-| **Database Diagram** | `LEJIO_FRI_ARCHITECTURE.md` | Database relationer |
+| **Database Diagram** | `AUTOFIQ_ARCHITECTURE.md` | Database relationer |
 | **Migration Scripts** | `database/` folder | Setup scripts |
 
 ---

@@ -395,7 +395,7 @@ export const AdminAuditLog = () => {
             </tbody>
           </table>
           <div class="footer">
-            <p>Denne rapport er genereret automatisk fra Lejio Admin Audit Log System</p>
+            <p>Denne rapport er genereret automatisk fra AUTOFIQ Admin Audit Log System</p>
             <p>For komplet JSON-data af ændringer, brug venligst CSV-eksport</p>
           </div>
         </body>

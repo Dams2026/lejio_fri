@@ -130,7 +130,7 @@ export const FriAdminLessorDetailsPage = () => {
       <div className="space-y-4">
         <Button
           variant="ghost"
-          onClick={() => navigate('/fri/admin/lessors')}
+          onClick={() => navigate('/autofiq/admin/lessors')}
           className="gap-2"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -158,7 +158,7 @@ export const FriAdminLessorDetailsPage = () => {
         <div>
           <Button
             variant="ghost"
-            onClick={() => navigate('/fri/admin/lessors')}
+            onClick={() => navigate('/autofiq/admin/lessors')}
             className="gap-2 mb-4"
           >
             <ChevronLeft className="w-4 h-4" />

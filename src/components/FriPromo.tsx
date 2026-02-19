@@ -15,12 +15,12 @@ const FriPromo = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white font-semibold mb-6 border border-white/30">
             <Zap className="w-4 h-4" />
-            <span>Nyt fra Lejio</span>
+            <span>Nyt fra AUTOFIQ</span>
           </div>
 
           {/* Main heading */}
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
-            Lejio Fri
+            AUTOFIQ
           </h2>
           
           {/* Subtitle */}
@@ -43,15 +43,15 @@ const FriPromo = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/fri/trial">
+            <Link to="/autofiq/trial">
               <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold gap-2">
                 Start gratis prøveperiode
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
-            <Link to="/fri">
+            <Link to="/autofiq">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 font-semibold">
-                Læs mere om Fri
+                Læs mere om AUTOFIQ
               </Button>
             </Link>
           </div>

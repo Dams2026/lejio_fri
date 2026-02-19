@@ -17,10 +17,10 @@ module.exports = async function (context, req) {
     name: subdomain.charAt(0).toUpperCase() + subdomain.slice(1),
     slug: subdomain,
     subdomain: subdomain,
-    domain: subdomain + ".lejio-fri.dk",
+    domain: subdomain + ".autofiq.dk",
     plan: "starter",
     status: "active",
-    ownerEmail: "owner@" + subdomain + ".lejio-fri.dk",
+    ownerEmail: "owner@" + subdomain + ".autofiq.dk",
     primaryColor: "#e91e63",
     trialEndDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString()
   };

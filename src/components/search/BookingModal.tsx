@@ -315,7 +315,7 @@ const BookingModal = ({ open, onClose, vehicle, filters }: BookingModalProps) =>
               {vehicle.unlimited_km ? (
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Kilometer:</span>
-                  <span className="font-medium text-accent">✓ Fri km</span>
+                  <span className="font-medium text-accent">✓ Ubegrænset km</span>
                 </div>
               ) : (
                 <div className="flex justify-between text-sm">

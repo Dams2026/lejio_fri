@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Crown, ShieldCheck, Sparkles, TrendingUp, Users, Wand2 } from 'lucide-react';
+import { ArrowRight, Check, ShieldCheck, Sparkles, TrendingUp, Users, Wand2 } from 'lucide-react';
+import { AutofiqLogo } from '@/components/AutofiqLogo';
 
 export function FriLandingPage() {
   return (
@@ -12,26 +13,20 @@ export function FriLandingPage() {
       <nav className="sticky top-0 z-50 backdrop-blur-lg bg-white/5 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-300 to-amber-500 flex items-center justify-center shadow-[0_0_30px_rgba(245,158,11,0.5)] animate-pulse">
-              <Crown className="h-7 w-7 text-amber-900 drop-shadow-lg" />
-            </div>
-            <div>
-              <div className="text-xl font-bold bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">Din platform</div>
-              <div className="text-xs text-amber-300/90">White‑label biludlejning</div>
-            </div>
+            <AutofiqLogo iconClassName="h-12 w-auto" showWordmark />
           </div>
           <div className="hidden md:flex gap-4 items-center">
-            <Link to="/fri/features">
+            <Link to="/autofiq/features">
               <Button variant="ghost" className="text-white/80 hover:text-amber-100 hover:bg-white/10">Alle funktioner</Button>
             </Link>
-            <Link to="/fri/login">
+            <Link to="/autofiq/login">
               <Button variant="ghost" className="text-white/80 hover:text-amber-100 hover:bg-white/10">Log ind</Button>
             </Link>
-            <Link to="/fri/signup">
+            <Link to="/autofiq/signup">
               <Button className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">Kom i gang</Button>
             </Link>
           </div>
-          <Link to="/fri/signup" className="md:hidden">
+          <Link to="/autofiq/signup" className="md:hidden">
             <Button className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">Kom i gang</Button>
           </Link>
         </div>
@@ -52,12 +47,12 @@ export function FriLandingPage() {
               Skab en premium oplevelse for dine kunder med et stilrent, hurtigt og sikkert system, der samler flåde, bookinger og fakturaer i ét kontrolcenter.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Link to="/fri/trial">
+              <Link to="/autofiq/trial">
                 <Button size="lg" className="gap-2 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">
                   Start gratis prøveperiode <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
-              <Link to="/fri/features">
+              <Link to="/autofiq/features">
                 <Button size="lg" variant="outline" className="border-amber-500/30 text-white hover:bg-white/10">
                   Se alle features
                 </Button>
@@ -249,7 +244,7 @@ export function FriLandingPage() {
           <div className="rounded-3xl border border-amber-500/30 bg-gradient-to-br from-amber-500/20 to-transparent p-10 text-center shadow-[0_0_60px_rgba(245,158,11,0.15)]">
             <div className="flex justify-center mb-6">
               <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-300 to-amber-500 flex items-center justify-center shadow-[0_0_40px_rgba(245,158,11,0.5)]">
-                <Crown className="h-9 w-9 text-amber-900" />
+                <AutofiqLogo iconClassName="h-9 w-auto" alt="Autofiq" />
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">Klar til en premium oplevelse?</h2>
@@ -266,7 +261,7 @@ export function FriLandingPage() {
       {/* Footer */}
       <footer className="border-t border-amber-500/20 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center text-amber-200/50">
-          <p>© 2026 Din platform. Alle rettigheder forbeholdt.</p>
+          <p>© 2026 AUTOFIQ. Alle rettigheder forbeholdt.</p>
         </div>
       </footer>
     </div>

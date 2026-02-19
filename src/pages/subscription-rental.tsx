@@ -42,7 +42,7 @@ function SubscriptionForm({
   // Stripe settings for valgt bil/forhandler
   const [stripeSettings, setStripeSettings] = useState<unknown>(null);
   const plans = stripeSettings ? [
-    { id: 'standard', name: 'Standard', price: 3999, priceId: stripeSettings.stripe_price_id_standard, description: 'Fri km, service og forsikring inkl.' },
+    { id: 'standard', name: 'Standard', price: 3999, priceId: stripeSettings.stripe_price_id_standard, description: 'Ubegrænsede km, service og forsikring inkl.' },
     { id: 'premium', name: 'Premium', price: 4999, priceId: stripeSettings.stripe_price_id_premium, description: 'Inkl. ekstra forsikring og vejhjælp.' },
   ] : [];
 

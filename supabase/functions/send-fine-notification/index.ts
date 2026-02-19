@@ -72,7 +72,7 @@ const handler = async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       console.error("SMTP not configured");
@@ -177,7 +177,7 @@ const handler = async (req: Request): Promise<Response> => {
               <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
               
               <p class="footer">
-                Denne email er sendt via LEJIO - Danmarks smarteste udlejningsplatform
+                Denne email er sendt via AUTOFIQ - Danmarks smarteste udlejningsplatform
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-# ✅ Lejio Fri Lessor Dashboard - Test Report
+# ✅ AUTOFIQ Lessor Dashboard - Test Report
 
 ## Build Status
 - ✅ **Build Success**: `✓ built in 10.08s`
@@ -10,19 +10,19 @@
 ## Files Created
 
 ### Components (1,650 lines)
-1. ✅ `src/pages/fri/dashboard/FriTeamManagement.tsx` (501 lines)
+1. ✅ `src/pages/autofiq/dashboard/AutofiqTeamManagement.tsx` (501 lines)
    - Team member CRUD operations
    - Search & filtering (role, status)
    - 3-stat dashboard
    - Add/Edit/Delete dialogs
 
-2. ✅ `src/pages/fri/dashboard/FriLessorDashboard.tsx` (450 lines)
+2. ✅ `src/pages/autofiq/dashboard/AutofiqLessorDashboard.tsx` (450 lines)
    - Revenue tracking & analytics
    - 4-stat dashboard with KPIs
    - 6-month trend chart
    - Per-vehicle utilization table
 
-3. ✅ `src/pages/fri/dashboard/FriInvoiceManagement.tsx` (550 lines)
+3. ✅ `src/pages/autofiq/dashboard/AutofiqInvoiceManagement.tsx` (550 lines)
    - Invoice list & management
    - 5-stat dashboard
    - Status workflow (Draft → Paid)
@@ -38,15 +38,15 @@
    - Utilization metrics
 
 ### Routes (App.tsx)
-5. ✅ `/fri/dashboard/team` - FriTeamManagement
-6. ✅ `/fri/dashboard/analytics` - FriLessorDashboard
-7. ✅ `/fri/dashboard/invoices` - FriInvoiceManagement
+5. ✅ `/autofiq/dashboard/team` - AutofiqTeamManagement
+6. ✅ `/autofiq/dashboard/analytics` - AutofiqLessorDashboard
+7. ✅ `/autofiq/dashboard/invoices` - AutofiqInvoiceManagement
    - All routes wrapped with FriAuthProvider + BrandProvider
    - Lazy loaded for code splitting
 
 ## Feature Checklist
 
-### FriTeamManagement
+### AutofiqTeamManagement
 - ✅ List team members with pagination
 - ✅ Real-time search (name, email)
 - ✅ Filter by role (Manager, Driver, Mechanic, Accountant)
@@ -58,7 +58,7 @@
 - ✅ Responsive table design
 - ✅ Badge indicators for roles
 
-### FriLessorDashboard
+### AutofiqLessorDashboard
 - ✅ Revenue summary card
 - ✅ Booking count tracking
 - ✅ Average utilization rate
@@ -70,7 +70,7 @@
 - ✅ Average booking revenue
 - ✅ Critical alerts for <30% utilization
 
-### FriInvoiceManagement
+### AutofiqInvoiceManagement
 - ✅ Invoice list with pagination
 - ✅ 5-stat dashboard (Total, Revenue, Pending, Overdue, Avg Days)
 - ✅ Filter by status (Draft, Pending, Sent, Paid)

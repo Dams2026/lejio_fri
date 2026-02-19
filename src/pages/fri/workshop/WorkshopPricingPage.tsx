@@ -78,7 +78,7 @@ export function WorkshopPricingPage() {
                     : 'bg-slate-700 hover:bg-slate-600 text-white'
                 }`}
                 size="lg"
-                onClick={() => navigate('/fri/settings?tab=subscription')}
+                onClick={() => navigate('/autofiq/settings?tab=subscription')}
               >
                 {tier.id === 'premium' ? 'Få Premium Adgang' : `Upgrade til ${tier.name}`}
               </Button>
@@ -209,7 +209,7 @@ export function WorkshopPricingPage() {
         <Button
           className="bg-white text-amber-600 hover:bg-amber-50 font-bold text-lg px-8"
           size="lg"
-          onClick={() => navigate('/fri/settings?tab=subscription')}
+          onClick={() => navigate('/autofiq/settings?tab=subscription')}
         >
           Start 30 dages gratis prøveperiode
         </Button>

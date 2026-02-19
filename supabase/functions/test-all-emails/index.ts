@@ -19,7 +19,7 @@ serve(async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       return new Response(
@@ -102,8 +102,8 @@ serve(async (req: Request): Promise<Response> => {
       </div>
     </div>
     <div class="footer">
-      <p><strong>LEJIO</strong> - Biludlejning gjort nemt</p>
-      <p>© ${year} LEJIO. [TEST EMAIL]</p>
+      <p><strong>AUTOFIQ</strong> - Biludlejning gjort nemt</p>
+      <p>© ${year} AUTOFIQ. [TEST EMAIL]</p>
     </div>
   </div>
 </body>
@@ -160,8 +160,8 @@ serve(async (req: Request): Promise<Response> => {
       </p>
     </div>
     <div class="footer">
-      <p><strong>LEJIO</strong> - Biludlejning gjort nemt</p>
-      <p>© ${year} LEJIO. [TEST EMAIL]</p>
+      <p><strong>AUTOFIQ</strong> - Biludlejning gjort nemt</p>
+      <p>© ${year} AUTOFIQ. [TEST EMAIL]</p>
     </div>
   </div>
 </body>
@@ -211,8 +211,8 @@ serve(async (req: Request): Promise<Response> => {
       </div>
     </div>
     <div class="footer">
-      <p><strong>LEJIO</strong> - Biludlejning gjort nemt</p>
-      <p>© ${year} LEJIO. [TEST EMAIL]</p>
+      <p><strong>AUTOFIQ</strong> - Biludlejning gjort nemt</p>
+      <p>© ${year} AUTOFIQ. [TEST EMAIL]</p>
     </div>
   </div>
 </body>
@@ -265,8 +265,8 @@ serve(async (req: Request): Promise<Response> => {
       </p>
     </div>
     <div class="footer">
-      <p><strong>LEJIO</strong> - Biludlejning gjort nemt</p>
-      <p>© ${year} LEJIO. [TEST EMAIL]</p>
+      <p><strong>AUTOFIQ</strong> - Biludlejning gjort nemt</p>
+      <p>© ${year} AUTOFIQ. [TEST EMAIL]</p>
     </div>
   </div>
 </body>

@@ -1,6 +1,6 @@
 # Email Service Integration Setup
 
-This document describes the SendGrid email integration for LEJIO's automated systems.
+This document describes the SendGrid email integration for AUTOFIQ's automated systems.
 
 ## Overview
 
@@ -18,7 +18,7 @@ The following email functions now use **SendGrid** for reliable email delivery:
 1. Visit [SendGrid Console](https://app.sendgrid.com)
 2. Navigate to **Settings → API Keys**
 3. Click **Create API Key**
-4. Name it: `LEJIO Production` (or similar)
+4. Name it: `AUTOFIQ Production` (or similar)
 5. Copy the API key (you'll only see it once)
 
 ### 2. Configure Environment Variables
@@ -27,7 +27,7 @@ Add the following to your Supabase project's environment variables:
 
 ```bash
 SENDGRID_API_KEY=SG.xxxxxxxxxxxxxx...
-ADMIN_EMAIL=admin@lejio.dk
+ADMIN_EMAIL=admin@autofiq.dk
 ```
 
 **For Supabase Edge Functions**, add these to your `supabase/config.toml`:
@@ -35,7 +35,7 @@ ADMIN_EMAIL=admin@lejio.dk
 ```toml
 [env.production]
 SENDGRID_API_KEY = "SG.xxxxxxxxxxxxxx..."
-ADMIN_EMAIL = "admin@lejio.dk"
+ADMIN_EMAIL = "admin@autofiq.dk"
 ```
 
 Or via Supabase Dashboard:
@@ -54,9 +54,9 @@ SendGrid requires verified sender email addresses. Add these to your SendGrid ac
 
 | Email | Purpose | Name |
 |-------|---------|------|
-| `notifications@lejio.dk` | System notifications | LEJIO System |
-| `sales@lejio.dk` | Lead welcome emails | LEJIO Sales Team |
-| `reports@lejio.dk` | Damage reports | LEJIO Damage Reports |
+| `notifications@autofiq.dk` | System notifications | AUTOFIQ System |
+| `sales@autofiq.dk` | Lead welcome emails | AUTOFIQ Sales Team |
+| `reports@autofiq.dk` | Damage reports | AUTOFIQ Damage Reports |
 
 Wait for verification emails and click the confirm links.
 
@@ -68,7 +68,7 @@ Wait for verification emails and click the confirm links.
 
 **Environment Variables:**
 - `SENDGRID_API_KEY` (required)
-- `ADMIN_EMAIL` (optional, defaults to `admin@lejio.dk`)
+- `ADMIN_EMAIL` (optional, defaults to `admin@autofiq.dk`)
 
 **Request Example:**
 ```bash
@@ -150,7 +150,7 @@ supabase functions invoke send-admin-email --no-verify \
   -- --request-body '{
     "subject": "Test Admin Email",
     "title": "System Test",
-    "content": "<p>This is a test email from LEJIO.</p>",
+    "content": "<p>This is a test email from AUTOFIQ.</p>",
     "recipients": ["your-email@example.com"]
   }'
 ```
@@ -233,7 +233,7 @@ curl https://api.sendgrid.com/v3/mail/send \
 
 **Solution**: Verify sender email in SendGrid:
 1. Go to SendGrid **Settings → Sender Authentication**
-2. Ensure `notifications@lejio.dk`, `sales@lejio.dk`, etc. are verified
+2. Ensure `notifications@autofiq.dk`, `sales@autofiq.dk`, etc. are verified
 3. Click **Create new sender** if needed
 
 ### Issue: Emails going to spam
@@ -273,7 +273,7 @@ SendGrid free tier includes:
 - **100 emails/day** (free tier)
 - **Paid tier:** Up to 500K emails/month
 
-LEJIO usage:
+AUTOFIQ usage:
 - Lead discovery: ~20-30 emails/day
 - Damage reports: ~5-10/day
 - Admin notifications: ~1-2/day

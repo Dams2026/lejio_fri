@@ -6,7 +6,7 @@ import { supabase } from '@/integrations/api/client';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import LejioLogo from "@/components/LejioLogo";
+import AUTOFIQLogo from "@/components/AUTOFIQLogo";
 import { toast } from "sonner";
 import { z } from "zod";
 import { User, ArrowLeft, ArrowRight, Check, Mail, Lock, Loader2 } from "lucide-react";
@@ -155,7 +155,7 @@ const Auth = () => {
           }
         }, 1000);
       }
-      toast.success("Konto oprettet! Velkommen til LEJIO 🎉");
+      toast.success("Konto oprettet! Velkommen til AUTOFIQ 🎉");
       navigate("/");
     }
   };
@@ -200,7 +200,7 @@ const Auth = () => {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-block cursor-pointer" onClick={() => navigate("/")}>
-            <LejioLogo />
+            <AUTOFIQLogo />
           </div>
           <p className="text-muted-foreground mt-2">
             {mode === "login" ? "Log ind på din konto" : "Opret din konto"}

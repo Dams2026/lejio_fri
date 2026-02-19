@@ -143,7 +143,7 @@ const VehicleCard = ({ vehicle, onToggleAvailability, onUpdate, onDelete, isFlee
         {/* Km info */}
         <div className="text-xs text-center mb-4 text-muted-foreground">
           {vehicle.unlimited_km ? (
-            <span className="text-accent font-medium">✓ Fri km inkluderet</span>
+            <span className="text-accent font-medium">✓ Ubegrænset km inkluderet</span>
           ) : (
             <span>
               {vehicle.included_km || 100} km/dag inkl. • {vehicle.extra_km_price || 2.5} kr/ekstra km

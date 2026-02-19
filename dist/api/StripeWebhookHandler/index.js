@@ -1,7 +1,18 @@
 const Stripe = require('stripe');
 const { Client } = require('pg');
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+let stripe = null;
+
+function getStripe() {
+  if (!stripe) {
+    const key = process.env.STRIPE_SECRET_KEY;
+    if (!key) {
+      throw new Error('STRIPE_SECRET_KEY is missing');
+    }
+    stripe = new Stripe(key);
+  }
+  return stripe;
+}
 
 const dbConfig = {
   host: process.env.POSTGRES_HOST,
@@ -23,7 +34,7 @@ module.exports = async function (context, req) {
     let event;
 
     try {
-      event = stripe.webhooks.constructEvent(
+      event = getStripe().webhooks.constructEvent(
         req.rawBody || req.body,
         sig,
         endpointSecret
@@ -203,7 +214,7 @@ async function handleSubscriptionCancelled(subscription, client, context) {
 async function triggerProvisioning(lessorId, planId, client, context) {
   try {
     const https = require('https');
-    const baseUrl = process.env.SITE_URL || 'https://lejio-fri.onrender.com';
+    const baseUrl = process.env.SITE_URL || 'https://autofiq.onrender.com';
 
     const payload = JSON.stringify({
       lessor_id: lessorId,

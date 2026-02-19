@@ -3,7 +3,7 @@ import { MapPin, Mail, Heart, ArrowRight, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import LejioLogo from "./LejioLogo";
+import AUTOFIQLogo from "./AUTOFIQLogo";
 
 const Footer = forwardRef<HTMLElement>((props, ref) => {
   const navigate = useNavigate();
@@ -80,7 +80,7 @@ const Footer = forwardRef<HTMLElement>((props, ref) => {
             <div className="md:col-span-1">
               {/* Logo */}
               <div className="mb-6">
-                <LejioLogo size="lg" />
+                <AUTOFIQLogo size="lg" />
               </div>
               <p className="text-white/60 max-w-xs mb-6">
                 Danmarks smarteste platform til køretøjsudlejning. Private og forhandlere – alt samlet ét sted.
@@ -129,12 +129,12 @@ const Footer = forwardRef<HTMLElement>((props, ref) => {
                 <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
                   <Mail className="w-5 h-5 text-accent" />
                 </div>
-                <a href="mailto:hej@lejio.dk" className="hover:text-primary transition-colors">hej@lejio.dk</a>
+                <a href="mailto:hej@autofiq.dk" className="hover:text-primary transition-colors">hej@autofiq.dk</a>
               </div>
               
               {/* Company info */}
               <div className="text-sm text-white/50 space-y-1 mb-6">
-                <p className="font-semibold text-white/70">LEJIO</p>
+                <p className="font-semibold text-white/70">AUTOFIQ</p>
                 <p>Erantisvej 2, st. 103</p>
                 <p>8800 Viborg</p>
                 <p>CVR: 44691507</p>
@@ -164,7 +164,7 @@ const Footer = forwardRef<HTMLElement>((props, ref) => {
 
           <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-sm text-white/50 flex items-center gap-2">
-              © {new Date().getFullYear()} LEJIO. Lavet med <Heart className="w-4 h-4 text-accent" /> i Danmark
+              © {new Date().getFullYear()} AUTOFIQ. Lavet med <Heart className="w-4 h-4 text-accent" /> i Danmark
             </p>
             <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-white/50">
               <a href="/om-os" className="hover:text-primary transition-colors">Om os</a>

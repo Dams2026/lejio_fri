@@ -170,7 +170,7 @@ export const FriAdminTicketsPage = () => {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => navigate(`/fri/admin/support/${ticket.id}`)}
+                          onClick={() => navigate(`/autofiq/admin/support/${ticket.id}`)}
                           className="text-violet-600 hover:text-violet-700 hover:bg-violet-50 rounded-lg gap-1"
                         >
                           Detaljer

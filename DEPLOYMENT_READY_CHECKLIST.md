@@ -26,19 +26,19 @@
 ## 🎯 FRONTEND MODULES - DEPLOYMENT READY
 
 ### Core Dashboard Features
-- ✅ **FRI Lessor Dashboard** (`src/pages/fri/dashboard/FriLessorDashboard.tsx`)
+- ✅ **AUTOFIQ Lessor Dashboard** (`src/pages/autofiq/dashboard/FriLessorDashboard.tsx`)
   - Landing view with all stats
   - Module browser
   - Quick access cards
   - Status: READY ✅
 
-- ✅ **Settings Page** (`src/pages/fri/dashboard/SettingsPage.tsx`)
+- ✅ **Settings Page** (`src/pages/autofiq/dashboard/SettingsPage.tsx`)
   - Branding customization (colors + logo)
   - Logo upload (base64 → Supabase)
   - Account settings
   - Status: FULLY IMPLEMENTED ✅
 
-- ✅ **Modules Page** (`src/pages/fri/dashboard/ModulesPage.tsx`)
+- ✅ **Modules Page** (`src/pages/autofiq/dashboard/ModulesPage.tsx`)
   - Module activation/deactivation
   - Status tracking
   - Feature browsing
@@ -80,7 +80,7 @@
 - ✅ Trial Page - Trial information
 - ✅ Signup Page - Registration flow
 - ✅ Landing Page - Public homepage
-- ✅ What is LEJIO - Information page
+- ✅ What is AUTOFIQ - Information page
 
 ---
 
@@ -280,7 +280,7 @@
 ### Step 1: Environment Configuration
 ```bash
 # Copy example file
-cp .env.example.fri .env.production
+cp .env.simply.example .env.production
 
 # Edit with production values
 nano .env.production
@@ -350,4 +350,4 @@ supabase migration up
 
 *Last Updated: January 27, 2026*  
 *Prepared by: GitHub Copilot*  
-*Repository: github.com/martinjensen9988-sudo/lejio-fri*
+*Repository: github.com/martinjensen9988-sudo/autofiq*

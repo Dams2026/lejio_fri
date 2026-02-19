@@ -23,7 +23,7 @@ RLS policies skal aktiveres i Render Postgres for at sikre data isolation mellem
 
 #### Option A: Via Render Dashboard
 1. Gå til [Render Dashboard](https://dashboard.render.com)
-2. Vælg din PostgreSQL database: `lejio-fri-db`
+2. Vælg din PostgreSQL database: `autofiq-db`
 3. Klik på "Connect" → "External Connection"
 4. Kopier `PSQL Command`
 
@@ -155,4 +155,4 @@ Hvis der opstår problemer efter RLS deployment:
 **Deploy Date**: 2026-02-08  
 **RLS Script**: `database/rls.policies.sql`  
 **Modified Endpoints**: UpdateSubscriptionTier, GetModules, SetModule  
-**Modified Files**: api/rls.js, src/pages/fri/dashboard/SettingsPage.tsx
+**Modified Files**: api/rls.js, src/pages/autofiq/dashboard/SettingsPage.tsx

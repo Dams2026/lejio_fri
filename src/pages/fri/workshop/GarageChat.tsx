@@ -12,7 +12,7 @@ export function GarageChatPage() {
 
   useEffect(() => {
     if (!user) {
-      navigate('/fri/login');
+      navigate('/autofiq/login');
     }
   }, [user, navigate]);
 
@@ -51,7 +51,7 @@ export function GarageChatPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <button
-                onClick={() => navigate('/fri')}
+                onClick={() => navigate('/autofiq')}
                 className="hover:bg-slate-800 p-2 rounded-lg transition-colors"
               >
                 <ArrowLeft className="w-5 h-5 text-slate-400" />
@@ -172,7 +172,7 @@ export function GarageChatPage() {
               size="lg"
               variant="outline"
               className="border-cyan-100 text-white hover:bg-cyan-700"
-              onClick={() => navigate('/fri')}
+              onClick={() => navigate('/autofiq')}
             >
               Tilbage til dashboard
             </Button>

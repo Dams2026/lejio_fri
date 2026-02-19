@@ -341,7 +341,7 @@ const EditVehiclePage = () => {
           <div className="text-center">
             <h2 className="text-lg font-semibold">Fleet-køretøj</h2>
             <p className="text-muted-foreground">
-              Dette køretøj administreres af LEJIO Fleet og kan kun redigeres af administratorer.
+              Dette køretøj administreres af AUTOFIQ Fleet og kan kun redigeres af administratorer.
             </p>
           </div>
           <Button variant="outline" onClick={() => navigate('/dashboard/vehicles')}>
@@ -512,7 +512,7 @@ const EditVehiclePage = () => {
                   checked={formData.unlimited_km || false}
                   onCheckedChange={(checked) => setFormData(prev => ({ ...prev, unlimited_km: !!checked }))}
                 />
-                <Label>Fri kilometer</Label>
+                <Label>Ubegrænsede kilometer</Label>
               </div>
               
               {!formData.unlimited_km && (

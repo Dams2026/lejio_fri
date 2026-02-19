@@ -14,14 +14,14 @@ export interface TemplateVariables {
 const templates = {
   invoice_sent: {
     da: {
-      subject: 'Din faktura fra Lejio',
+      subject: 'Din faktura fra AUTOFIQ',
       html: `
 <html dir="ltr" lang="da">
 <body style="font-family: Arial, sans-serif; color: #333;">
   <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
     <h1 style="color: #1f2937;">Din faktura er klar</h1>
     <p>Hej {{renter_name}},</p>
-    <p>Vi har genereret en faktura for dit biler leje hos Lejio.</p>
+    <p>Vi har genereret en faktura for dit biler leje hos AUTOFIQ.</p>
     <div style="background-color: #f3f4f6; padding: 20px; margin: 20px 0; border-radius: 8px;">
       <p><strong>Faktura nr.:</strong> {{invoice_number}}</p>
       <p><strong>Beløb:</strong> {{amount}} DKK</p>
@@ -29,16 +29,16 @@ const templates = {
       <p><strong>Status:</strong> {{status}}</p>
     </div>
     <a href="{{invoice_link}}" style="background-color: #3b82f6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Se faktura</a>
-    <p style="color: #666; font-size: 12px; margin-top: 30px;">Spørgsmål? Kontakt os på support@lejio.dk</p>
+    <p style="color: #666; font-size: 12px; margin-top: 30px;">Spørgsmål? Kontakt os på support@autofiq.dk</p>
   </div>
 </body>
 </html>
       `,
-      text: `Din faktura fra Lejio
+      text: `Din faktura fra AUTOFIQ
 
 Hej {{renter_name}},
 
-Vi har genereret en faktura for dit biler leje hos Lejio.
+Vi har genereret en faktura for dit biler leje hos AUTOFIQ.
 
 Faktura nr.: {{invoice_number}}
 Beløb: {{amount}} DKK
@@ -47,7 +47,7 @@ Status: {{status}}
 
 Se faktura: {{invoice_link}}
 
-Spørgsmål? Kontakt os på support@lejio.dk
+Spørgsmål? Kontakt os på support@autofiq.dk
       `,
     },
   },
@@ -60,7 +60,7 @@ Spørgsmål? Kontakt os på support@lejio.dk
   <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
     <h1 style="color: #dc2626;">Betaling er forfalden</h1>
     <p>Hej {{renter_name}},</p>
-    <p>Din faktura fra Lejio er {{days_overdue}} dage forfalden.</p>
+    <p>Din faktura fra AUTOFIQ er {{days_overdue}} dage forfalden.</p>
     <div style="background-color: #fee2e2; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #dc2626;">
       <p><strong>Faktura nr.:</strong> {{invoice_number}}</p>
       <p><strong>Forfaldsdato:</strong> {{due_date}}</p>
@@ -68,7 +68,7 @@ Spørgsmål? Kontakt os på support@lejio.dk
     </div>
     <p>Venligst betaler så snart som muligt for at undgå yderligere renter og gebyrer.</p>
     <a href="{{payment_link}}" style="background-color: #dc2626; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Betal nu</a>
-    <p style="color: #666; font-size: 12px; margin-top: 30px;">Spørgsmål? Kontakt os på support@lejio.dk</p>
+    <p style="color: #666; font-size: 12px; margin-top: 30px;">Spørgsmål? Kontakt os på support@autofiq.dk</p>
   </div>
 </body>
 </html>
@@ -77,7 +77,7 @@ Spørgsmål? Kontakt os på support@lejio.dk
 
 Hej {{renter_name}},
 
-Din faktura fra Lejio er {{days_overdue}} dage forfalden.
+Din faktura fra AUTOFIQ er {{days_overdue}} dage forfalden.
 
 Faktura nr.: {{invoice_number}}
 Forfaldsdato: {{due_date}}
@@ -87,20 +87,20 @@ Venligst betaler så snart som muligt for at undgå yderligere renter og gebyrer
 
 Betal nu: {{payment_link}}
 
-Spørgsmål? Kontakt os på support@lejio.dk
+Spørgsmål? Kontakt os på support@autofiq.dk
       `,
     },
   },
   subscription_created: {
     da: {
-      subject: 'Dit abonnement hos Lejio er oprettet',
+      subject: 'Dit abonnement hos AUTOFIQ er oprettet',
       html: `
 <html dir="ltr" lang="da">
 <body style="font-family: Arial, sans-serif; color: #333;">
   <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
     <h1 style="color: #1f2937;">Abonnement oprettet</h1>
     <p>Hej {{renter_name}},</p>
-    <p>Dit abonnement hos Lejio er nu oprettet!</p>
+    <p>Dit abonnement hos AUTOFIQ er nu oprettet!</p>
     <div style="background-color: #f3f4f6; padding: 20px; margin: 20px 0; border-radius: 8px;">
       <p><strong>Køretøj:</strong> {{vehicle_name}}</p>
       <p><strong>Abonnementstype:</strong> {{subscription_type}}</p>
@@ -108,16 +108,16 @@ Spørgsmål? Kontakt os på support@lejio.dk
       <p><strong>Næste fakturering:</strong> {{next_billing_date}}</p>
     </div>
     <a href="{{subscription_link}}" style="background-color: #3b82f6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Se abonnement</a>
-    <p style="color: #666; font-size: 12px; margin-top: 30px;">Spørgsmål? Kontakt os på support@lejio.dk</p>
+    <p style="color: #666; font-size: 12px; margin-top: 30px;">Spørgsmål? Kontakt os på support@autofiq.dk</p>
   </div>
 </body>
 </html>
       `,
-      text: `Dit abonnement hos Lejio er oprettet
+      text: `Dit abonnement hos AUTOFIQ er oprettet
 
 Hej {{renter_name}},
 
-Dit abonnement hos Lejio er nu oprettet!
+Dit abonnement hos AUTOFIQ er nu oprettet!
 
 Køretøj: {{vehicle_name}}
 Abonnementstype: {{subscription_type}}
@@ -126,7 +126,7 @@ Næste fakturering: {{next_billing_date}}
 
 Se abonnement: {{subscription_link}}
 
-Spørgsmål? Kontakt os på support@lejio.dk
+Spørgsmål? Kontakt os på support@autofiq.dk
       `,
     },
   },
@@ -146,7 +146,7 @@ Spørgsmål? Kontakt os på support@lejio.dk
       <p><strong>Transaktions-ID:</strong> {{transaction_id}}</p>
     </div>
     <p>Din faktura er nu mærket som betalt.</p>
-    <p style="color: #666; font-size: 12px; margin-top: 30px;">Spørgsmål? Kontakt os på support@lejio.dk</p>
+    <p style="color: #666; font-size: 12px; margin-top: 30px;">Spørgsmål? Kontakt os på support@autofiq.dk</p>
   </div>
 </body>
 </html>
@@ -163,7 +163,7 @@ Transaktions-ID: {{transaction_id}}
 
 Din faktura er nu mærket som betalt.
 
-Spørgsmål? Kontakt os på support@lejio.dk
+Spørgsmål? Kontakt os på support@autofiq.dk
       `,
     },
   },

@@ -9,7 +9,7 @@
 
 ### What Was Built
 
-Three enterprise corporate management components for LEJIO:
+Three enterprise corporate management components for AUTOFIQ:
 
 | Component | Lines | Purpose |
 |-----------|-------|---------|

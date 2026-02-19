@@ -1,4 +1,4 @@
-# ✅ LEJIO FRI - RENDER READY! PostgreSQL Migration Complete
+# ✅ AUTOFIQ - RENDER READY! PostgreSQL Migration Complete
 
 **Status:** 🎉 **READY FOR DEPLOYMENT TO RENDER**  
 **Date:** February 5, 2026  
@@ -86,16 +86,16 @@ Then test in browser: `http://localhost:3000/api/health`
 
 **3b. Create PostgreSQL Database**
 - Dashboard → "New +" → "PostgreSQL"
-- Name: `lejio-fri`
+- Name: `autofiq`
 - Region: Copenhagen
 - Plan: Standard
 - Copy credentials
 
 **3c. Deploy Web Service**
 - Dashboard → "New +" → "Web Service"
-- Connect GitHub repo: `lejio-fri`
+- Connect GitHub repo: `autofiq`
 - Select branch: `main`
-- Name: `lejio-fri`
+- Name: `autofiq`
 - Environment: Node
 - Build: `npm install && npm run build`
 - Start: `npm start`
@@ -105,7 +105,7 @@ In Render dashboard, add from `.env.render`:
 ```
 DB_HOST=[your-postgres-host]
 DB_PORT=5432
-DB_NAME=lejio_fri
+DB_NAME=autofiq
 DB_USER=postgres
 DB_PASSWORD=[your-password]
 NODE_ENV=production
@@ -119,7 +119,7 @@ NODE_ENV=production
 ### Step 4: Migrate Database
 ```bash
 # Run PostgreSQL migrations
-psql postgresql://postgres:PASS@HOST:5432/lejio_fri < database/schema.postgres.sql
+psql postgresql://postgres:PASS@HOST:5432/autofiq < database/schema.postgres.sql
 ```
 
 ### Step 5: Verify Everything Works

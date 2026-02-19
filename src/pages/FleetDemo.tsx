@@ -270,7 +270,7 @@ const FleetDemo = () => {
               <CardContent className="py-6">
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-2">
-                    Denne side henter data live fra Lejio Fleet API
+                    Denne side henter data live fra AUTOFIQ Fleet API
                   </p>
                   <code className="text-xs bg-background px-3 py-1 rounded">
                     GET /functions/v1/fleet-site

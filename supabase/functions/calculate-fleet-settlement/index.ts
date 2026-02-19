@@ -223,7 +223,7 @@ serve(async (req: Request): Promise<Response> => {
           <span class="value">${settlement.totalRevenue.toLocaleString('da-DK')} kr</span>
         </div>
         <div class="row">
-          <span class="label">LEJIO kommission (${lessor.fleet_plan === 'fleet_premium' ? '10%' : '15%'}):</span>
+          <span class="label">AUTOFIQ kommission (${lessor.fleet_plan === 'fleet_premium' ? '10%' : '15%'}):</span>
           <span class="value">-${settlement.commissionAmount.toLocaleString('da-DK')} kr</span>
         </div>
         <div class="row">
@@ -235,8 +235,8 @@ serve(async (req: Request): Promise<Response> => {
       <p>Udbetalingen sker inden for 5 hverdage til din registrerede bankkonto.</p>
 
       <div class="footer">
-        <p>LEJIO Fleet Management</p>
-        <p>Har du spørgsmål? Kontakt os på fleet@lejio.dk</p>
+        <p>AUTOFIQ Fleet Management</p>
+        <p>Har du spørgsmål? Kontakt os på fleet@autofiq.dk</p>
       </div>
     </div>
   </div>
@@ -248,7 +248,7 @@ serve(async (req: Request): Promise<Response> => {
           await client.send({
             from: smtpFromEmail,
             to: lessor.email,
-            subject: `📊 Din LEJIO Fleet afregning for ${monthName}`,
+            subject: `📊 Din AUTOFIQ Fleet afregning for ${monthName}`,
             content: emailHtml,
             html: emailHtml,
           });

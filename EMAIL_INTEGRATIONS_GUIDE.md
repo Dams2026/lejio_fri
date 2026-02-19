@@ -2,7 +2,7 @@
 
 ## Overview
 
-The email integration system allows lessors to connect multiple email accounts (Gmail, Outlook, or custom SMTP) and choose which one to use when sending messages through LEJIO.
+The email integration system allows lessors to connect multiple email accounts (Gmail, Outlook, or custom SMTP) and choose which one to use when sending messages through AUTOFIQ.
 
 This replaces the single global SMTP configuration with a per-user, multi-account system.
 
@@ -150,7 +150,7 @@ import { EmailIntegrationSettings } from '@/components/settings/EmailIntegration
   "recipient": "customer@example.com",
   "subject": "Booking Confirmation",
   "html": "<h1>Welcome!</h1>",
-  "text": "Welcome to LEJIO!",
+  "text": "Welcome to AUTOFIQ!",
   "emailType": "booking_confirmation",
   "integrationId": "uuid" // Optional: use default if not specified
 }
@@ -205,7 +205,7 @@ function MyComponent({ userId }) {
   const handleSendEmail = async () => {
     const result = await sendEmail(
       'customer@example.com',
-      'Welcome to LEJIO',
+      'Welcome to AUTOFIQ',
       '<h1>Welcome!</h1>',
       {
         text: 'Plain text version',
@@ -235,7 +235,7 @@ function MyComponent({ userId }) {
 
 | Type | Description | When Sent |
 |------|-------------|-----------|
-| `welcome` | Welcome to LEJIO | New user signup |
+| `welcome` | Welcome to AUTOFIQ | New user signup |
 | `booking_confirmation` | Confirm booking | After booking created |
 | `payment_reminder` | Payment due reminder | 7 days before due |
 | `booking_approved` | Booking approved by lessor | After lessor approves |
@@ -261,7 +261,7 @@ function MyComponent({ userId }) {
    - Select Mail → Windows Computer
    - Copy the generated password
 
-3. **Add to LEJIO**
+3. **Add to AUTOFIQ**
    - Go to Settings → Email Integration
    - Click "Tilføj Email Integration"
    - Select "Gmail"
@@ -279,7 +279,7 @@ function MyComponent({ userId }) {
    - Click "App passwords"
    - Copy the generated password
 
-3. **Add to LEJIO**
+3. **Add to AUTOFIQ**
    - Go to Settings → Email Integration
    - Click "Tilføj Email Integration"
    - Select "Outlook"
@@ -296,7 +296,7 @@ For other email providers (hosting, corporate email, etc.):
    - Username: `user@example.com`
    - Password: Your email password
 
-2. **Add to LEJIO**
+2. **Add to AUTOFIQ**
    - Go to Settings → Email Integration
    - Click "Tilføj Email Integration"
    - Select "SMTP"
@@ -448,4 +448,4 @@ For issues with email integrations:
 2. Verify 2FA is properly enabled
 3. Send a test email to verify setup
 4. Check email_activity_log for error details
-5. Contact support: support@lejio.dk
+5. Contact support: support@autofiq.dk

@@ -30,7 +30,7 @@ serve(async (req: Request) => {
     }
 
     // Get admin email(s) from environment
-    const defaultAdminEmail = Deno.env.get('ADMIN_EMAIL') || 'admin@lejio.dk';
+    const defaultAdminEmail = Deno.env.get('ADMIN_EMAIL') || 'admin@autofiq.dk';
     const adminEmails = recipients && recipients.length > 0 ? recipients : [defaultAdminEmail];
 
     // Get SendGrid API key
@@ -82,11 +82,11 @@ serve(async (req: Request) => {
             <div class="body">
               ${content}
               <div class="footer">
-                <p><strong>LEJIO System Notification</strong></p>
+                <p><strong>AUTOFIQ System Notification</strong></p>
                 <p>Tid: ${new Date().toLocaleString('da-DK')}</p>
                 <p style="margin-top: 10px; font-size: 11px; color: #aaa;">
-                  Denne email er auto-genereret af LEJIO-systemet.<br>
-                  Spørgsmål? Kontakt support@lejio.dk
+                  Denne email er auto-genereret af AUTOFIQ-systemet.<br>
+                  Spørgsmål? Kontakt support@autofiq.dk
                 </p>
               </div>
             </div>
@@ -108,8 +108,8 @@ serve(async (req: Request) => {
           subject: subject,
         })),
         from: {
-          email: 'notifications@lejio.dk',
-          name: 'LEJIO System',
+          email: 'notifications@autofiq.dk',
+          name: 'AUTOFIQ System',
         },
         content: [
           {
@@ -118,11 +118,11 @@ serve(async (req: Request) => {
           },
         ],
         reply_to: {
-          email: 'support@lejio.dk',
-          name: 'LEJIO Support',
+          email: 'support@autofiq.dk',
+          name: 'AUTOFIQ Support',
         },
         // Tag for SendGrid analytics
-        categories: ['admin-notifications', 'lejio-system'],
+        categories: ['admin-notifications', 'autofiq-system'],
       }),
     });
 

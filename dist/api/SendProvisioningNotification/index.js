@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-const siteUrl = process.env.SITE_URL || 'https://lejio-fri.onrender.com';
+const siteUrl = process.env.SITE_URL || 'https://autofiq.onrender.com';
 
 module.exports = async function (context, req) {
   const client = new Client(dbConfig);
@@ -99,7 +99,7 @@ module.exports = async function (context, req) {
 
     // Send email
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || 'noreply@lejio-fri.dk',
+      from: process.env.SMTP_FROM || 'noreply@autofiq.dk',
       to: lessor.email,
       subject: emailContent.subject,
       html: emailContent.html,
@@ -131,11 +131,11 @@ module.exports = async function (context, req) {
 
 function generateProvisioningStartedEmail(tenant, lessor) {
   return {
-    subject: '🚀 Din LEJIO FRI-konto bliver sat op!',
+    subject: '🚀 Din AUTOFIQ-konto bliver sat op!',
     text: `
 Hej ${lessor.company_name},
 
-Din LEJIO FRI-konto er blevet oprettet og opsætning er nu startet!
+Din AUTOFIQ-konto er blevet oprettet og opsætning er nu startet!
 
 Domæne: ${tenant.domain}
 Status: Initializing...
@@ -146,18 +146,18 @@ ${siteUrl}/tenant-provisioning/${tenant.id}
 Opsætningen tager normalt 5-10 minutter.
 
 Med venlig hilsen,
-LEJIO FRI Team
+AUTOFIQ Team
     `,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; color: white; text-align: center; border-radius: 8px 8px 0 0;">
-          <h1 style="margin: 0; font-size: 28px;">🚀 Din LEJIO FRI-konto bliver sat op!</h1>
+          <h1 style="margin: 0; font-size: 28px;">🚀 Din AUTOFIQ-konto bliver sat op!</h1>
         </div>
         
         <div style="padding: 40px; background: #f9fafb; border: 1px solid #e5e7eb;">
           <p>Hej <strong>${lessor.company_name}</strong>,</p>
           
-          <p>Din LEJIO FRI-konto er blevet oprettet og opsætning er nu startet!</p>
+          <p>Din AUTOFIQ-konto er blevet oprettet og opsætning er nu startet!</p>
           
           <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #667eea; margin: 20px 0;">
             <p style="margin: 0; color: #666; font-size: 12px; text-transform: uppercase;">Din domæne</p>
@@ -185,7 +185,7 @@ LEJIO FRI Team
         </div>
         
         <div style="padding: 20px; background: #f3f4f6; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 8px 8px;">
-          <p style="margin: 0;">Med venlig hilsen,<br/>LEJIO FRI Team</p>
+          <p style="margin: 0;">Med venlig hilsen,<br/>AUTOFIQ Team</p>
         </div>
       </div>
     `
@@ -204,7 +204,7 @@ function generateProvisioningProgressEmail(tenant, lessor, prov) {
   return {
     subject: `⏳ Opsætning i gang: ${prov.progress_percent}%`,
     text: `
-Din LEJIO FRI opsætning skrider frem!
+Din AUTOFIQ opsætning skrider frem!
 
 Nuværende status: ${prov.step}
 Fremskridt: ${prov.progress_percent}%
@@ -241,7 +241,7 @@ ${siteUrl}/tenant-provisioning/${tenant.id}
         </div>
         
         <div style="padding: 20px; background: #f3f4f6; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 8px 8px;">
-          <p style="margin: 0;">LEJIO FRI Team</p>
+          <p style="margin: 0;">AUTOFIQ Team</p>
         </div>
       </div>
     `
@@ -250,9 +250,9 @@ ${siteUrl}/tenant-provisioning/${tenant.id}
 
 function generateProvisioningCompletedEmail(tenant, lessor) {
   return {
-    subject: '✅ Din LEJIO FRI er klar!',
+    subject: '✅ Din AUTOFIQ er klar!',
     text: `
-Tillykke! Din LEJIO FRI opsætning er færdig!
+Tillykke! Din AUTOFIQ opsætning er færdig!
 
 Du kan nu få adgang til din konto på:
 https://${tenant.domain}
@@ -260,25 +260,25 @@ https://${tenant.domain}
 Login med dine credentials og kom i gang!
 
 Med venlig hilsen,
-LEJIO FRI Team
+AUTOFIQ Team
     `,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 40px; color: white; text-align: center; border-radius: 8px 8px 0 0;">
-          <h1 style="margin: 0; font-size: 28px;">✅ Din LEJIO FRI er klar!</h1>
+          <h1 style="margin: 0; font-size: 28px;">✅ Din AUTOFIQ er klar!</h1>
         </div>
         
         <div style="padding: 40px; background: #f9fafb; border: 1px solid #e5e7eb;">
           <p>Hej <strong>${lessor.company_name}</strong>,</p>
           
           <p style="font-size: 16px; margin: 20px 0;">
-            Tillykke! Din LEJIO FRI opsætning er færdig! 🎉
+            Tillykke! Din AUTOFIQ opsætning er færdig! 🎉
           </p>
           
           <p style="text-align: center; margin: 30px 0;">
             <a href="https://${tenant.domain}" 
                style="background: #10b981; color: white; padding: 16px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; font-size: 16px;">
-              Åbn din LEJIO FRI →
+              Åbn din AUTOFIQ →
             </a>
           </p>
           
@@ -299,7 +299,7 @@ LEJIO FRI Team
         </div>
         
         <div style="padding: 20px; background: #f3f4f6; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 8px 8px;">
-          <p style="margin: 0;">Med venlig hilsen,<br/>LEJIO FRI Team</p>
+          <p style="margin: 0;">Med venlig hilsen,<br/>AUTOFIQ Team</p>
         </div>
       </div>
     `
@@ -310,7 +310,7 @@ function generateProvisioningFailedEmail(tenant, lessor, prov) {
   return {
     subject: '⚠️ Opsætning fejlede - Vi hjælper!',
     text: `
-Desværre fejlede opsætningen af din LEJIO FRI konto.
+Desværre fejlede opsætningen af din AUTOFIQ konto.
 
 Fejl: ${prov.error_message}
 
@@ -319,7 +319,7 @@ Vores team er blevet notificeret og arbejder på at løse problemet.
 Du hører fra os snarest.
 
 Med venlig hilsen,
-LEJIO FRI Support
+AUTOFIQ Support
     `,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -330,7 +330,7 @@ LEJIO FRI Support
         <div style="padding: 40px; background: #f9fafb; border: 1px solid #e5e7eb;">
           <p>Hej ${lessor.company_name},</p>
           
-          <p>Desværre fejlede opsætningen af din LEJIO FRI konto. Vi beklager dette.</p>
+          <p>Desværre fejlede opsætningen af din AUTOFIQ konto. Vi beklager dette.</p>
           
           <div style="background: #fee2e2; padding: 15px; border-radius: 6px; border-left: 4px solid #ef4444; margin: 20px 0;">
             <p style="margin: 0; font-size: 13px; color: #991b1b;">
@@ -343,7 +343,7 @@ LEJIO FRI Support
           </p>
           
           <p style="text-align: center;">
-            <a href="mailto:support@lejio-fri.dk" 
+            <a href="mailto:support@autofiq.dk" 
                style="color: #ef4444; text-decoration: none; font-weight: bold;">
               Kontakt support →
             </a>
@@ -351,7 +351,7 @@ LEJIO FRI Support
         </div>
         
         <div style="padding: 20px; background: #f3f4f6; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 8px 8px;">
-          <p style="margin: 0;">LEJIO FRI Support Team</p>
+          <p style="margin: 0;">AUTOFIQ Support Team</p>
         </div>
       </div>
     `
@@ -360,17 +360,17 @@ LEJIO FRI Support
 
 function generateTrialEndingSoonEmail(tenant, lessor) {
   return {
-    subject: '📅 Din LEJIO FRI trial slutter snart',
+    subject: '📅 Din AUTOFIQ trial slutter snart',
     text: `
 Hej ${lessor.company_name},
 
 Din 14-dages trial slutter om 48 timer.
 
-Vælg en plan for at fortsætte og få din egen dedikeret LEJIO FRI:
+Vælg en plan for at fortsætte og få din egen dedikeret AUTOFIQ:
 ${siteUrl}/pricing
 
 Med venlig hilsen,
-LEJIO FRI Team
+AUTOFIQ Team
     `,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -381,7 +381,7 @@ LEJIO FRI Team
         <div style="padding: 40px; background: #f9fafb; border: 1px solid #e5e7eb;">
           <p>Hej ${lessor.company_name},</p>
           
-          <p>Din 14-dages trial af LEJIO FRI slutter om <strong>48 timer</strong>.</p>
+          <p>Din 14-dages trial af AUTOFIQ slutter om <strong>48 timer</strong>.</p>
           
           <p>Vælg en plan nu for at:</p>
           <ul style="color: #374151;">
@@ -399,7 +399,7 @@ LEJIO FRI Team
         </div>
         
         <div style="padding: 20px; background: #f3f4f6; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 8px 8px;">
-          <p style="margin: 0;">LEJIO FRI Team</p>
+          <p style="margin: 0;">AUTOFIQ Team</p>
         </div>
       </div>
     `

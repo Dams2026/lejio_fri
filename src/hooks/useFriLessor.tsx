@@ -68,7 +68,12 @@ export interface FriInvoice {
 
 const esc = (v: string) => v.replace(/'/g, "''");
 
-const normalizeRows = (response: any) => {
+type DbQueryRows<T> = {
+  data?: T[] | { recordset?: T[] } | unknown;
+  recordset?: T[];
+} | T[] | unknown;
+
+const normalizeRows = <T,>(response: DbQueryRows<T>): T[] => {
   if (!response) return [];
   if (Array.isArray(response)) return response;
   if (Array.isArray(response.data)) return response.data;
@@ -93,21 +98,21 @@ export const useFriLessor = () => {
     try {
       const safeLessorId = esc(lessorId);
       const [lessorRes, teamRes, vehiclesRes, bookingsRes, invoicesRes] = await Promise.allSettled([
-        azureApi.post<any>('/db-query', {
+        azureApi.post('/db-query', {
           query: `SELECT id, company_name, email AS contact_email, subscription_status AS status, created_at FROM fri_lessors WHERE id='${safeLessorId}'`
         }),
-        azureApi.post<any>('/db-query', {
+        azureApi.post('/db-query', {
           query: `SELECT *, name AS full_name FROM fri_lessor_team_members WHERE lessor_id='${safeLessorId}' AND status='active'`
         }),
-        azureApi.post<any>('/db-query', {
+        azureApi.post('/db-query', {
           query: `SELECT *, availability_status AS status FROM fri_vehicles WHERE lessor_id='${safeLessorId}' ORDER BY created_at DESC`
         }),
-        azureApi.post<any>('/db-query', {
+        azureApi.post('/db-query', {
           query: `SELECT b.*, b.customer_name AS renter_name, b.email AS renter_email, b.phone AS renter_phone
                   FROM fri_bookings b WHERE b.lessor_id='${safeLessorId}'
                   ORDER BY b.created_at DESC LIMIT 100`
         }),
-        azureApi.post<any>('/db-query', {
+        azureApi.post('/db-query', {
           query: `SELECT *, created_at AS issued_date FROM fri_invoices WHERE lessor_id='${safeLessorId}' ORDER BY created_at DESC`
         }),
       ]);
@@ -124,7 +129,7 @@ export const useFriLessor = () => {
       setBookings((bookingRows || []) as FriBooking[]);
       setInvoices((invoiceRows || []) as FriInvoice[]);
     } catch (error) {
-      console.error('Error fetching Fri data:', error);
+      console.error('Error fetching lessor data:', error);
     } finally {
       setIsLoading(false);
     }

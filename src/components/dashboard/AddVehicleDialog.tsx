@@ -568,7 +568,7 @@ const AddVehicleDialog = () => {
                     onCheckedChange={(checked) => setVehicleDetails(prev => ({ ...prev, unlimited_km: !!checked }))}
                   />
                   <label htmlFor="manual_unlimited_km" className="text-sm font-medium cursor-pointer select-none">
-                    Fri km (ingen km-begrænsning)
+                    Ubegrænset km (ingen km-begrænsning)
                   </label>
                 </div>
 
@@ -800,7 +800,7 @@ const AddVehicleDialog = () => {
                     onCheckedChange={(checked) => setVehicleDetails(prev => ({ ...prev, unlimited_km: !!checked }))}
                   />
                   <label htmlFor="unlimited_km" className="text-sm font-medium cursor-pointer select-none">
-                    Fri km (ingen km-begrænsning)
+                    Ubegrænset km (ingen km-begrænsning)
                   </label>
                 </div>
 

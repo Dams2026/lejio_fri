@@ -33,7 +33,7 @@ serve(async (req) => {
 
     const leadData = lead as LeadData;
     
-    const prompt = `Du er en erfaren salgs-coach der hjælper med at forberede opkald til potentielle kunder for LEJIO, en dansk biludlejningsplatform.
+    const prompt = `Du er en erfaren salgs-coach der hjælper med at forberede opkald til potentielle kunder for AUTOFIQ, en dansk biludlejningsplatform.
 
 Analyser følgende virksomhed og giv konkrete, handlingsorienterede tips til salgssamtalen:
 
@@ -47,10 +47,10 @@ VIRKSOMHEDSDATA:
 - Adresse: ${leadData.address || 'Ikke angivet'}
 - Tidligere noter: ${leadData.notes || 'Ingen'}
 
-=== KOMPLET LEJIO VIDEN (brug aktivt i dine tips) ===
+=== KOMPLET AUTOFIQ VIDEN (brug aktivt i dine tips) ===
 
-**HVAD ER LEJIO?**
-LEJIO er Danmarks førende platform for biludlejning - tænk det som "Hotels.com for biludlejning". Vi forbinder udlejere (lessors) med lejere (renters) og håndterer alt det administrative.
+**HVAD ER AUTOFIQ?**
+AUTOFIQ er Danmarks førende platform for biludlejning - tænk det som "Hotels.com for biludlejning". Vi forbinder udlejere (lessors) med lejere (renters) og håndterer alt det administrative.
 
 **MÅLGRUPPER:**
 1. Private bilejere der vil tjene penge på deres bil
@@ -67,9 +67,9 @@ LEJIO er Danmarks førende platform for biludlejning - tænk det som "Hotels.com
   * Enterprise: 899 kr/md for 16-35 køretøjer
 - 3% kommission pr. booking for Pro-brugere
 
-**LEJIO FLEET (Varetager-ordning):**
-- "LEJIO Varetager" (15% kommission): Platform + kundeservice
-- "LEJIO Varetager Pro" (10% kommission): Alt inkl. afhentning, aflevering, rengøring, genulejning
+**AUTOFIQ FLEET (Varetager-ordning):**
+- "AUTOFIQ Varetager" (15% kommission): Platform + kundeservice
+- "AUTOFIQ Varetager Pro" (10% kommission): Alt inkl. afhentning, aflevering, rengøring, genulejning
 - Ideel for bilejere der vil have passiv indkomst
 
 **KERNEFUNKTIONER:**
@@ -80,7 +80,7 @@ LEJIO er Danmarks førende platform for biludlejning - tænk det som "Hotels.com
    - Automatisk generering
    - Skadesregistrering integreret
 
-2. LEJIO VISION AI
+2. AUTOFIQ VISION AI
    - Automatisk nummerplade-scanning
    - Dashboard-aflæsning (km-stand, brændstof)
    - Skadesregistrering med AI-analyse
@@ -134,7 +134,7 @@ LEJIO er Danmarks førende platform for biludlejning - tænk det som "Hotels.com
 **TYPISKE INDVENDINGER OG SVAR:**
 
 "Vi har allerede et system"
-→ "Hvad savner I ved jeres nuværende løsning? LEJIO integrerer ofte funktioner I betaler ekstra for andre steder."
+→ "Hvad savner I ved jeres nuværende løsning? AUTOFIQ integrerer ofte funktioner I betaler ekstra for andre steder."
 
 "Det lyder dyrt"
 → "Med 299 kr/md for op til 5 biler og ingen booking-gebyrer, tjener de fleste det hjem på første booking."
@@ -143,14 +143,14 @@ LEJIO er Danmarks førende platform for biludlejning - tænk det som "Hotels.com
 → "Vores onboarding tager typisk under en time, og vi hjælper med at importere eksisterende data."
 
 "Vi foretrækker personlig kontakt"
-→ "LEJIO automatiserer det kedelige, så I får mere tid til personlig kundekontakt."
+→ "AUTOFIQ automatiserer det kedelige, så I får mere tid til personlig kundekontakt."
 
 **KONTAKTINFO:**
-- Website: lejio.dk
-- Support: kontakt@lejio.dk
+- Website: autofiq.dk
+- Support: kontakt@autofiq.dk
 - Rasmus Damsgaard, Medstifter & Partner
 
-=== SLUT PÅ LEJIO VIDEN ===
+=== SLUT PÅ AUTOFIQ VIDEN ===
 
 Giv dit svar i følgende JSON-format (og KUN JSON, ingen tekst før eller efter):
 {
@@ -161,7 +161,7 @@ Giv dit svar i følgende JSON-format (og KUN JSON, ingen tekst før eller efter)
   ],
   "keySellingPoints": [
     {
-      "point": "Specifikt salgsargument relevant for denne kunde (brug LEJIO-viden)",
+      "point": "Specifikt salgsargument relevant for denne kunde (brug AUTOFIQ-viden)",
       "why": "Hvorfor dette er vigtigt for dem"
     }
   ],
@@ -172,7 +172,7 @@ Giv dit svar i følgende JSON-format (og KUN JSON, ingen tekst før eller efter)
   "potentialObjections": [
     {
       "objection": "Mulig indvending kunden kan have",
-      "response": "Hvordan du kan håndtere den (brug LEJIO-svar)"
+      "response": "Hvordan du kan håndtere den (brug AUTOFIQ-svar)"
     }
   ],
   "questionsToAsk": [
@@ -181,14 +181,14 @@ Giv dit svar i følgende JSON-format (og KUN JSON, ingen tekst før eller efter)
   ],
   "importantHighlights": [
     {
-      "highlight": "Vigtigt punkt at huske om LEJIO",
+      "highlight": "Vigtigt punkt at huske om AUTOFIQ",
       "priority": "high" | "medium",
       "reason": "Hvorfor dette er vigtigt for denne kunde"
     }
   ],
   "relevantFeatures": [
     {
-      "feature": "Relevant LEJIO-funktion for denne kunde",
+      "feature": "Relevant AUTOFIQ-funktion for denne kunde",
       "benefit": "Konkret fordel for kunden"
     }
   ],
@@ -197,7 +197,7 @@ Giv dit svar i følgende JSON-format (og KUN JSON, ingen tekst før eller efter)
   "suggestedApproach": "Anbefalet samtalestrategi for denne specifikke kunde"
 }
 
-Vær specifik og konkret. Brug virksomhedens navn og branche til at gøre tipsene relevante. Hvis branche ikke er angivet, gæt baseret på virksomhedsnavnet. Inkluder altid mindst 3 relevante LEJIO-funktioner baseret på kundetypen.`;
+Vær specifik og konkret. Brug virksomhedens navn og branche til at gøre tipsene relevante. Hvis branche ikke er angivet, gæt baseret på virksomhedsnavnet. Inkluder altid mindst 3 relevante AUTOFIQ-funktioner baseret på kundetypen.`;
 
     const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
       method: 'POST',
@@ -252,12 +252,12 @@ Vær specifik og konkret. Brug virksomhedens navn og branche til at gøre tipsen
       analysis = {
         companyInsights: [`${leadData.company_name} er en potentiel kunde i ${leadData.city || 'Danmark'}`],
         keySellingPoints: [{ point: 'Nem og effektiv biludlejning', why: 'Sparer tid og ressourcer' }],
-        conversationStarters: [`Hej, jeg ringer fra LEJIO angående biludlejning for ${leadData.company_name}`],
+        conversationStarters: [`Hej, jeg ringer fra AUTOFIQ angående biludlejning for ${leadData.company_name}`],
         potentialObjections: [{ objection: 'Vi har allerede en løsning', response: 'Jeg forstår - må jeg spørge hvad I savner ved jeres nuværende løsning?' }],
         questionsToAsk: ['Hvor mange biler har I i jeres flåde?', 'Hvordan håndterer I booking i dag?'],
         importantHighlights: [{ highlight: 'Fokuser på kundens specifikke behov', priority: 'high', reason: 'Personlig tilgang øger succesraten' }],
         industryContext: 'Virksomheder i denne branche kan ofte drage fordel af fleksibel biludlejning.',
-        suggestedApproach: 'Start med at lytte til kundens nuværende udfordringer før du præsenterer LEJIO.'
+        suggestedApproach: 'Start med at lytte til kundens nuværende udfordringer før du præsenterer AUTOFIQ.'
       };
     }
 

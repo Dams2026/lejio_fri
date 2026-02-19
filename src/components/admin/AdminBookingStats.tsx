@@ -266,7 +266,7 @@ const AdminBookingStats = () => {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `lejio-bookings-${format(now, 'yyyy-MM-dd')}.csv`;
+      a.download = `autofiq-bookings-${format(now, 'yyyy-MM-dd')}.csv`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

@@ -24,7 +24,7 @@ Since this project is built with Lovable, use the built-in deployment feature.
 #### Step 1: Access Lovable Dashboard
 1. Go to https://lovable.dev
 2. Sign in with your account
-3. Find project: **LEJIO**
+3. Find project: **AUTOFIQ**
 
 #### Step 2: Deploy to Staging First
 1. Click "Share" or "Deploy" button (top right)
@@ -39,7 +39,7 @@ Since this project is built with Lovable, use the built-in deployment feature.
 **Expected Success Message:**
 ```
 ✅ Staging deployment successful
-App ready at: https://staging-lejio-XXXXX.lovable.dev
+App ready at: https://staging-autofiq-XXXXX.lovable.dev
 ```
 
 #### Step 3: Verify Staging Deployment
@@ -60,7 +60,7 @@ App ready at: https://staging-lejio-XXXXX.lovable.dev
 **Expected Success Message:**
 ```
 ✅ Production deployment successful
-App live at: https://lejio.dk
+App live at: https://autofiq.dk
 ```
 
 ---
@@ -89,7 +89,7 @@ git push origin main
 ### 1. Check Application Status
 ```bash
 # Verify production is accessible
-curl https://lejio.dk/admin/corporate/employees
+curl https://autofiq.dk/admin/corporate/employees
 # Should return HTML (200 status)
 ```
 

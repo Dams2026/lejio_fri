@@ -6,38 +6,38 @@
 ## Database Configuration
 
 ### Server Details
-- **Host:** `lejio-fri-db.database.windows.net`
-- **Database:** `lejio_fri`
+- **Host:** `autofiq-db.database.windows.net`
+- **Database:** `autofiq`
 - **Port:** 1433
 - **Protocol:** TCP/SSL Encrypted
 
 ### Database User
-- **Username:** `martin_lejio_user`
+- **Username:** `martin_autofiq_user`
 - **Password:** `TestPassword123!`
 - **Roles:** db_datareader, db_datawriter
 
 ### Connection String
 ```
-Server=tcp:lejio-fri-db.database.windows.net,1433;Initial Catalog=lejio_fri;Persist Security Info=False;User ID=martin_lejio_user;Password=TestPassword123!;Encrypt=True;Connection Timeout=30;
+Server=tcp:autofiq-db.database.windows.net,1433;Initial Catalog=autofiq;Persist Security Info=False;User ID=martin_autofiq_user;Password=TestPassword123!;Encrypt=True;Connection Timeout=30;
 ```
 
 ## Environment Variables Configured
 
 ### .env.azure
 ```
-DB_SERVER=lejio-fri-db.database.windows.net
-DB_NAME=lejio_fri
-DB_USER=martin_lejio_user
+DB_SERVER=autofiq-db.database.windows.net
+DB_NAME=autofiq
+DB_USER=martin_autofiq_user
 DB_PASSWORD=TestPassword123!
-VITE_SQL_SERVER=lejio-fri-db.database.windows.net
+VITE_SQL_SERVER=autofiq-db.database.windows.net
 ```
 
 ### Azure Static Web Apps
 When deploying, set these in Azure Portal → Configuration:
 ```
-DB_SERVER=lejio-fri-db.database.windows.net
-DB_NAME=lejio_fri
-DB_USER=martin_lejio_user
+DB_SERVER=autofiq-db.database.windows.net
+DB_NAME=autofiq
+DB_USER=martin_autofiq_user
 DB_PASSWORD=TestPassword123!
 ```
 
@@ -49,7 +49,7 @@ DB_PASSWORD=TestPassword123!
    - Build now passes successfully
 
 ✅ 2. Updated environment configuration
-   - Updated `.env.azure` with correct database server (`lejio-fri-db.database.windows.net`)
+   - Updated `.env.azure` with correct database server (`autofiq-db.database.windows.net`)
    - Added database credentials to environment variables
    - Created `AZURE_FUNCTIONS_GUIDE.md` with complete setup documentation
 
@@ -63,28 +63,28 @@ DB_PASSWORD=TestPassword123!
 ### Step 1: Create Database User (Server Admin Only)
 This must be done by someone with Azure SQL Server admin access:
 
-**Run in SQL Server Management Studio (SSMS)** - Connect to `lejio-fri-db.database.windows.net` as server admin:
+**Run in SQL Server Management Studio (SSMS)** - Connect to `autofiq-db.database.windows.net` as server admin:
 
 In **Master** database:
 ```sql
 USE master;
 
-IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'martin_lejio_user')
+IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'martin_autofiq_user')
 BEGIN
-    CREATE LOGIN martin_lejio_user WITH PASSWORD = 'TestPassword123!';
+    CREATE LOGIN martin_autofiq_user WITH PASSWORD = 'TestPassword123!';
     PRINT 'Login created successfully';
 END
 ```
 
-In **lejio_fri** database:
+In **autofiq** database:
 ```sql
-USE lejio_fri;
+USE autofiq;
 
-IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'martin_lejio_user' AND type = 'U')
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'martin_autofiq_user' AND type = 'U')
 BEGIN
-    CREATE USER martin_lejio_user FOR LOGIN martin_lejio_user;
-    ALTER ROLE db_datareader ADD MEMBER martin_lejio_user;
-    ALTER ROLE db_datawriter ADD MEMBER martin_lejio_user;
+    CREATE USER martin_autofiq_user FOR LOGIN martin_autofiq_user;
+    ALTER ROLE db_datareader ADD MEMBER martin_autofiq_user;
+    ALTER ROLE db_datawriter ADD MEMBER martin_autofiq_user;
     PRINT 'Database user created with read/write permissions';
 END
 ```
@@ -94,10 +94,10 @@ Once user is created, test the connection:
 
 ```powershell
 $env:SQLCMDPASSWORD='TestPassword123!'
-sqlcmd -S tcp:lejio-fri-db.database.windows.net,1433 -U martin_lejio_user -d "lejio_fri" -C -Q "SELECT COUNT(*) AS table_count FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo';"
+sqlcmd -S tcp:autofiq-db.database.windows.net,1433 -U martin_autofiq_user -d "autofiq" -C -Q "SELECT COUNT(*) AS table_count FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo';"
 ```
 
-Expected output: Should show `14` (number of Fri tables)
+Expected output: Should show `14` (number of Autofiq tables)
 
 ### Step 3: Run Migrations (if needed)
 ```powershell
@@ -131,13 +131,13 @@ $response.Content | ConvertFrom-Json
 
 ## Troubleshooting
 
-### "Login failed for user 'martin_lejio_user'"
+### "Login failed for user 'martin_autofiq_user'"
 - Ensure SQL user has been created by server admin
 - Check firewall allows your IP in Azure SQL settings
 - Verify exact password: `TestPassword123!`
 
 ### "Server is not found or not accessible"
-- Use full hostname: `lejio-fri-db.database.windows.net` (not just `lejio-fri-db`)
+- Use full hostname: `autofiq-db.database.windows.net` (not just `autofiq-db`)
 - Check firewall allows port 1433
 - Ensure "Allow Azure services and resources" is enabled in Azure SQL firewall
 
@@ -157,7 +157,7 @@ Azure Static Web Apps (proxy)
         ↓
 Azure Functions (API handlers)
         ↓
-Azure SQL Database (lejio_fri)
+Azure SQL Database (autofiq)
 ```
 
 All API files in `api/**/*.js` automatically use credentials from environment variables.
@@ -165,7 +165,7 @@ All API files in `api/**/*.js` automatically use credentials from environment va
 ## Files Modified
 
 1. **src/integrations/azure/client.ts** - Exported supabase client
-2. **src/pages/fri/landing/LandingPage.tsx** - Fixed duplicate className attributes
+2. **src/pages/autofiq/landing/LandingPage.tsx** - Fixed duplicate className attributes
 3. **.env.azure** - Updated database server and credentials
 4. **AZURE_FUNCTIONS_GUIDE.md** - Created comprehensive setup guide
 
@@ -195,4 +195,4 @@ See `AZURE_FUNCTIONS_GUIDE.md` for detailed documentation on:
 
 **Status:** ✅ Ready for Database User Creation & Testing
 **Date:** February 4, 2026
-**Configuration:** lejio-fri-db.database.windows.net / lejio_fri
+**Configuration:** autofiq-db.database.windows.net / autofiq

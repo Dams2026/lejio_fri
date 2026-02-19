@@ -12,7 +12,7 @@ export function GaragePlanPage() {
 
   useEffect(() => {
     if (!user) {
-      navigate('/fri/login');
+      navigate('/autofiq/login');
     }
   }, [user, navigate]);
 
@@ -63,7 +63,7 @@ export function GaragePlanPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <button
-                onClick={() => navigate('/fri')}
+                onClick={() => navigate('/autofiq')}
                 className="hover:bg-slate-800 p-2 rounded-lg transition-colors"
               >
                 <ArrowLeft className="w-5 h-5 text-slate-400" />
@@ -249,7 +249,7 @@ export function GaragePlanPage() {
               size="lg"
               variant="outline"
               className="border-amber-100 text-white hover:bg-amber-700"
-              onClick={() => navigate('/fri/trial')}
+              onClick={() => navigate('/autofiq/trial')}
             >
               Mere info
             </Button>

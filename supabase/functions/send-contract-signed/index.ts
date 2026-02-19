@@ -116,7 +116,7 @@ async function generateContractPDF(contract: Contract): Promise<Uint8Array> {
   drawText('LEJEKONTRAKT', margin, y, 24, helveticaBold, primaryColor);
   drawText(contract.contract_number, margin + 200, y, 16, helveticaBold, textColor);
   y -= 20;
-  drawText('LEJIO - Biludlejning', margin, y, 10, helvetica, lightGray);
+  drawText('AUTOFIQ - Biludlejning', margin, y, 10, helvetica, lightGray);
   y -= 40;
   
   // Udlejer Section
@@ -364,7 +364,7 @@ async function generateContractPDF(contract: Contract): Promise<Uint8Array> {
   const pages = pdfDoc.getPages();
   for (let i = 0; i < pages.length; i++) {
     const p = pages[i];
-    p.drawText('Genereret af LEJIO • lejio.dk', { 
+    p.drawText('Genereret af AUTOFIQ • autofiq.dk', { 
       x: margin, 
       y: 30, 
       size: 8, 
@@ -472,7 +472,7 @@ const handler = async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const fromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const fromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       console.log("SMTP not configured, skipping email");
@@ -595,7 +595,7 @@ const handler = async (req: Request): Promise<Response> => {
       </head>
       <body style="font-family: 'Nunito', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #2962FF; margin: 0;">LEJIO</h1>
+          <h1 style="color: #2962FF; margin: 0;">AUTOFIQ</h1>
           <p style="color: #666; margin: 5px 0;">Din biludlejningsplatform</p>
         </div>
         
@@ -672,16 +672,16 @@ const handler = async (req: Request): Promise<Response> => {
         ` : ''}
 
         <div style="text-align: center; margin-top: 30px;">
-          <a href="https://lejio.dk/my-rentals" style="display: inline-block; background-color: #2962FF; color: white; padding: 14px 28px; text-decoration: none; border-radius: 25px; font-weight: bold;">
+          <a href="https://autofiq.dk/my-rentals" style="display: inline-block; background-color: #2962FF; color: white; padding: 14px 28px; text-decoration: none; border-radius: 25px; font-weight: bold;">
             Se mine lejeaftaler
           </a>
         </div>
 
         <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 12px;">
-          <p>Dette er en automatisk genereret email fra LEJIO.</p>
+          <p>Dette er en automatisk genereret email fra AUTOFIQ.</p>
           <p>Du modtager denne email fordi du er part i en lejekontrakt.</p>
           <p style="margin-top: 10px;">
-            <a href="https://lejio.dk" style="color: #2962FF;">lejio.dk</a>
+            <a href="https://autofiq.dk" style="color: #2962FF;">autofiq.dk</a>
           </p>
         </div>
       </body>

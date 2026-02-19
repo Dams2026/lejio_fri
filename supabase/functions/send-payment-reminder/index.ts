@@ -233,7 +233,7 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="cta">
-        <a href="https://lejio.dk/dashboard">Betal nu med kort</a>
+        <a href="https://autofiq.dk/dashboard">Betal nu med kort</a>
       </div>
 
       <div class="info-box">
@@ -241,8 +241,8 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="footer">
-        <p>Denne email er sendt automatisk fra LEJIO</p>
-        <p>Har du spørgsmål? Kontakt os på support@lejio.dk</p>
+        <p>Denne email er sendt automatisk fra AUTOFIQ</p>
+        <p>Har du spørgsmål? Kontakt os på support@autofiq.dk</p>
       </div>
     </div>
   </div>

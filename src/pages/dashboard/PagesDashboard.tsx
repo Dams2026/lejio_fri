@@ -240,7 +240,7 @@ export function PagesDashboard() {
               <li>Indtast dit domænenavn (f.eks. biludlejning.dk)</li>
               <li>Tilføj disse DNS-records til dit domæne:</li>
               <li className="ml-4">
-                CNAME: www.ditdomæne.dk → lejio-fri.onrender.com
+                CNAME: www.ditdomæne.dk → autofiq.onrender.com
               </li>
               <li>Bekræft domæneejerskab</li>
               <li>SSL-certifikat genereres automatisk (24-48 timer)</li>

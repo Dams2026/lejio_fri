@@ -30,10 +30,10 @@ resource firewallRuleAllowAzure 'Microsoft.Sql/servers/firewallRules@2023-08-01-
   }
 }
 
-// Database - Lejio Fri
+// Database - AUTOFIQ
 resource database 'Microsoft.Sql/servers/databases@2023-08-01-preview' = {
   parent: sqlServer
-  name: 'lejio-fri'
+  name: 'autofiq'
   location: location
   properties: {
     collation: 'SQL_Latin1_General_CP1_CI_AS'

@@ -1,5 +1,5 @@
 /**
- * Azure SQL Client for Lejio Fri (Lessor Platform)
+ * Azure SQL Client for AUTOFIQ (Lessor Platform)
  * Connects to: Azure SQL Database via REST API
  * 
  * Usage:
@@ -8,7 +8,7 @@
  * - Auth handled by Supabase
  */
 
-const API_BASE_URL = import.meta.env.VITE_AZURE_API_URL || 'https://api.lejio-fri.com';
+const API_BASE_URL = import.meta.env.VITE_AZURE_API_URL || 'https://api.autofiq.com';
 
 /**
  * Initialize Azure SQL connection

@@ -249,7 +249,7 @@ const AdminCRMPage = () => {
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `lejio-leads-${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `autofiq-leads-${new Date().toISOString().split('T')[0]}.csv`;
     a.click();
   };
 

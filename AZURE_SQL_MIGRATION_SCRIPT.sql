@@ -1,5 +1,5 @@
 -- ============================================================================
--- LEJIO FRI MULTI-TENANT DATABASE MIGRATION
+-- AUTOFIQ MULTI-TENANT DATABASE MIGRATION
 -- ============================================================================
 -- Run this in Azure Portal -> SQL Database -> Query Editor
 -- Or paste into Azure Data Studio
@@ -7,7 +7,7 @@
 -- Steps:
 -- 1. Go to: https://portal.azure.com
 -- 2. Search for "sql-vqiibdafjcmnc-dev"
--- 3. Click on Database "lejio-fri"
+-- 3. Click on Database "autofiq"
 -- 4. Click "Query editor (preview)" in left sidebar
 -- 5. Copy-paste everything below
 -- 6. Click "Run"
@@ -143,10 +143,10 @@ BEGIN
         'Martin Biludlejning',
         'martinbiludlejning',
         'martinbiludlejning',
-        'martinbiludlejning.lejio-fri.dk',
+        'martinbiludlejning.autofiq.dk',
         'trial',
         'active',
-        'martin@lejio.dk',
+        'martin@autofiq.dk',
         '12345678',
         GETUTCDATE(),
         DATEADD(DAY, @TrialDays, GETUTCDATE()),
@@ -165,7 +165,7 @@ ELSE
 -- Update lessors
 UPDATE fri_lessors 
 SET tenant_id = 'tenant-martin-001'
-WHERE email = 'martin@lejio.dk';
+WHERE email = 'martin@autofiq.dk';
 
 PRINT 'Updated lessors with tenant_id';
 
@@ -176,7 +176,7 @@ WHERE id IN (
     SELECT v.id 
     FROM fri_vehicles v
     INNER JOIN fri_lessors l ON v.lessor_id = l.id
-    WHERE l.email = 'martin@lejio.dk'
+    WHERE l.email = 'martin@autofiq.dk'
 );
 
 PRINT 'Updated vehicles with tenant_id';

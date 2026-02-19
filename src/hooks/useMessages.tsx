@@ -89,7 +89,7 @@ export const useMessages = () => {
 
           return {
             ...conv,
-            other_participant: otherParticipant || (conv.is_customer_service ? { full_name: "LEJIO Kundeservice", email: "hej@lejio.dk", company_name: null } : null),
+            other_participant: otherParticipant || (conv.is_customer_service ? { full_name: "AUTOFIQ Kundeservice", email: "hej@autofiq.dk", company_name: null } : null),
             last_message: lastMessageData,
             unread_count: count || 0,
           };

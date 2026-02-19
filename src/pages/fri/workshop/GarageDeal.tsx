@@ -12,7 +12,7 @@ export function GarageDealPage() {
 
   useEffect(() => {
     if (!user) {
-      navigate('/fri/login');
+      navigate('/autofiq/login');
     }
   }, [user, navigate]);
 
@@ -51,7 +51,7 @@ export function GarageDealPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <button
-                onClick={() => navigate('/fri')}
+                onClick={() => navigate('/autofiq')}
                 className="hover:bg-slate-800 p-2 rounded-lg transition-colors"
               >
                 <ArrowLeft className="w-5 h-5 text-slate-400" />
@@ -172,7 +172,7 @@ export function GarageDealPage() {
               size="lg"
               variant="outline"
               className="border-red-100 text-white hover:bg-red-700"
-              onClick={() => navigate('/fri')}
+              onClick={() => navigate('/autofiq')}
             >
               Tilbage til dashboard
             </Button>

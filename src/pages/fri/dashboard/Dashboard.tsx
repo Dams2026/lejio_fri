@@ -52,7 +52,7 @@ export function FriDashboard() {
             </div>
             <h2 className="text-xl font-bold text-brown-900 mb-2">Noget gik galt</h2>
             <p className="text-gray-500 mb-6">{error.message}</p>
-            <Button onClick={() => navigate('/fri/login')} className="bg-brown-900 hover:bg-gray-800 text-white px-6">
+            <Button onClick={() => navigate('/autofiq/login')} className="bg-brown-900 hover:bg-gray-800 text-white px-6">
               Gå til login
             </Button>
           </div>
@@ -70,7 +70,7 @@ export function FriDashboard() {
               <Shield className="w-7 h-7 text-amber-500" />
             </div>
             <h2 className="text-xl font-bold text-brown-900 mb-2">Log ind for at fortsætte</h2>
-            <Button onClick={() => navigate('/fri/login')} className="mt-4 bg-brown-900 hover:bg-gray-800 text-white px-6">
+            <Button onClick={() => navigate('/autofiq/login')} className="mt-4 bg-brown-900 hover:bg-gray-800 text-white px-6">
               Gå til login
             </Button>
           </div>
@@ -89,7 +89,7 @@ export function FriDashboard() {
       icon: Car,
       gradient: 'from-blue-500 to-cyan-400',
       bgLight: 'bg-blue-50',
-      path: '/fri/dashboard/vehicles',
+      path: '/autofiq/dashboard/vehicles',
     },
     {
       label: 'Bookinger',
@@ -98,7 +98,7 @@ export function FriDashboard() {
       icon: Calendar,
       gradient: 'from-emerald-500 to-teal-400',
       bgLight: 'bg-emerald-50',
-      path: '/fri/dashboard/bookings',
+      path: '/autofiq/dashboard/bookings',
     },
     {
       label: 'Omsætning',
@@ -107,7 +107,7 @@ export function FriDashboard() {
       icon: TrendingUp,
       gradient: 'from-violet-500 to-purple-400',
       bgLight: 'bg-violet-50',
-      path: '/fri/dashboard/analytics',
+      path: '/autofiq/dashboard/analytics',
     },
     {
       label: 'Fakturaer',
@@ -116,14 +116,14 @@ export function FriDashboard() {
       icon: FileText,
       gradient: 'from-amber-500 to-orange-400',
       bgLight: 'bg-amber-50',
-      path: '/fri/dashboard/invoices',
+      path: '/autofiq/dashboard/invoices',
     },
   ];
 
   const quickActions = [
-    { label: 'Tilføj køretøj', icon: Car, path: '/fri/dashboard/vehicles', color: 'text-blue-600 bg-blue-50 hover:bg-blue-100', permission: 'create-vehicle' },
-    { label: 'Ny booking', icon: Plus, path: '/fri/dashboard/bookings', color: 'text-emerald-600 bg-emerald-50 hover:bg-emerald-100', permission: 'create-booking' },
-    { label: 'Opret faktura', icon: FileText, path: '/fri/dashboard/invoices', color: 'text-violet-600 bg-violet-50 hover:bg-violet-100', permission: 'create-invoice' },
+    { label: 'Tilføj køretøj', icon: Car, path: '/autofiq/dashboard/vehicles', color: 'text-blue-600 bg-blue-50 hover:bg-blue-100', permission: 'create-vehicle' },
+    { label: 'Ny booking', icon: Plus, path: '/autofiq/dashboard/bookings', color: 'text-emerald-600 bg-emerald-50 hover:bg-emerald-100', permission: 'create-booking' },
+    { label: 'Opret faktura', icon: FileText, path: '/autofiq/dashboard/invoices', color: 'text-violet-600 bg-violet-50 hover:bg-violet-100', permission: 'create-invoice' },
     { label: 'Lav hjemmeside', icon: Globe, path: '/dashboard/pages', color: 'text-pink-600 bg-pink-50 hover:bg-pink-100', permission: 'page-builder' },
   ].filter(a => hasAccess(a.permission));
 
@@ -131,17 +131,17 @@ export function FriDashboard() {
     {
       title: 'Drift',
       items: [
-        { label: 'Køretøjer', desc: 'Administrer din flåde', icon: Car, path: '/fri/dashboard/vehicles', iconColor: 'text-blue-500', permission: 'vehicles' },
-        { label: 'Bookinger', desc: 'Reservationer & udlejning', icon: Calendar, path: '/fri/dashboard/bookings', iconColor: 'text-emerald-500', permission: 'bookings' },
-        { label: 'Fakturaer', desc: 'Fakturering & betaling', icon: FileText, path: '/fri/dashboard/invoices', iconColor: 'text-violet-500', permission: 'invoices' },
+        { label: 'Køretøjer', desc: 'Administrer din flåde', icon: Car, path: '/autofiq/dashboard/vehicles', iconColor: 'text-blue-500', permission: 'vehicles' },
+        { label: 'Bookinger', desc: 'Reservationer & udlejning', icon: Calendar, path: '/autofiq/dashboard/bookings', iconColor: 'text-emerald-500', permission: 'bookings' },
+        { label: 'Fakturaer', desc: 'Fakturering & betaling', icon: FileText, path: '/autofiq/dashboard/invoices', iconColor: 'text-violet-500', permission: 'invoices' },
       ].filter(i => hasAccess(i.permission))
     },
     {
       title: 'Vækst',
       items: [
-        { label: 'Analytik', desc: 'Indsigt & rapporter', icon: BarChart3, path: '/fri/dashboard/analytics', iconColor: 'text-brown-500', permission: 'analytics' },
-        { label: 'Team', desc: 'Medarbejdere & roller', icon: Users, path: '/fri/dashboard/team', iconColor: 'text-orange-500', permission: 'team' },
-        { label: 'Betalinger', desc: 'Transaktioner & flow', icon: CreditCard, path: '/fri/dashboard/payments', iconColor: 'text-teal-500', permission: 'payments' },
+        { label: 'Analytik', desc: 'Indsigt & rapporter', icon: BarChart3, path: '/autofiq/dashboard/analytics', iconColor: 'text-brown-500', permission: 'analytics' },
+        { label: 'Team', desc: 'Medarbejdere & roller', icon: Users, path: '/autofiq/dashboard/team', iconColor: 'text-orange-500', permission: 'team' },
+        { label: 'Betalinger', desc: 'Transaktioner & flow', icon: CreditCard, path: '/autofiq/dashboard/payments', iconColor: 'text-teal-500', permission: 'payments' },
       ].filter(i => hasAccess(i.permission))
     },
   ].filter(s => s.items.length > 0);
@@ -182,7 +182,7 @@ export function FriDashboard() {
             </div>
             <div className="flex items-center gap-3">
               <Button
-                onClick={() => navigate('/fri/dashboard/vehicles')}
+                onClick={() => navigate('/autofiq/dashboard/vehicles')}
                 className="bg-white text-brown-900 hover:bg-gray-100 font-semibold shadow-lg shadow-white/10 px-5"
                 size="lg"
               >
@@ -190,7 +190,7 @@ export function FriDashboard() {
                 Tilføj køretøj
               </Button>
               <Button
-                onClick={() => navigate('/fri/dashboard/bookings')}
+                onClick={() => navigate('/autofiq/dashboard/bookings')}
                 variant="outline"
                 className="border-white/20 text-white hover:bg-white/10 font-semibold px-5"
                 size="lg"
@@ -383,7 +383,7 @@ export function FriDashboard() {
               </div>
               <div className="mt-5 pt-4 border-t border-gray-100">
                 <button
-                  onClick={() => navigate('/fri/dashboard/settings')}
+                  onClick={() => navigate('/autofiq/dashboard/settings')}
                   className="w-full text-sm font-semibold text-gray-500 hover:text-brown-900 transition-colors flex items-center justify-center gap-1.5"
                 >
                   Administrer konto
@@ -402,7 +402,7 @@ export function FriDashboard() {
                 <p className="text-xs text-gray-500 mb-4">Kontakt os, så hjælper vi dig i gang</p>
                 <button
                   className="w-full text-sm font-semibold text-violet-600 bg-white hover:bg-violet-50 border border-violet-100 rounded-xl py-2.5 transition-colors"
-                  onClick={() => window.open('mailto:support@lejio.dk')}
+                  onClick={() => window.open('mailto:support@autofiq.dk')}
                 >
                   Kontakt support
                 </button>

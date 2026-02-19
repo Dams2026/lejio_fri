@@ -1,5 +1,5 @@
 -- ============================================
--- STEP 2: CREATE ALL LEJIO FRI TABLES
+-- STEP 2: CREATE ALL AUTOFIQ TABLES
 -- ============================================
 -- Run this SECOND in Azure Portal Query Editor
 -- After successfully running STEP1-DROP-TABLES.sql

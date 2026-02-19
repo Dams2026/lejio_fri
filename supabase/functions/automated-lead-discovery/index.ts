@@ -134,7 +134,7 @@ serve(async (req: Request) => {
 
               <hr />
               <p style="font-size: 12px; color: #666;">
-                Denne rapport er auto-genereret af LEJIO's Lead Finder system.
+                Denne rapport er auto-genereret af AUTOFIQ's Lead Finder system.
                 <br />
                 Se alle leads i <a href="#">admin dashboard</a>.
               </p>

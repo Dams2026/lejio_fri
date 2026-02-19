@@ -1,11 +1,21 @@
-import { HttpRequest, HttpResponseInit, app } from '@azure/functions';
-import { createClient } from '@supabase/supabase-js';
-import * as nodemailer from 'nodemailer';
+const { createClient } = require('@supabase/supabase-js');
+const nodemailer = require('nodemailer');
+
 
 const supabaseUrl = process.env.SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY || '';
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+let supabase = null;
+
+function getSupabase() {
+  if (!supabase) {
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Supabase env vars missing');
+    }
+    supabase = createClient(supabaseUrl, supabaseKey);
+  }
+  return supabase;
+}
 
 /**
  * @typedef {Object} SendEmailRequest
@@ -20,7 +30,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function sendEmailWithIntegration(request) {
   try {
-    const body = await request.json();
+    const body = request.body || {};
     const { lessorId, recipient, subject, html, text, emailType, integrationId } = body;
 
     if (!lessorId || !recipient || !subject || !html) {
@@ -34,7 +44,7 @@ async function sendEmailWithIntegration(request) {
     let integration;
 
     if (integrationId) {
-      const { data, error } = await supabase
+      const { data, error } = await getSupabase()
         .from('lessor_email_integrations')
         .select('*')
         .eq('id', integrationId)
@@ -50,7 +60,7 @@ async function sendEmailWithIntegration(request) {
       integration = data;
     } else {
       // Get default integration
-      const { data, error } = await supabase
+      const { data, error } = await getSupabase()
         .from('lessor_email_integrations')
         .select('*')
         .eq('lessor_id', lessorId)
@@ -107,7 +117,7 @@ async function sendEmailWithIntegration(request) {
 
     // Send email
     await transporter.sendMail({
-      from: `${integration.display_name || 'LEJIO'} <${integration.email}>`,
+      from: `${integration.display_name || 'AUTOFIQ'} <${integration.email}>`,
       to: recipient,
       subject: subject,
       html: html,
@@ -115,7 +125,7 @@ async function sendEmailWithIntegration(request) {
     });
 
     // Log activity
-    await supabase.from('email_activity_log').insert([
+    await getSupabase().from('email_activity_log').insert([
       {
         lessor_id: lessorId,
         integration_id: integration.id,
@@ -154,7 +164,7 @@ async function sendWithSystemSMTP(recipient, subject, html, text) {
     const smtpHost = process.env.SMTP_HOST || '';
     const smtpUser = process.env.SMTP_USER || '';
     const smtpPassword = process.env.SMTP_PASSWORD || '';
-    const smtpFromEmail = process.env.SMTP_FROM_EMAIL || 'noreply@lejio.dk';
+    const smtpFromEmail = process.env.SMTP_FROM_EMAIL || 'noreply@autofiq.dk';
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       return {
@@ -202,8 +212,11 @@ async function sendWithSystemSMTP(recipient, subject, html, text) {
   }
 }
 
-app.function('SendEmailWithIntegration', {
-  methods: ['POST'],
-  authLevel: 'anonymous',
-  handler: sendEmailWithIntegration,
-});
+module.exports = async function (context, request) {
+  const result = await sendEmailWithIntegration(request);
+  return {
+    status: result?.status || 200,
+    headers: result?.headers || {},
+    body: result?.jsonBody ?? result?.body ?? null,
+  };
+};

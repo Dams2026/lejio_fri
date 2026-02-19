@@ -45,7 +45,7 @@ module.exports = async function (context, req) {
         const contractLink = `${process.env.APP_URL}/sign-contract/${contractId}`;
         
         await transporter.sendMail({
-          from: process.env.FROM_EMAIL || 'noreply@lejio.dk',
+          from: process.env.FROM_EMAIL || 'noreply@autofiq.dk',
           to: customerEmail,
           subject: `Kontrakt til underskrivning - ${contractType}`,
           html: `
@@ -54,7 +54,7 @@ module.exports = async function (context, req) {
             <p><strong>Kontrakttype:</strong> ${contractType}</p>
             ${contractText ? `<p><strong>Vilkår:</strong></p><p>${contractText}</p>` : ''}
             <p><a href="${contractLink}" style="background-color: #8b6f47; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Underskriv kontrakt</a></p>
-            <p>Med venlig hilsen<br/>LEJIO Bilforhandler</p>
+            <p>Med venlig hilsen<br/>AUTOFIQ Bilforhandler</p>
           `
         });
         emailSent = true;

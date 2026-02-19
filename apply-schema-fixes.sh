@@ -3,8 +3,8 @@
 # Apply database migrations to fix schema
 
 DB_HOST="dpg-d6298k2g5rbc73f1k04g-a.frankfurt-postgres.render.com"
-DB_USER="lejio_fri_db_user"
-DB_NAME="lejio_fri_db"
+DB_USER="autofiq_db_user"
+DB_NAME="autofiq_db"
 DB_PASS="F6TnsEAtqSG2o5FF2PTLgCvzB4ZyaHcQ"
 
 echo "🔧 Applying database schema fixes..."

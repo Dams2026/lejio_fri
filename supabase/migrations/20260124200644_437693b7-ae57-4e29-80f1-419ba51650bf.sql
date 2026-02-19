@@ -26,10 +26,10 @@ CREATE TABLE public.fleet_partner_contracts (
   binding_end_date DATE NOT NULL, -- 6 months after start
   
   -- Signatures
-  lejio_signer_name TEXT,
-  lejio_signer_title TEXT,
-  lejio_signature TEXT,
-  lejio_signed_at TIMESTAMPTZ,
+  autofiq_signer_name TEXT,
+  autofiq_signer_title TEXT,
+  autofiq_signature TEXT,
+  autofiq_signed_at TIMESTAMPTZ,
   
   partner_signer_name TEXT,
   partner_signer_title TEXT,
@@ -37,7 +37,7 @@ CREATE TABLE public.fleet_partner_contracts (
   partner_signed_at TIMESTAMPTZ,
   
   -- Status
-  status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ('draft', 'pending_partner_signature', 'pending_lejio_signature', 'signed', 'terminated')),
+  status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ('draft', 'pending_partner_signature', 'pending_autofiq_signature', 'signed', 'terminated')),
   
   -- PDF
   pdf_url TEXT,

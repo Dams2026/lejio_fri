@@ -463,7 +463,7 @@ export function PageBuilder() {
           <div className="flex items-center justify-between">
             {/* Left: Back & Page Info */}
             <div className="flex items-center gap-4">
-              <Link to="/fri/dashboard/pages">
+              <Link to="/dashboard/pages">
                 <Button variant="ghost" size="sm" className="text-white/60 hover:text-white">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Tilbage

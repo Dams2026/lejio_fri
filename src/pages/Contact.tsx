@@ -72,10 +72,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-display font-bold text-lg text-foreground mb-1">E-mail</h3>
                       <a 
-                        href="mailto:hej@lejio.dk" 
+                        href="mailto:hej@autofiq.dk" 
                         className="text-xl font-semibold text-primary hover:underline"
                       >
-                        hej@lejio.dk
+                        hej@autofiq.dk
                       </a>
                       <p className="text-sm text-muted-foreground mt-2">
                         Vi svarer inden for 24 timer
@@ -98,7 +98,7 @@ const Contact = () => {
                     <Building2 className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-foreground mb-1">LEJIO</h3>
+                    <h3 className="font-display font-bold text-foreground mb-1">AUTOFIQ</h3>
                     <p className="text-muted-foreground">CVR: 44691507</p>
                   </div>
                 </div>
@@ -124,7 +124,7 @@ const Contact = () => {
                 Ofte stillede spørgsmål
               </h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Find svar på de mest almindelige spørgsmål om LEJIO, udlejning og booking.
+                Find svar på de mest almindelige spørgsmål om AUTOFIQ, udlejning og booking.
               </p>
               <Button 
                 size="lg" 

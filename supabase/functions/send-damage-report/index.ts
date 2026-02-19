@@ -61,10 +61,10 @@ const handler = async (req: Request): Promise<Response> => {
             </p>
             <p>Hvis du har spørgsmål til rapporten eller skaderne, er du velkonmen til at kontakte os.</p>
             <div class="footer">
-              <p style="margin: 0;">Med venlig hilsen,<br><strong>LEJIO Team</strong></p>
+              <p style="margin: 0;">Med venlig hilsen,<br><strong>AUTOFIQ Team</strong></p>
               <p style="margin-top: 10px; font-size: 11px; color: #aaa;">
-                Denne email er sendt automatisk fra LEJIO.<br>
-                Kontakt: support@lejio.dk
+                Denne email er sendt automatisk fra AUTOFIQ.<br>
+                Kontakt: support@autofiq.dk
               </p>
             </div>
           </div>
@@ -97,8 +97,8 @@ const handler = async (req: Request): Promise<Response> => {
           },
         ],
         from: {
-          email: 'reports@lejio.dk',
-          name: 'LEJIO Damage Reports',
+          email: 'reports@autofiq.dk',
+          name: 'AUTOFIQ Damage Reports',
         },
         content: [
           {
@@ -107,8 +107,8 @@ const handler = async (req: Request): Promise<Response> => {
           },
         ],
         reply_to: {
-          email: 'support@lejio.dk',
-          name: 'LEJIO Support',
+          email: 'support@autofiq.dk',
+          name: 'AUTOFIQ Support',
         },
         categories: ['damage-report'],
       }),

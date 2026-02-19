@@ -1,8 +1,8 @@
-# Lejio API Documentation
+# AUTOFIQ API Documentation
 
 ## Overview
 
-Lejio API provides programmatic access to vehicle rental, invoicing, subscriptions, and accounting features.
+AUTOFIQ API provides programmatic access to vehicle rental, invoicing, subscriptions, and accounting features.
 
 ## Authentication
 
@@ -17,7 +17,7 @@ API keys are managed in the admin dashboard under Settings > API Keys.
 ## Base URL
 
 ```
-https://api.lejio.dk/v1
+https://api.autofiq.dk/v1
 ```
 
 ## Invoices
@@ -343,7 +343,7 @@ Rate limit headers:
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://api.lejio.dk/v1',
+  baseURL: 'https://api.autofiq.dk/v1',
   headers: {
     Authorization: `Bearer YOUR_API_KEY`,
   },
@@ -375,13 +375,13 @@ api.headers.update({
 })
 
 # Get invoices
-response = api.get('https://api.lejio.dk/v1/invoices', 
+response = api.get('https://api.autofiq.dk/v1/invoices', 
   params={'status': 'paid'})
 invoices = response.json()
 
 # Record payment
 response = api.post(
-  f'https://api.lejio.dk/v1/invoices/{invoice_id}/payments',
+  f'https://api.autofiq.dk/v1/invoices/{invoice_id}/payments',
   json={'amount': 750, 'method': 'card'})
 ```
 
@@ -390,7 +390,7 @@ response = api.post(
 ```bash
 # Get invoices
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://api.lejio.dk/v1/invoices?status=paid"
+  "https://api.autofiq.dk/v1/invoices?status=paid"
 
 # Create subscription
 curl -X POST \
@@ -403,11 +403,11 @@ curl -X POST \
     "daily_rate": 500,
     "start_date": "2026-01-26T00:00:00Z"
   }' \
-  "https://api.lejio.dk/v1/subscriptions"
+  "https://api.autofiq.dk/v1/subscriptions"
 ```
 
 ## Support
 
-- Email: api-support@lejio.dk
-- Docs: https://docs.lejio.dk
-- Status: https://status.lejio.dk
+- Email: api-support@autofiq.dk
+- Docs: https://docs.autofiq.dk
+- Status: https://status.autofiq.dk

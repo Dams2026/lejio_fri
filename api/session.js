@@ -12,7 +12,7 @@ function parseCookies(cookieHeader) {
 
 async function getSessionUserId(req) {
   const cookies = parseCookies(req.headers.cookie);
-  const sessionId = cookies.lejio_sid;
+  const sessionId = cookies.autofiq_sid;
   if (!sessionId) {
     console.log('[session] No session ID in cookies:', {
       hasCookieHeader: !!req.headers.cookie,

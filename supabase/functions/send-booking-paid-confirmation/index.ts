@@ -79,7 +79,7 @@ serve(async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       console.log("[BOOKING-PAID] SMTP not configured");
@@ -217,13 +217,13 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="cta">
-        <a href="https://lejio.dk/mine-lejemal">Se din booking</a>
+        <a href="https://autofiq.dk/mine-lejemal">Se din booking</a>
       </div>
     </div>
 
     <div class="footer">
-      <p><strong>LEJIO</strong> - Biludlejning gjort nemt</p>
-      <p>© ${new Date().getFullYear()} LEJIO. Alle rettigheder forbeholdes.</p>
+      <p><strong>AUTOFIQ</strong> - Biludlejning gjort nemt</p>
+      <p>© ${new Date().getFullYear()} AUTOFIQ. Alle rettigheder forbeholdes.</p>
     </div>
   </div>
 </body>

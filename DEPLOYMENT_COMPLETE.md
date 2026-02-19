@@ -1,8 +1,8 @@
-# ✅ LEJIO FRI - DEPLOYMENT COMPLETE - FINAL STATUS
+# ✅ AUTOFIQ - DEPLOYMENT COMPLETE - FINAL STATUS
 
 ## 🎯 Mission Accomplished
 
-Your Lejio Fri application is **LIVE and DEPLOYED** to Azure Static Web Apps!
+Your AUTOFIQ application is **LIVE and DEPLOYED** to Azure Static Web Apps!
 
 ### Live Application
 - **URL:** https://zealous-stone-04c86dd03.2.azurestaticapps.net
@@ -17,9 +17,9 @@ Your Lejio Fri application is **LIVE and DEPLOYED** to Azure Static Web Apps!
 ### Infrastructure
 | Component | Status | Details |
 |-----------|--------|---------|
-| **Azure SQL Server** | ✅ Ready | `lejio-fri-db.database.windows.net` in `Lejio_group` |
-| **SQL Database** | ✅ Ready | `lejio_fri` with 14 tables (schema verified) |
-| **Azure Static Web App** | ✅ Live | `Lejio-fri` in resource group `Lejio-Fri` |
+| **Azure SQL Server** | ✅ Ready | `autofiq-db.database.windows.net` in `AUTOFIQ_group` |
+| **SQL Database** | ✅ Ready | `autofiq` with 14 tables (schema verified) |
+| **Azure Static Web App** | ✅ Live | `AUTOFIQ` in resource group `AUTOFIQ` |
 | **Azure Functions API** | ✅ Deployed | 22 endpoints ready |
 | **Frontend App** | ✅ Deployed | React 18 + Vite 5.4.19 + TypeScript |
 
@@ -42,7 +42,7 @@ Your Lejio Fri application is **LIVE and DEPLOYED** to Azure Static Web Apps!
    - Export now includes: `export const supabase = ...`
 
 2. ✅ **Duplicate className Attributes** (2 instances)
-   - Fixed in `src/pages/fri/landing/LandingPage.tsx`
+   - Fixed in `src/pages/autofiq/landing/LandingPage.tsx`
    - Merged conflicting className props
 
 ### Database Schema Alignment (11 FILES UPDATED)
@@ -103,11 +103,11 @@ All hooks and components updated to match actual Azure SQL schema:
 ### Frontend (React Application)
 ```
 React 18 + TypeScript + Vite 5.4.19
-├── Fri Landing Page (public)
-├── Fri Login/Auth
+├── AUTOFIQ Landing Page (public)
+├── AUTOFIQ Login/Auth
 ├── Lessor Dashboard (/dashboard/*)
 ├── Page Builder (drag-drop editor)
-├── Admin Panel (/fri/admin/*)
+├── Admin Panel (/autofiq/admin/*)
 └── Public Site Renderer
 
 🎯 Features Working:
@@ -138,7 +138,7 @@ Azure Functions (Node.js/TypeScript)
 
 ### Database (Azure SQL)
 ```
-Azure SQL - lejio_fri database
+Azure SQL - autofiq database
 ├── 14 Tables (schema verified)
 ├── All migrations applied
 ├── Firewall configured
@@ -177,8 +177,8 @@ Azure SQL - lejio_fri database
 
 ### Access Points
 1. **Live Application:** https://zealous-stone-04c86dd03.2.azurestaticapps.net
-2. **Admin Access:** `/fri/admin/` (requires admin auth)
-3. **Lessor Dashboard:** `/fri/dashboard/` (requires lessor login)
+2. **Admin Access:** `/autofiq/admin/` (requires admin auth)
+3. **Lessor Dashboard:** `/autofiq/dashboard/` (requires lessor login)
 4. **API Endpoints:** `/api/*` (22 functions available)
 
 ### Testing Endpoints
@@ -211,7 +211,7 @@ The database needs a dedicated application user to connect from Azure Functions.
 **Option 1: Azure Portal (EASIEST - 2 MIN)**
 1. Go to https://portal.azure.com
 2. Search for "SQL databases"
-3. Click `lejio_fri` database
+3. Click `autofiq` database
 4. Click "Query editor" on left menu
 5. Sign in with your Azure account
 6. Copy-paste SQL from `create_sql_user_final.sql` in project root
@@ -220,7 +220,7 @@ The database needs a dedicated application user to connect from Azure Functions.
 **Option 2: SQL Server Management Studio**
 1. Download SSMS (https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
 2. Install & open
-3. Connect to: `lejio-fri-db.database.windows.net`
+3. Connect to: `autofiq-db.database.windows.net`
 4. Use Azure AD authentication
 5. Open `create_sql_user_final.sql` and execute
 
@@ -252,7 +252,7 @@ The database needs a dedicated application user to connect from Azure Functions.
 ### Source Code
 ```
 src/
-├── pages/fri/
+├── pages/autofiq/
 │   ├── dashboard/     # Lessor dashboard
 │   ├── admin/         # Admin panel
 │   └── landing/       # Public landing
@@ -285,10 +285,10 @@ api/
 2. Verify SQL user works:
    ```bash
    # In VS Code terminal
-   sqlcmd -S lejio-fri-db.database.windows.net \
-           -U martin_lejio_user \
+   sqlcmd -S autofiq-db.database.windows.net \
+           -U martin_autofiq_user \
            -P "Temp123456789!" \
-           -d lejio_fri \
+           -d autofiq \
            -Q "SELECT COUNT(*) FROM fri_vehicles"
    ```
 
@@ -312,7 +312,7 @@ api/
 - `DATABASE_SETUP_COMPLETE.md` - Database schema reference
 
 ### Contacts
-- **Project Owner:** martin@lejio.dk
+- **Project Owner:** martin@autofiq.dk
 - **Azure Support:** https://support.microsoft.com/en-us/
 - **GitHub Issues:** Create issue in repository
 
@@ -320,7 +320,7 @@ api/
 
 ## ✨ Summary
 
-**🎉 Your Lejio Fri application is successfully deployed and running on Azure!**
+**🎉 Your AUTOFIQ application is successfully deployed and running on Azure!**
 
 - **App URL:** https://zealous-stone-04c86dd03.2.azurestaticapps.net
 - **Build Time:** 12.14 seconds

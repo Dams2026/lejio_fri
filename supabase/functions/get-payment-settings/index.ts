@@ -32,7 +32,7 @@ async function getEncryptionKey(secret: string): Promise<CryptoKey> {
   return crypto.subtle.deriveKey(
     {
       name: 'PBKDF2',
-      salt: encoder.encode('lejio-salt-v1'),
+      salt: encoder.encode('autofiq-salt-v1'),
       iterations: 100000,
       hash: 'SHA-256'
     },

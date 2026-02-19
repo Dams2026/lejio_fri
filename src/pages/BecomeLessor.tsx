@@ -168,7 +168,7 @@ const BecomeLessor = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Lejio leverer de juridiske kontrakter og dokumentationsværktøjer, der sikrer dig i tilfælde af skader. 
+              AUTOFIQ leverer de juridiske kontrakter og dokumentationsværktøjer, der sikrer dig i tilfælde af skader. 
               Du læner dig tilbage og tjener penge.
             </p>
             
@@ -177,8 +177,8 @@ const BecomeLessor = () => {
                 Kom i gang nu
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => navigate("/hvad-er-lejio")}>
-                Læs mere om Lejio
+              <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => navigate("/hvad-er-autofiq")}>
+                Læs mere om AUTOFIQ
               </Button>
             </div>
             
@@ -332,7 +332,7 @@ const BecomeLessor = () => {
                     Vi hjælper dig med at digitalisere din udlejningsforretning.
                   </p>
                 </div>
-                <a href="https://www.lejio.dk/forhandler" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.autofiq.dk/forhandler" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="shrink-0" asChild>
                     <span>
                       Læs om Fleet-løsningen

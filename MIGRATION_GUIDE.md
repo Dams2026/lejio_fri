@@ -10,7 +10,7 @@
 
 2. **Navigate to Database**
    - Click on the SQL Server
-   - Click on Database: `lejio-fri`
+   - Click on Database: `autofiq`
 
 3. **Open Query Editor**
    - Left sidebar → "Query editor (preview)"
@@ -47,7 +47,7 @@
 2. **Connect to Azure SQL**
    - File → New Connection
    - Server: `sql-vqiibdafjcmnc-dev.database.windows.net`
-   - Database: `lejio-fri`
+   - Database: `autofiq`
    - Authentication: SQL Login
    - Username: `sqladmin`
    - Password: [Your SQL password]
@@ -64,7 +64,7 @@
 # Export credentials
 export SQL_PASSWORD="your-password"
 export SQL_SERVER="sql-vqiibdafjcmnc-dev.database.windows.net"
-export SQL_DATABASE="lejio-fri"
+export SQL_DATABASE="autofiq"
 export SQL_USERNAME="sqladmin"
 
 # Install sqlcmd (if not already installed)
@@ -94,9 +94,9 @@ sqlcmd -S $SQL_SERVER -U $SQL_USERNAME -P $SQL_PASSWORD -d $SQL_DATABASE -i AZUR
    - **ID**: `tenant-martin-001`
    - **Name**: Martin Biludlejning
    - **Subdomain**: `martinbiludlejning`
-   - **Domain**: `martinbiludlejning.lejio-fri.dk`
+   - **Domain**: `martinbiludlejning.autofiq.dk`
    - **Plan**: trial (30 days)
-   - **Owner**: martin@lejio.dk
+   - **Owner**: martin@autofiq.dk
 
 4. **Associates Existing Data**
    - All existing lessors, vehicles, bookings → assigned to Martin tenant
@@ -147,7 +147,7 @@ Tenant Information:
 ## 🚀 Next Steps After Migration
 
 1. **Database is ready for multi-tenant** ✅
-2. **Test tenant signup** → Go to `/fri/tenant/signup`
+2. **Test tenant signup** → Go to `/autofiq/tenant/signup`
 3. **Verify subdomain routing** → Once DNS is configured
 4. **Enable RLS** → Add Row Level Security policies
 5. **Deploy to production** → Update DNS to final domain
@@ -159,5 +159,5 @@ Tenant Information:
 - Migration script: `AZURE_SQL_MIGRATION_SCRIPT.sql`
 - Original migrations: `supabase/migrations/azure-sql/`
 - Multi-tenant hook: `src/hooks/useTenant.tsx`
-- Signup page: `src/pages/fri/tenant/SignupPage.tsx`
+- Signup page: `src/pages/autofiq/tenant/SignupPage.tsx`
 

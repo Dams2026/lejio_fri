@@ -102,7 +102,7 @@ serve(async (req: Request): Promise<Response> => {
     const safeContractId = escapeHtml(data.contractId);
 
     // Generate contract signing link - use the app domain
-    const appDomain = "https://lejio.dk";
+    const appDomain = "https://autofiq.dk";
     const contractLink = `${appDomain}/my-rentals?contractId=${encodeURIComponent(data.contractId)}`;
 
     const emailHtml = `
@@ -203,8 +203,8 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="footer">
-        <p>Denne email er sendt automatisk fra LEJIO</p>
-        <p>Har du spørgsmål? Kontakt os på support@lejio.dk</p>
+        <p>Denne email er sendt automatisk fra AUTOFIQ</p>
+        <p>Har du spørgsmål? Kontakt os på support@autofiq.dk</p>
       </div>
     </div>
   </div>

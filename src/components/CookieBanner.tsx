@@ -41,7 +41,7 @@ const CookieBanner = forwardRef<HTMLDivElement>((props, ref) => {
               Vi bruger cookies 🍪
             </h3>
             <p className="text-sm text-muted-foreground">
-              Vi bruger cookies for at forbedre din oplevelse på LEJIO. Ved at fortsætte accepterer du vores{" "}
+              Vi bruger cookies for at forbedre din oplevelse på AUTOFIQ. Ved at fortsætte accepterer du vores{" "}
               <Link to="/privatlivspolitik" className="text-primary hover:underline">
                 privatlivspolitik
               </Link>

@@ -1,10 +1,10 @@
-# PowerShell Script to Initialize Lejio Fri Database via Azure REST API
+# PowerShell Script to Initialize Autofiq Database via Azure REST API
 # This script will authenticate to Azure and execute SQL commands via Query API
 
 param(
-    [string]$ResourceGroup = "lejio-fri-rg",
+    [string]$ResourceGroup = "autofiq-rg",
     [string]$ServerName = "sql-vqiibdafjcmnc-dev",
-    [string]$DatabaseName = "lejio-fri",
+    [string]$DatabaseName = "autofiq",
     [string]$DropScriptPath = ".\infra\migrations\drop-fri-tables.sql",
     [string]$CreateScriptPath = ".\infra\migrations\002-init-fri-schema-clean.sql"
 )
@@ -13,7 +13,7 @@ param(
 $dropSql = Get-Content -Path $DropScriptPath -Raw
 $createSql = Get-Content -Path $CreateScriptPath -Raw
 
-Write-Host "=== Lejio Fri Database Initialization ===" -ForegroundColor Cyan
+Write-Host "=== Autofiq Database Initialization ===" -ForegroundColor Cyan
 Write-Host "Resource Group: $ResourceGroup"
 Write-Host "Server: $ServerName"
 Write-Host "Database: $DatabaseName"

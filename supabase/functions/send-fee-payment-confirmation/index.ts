@@ -135,12 +135,12 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <p style="text-align: center; color: #666;">
-        Du kan altid se din betalingshistorik i dit <a href="https://lejio.dk/dashboard" style="color: #2962FF;">dashboard</a>.
+        Du kan altid se din betalingshistorik i dit <a href="https://autofiq.dk/dashboard" style="color: #2962FF;">dashboard</a>.
       </p>
 
       <div class="footer">
-        <p>Denne email er sendt automatisk fra LEJIO</p>
-        <p>Har du spørgsmål? Kontakt os på support@lejio.dk</p>
+        <p>Denne email er sendt automatisk fra AUTOFIQ</p>
+        <p>Har du spørgsmål? Kontakt os på support@autofiq.dk</p>
       </div>
     </div>
   </div>

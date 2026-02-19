@@ -76,19 +76,19 @@ INSERT INTO leads (
   - Personlig hilsen med virksomhedsnavn
   - Branche-specifikt pitch (tilpasset industri)
   - Call-to-action: "Booke demo"
-  - LEJIO signatur
+  - AUTOFIQ signatur
 
 **Eksempel email:**
 ```
 Hej [Virksomhed],
 
 Vi har set at I arbejder inden for [industri], og det kunne passe perfekt 
-med vores LEJIO biludlejnings-platform...
+med vores AUTOFIQ biludlejnings-platform...
 
 Vil I gerne høre mere om hvordan vi kan hjælpe jer?
 
 Med venlig hilsen,
-LEJIO Sales Team
+AUTOFIQ Sales Team
 ```
 
 ### 5. Detaljeret Statistik

@@ -1,5 +1,5 @@
 /**
- * Lejio Fri - White-Label Lessor Platform
+ * AUTOFIQ - White-Label Lessor Platform
  * Azure PostgreSQL Schema Migration
  * 
  * This creates the complete schema for lessor accounts and their data
@@ -423,4 +423,4 @@ $$ LANGUAGE plpgsql;
 -- DONE
 -- ============================================================================
 -- Migration complete. All tables, indexes, and RLS policies created.
--- Ready for Lejio Fri platform!
+-- Ready for AUTOFIQ platform!

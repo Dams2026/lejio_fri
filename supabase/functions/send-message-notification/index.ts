@@ -99,7 +99,7 @@ serve(async (req: Request): Promise<Response> => {
 <body>
   <div class="container">
     <div class="header">
-      <h1>💬 Ny besked på LEJIO</h1>
+      <h1>💬 Ny besked på AUTOFIQ</h1>
     </div>
     <div class="content">
       <p>Hej ${safeRecipientName},</p>
@@ -110,11 +110,11 @@ serve(async (req: Request): Promise<Response> => {
       </div>
 
       <div class="cta">
-        <a href="https://lejio.dk/beskeder">Se besked</a>
+        <a href="https://autofiq.dk/beskeder">Se besked</a>
       </div>
 
       <div class="footer">
-        <p>Du modtager denne email fordi du har aktiveret notifikationer på LEJIO</p>
+        <p>Du modtager denne email fordi du har aktiveret notifikationer på AUTOFIQ</p>
       </div>
     </div>
   </div>
@@ -125,7 +125,7 @@ serve(async (req: Request): Promise<Response> => {
     await client.send({
       from: smtpFromEmail,
       to: data.recipientEmail,
-      subject: `Ny besked fra ${safeSenderName} på LEJIO`,
+      subject: `Ny besked fra ${safeSenderName} på AUTOFIQ`,
       content: emailHtml,
       html: emailHtml,
     });

@@ -77,7 +77,7 @@ const handler = async (req: Request): Promise<Response> => {
     const smtpHost = Deno.env.get("SMTP_HOST");
     const smtpUser = Deno.env.get("SMTP_USER");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
-    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@lejio.dk";
+    const smtpFromEmail = Deno.env.get("SMTP_FROM_EMAIL") || "noreply@autofiq.dk";
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
       console.error("Missing SMTP configuration");
@@ -103,7 +103,7 @@ const handler = async (req: Request): Promise<Response> => {
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   ${htmlBody}
   <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;">
-  <p style="color: #666; font-size: 12px;">Sendt fra Lejio CRM</p>
+  <p style="color: #666; font-size: 12px;">Sendt fra AUTOFIQ CRM</p>
 </body>
 </html>`;
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Smartphone, Monitor, Tablet, Download, Check, Share, Plus, MoreVertical } from 'lucide-react';
-import LejioLogo from '@/components/LejioLogo';
+import AUTOFIQLogo from '@/components/AUTOFIQLogo';
 import { Link } from 'react-router-dom';
 
 interface BeforeInstallPromptEvent extends Event {
@@ -60,17 +60,17 @@ const Install = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-cream to-background">
       <header className="container mx-auto px-4 py-6">
         <Link to="/">
-          <LejioLogo />
+          <AUTOFIQLogo />
         </Link>
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-2xl">
         <div className="text-center mb-8">
           <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-primary flex items-center justify-center shadow-lg">
-            <img src="/pwa-192x192.png" alt="LEJIO" className="w-16 h-16 rounded-xl" />
+            <img src="/pwa-192x192.png" alt="AUTOFIQ" className="w-16 h-16 rounded-xl" />
           </div>
           <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
-            Installer LEJIO
+            Installer AUTOFIQ
           </h1>
           <p className="text-muted-foreground text-lg">
             Få den fulde app-oplevelse på din enhed
@@ -82,13 +82,13 @@ const Install = () => {
             <CardContent className="pt-6">
               <div className="flex items-center gap-3 text-mint">
                 <Check className="w-6 h-6" />
-                <span className="font-semibold text-lg">LEJIO er allerede installeret!</span>
+                <span className="font-semibold text-lg">AUTOFIQ er allerede installeret!</span>
               </div>
               <p className="text-muted-foreground mt-2">
                 Du kan finde appen på din startskærm eller i din app-liste.
               </p>
               <Button asChild className="mt-4 w-full">
-                <Link to="/">Åbn LEJIO</Link>
+                <Link to="/">Åbn AUTOFIQ</Link>
               </Button>
             </CardContent>
           </Card>
@@ -100,7 +100,7 @@ const Install = () => {
                 <CardContent className="pt-6">
                   <Button onClick={handleInstall} size="lg" className="w-full gap-2">
                     <Download className="w-5 h-5" />
-                    Installer LEJIO nu
+                    Installer AUTOFIQ nu
                   </Button>
                   <p className="text-sm text-muted-foreground text-center mt-3">
                     Klik for at installere appen direkte
@@ -146,7 +146,7 @@ const Install = () => {
                         <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">3</span>
                         <div>
                           <p className="font-medium">Tryk "Tilføj"</p>
-                          <p className="text-muted-foreground text-sm mt-1">LEJIO vil nu være på din hjemmeskærm</p>
+                          <p className="text-muted-foreground text-sm mt-1">AUTOFIQ vil nu være på din hjemmeskærm</p>
                         </div>
                       </li>
                     </ol>
@@ -186,7 +186,7 @@ const Install = () => {
                         <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">3</span>
                         <div>
                           <p className="font-medium">Bekræft installation</p>
-                          <p className="text-muted-foreground text-sm mt-1">LEJIO vil nu være på din startskærm</p>
+                          <p className="text-muted-foreground text-sm mt-1">AUTOFIQ vil nu være på din startskærm</p>
                         </div>
                       </li>
                     </ol>
@@ -223,7 +223,7 @@ const Install = () => {
                         <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">3</span>
                         <div>
                           <p className="font-medium">Færdig!</p>
-                          <p className="text-muted-foreground text-sm mt-1">LEJIO åbner som en selvstændig app</p>
+                          <p className="text-muted-foreground text-sm mt-1">AUTOFIQ åbner som en selvstændig app</p>
                         </div>
                       </li>
                     </ol>

@@ -269,15 +269,15 @@ const FriLessorDashboard = () => {
   const avgUtilization = revenueData.length > 0 ? revenueData.reduce((sum, v) => sum + v.utilization_rate, 0) / revenueData.length : 0;
 
   const featureModules = [
-    { icon: Car, title: 'Fladestyring', description: 'Administrer hele din bilflåde', status: 'active' as const, features: ['Registrer køretojer', 'Spor vedligeholdelse', 'GPS-tracking', 'Dokumentation'], link: '/fri/dashboard/vehicles' },
-    { icon: Calendar, title: 'Bookinger', description: 'Online booking & kalender', status: 'active' as const, features: ['Online bookingkalender', 'Automatisk bekraeftelse', 'SMS pamindelser', 'Dubletbeskyttelse'], link: '/fri/dashboard/bookings' },
-    { icon: CreditCard, title: 'Betalinger', description: 'Fakturering & betaling', status: 'active' as const, features: ['Automatisk fakturering', 'Stripe & MobilePay', 'Recurring billing', 'Betalingspamindelser'], link: '/fri/dashboard/invoices' },
-    { icon: BarChart3, title: 'Analytik', description: 'Data-drevne indsigter', status: 'active' as const, features: ['Omsaetningsrapporter', 'Kundeanalyse', 'Performance KPI', 'Excel eksport'], link: '/fri/dashboard/analytics' },
-    { icon: Users, title: 'Team', description: 'Teamsamarbejde', status: 'active' as const, features: ['Ubegraensede medlemmer', 'Roller & tilladelser', 'Aktivitetslog', 'Intern chat'], link: '/fri/dashboard/team' },
-    { icon: Package, title: 'Moduler', description: 'Udvid din platform', status: 'active' as const, features: ['GaragePlan', 'GarageBooks', 'GarageHub', 'Custom moduler'], link: '/fri/dashboard/modules' },
+    { icon: Car, title: 'Fladestyring', description: 'Administrer hele din bilflåde', status: 'active' as const, features: ['Registrer køretojer', 'Spor vedligeholdelse', 'GPS-tracking', 'Dokumentation'], link: '/autofiq/dashboard/vehicles' },
+    { icon: Calendar, title: 'Bookinger', description: 'Online booking & kalender', status: 'active' as const, features: ['Online bookingkalender', 'Automatisk bekraeftelse', 'SMS pamindelser', 'Dubletbeskyttelse'], link: '/autofiq/dashboard/bookings' },
+    { icon: CreditCard, title: 'Betalinger', description: 'Fakturering & betaling', status: 'active' as const, features: ['Automatisk fakturering', 'Stripe & MobilePay', 'Recurring billing', 'Betalingspamindelser'], link: '/autofiq/dashboard/invoices' },
+    { icon: BarChart3, title: 'Analytik', description: 'Data-drevne indsigter', status: 'active' as const, features: ['Omsaetningsrapporter', 'Kundeanalyse', 'Performance KPI', 'Excel eksport'], link: '/autofiq/dashboard/analytics' },
+    { icon: Users, title: 'Team', description: 'Teamsamarbejde', status: 'active' as const, features: ['Ubegraensede medlemmer', 'Roller & tilladelser', 'Aktivitetslog', 'Intern chat'], link: '/autofiq/dashboard/team' },
+    { icon: Package, title: 'Moduler', description: 'Udvid din platform', status: 'active' as const, features: ['GaragePlan', 'GarageBooks', 'GarageHub', 'Custom moduler'], link: '/autofiq/dashboard/modules' },
     { icon: MessageSquare, title: 'Kommunikation', description: 'Automatiseret kundekontakt', status: 'active' as const, features: ['SMS & email', 'Automatiske pamindelser', 'Chatbot bookinger', 'Kundeportal'] },
     { icon: Shield, title: 'Sikkerhed', description: 'Enterprise-grade sikkerhed', status: 'active' as const, features: ['SSL-kryptering', 'GDPR-kompatibel', '2FA login', 'Daglige backups'] },
-    { icon: Workflow, title: 'Integrationer', description: 'Kobl dine systemer', status: 'pro' as const, features: ['e-conomic', 'Google Kalender', 'REST API', 'Webhooks'], link: '/fri/dashboard/api-keys' },
+    { icon: Workflow, title: 'Integrationer', description: 'Kobl dine systemer', status: 'pro' as const, features: ['e-conomic', 'Google Kalender', 'REST API', 'Webhooks'], link: '/autofiq/dashboard/api-keys' },
     { icon: Database, title: 'ERP System', description: 'Fuld forretningsstyring', status: 'pro' as const, features: ['Kundeadministration', 'Ordreforvaltning', 'Lagerstyring', 'Regnskab'] },
     { icon: Smartphone, title: 'Mobil App', description: 'Arbejd overalt', status: 'coming' as const, features: ['iOS & Android', 'Offline mode', 'Push notifikationer', 'Biometric login'] },
     { icon: MapPin, title: 'GPS & Tracking', description: 'Real-time lokation', status: 'coming' as const, features: ['Live tracking', 'Geofencing', 'Korselhistorik', 'Fuel tracking'] },
@@ -325,7 +325,7 @@ const FriLessorDashboard = () => {
             <RefreshCw className={`w-4 h-4 mr-2 ${isLoadingData ? 'animate-spin' : ''}`} />
             Opdater
           </Button>
-          <Link to="/fri/dashboard/vehicles">
+          <Link to="/autofiq/dashboard/vehicles">
             <Button className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">
               <Car className="w-4 h-4 mr-2" />
               Tilføj køretoej
@@ -386,11 +386,11 @@ const FriLessorDashboard = () => {
             Hurtige Handlinger
           </h3>
           <div className="space-y-3">
-            <Link to="/fri/dashboard/vehicles"><QuickActionButton icon={Car} label="Tilfoej koretoj" variant="primary" /></Link>
-            <Link to="/fri/dashboard/bookings"><QuickActionButton icon={Calendar} label="Se bookinger" /></Link>
-            <Link to="/fri/dashboard/invoices"><QuickActionButton icon={FileText} label="Opret faktura" /></Link>
-            <Link to="/fri/dashboard/team"><QuickActionButton icon={Users} label="Inviter teammedlem" /></Link>
-            <Link to="/fri/dashboard/settings"><QuickActionButton icon={Settings} label="Indstillinger" /></Link>
+            <Link to="/autofiq/dashboard/vehicles"><QuickActionButton icon={Car} label="Tilfoej koretoj" variant="primary" /></Link>
+            <Link to="/autofiq/dashboard/bookings"><QuickActionButton icon={Calendar} label="Se bookinger" /></Link>
+            <Link to="/autofiq/dashboard/invoices"><QuickActionButton icon={FileText} label="Opret faktura" /></Link>
+            <Link to="/autofiq/dashboard/team"><QuickActionButton icon={Users} label="Inviter teammedlem" /></Link>
+            <Link to="/autofiq/dashboard/settings"><QuickActionButton icon={Settings} label="Indstillinger" /></Link>
           </div>
         </div>
       </div>
@@ -403,7 +403,7 @@ const FriLessorDashboard = () => {
               <Car className="w-5 h-5 text-amber-400" />
               Køretoej Performance
             </h3>
-            <Link to="/fri/dashboard/vehicles">
+            <Link to="/autofiq/dashboard/vehicles">
               <Button variant="ghost" size="sm" className="text-amber-400 hover:text-amber-300">
                 Se alle <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
@@ -449,7 +449,7 @@ const FriLessorDashboard = () => {
             </h2>
             <p className="text-white/50 mt-1">Alt hvad du har adgang til i din platform</p>
           </div>
-          <Link to="/fri/features">
+          <Link to="/autofiq/features">
             <Button variant="outline" className="border-white/10 bg-white/5 text-white hover:bg-white/10">
               Se alle features <ChevronRight className="w-4 h-4 ml-1" />
             </Button>

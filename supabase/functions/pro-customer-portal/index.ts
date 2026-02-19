@@ -20,8 +20,8 @@ serve(async (req) => {
   try {
     logStep("Function started");
 
-    const stripeKey = Deno.env.get("LEJIO_STRIPE_SECRET_KEY");
-    if (!stripeKey) throw new Error("LEJIO_STRIPE_SECRET_KEY is not set");
+    const stripeKey = Deno.env.get("AUTOFIQ_STRIPE_SECRET_KEY");
+    if (!stripeKey) throw new Error("AUTOFIQ_STRIPE_SECRET_KEY is not set");
 
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
@@ -50,7 +50,7 @@ serve(async (req) => {
     const customerId = customers.data[0].id;
     logStep("Found Stripe customer", { customerId });
 
-    const origin = req.headers.get("origin") || "https://lejio.dk";
+    const origin = req.headers.get("origin") || "https://autofiq.dk";
     const portalSession = await stripe.billingPortal.sessions.create({
       customer: customerId,
       return_url: `${origin}/settings`,

@@ -281,7 +281,7 @@ const VehicleDetailPage = () => {
                     {vehicle.unlimited_km ? (
                       <div className="flex items-center gap-2 text-mint">
                         <Check className="w-4 h-4" />
-                        Fri kilometer
+                        Ubegrænsede kilometer
                       </div>
                     ) : (
                       <div className="flex justify-between">

@@ -173,7 +173,7 @@ const VehicleSearchCard = ({
               {vehicle.owner_fleet_plan && (
                 <Badge className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg border-0">
                   <Shield className="w-3 h-3 mr-1" />
-                  LEJIO
+                  AUTOFIQ
                 </Badge>
               )}
             </div>
@@ -226,7 +226,7 @@ const VehicleSearchCard = ({
                 {vehicle.unlimited_km && (
                   <span className="flex items-center gap-1.5 text-green-600">
                     <Check className="w-4 h-4" />
-                    Fri km
+                    Ubegrænset km
                   </span>
                 )}
               </div>
@@ -350,7 +350,7 @@ const VehicleSearchCard = ({
           {vehicle.unlimited_km && vehicle.vehicle_type === 'bil' && (
             <Badge className="bg-accent/90 backdrop-blur-sm text-white shadow-lg border-0 text-xs">
               <Check className="w-3 h-3 mr-1" />
-              Fri km
+              Ubegrænset km
             </Badge>
           )}
         </div>
@@ -365,7 +365,7 @@ const VehicleSearchCard = ({
         {vehicle.owner_fleet_plan && (
           <Badge className="absolute bottom-3 right-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg border-0">
             <Shield className="w-3 h-3 mr-1" />
-            LEJIO
+            AUTOFIQ
           </Badge>
         )}
       </div>

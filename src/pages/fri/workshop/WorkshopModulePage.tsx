@@ -15,7 +15,7 @@ export function WorkshopModulePage() {
         <div className="max-w-4xl mx-auto px-4 py-20 text-center">
           <h1 className="text-3xl font-semibold text-white">Modul ikke fundet</h1>
           <p className="text-white/60 mt-4">Vælg et modul fra oversigten.</p>
-          <Link to="/fri/workshop">
+          <Link to="/autofiq/workshop">
             <Button className="mt-6 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">
               Tilbage til oversigt
             </Button>
@@ -29,7 +29,7 @@ export function WorkshopModulePage() {
     <FriMarketingLayout>
       <section className="max-w-5xl mx-auto px-4 py-16">
         <div className="mb-8">
-          <Link to="/fri/workshop" className="text-white/60 hover:text-white text-sm">
+          <Link to="/autofiq/workshop" className="text-white/60 hover:text-white text-sm">
             ← Tilbage til moduler
           </Link>
         </div>

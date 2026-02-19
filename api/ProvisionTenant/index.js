@@ -85,7 +85,7 @@ module.exports = async function (context, req) {
     const tenantId = uuidv4().substring(0, 36);
     const slug = createSlug(lessor.company_name);
     const subdomain = await generateUniqueSubdomain(slug, client);
-    const domain = custom_domain || `${subdomain}.lejio-fri.dk`;
+    const domain = custom_domain || `${subdomain}.autofiq.dk`;
 
     // 4. Create tenant record
     await client.query(

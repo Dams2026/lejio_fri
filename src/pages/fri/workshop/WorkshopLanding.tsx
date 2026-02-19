@@ -21,12 +21,12 @@ export function WorkshopLanding() {
             Sammensæt præcis de moduler dit værksted har brug for – og udvid løbende. TRISYS‑inspireret modulstruktur med fuld fleksibilitet.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/fri/workshop/garageplan">
+            <Link to="/autofiq/workshop/garageplan">
               <Button size="lg" className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-brown-900 hover:brightness-110">
                 Start med GaragePlan <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
-            <Link to="/fri/trial">
+            <Link to="/autofiq/trial">
               <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
                 Book demo
               </Button>
@@ -59,7 +59,7 @@ export function WorkshopLanding() {
                     {module.status === 'Klar' ? 'Modul klar til tilvalg' : 'I pipeline til aktivering'}
                   </span>
                 </div>
-                <Link to={`/fri/workshop/${module.id}`} className="inline-flex items-center text-amber-200 hover:text-amber-100 text-sm">
+                <Link to={`/autofiq/workshop/${module.id}`} className="inline-flex items-center text-amber-200 hover:text-amber-100 text-sm">
                   Se modul <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
               </CardContent>

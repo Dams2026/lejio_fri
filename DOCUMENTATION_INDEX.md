@@ -1,6 +1,6 @@
-# 📖 Lejio Fri - Documentation Index
+# 📖 AUTOFIQ - Documentation Index
 
-Welcome! Your Lejio Fri application has been successfully deployed to Azure.
+Welcome! Your AUTOFIQ application has been successfully deployed to Azure.
 
 **Status:** 🟢 LIVE at https://zealous-stone-04c86dd03.2.azurestaticapps.net
 
@@ -53,7 +53,7 @@ Welcome! Your Lejio Fri application has been successfully deployed to Azure.
 ### Source Code
 | Location | Purpose |
 |----------|---------|
-| **src/pages/fri/** | Lejio Fri pages & routes |
+| **src/pages/autofiq/** | AUTOFIQ pages & routes |
 | **src/hooks/** | Custom React hooks (11 updated) |
 | **src/integrations/azure/** | Azure SDK integration |
 | **src/components/ui/** | shadcn-ui components |
@@ -108,9 +108,9 @@ Welcome! Your Lejio Fri application has been successfully deployed to Azure.
 |----------|-----|
 | **Live App** | https://zealous-stone-04c86dd03.2.azurestaticapps.net |
 | **Azure Portal** | https://portal.azure.com |
-| **GitHub Repo** | https://github.com/martinjensen9988-sudo/lejio-b75cff1f |
-| **Azure SQL Server** | lejio-fri-db.database.windows.net |
-| **SQL Database** | lejio_fri |
+| **GitHub Repo** | https://github.com/martinjensen9988-sudo/autofiq-b75cff1f |
+| **Azure SQL Server** | autofiq-db.database.windows.net |
+| **SQL Database** | autofiq |
 
 ---
 
@@ -118,7 +118,7 @@ Welcome! Your Lejio Fri application has been successfully deployed to Azure.
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                 LEJIO FRI DEPLOYMENT                │
+│                 AUTOFIQ DEPLOYMENT                │
 └─────────────────────────────────────────────────────┘
                             │
                 ┌───────────┼───────────┐
@@ -128,7 +128,7 @@ Welcome! Your Lejio Fri application has been successfully deployed to Azure.
         Static Web App  Functions    SQL Server
          (146 files)   (22 endpoints) (14 tables)
              (Live)        (Ready)    (Verified)
-            https://       /api/*      lejio_fri
+            https://       /api/*      autofiq
           zealous-stone
 ```
 
@@ -178,14 +178,14 @@ Welcome! Your Lejio Fri application has been successfully deployed to Azure.
 - Azure Functions: https://learn.microsoft.com/en-us/azure/azure-functions/
 
 ### Contacts
-- Project Lead: martin@lejio.dk
+- Project Lead: martin@autofiq.dk
 - Azure Support: https://support.microsoft.com/
 
 ---
 
 ## 🎉 Summary
 
-Your Lejio Fri application is **LIVE and READY**!
+Your AUTOFIQ application is **LIVE and READY**!
 
 ✅ All code deployed  
 ✅ All infrastructure configured  
